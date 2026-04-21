@@ -98,10 +98,11 @@ def build_prompt(articles: list) -> str:
 Tienes {len(articles)} artículos de noticias de IA, en inglés (EN) y español (ES).
 
 Tu tarea:
-1. Selecciona los 2 más relevantes e impactantes para profesionales de tecnología e IA.
-2. Incluye al menos 1 fuentes en español y 1 en inglés entre los elegidos.
+1. Selecciona los 4-5 más relevantes e impactantes para profesionales de tecnología e IA.
+2. Incluye al menos 2 fuentes en español y 2 en inglés entre los elegidos.
 3. Escribe TODOS los resúmenes en español, independientemente del idioma original.
 4. Cada resumen debe tener 2-3 frases claras y directas.
+5. Verifica que realmente esta hablando de temas de IA
 
 Devuelve ÚNICAMENTE un JSON válido con este esquema exacto, sin texto adicional:
 {{
