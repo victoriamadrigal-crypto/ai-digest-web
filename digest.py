@@ -23,7 +23,7 @@ SOURCES = [
     {"url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/tecnologia/portada","lang": "es", "name": "El País Tecnología"},
 ]
 
-MAX_PER_SOURCE = 5
+MAX_PER_SOURCE = 2
 MAX_SEEN_URLS  = 500
 SEEN_URLS_FILE = "seen_urls.json"
 GROQ_MODEL     = "llama-3.1-8b-instant"
@@ -98,8 +98,8 @@ def build_prompt(articles: list) -> str:
 Tienes {len(articles)} artículos de noticias de IA, en inglés (EN) y español (ES).
 
 Tu tarea:
-1. Selecciona los 5-7 más relevantes e impactantes para profesionales de tecnología e IA.
-2. Incluye al menos 2 fuentes en español y 2 en inglés entre los elegidos.
+1. Selecciona los 2 más relevantes e impactantes para profesionales de tecnología e IA.
+2. Incluye al menos 1 fuentes en español y 1 en inglés entre los elegidos.
 3. Escribe TODOS los resúmenes en español, independientemente del idioma original.
 4. Cada resumen debe tener 2-3 frases claras y directas.
 
@@ -139,6 +139,9 @@ def summarize_with_groq(articles: list) -> list:
     response.raise_for_status()
 
     raw = response.json()["choices"][0]["message"]["content"].strip()
+    print(f"[DEBUG] Respuesta de Groq: {raw[:200]}")
+    if not raw:
+        raise ValueError("Groq devolvió una respuesta vacía")
     if raw.startswith("```"):
         raw = raw.split("```")[1]
         if raw.startswith("json"):
