@@ -226,25 +226,40 @@ def summarize_with_groq(articles: list) -> list:
         "temperature": 0.3
     }
 
-    response = requests.post(
-        "https://api.groq.com/openai/v1/chat/completions",
-        json=payload, headers=headers, timeout=60
-    )
-    response.raise_for_status()
+    for intento in range(3):
+        response = requests.post(
+            "https://api.groq.com/openai/v1/chat/completions",
+            json=payload, headers=headers, timeout=60
+        )
+        response.raise_for_status()
 
-    raw = response.json()["choices"][0]["message"]["content"].strip()
-    if not raw:
-        raise ValueError("Groq devolvió una respuesta vacía")
-    if raw.startswith("```"):
-        raw = raw.split("```")[1]
-        if raw.startswith("json"):
-            raw = raw[4:]
-    raw = raw.strip()
+        raw = response.json()["choices"][0]["message"]["content"].strip()
 
-    data = json.loads(raw)
-    items = data.get("items", [])
-    print(f"[INFO] Groq seleccionó {len(items)} artículos")
-    return items
+        if not raw:
+            print(f"[WARN] Groq devolvió vacío (intento {intento+1}/3), reintentando en 10s...")
+            time.sleep(10)
+            continue
+
+        if raw.startswith("```"):
+            raw = raw.split("```")[1]
+            if raw.startswith("json"):
+                raw = raw[4:]
+        raw = raw.strip()
+
+        try:
+            data = json.loads(raw)
+            items = data.get("items", [])
+            if items:
+                print(f"[INFO] Groq seleccionó {len(items)} artículos")
+                return items
+            else:
+                print(f"[WARN] Groq devolvió lista vacía (intento {intento+1}/3), reintentando...")
+                time.sleep(10)
+        except json.JSONDecodeError as e:
+            print(f"[WARN] JSON inválido en intento {intento+1}/3: {e}")
+            time.sleep(10)
+
+    raise ValueError("Groq no devolvió resultados válidos tras 3 intentos")
 
 
 # ─────────────────────────────────────────
