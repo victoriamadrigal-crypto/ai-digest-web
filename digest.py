@@ -233,11 +233,11 @@ def summarize_with_groq(articles: list) -> list:
         )
         response.raise_for_status()
 
-    raw = response.json()["choices"][0]["message"]["content"].strip()
-    print(f"[DEBUG] Respuesta cruda de Groq: '{raw[:300]}'")
+        raw = response.json()["choices"][0]["message"]["content"].strip()
+        print(f"[DEBUG] Respuesta Groq intento {intento+1}: '{raw[:200]}'")
 
         if not raw:
-            print(f"[WARN] Groq devolvió vacío (intento {intento+1}/3), reintentando en 10s...")
+            print(f"[WARN] Vacío, reintentando en 10s...")
             time.sleep(10)
             continue
 
@@ -253,11 +253,10 @@ def summarize_with_groq(articles: list) -> list:
             if items:
                 print(f"[INFO] Groq seleccionó {len(items)} artículos")
                 return items
-            else:
-                print(f"[WARN] Groq devolvió lista vacía (intento {intento+1}/3), reintentando...")
-                time.sleep(10)
+            print(f"[WARN] Lista vacía, reintentando en 10s...")
+            time.sleep(10)
         except json.JSONDecodeError as e:
-            print(f"[WARN] JSON inválido en intento {intento+1}/3: {e}")
+            print(f"[WARN] JSON inválido intento {intento+1}: {e}")
             time.sleep(10)
 
     raise ValueError("Groq no devolvió resultados válidos tras 3 intentos")
