@@ -233,7 +233,8 @@ def summarize_with_groq(articles: list) -> list:
         )
         response.raise_for_status()
 
-        raw = response.json()["choices"][0]["message"]["content"].strip()
+    raw = response.json()["choices"][0]["message"]["content"].strip()
+    print(f"[DEBUG] Respuesta cruda de Groq: '{raw[:300]}'")
 
         if not raw:
             print(f"[WARN] Groq devolvió vacío (intento {intento+1}/3), reintentando en 10s...")
