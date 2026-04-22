@@ -241,10 +241,11 @@ def summarize_with_groq(articles: list) -> list:
             time.sleep(10)
             continue
 
-        if raw.startswith("```"):
-            raw = raw.split("```")[1]
-            if raw.startswith("json"):
-                raw = raw[4:]
+        # Groq a veces añade texto antes del bloque JSON
+        if "```json" in raw:
+            raw = raw.split("```json")[1].split("```")[0]
+        elif "```" in raw:
+            raw = raw.split("```")[1].split("```")[0]
         raw = raw.strip()
 
         try:
