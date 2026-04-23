@@ -1776,11 +1776,25 @@ async function loadReto() {
     const nivelIcon  = { Basico:'🟢', Intermedio:'🟡', Avanzado:'🔴' };
 
     container.innerHTML = (data.ejercicios || []).map((ej, i) => {
-      const color = toolColor[ej.herramienta] || 'var(--muted)';
+      const color  = toolColor[ej.herramienta]  || 'var(--muted)';
       const nColor = nivelColor[ej.nivel] || 'var(--muted)';
-      const nIcon  = nivelIcon[ej.nivel] || '⚪';
+      const nIcon  = nivelIcon[ej.nivel]  || '⚪';
       const doneKey = `reto-done-${data.semana}-${ej.id}`;
-      const isDone = localStorage.getItem(doneKey) === '1';
+      const isDone  = localStorage.getItem(doneKey) === '1';
+
+      const pasosHTML = ej.pasos && ej.pasos.length ? `
+        <div style="margin-bottom:14px">
+          <div style="font-size:0.72rem;font-weight:600;text-transform:uppercase;
+                      letter-spacing:0.06em;color:var(--muted);margin-bottom:8px">
+            📋 Pasos a seguir
+          </div>
+          <ol style="padding-left:20px;display:flex;flex-direction:column;gap:6px">
+            ${ej.pasos.map(p => `
+              <li style="font-size:0.87rem;color:var(--text);line-height:1.6">${p}</li>
+            `).join('')}
+          </ol>
+        </div>` : '';
+
       return `
       <div class="card" id="reto-card-${ej.id}" style="${isDone ? 'border-color:var(--success)' : ''}">
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px">
@@ -1793,14 +1807,23 @@ async function loadReto() {
           </div>
           <span style="font-size:0.72rem;font-weight:600;color:var(--muted)">Ejercicio ${ej.id}</span>
         </div>
+
         <h3 style="font-family:var(--font-head);font-weight:700;font-size:1.05rem;margin-bottom:8px">${ej.titulo}</h3>
         <p style="font-size:0.85rem;color:${color};font-weight:500;margin-bottom:12px">🎯 ${ej.objetivo}</p>
-        <div style="background:var(--surface2);border-radius:8px;padding:14px 16px;margin-bottom:12px;font-size:0.88rem;color:var(--muted);line-height:1.7;white-space:pre-wrap">${ej.instrucciones}</div>
-        <div style="background:rgba(74,217,124,0.06);border:1px solid rgba(74,217,124,0.2);border-radius:8px;padding:10px 14px;margin-bottom:16px">
-          <span style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--success)">✓ Criterio de éxito</span>
+
+        <div style="background:var(--surface2);border-radius:8px;padding:14px 16px;margin-bottom:14px;
+                    font-size:0.88rem;color:var(--muted);line-height:1.7;white-space:pre-wrap">${ej.instrucciones}</div>
+
+        ${pasosHTML}
+
+        <div style="background:rgba(74,217,124,0.06);border:1px solid rgba(74,217,124,0.2);
+                    border-radius:8px;padding:10px 14px;margin-bottom:16px">
+          <span style="font-size:0.72rem;font-weight:600;text-transform:uppercase;
+                       letter-spacing:0.06em;color:var(--success)">✓ Criterio de éxito</span>
           <p style="font-size:0.85rem;color:var(--text);margin-top:4px">${ej.criterio_exito}</p>
         </div>
-        <button onclick="marcarRetoHecho('${data.semana}', ${ej.id}, this)" 
+
+        <button onclick="marcarRetoHecho('${data.semana}', ${ej.id}, this)"
           class="complete-btn ${isDone ? 'done' : ''}" id="reto-btn-${ej.id}">
           ${isDone ? '✓ Completado' : '✓ Marcar como completado'}
         </button>
