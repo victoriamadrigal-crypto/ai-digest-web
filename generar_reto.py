@@ -78,7 +78,7 @@ Devuelve ÚNICAMENTE un JSON válido con este esquema exacto, sin texto adiciona
       "nivel": "Basico",
       "titulo": "Título del ejercicio (máximo 6 palabras)",
       "objetivo": "Qué aprenderá o practicará el usuario (1 frase)",
-      "instrucciones": "Pasos claros para realizar el ejercicio. Incluye el prompt de ejemplo si aplica. Máximo 150 palabras.",
+      "instrucciones": "Pasos claros para realizar el ejercicio. Como hacerlo paso a paso. Incluye el prompt de ejemplo si aplica. Máximo 1000 palabras.",
       "criterio_exito": "Cómo sabe el usuario que lo ha hecho bien (1-2 frases)",
       "tiempo_estimado": "10 min"
     }}
