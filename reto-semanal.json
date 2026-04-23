@@ -1,0 +1,49 @@
+{
+  "semana": "2026-04-20",
+  "num_semana": 17,
+  "tema": "uso de Kiro: spec-driven development en proyectos reales",
+  "titulo": "Desarrollo con Kiro",
+  "descripcion": "Mejora proyectos con spec-driven",
+  "ejercicios": [
+    {
+      "id": 1,
+      "herramienta": "Kiro",
+      "nivel": "Basico",
+      "titulo": "Intro a Kiro",
+      "objetivo": "Aprender a utilizar Kiro para especificar requisitos",
+      "instrucciones": "Abre Kiro y crea un nuevo proyecto. Utiliza el prompt 'Especifica los requisitos para un sistema de gestión de inventario' para empezar.",
+      "criterio_exito": "El usuario ha creado un proyecto en Kiro y ha iniciado la especificación de requisitos",
+      "tiempo_estimado": "10 min"
+    },
+    {
+      "id": 2,
+      "herramienta": "Gemini",
+      "nivel": "Basico",
+      "titulo": "Análisis con Gemini",
+      "objetivo": "Aprender a analizar datos con Gemini",
+      "instrucciones": "Abre Gemini y carga un conjunto de datos de ejemplo. Utiliza el prompt 'Analiza los datos y proporciona conclusiones' para obtener resultados.",
+      "criterio_exito": "El usuario ha cargado datos en Gemini y ha obtenido conclusiones",
+      "tiempo_estimado": "10 min"
+    },
+    {
+      "id": 3,
+      "herramienta": "Claude y Kiro",
+      "nivel": "Intermedio",
+      "titulo": "Integración Claude-Kiro",
+      "objetivo": "Aprender a integrar Claude con Kiro para mejorar la especificación de requisitos",
+      "instrucciones": "Abre Claude y crea un nuevo documento. Conecta Kiro para importar requisitos y utiliza el prompt 'Crea un documento que combine la especificación de requisitos con la capacidad de análisis de Claude'",
+      "criterio_exito": "El usuario ha integrado Claude con Kiro y ha creado un documento que combina ambas herramientas",
+      "tiempo_estimado": "20 min"
+    },
+    {
+      "id": 4,
+      "herramienta": "Gemini y Kiro",
+      "nivel": "Intermedio",
+      "titulo": "Análisis y especificación",
+      "objetivo": "Aprender a utilizar Gemini y Kiro para analizar y especificar requisitos de manera efectiva",
+      "instrucciones": "Abre Gemini y carga un conjunto de datos. Conecta Kiro para importar requisitos y analiza los datos para proporcionar conclusiones que mejoren la especificación de requisitos",
+      "criterio_exito": "El usuario ha utilizado Gemini y Kiro para analizar y especificar requisitos de manera efectiva",
+      "tiempo_estimado": "20 min"
+    }
+  ]
+}
