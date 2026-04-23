@@ -56,10 +56,12 @@ Esta semana (semana {week_num} de {datetime.date.today().year}) el tema central 
 Genera exactamente 4 ejercicios prácticos para que el equipo practique durante la semana. Los ejercicios deben:
 - Ser realizables en 10-20 minutos cada uno
 - Cubrir al menos 2 herramientas distintas entre Claude, Gemini y Kiro
+- Tiene que poderse realizar con versiones gratuitas
 - Tener diferentes niveles: 2 de nivel "Básico" y 2 de nivel "Intermedio"  
 - Ser prácticos y aplicables a contextos profesionales reales
 - Incluir instrucciones claras y un criterio de éxito medible
 - NO requerir conocimientos técnicos avanzados para los básicos
+- Incluir los pasos que hay que realizar para completar la practica
 - Variar en formato: algunos con prompts de ejemplo, otros más abiertos
 
 Devuelve ÚNICAMENTE un JSON válido con este esquema exacto, sin texto adicional, sin markdown, sin explicaciones:
