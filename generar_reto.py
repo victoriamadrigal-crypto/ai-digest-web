@@ -61,7 +61,7 @@ Genera exactamente 4 ejercicios prácticos para que el equipo practique durante 
 - Ser prácticos y aplicables a contextos profesionales reales
 - Incluir instrucciones claras y un criterio de éxito medible
 - NO requerir conocimientos técnicos avanzados para los básicos
-- Incluir los pasos que hay que realizar para completar la practica
+- Incluye siempre un campo "pasos" con 3-5 pasos numerados y concretos que el usuario debe seguir para completar el ejercicio
 - Variar en formato: algunos con prompts de ejemplo, otros más abiertos
 
 Devuelve ÚNICAMENTE un JSON válido con este esquema exacto, sin texto adicional, sin markdown, sin explicaciones:
@@ -78,7 +78,12 @@ Devuelve ÚNICAMENTE un JSON válido con este esquema exacto, sin texto adiciona
       "nivel": "Basico",
       "titulo": "Título del ejercicio (máximo 6 palabras)",
       "objetivo": "Qué aprenderá o practicará el usuario (1 frase)",
-      "instrucciones": "Pasos claros para realizar el ejercicio. Como hacerlo paso a paso. Incluye el prompt de ejemplo si aplica. Máximo 1000 palabras.",
+      "pasos": [
+        "Paso 1: descripción concreta de qué hacer",
+        "Paso 2: descripción concreta de qué hacer",
+        "Paso 3: descripción concreta de qué hacer"
+      ],
+      "instrucciones": "Contexto general del ejercicio y prompt de ejemplo si aplica. Máximo 80 palabras.",
       "criterio_exito": "Cómo sabe el usuario que lo ha hecho bien (1-2 frases)",
       "tiempo_estimado": "10 min"
     }}
