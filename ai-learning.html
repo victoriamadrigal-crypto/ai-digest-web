@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Masterclass — Claude · Gemini · Kiro</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0c0c0f;
+  --surface: #141418;
+  --surface2: #1c1c22;
+  --border: #2a2a35;
+  --text: #e8e8f0;
+  --muted: #6b6b80;
+  --claude: #d97c4a;
+  --gemini: #4a9bd9;
+  --kiro: #7c4ad9;
+  --success: #4ad97c;
+  --error: #d94a4a;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --radius: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(12,12,15,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  font-family: var(--font-head);
+  font-weight: 800; font-size: 1rem;
+  color: var(--text); text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--claude); }
+.nav-tools {
+  display: flex; gap: 4px;
+}
+.nav-btn {
+  background: none; border: 1px solid transparent;
+  padding: 6px 14px; border-radius: 8px;
+  font-family: var(--font-body); font-size: 0.82rem; font-weight: 500;
+  color: var(--muted); cursor: pointer;
+  transition: all 0.2s;
+}
+.nav-btn:hover { color: var(--text); border-color: var(--border); }
+.nav-btn.active { color: var(--text); border-color: var(--border); background: var(--surface); }
+.nav-btn[data-tool="claude"].active { color: var(--claude); border-color: var(--claude); }
+.nav-btn[data-tool="gemini"].active { color: var(--gemini); border-color: var(--gemini); }
+.nav-btn[data-tool="kiro"].active   { color: var(--kiro);   border-color: var(--kiro); }
+
+.progress-bar {
+  position: fixed; top: 60px; left: 0; right: 0; z-index: 99;
+  height: 3px; background: var(--border);
+}
+.progress-fill {
+  height: 100%; background: linear-gradient(90deg, var(--claude), var(--gemini), var(--kiro));
+  width: 0%; transition: width 0.4s ease;
+}
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 80px 24px 60px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: 
+    radial-gradient(ellipse 60% 50% at 20% 50%, rgba(217,124,74,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(124,74,217,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 50% 80%, rgba(74,155,217,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--surface2); border: 1px solid var(--border);
+  padding: 6px 16px; border-radius: 100px;
+  font-size: 0.8rem; font-weight: 500; color: var(--muted);
+  margin-bottom: 32px;
+  animation: fadeUp 0.6s ease both;
+}
+.hero h1 {
+  font-family: var(--font-head); font-size: clamp(2.8rem, 8vw, 5.5rem);
+  font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;
+  max-width: 820px; margin-bottom: 24px;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+.hero h1 .c { color: var(--claude); }
+.hero h1 .g { color: var(--gemini); }
+.hero h1 .k { color: var(--kiro); }
+
+.hero-sub {
+  font-size: 1.1rem; color: var(--muted); font-weight: 300;
+  max-width: 520px; margin-bottom: 48px;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+.hero-ctas {
+  display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+.btn-primary {
+  background: var(--text); color: var(--bg);
+  border: none; padding: 14px 28px; border-radius: 10px;
+  font-family: var(--font-body); font-size: 0.95rem; font-weight: 500;
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+.btn-secondary {
+  background: none; color: var(--text); border: 1px solid var(--border);
+  padding: 14px 28px; border-radius: 10px;
+  font-family: var(--font-body); font-size: 0.95rem; font-weight: 500;
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: var(--text); }
+
+.hero-tools {
+  display: flex; gap: 24px; margin-top: 64px; flex-wrap: wrap; justify-content: center;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+.tool-pill {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 12px 20px; border-radius: 100px;
+  font-size: 0.88rem; font-weight: 500; cursor: pointer;
+  transition: all 0.2s;
+}
+.tool-pill:hover { transform: translateY(-2px); }
+.tool-pill .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+}
+.tool-pill.claude .dot { background: var(--claude); }
+.tool-pill.gemini .dot { background: var(--gemini); }
+.tool-pill.kiro   .dot { background: var(--kiro); }
+
+/* ─── MAIN CONTENT ─── */
+.main {
+  max-width: 900px; margin: 0 auto; padding: 0 24px 100px;
+}
+
+/* ─── TOOL SECTION ─── */
+.tool-section {
+  display: none; animation: fadeUp 0.5s ease both;
+}
+.tool-section.active { display: block; }
+
+.tool-header {
+  padding: 80px 0 40px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+.tool-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 16px;
+}
+.tool-tag .dot { width: 6px; height: 6px; border-radius: 50%; }
+.tool-header h2 {
+  font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+  margin-bottom: 16px;
+}
+.tool-header p { font-size: 1.05rem; color: var(--muted); max-width: 560px; }
+
+/* ─── LESSON ─── */
+.lesson {
+  margin-bottom: 32px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; transition: border-color 0.2s;
+}
+.lesson.completed { border-color: var(--success); }
+.lesson-header {
+  display: flex; align-items: center; gap: 16px;
+  padding: 20px 24px; cursor: pointer;
+  background: var(--surface);
+  transition: background 0.2s;
+}
+.lesson-header:hover { background: var(--surface2); }
+.lesson-num {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-weight: 700; font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.lesson-title-group { flex: 1; }
+.lesson-title {
+  font-family: var(--font-head); font-weight: 600; font-size: 1rem;
+  margin-bottom: 2px;
+}
+.lesson-meta { font-size: 0.78rem; color: var(--muted); }
+.lesson-chevron {
+  color: var(--muted); transition: transform 0.3s;
+  font-size: 1.2rem; flex-shrink: 0;
+}
+.lesson.open .lesson-chevron { transform: rotate(180deg); }
+.lesson-status {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 2px solid var(--border); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem;
+}
+.lesson.completed .lesson-status {
+  background: var(--success); border-color: var(--success); color: var(--bg);
+}
+
+.lesson-body {
+  display: none; padding: 28px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+.lesson.open .lesson-body { display: block; }
+
+.lesson-content h3 {
+  font-family: var(--font-head); font-weight: 700; font-size: 1.1rem;
+  margin-bottom: 12px; margin-top: 24px;
+}
+.lesson-content h3:first-child { margin-top: 0; }
+.lesson-content p { color: var(--muted); margin-bottom: 16px; line-height: 1.7; }
+.lesson-content strong { color: var(--text); font-weight: 500; }
+
+/* Tip box */
+.tip {
+  background: var(--surface2); border-left: 3px solid;
+  padding: 16px 18px; border-radius: 0 8px 8px 0;
+  margin: 20px 0; font-size: 0.9rem;
+}
+.tip .tip-label { font-weight: 600; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.tip p { margin: 0; color: var(--text); }
+
+/* Example prompt */
+.prompt-example {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 18px; margin: 16px 0;
+  font-size: 0.88rem; position: relative;
+}
+.prompt-example .label {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 8px; opacity: 0.6;
+}
+.prompt-example pre {
+  white-space: pre-wrap; word-break: break-word;
+  font-family: 'Courier New', monospace; font-size: 0.85rem;
+  color: var(--text); line-height: 1.6;
+}
+.copy-btn {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--muted); padding: 4px 10px; border-radius: 6px;
+  font-size: 0.72rem; cursor: pointer; transition: all 0.2s;
+}
+.copy-btn:hover { color: var(--text); border-color: var(--text); }
+
+/* ─── EXERCISE ─── */
+.exercise {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px; margin-top: 28px;
+}
+.exercise-label {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 16px;
+}
+.exercise-label .icon { font-size: 1rem; }
+.exercise h4 {
+  font-family: var(--font-head); font-weight: 700; font-size: 1rem;
+  margin-bottom: 8px;
+}
+.exercise p { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
+
+/* Quiz */
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-option {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px 16px;
+  font-size: 0.9rem; cursor: pointer;
+  transition: all 0.15s; text-align: left;
+  color: var(--text);
+}
+.quiz-option:hover { border-color: var(--text); }
+.quiz-option.correct { background: rgba(74,217,124,0.1); border-color: var(--success); color: var(--success); }
+.quiz-option.wrong   { background: rgba(217,74,74,0.1);  border-color: var(--error);   color: var(--error); }
+.quiz-option.disabled { cursor: default; opacity: 0.5; }
+.quiz-option.disabled:hover { border-color: var(--border); }
+
+.quiz-feedback {
+  margin-top: 14px; padding: 12px 16px; border-radius: 8px;
+  font-size: 0.88rem; display: none;
+}
+.quiz-feedback.show { display: block; }
+.quiz-feedback.correct { background: rgba(74,217,124,0.1); color: var(--success); }
+.quiz-feedback.wrong   { background: rgba(217,74,74,0.1);  color: var(--error); }
+
+/* Prompt practice */
+.practice-textarea {
+  width: 100%; min-height: 120px;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 14px 16px;
+  font-family: var(--font-body); font-size: 0.9rem; color: var(--text);
+  resize: vertical; transition: border-color 0.2s;
+}
+.practice-textarea:focus { outline: none; border-color: var(--text); }
+.practice-textarea::placeholder { color: var(--muted); }
+.practice-actions { display: flex; gap: 10px; margin-top: 12px; align-items: center; }
+.btn-check {
+  padding: 10px 20px; border-radius: 8px;
+  font-family: var(--font-body); font-size: 0.88rem; font-weight: 500;
+  cursor: pointer; border: none; transition: all 0.2s;
+}
+.btn-check.claude-btn { background: var(--claude); color: var(--bg); }
+.btn-check.gemini-btn { background: var(--gemini); color: var(--bg); }
+.btn-check.kiro-btn   { background: var(--kiro);   color: white; }
+.btn-check:hover { opacity: 0.85; transform: translateY(-1px); }
+
+.show-answer-btn {
+  background: none; border: 1px solid var(--border); color: var(--muted);
+  padding: 10px 16px; border-radius: 8px;
+  font-family: var(--font-body); font-size: 0.88rem; cursor: pointer;
+  transition: all 0.2s;
+}
+.show-answer-btn:hover { color: var(--text); border-color: var(--text); }
+
+.answer-reveal {
+  display: none; margin-top: 16px;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 16px;
+}
+.answer-reveal.show { display: block; }
+.answer-reveal .answer-label {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--success); margin-bottom: 8px;
+}
+.answer-reveal pre {
+  font-family: 'Courier New', monospace; font-size: 0.83rem;
+  color: var(--text); white-space: pre-wrap; word-break: break-word;
+  line-height: 1.6;
+}
+
+.complete-btn {
+  width: 100%; margin-top: 28px; padding: 14px;
+  border-radius: 10px; font-family: var(--font-body);
+  font-size: 0.95rem; font-weight: 500; cursor: pointer;
+  border: 1px dashed var(--border); color: var(--muted);
+  background: none; transition: all 0.2s;
+}
+.complete-btn:hover { border-color: var(--success); color: var(--success); }
+.complete-btn.done { background: rgba(74,217,124,0.1); border-color: var(--success); color: var(--success); border-style: solid; }
+
+/* ─── PROGRESS SECTION ─── */
+.progress-section {
+  display: none;
+}
+.progress-section.active { display: block; padding-top: 80px; }
+.stats-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin-bottom: 40px;
+}
+.stat-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px;
+  text-align: center;
+}
+.stat-num {
+  font-family: var(--font-head); font-size: 2.5rem; font-weight: 800;
+  line-height: 1; margin-bottom: 8px;
+}
+.stat-label { font-size: 0.82rem; color: var(--muted); }
+.tool-progress-list { display: flex; flex-direction: column; gap: 16px; }
+.tool-progress-item {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 24px;
+}
+.tool-progress-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 12px;
+}
+.tool-progress-name { font-family: var(--font-head); font-weight: 700; }
+.tool-progress-pct { font-size: 0.85rem; font-weight: 600; }
+.progress-track {
+  height: 6px; background: var(--border); border-radius: 3px; overflow: hidden;
+}
+.progress-fill-bar {
+  height: 100%; border-radius: 3px; transition: width 0.6s ease;
+}
+
+/* ─── COMPARISON TABLE ─── */
+.comparison-section {
+  display: none;
+  padding-top: 80px;
+}
+.comparison-section.active { display: block; }
+.comparison-section h2 {
+  font-family: var(--font-head); font-size: 2rem; font-weight: 800;
+  letter-spacing: -0.02em; margin-bottom: 8px;
+}
+.comparison-section p { color: var(--muted); margin-bottom: 40px; }
+
+.comp-table {
+  width: 100%; border-collapse: collapse; font-size: 0.88rem;
+}
+.comp-table th {
+  font-family: var(--font-head); font-weight: 700; font-size: 0.9rem;
+  padding: 16px; text-align: left; border-bottom: 2px solid var(--border);
+}
+.comp-table th:nth-child(2) { color: var(--claude); }
+.comp-table th:nth-child(3) { color: var(--gemini); }
+.comp-table th:nth-child(4) { color: var(--kiro); }
+.comp-table td {
+  padding: 14px 16px; border-bottom: 1px solid var(--border);
+  vertical-align: top; color: var(--muted); line-height: 1.5;
+}
+.comp-table td:first-child { color: var(--text); font-weight: 500; }
+.comp-table tr:hover td { background: var(--surface); }
+.tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-size: 0.72rem; font-weight: 600; margin: 2px;
+}
+.tag.green { background: rgba(74,217,124,0.15); color: var(--success); }
+.tag.orange { background: rgba(217,124,74,0.15); color: var(--claude); }
+.tag.blue   { background: rgba(74,155,217,0.15); color: var(--gemini); }
+.tag.purple { background: rgba(124,74,217,0.15); color: var(--kiro); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {
+  .hero-ctas { flex-direction: column; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .nav-tools { gap: 2px; }
+  .nav-btn { padding: 6px 10px; font-size: 0.75rem; }
+  .comp-table { font-size: 0.78rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#" onclick="showSection('home')">AI<span>Masterclass</span></a>
+  <div class="nav-tools">
+    <button class="nav-btn" data-tool="claude" onclick="showSection('claude')">Claude</button>
+    <button class="nav-btn" data-tool="gemini" onclick="showSection('gemini')">Gemini</button>
+    <button class="nav-btn" data-tool="kiro" onclick="showSection('kiro')">Kiro</button>
+    <button class="nav-btn" data-tool="reto" onclick="showSection('reto')">🎯 Reto Semanal</button>
+    <button class="nav-btn" data-tool="sandbox" onclick="showSection('sandbox')">Sandbox IA</button>
+    <button class="nav-btn" data-tool="progress" onclick="showSection('progress')">Mi progreso</button>
+  </div>
+</nav>
+
+<div class="progress-bar"><div class="progress-fill" id="globalProgress"></div></div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-eyebrow">🎓 Nivel intermedio · Equipo mixto · 3 herramientas</div>
+  <h1>Domina las<br><span class="c">IAs</span> que <span class="g">están</span><br><span class="k">cambiando</span> todo</h1>
+  <p class="hero-sub">Aprende a sacar el máximo partido a Claude, Gemini y Kiro con lecciones prácticas diseñadas para tu equipo.</p>
+  <div class="hero-ctas">
+    <button class="btn-primary" onclick="showSection('claude')">Empezar con Claude →</button>
+    <button class="btn-secondary" onclick="showSection('reto')">🎯 Ver reto semanal</button>
+  </div>
+  <div class="hero-tools">
+    <div class="tool-pill claude" onclick="showSection('claude')">
+      <span class="dot"></span> Claude · 4 lecciones
+    </div>
+    <div class="tool-pill gemini" onclick="showSection('gemini')">
+      <span class="dot"></span> Gemini · 4 lecciones
+    </div>
+    <div class="tool-pill kiro" onclick="showSection('kiro')">
+      <span class="dot"></span> Kiro · 3 lecciones
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- ══════════ CLAUDE ══════════ -->
+<section class="tool-section" id="section-claude">
+  <div class="tool-header">
+    <div class="tool-tag" style="color:var(--claude)">
+      <span class="dot" style="background:var(--claude)"></span> Módulo 1
+    </div>
+    <h2>Claude</h2>
+    <p>El asistente de Anthropic destaca en razonamiento profundo, escritura matizada y conversaciones largas con contexto.</p>
+  </div>
+
+  <!-- L1 -->
+  <div class="lesson" id="lesson-claude-1">
+    <div class="lesson-header" onclick="toggleLesson('claude-1')">
+      <div class="lesson-num" style="background:rgba(217,124,74,0.15);color:var(--claude)">1</div>
+      <div class="lesson-title-group">
+        <div class="lesson-title">El arte del prompt: cómo hablarle a Claude</div>
+        <div class="lesson-meta">⏱ 8 min · Fundamentos</div>
+      </div>
+      <div class="lesson-status" id="status-claude-1">✓</div>
+      <div class="lesson-chevron">⌄</div>
+    </div>
+    <div class="lesson-body">
+      <div class="lesson-content">
+        <h3>Por qué los prompts mediocres dan resultados mediocres</h3>
+        <p>Claude es excepcionalmente capaz, pero necesita contexto para dar lo mejor de sí. La diferencia entre un prompt vago y uno bien construido puede ser la diferencia entre una respuesta genérica y un resultado que te ahorra horas de trabajo.</p>
+
+        <div class="tip" style="border-color:var(--claude)">
+          <div class="tip-label" style="color:var(--claude)">⚡ Regla de oro</div>
+          <p>Un buen prompt responde a cuatro preguntas: <strong>¿Quién soy yo?</strong> (tu rol o contexto), <strong>¿Qué necesito?</strong> (tarea), <strong>¿Para qué?</strong> (objetivo), <strong>¿En qué formato?</strong> (salida esperada).</p>
+        </div>
+
+        <h3>Los 5 elementos de un prompt efectivo</h3>
+        <p><strong>1. Rol:</strong> Asigna un rol a Claude ("Actúa como diseñador UX senior")</p>
+        <p><strong>2. Contexto:</strong> Da el contexto mínimo necesario para que entienda tu situación</p>
+        <p><strong>3. Tarea:</strong> Sé específico sobre lo que pides, no lo que crees que quieres</p>
+        <p><strong>4. Restricciones:</strong> Dile qué NO hacer ("sin tecnicismos", "máximo 3 opciones")</p>
+        <p><strong>5. Formato:</strong> Define cómo quieres la respuesta (lista, tabla, párrafos, código)</p>
+
+        <h3>Comparación práctica</h3>
+        <div class="prompt-example">
+          <div class="label">❌ Prompt vago</div>
+          <pre>Dame ideas para mejorar nuestra app.</pre>
+          <button class="copy-btn" onclick="copyText(this, 'Dame ideas para mejorar nuestra app.')">Copiar</button>
+        </div>
+        <div class="prompt-example">
+          <div class="label">✅ Prompt estructurado</div>
+          <pre>Actúa como consultor de producto con experiencia en apps B2B SaaS.
+Nuestra app de gestión de proyectos tiene un 40% de abandono en el onboarding.
+Los usuarios llegan pero no completan la configuración inicial.
+Dame 5 ideas concretas y priorizadas para reducir ese abandono, 
+enfocándote en cambios de UX que no requieran rediseño completo.
+Formato: lista numerada con título + 2 líneas de explicación cada una.</pre>
+          <button class="copy-btn" onclick="copyText(this, 'Actúa como consultor de producto con experiencia en apps B2B SaaS.\nNuestra app de gestión de proyectos tiene un 40% de abandono en el onboarding.\nLos usuarios llegan pero no completan la configuración inicial.\nDame 5 ideas concretas y priorizadas para reducir ese abandono,\nenfocándote en cambios de UX que no requieran rediseño completo.\nFormato: lista numerada con título + 2 líneas de explicación cada una.')">Copiar</button>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label"><span class="icon">🧠</span> Ejercicio — Quiz</div>
+        <h4>¿Cuál de estos prompts dará un mejor resultado?</h4>
+        <p>Necesitas que Claude te ayude a preparar una reunión importante.</p>
+        <div class="quiz-options" id="quiz-claude-1">
+          <button class="quiz-option" onclick="checkQuiz('claude-1', this, false)">A) "Ayúdame a preparar una reunión"</button>
+          <button class="quiz-option" onclick="checkQuiz('claude-1', this, false)">B) "Dame un guión para reunión de ventas"</button>
+          <button class="quiz-option" onclick="checkQuiz('claude-1', this, true)">C) "Soy director comercial. Tengo una reunión con un cliente nuevo que viene de un competidor nuestro. El objetivo es entender por qué se fue y ver si podemos recuperarle. Dame un guión de 30 min con preguntas específicas para descubrir sus frustraciones sin ponerle a la defensiva."</button>
+          <button class="quiz-option" onclick="checkQuiz('claude-1', this, false)">D) "Necesito preparar reunión con cliente, 30 min, ventas"</button>
+        </div>
+        <div class="quiz-feedback" id="feedback-claude-1"></div>
+      </div>
+
+      <button class="complete-btn" id="complete-claude-1" onclick="completeLesson('claude-1')">
+        ✓ Marcar como completada
+      </button>
+    </div>
+  </div>
+
+  <!-- L2 -->
+  <div class="lesson" id="lesson-claude-2">
+    <div class="lesson-header" onclick="toggleLesson('claude-2')">
+      <div class="lesson-num" style="background:rgba(217,124,74,0.15);color:var(--claude)">2</div>
+      <div class="lesson-title-group">
+        <div class="lesson-title">Contexto largo: Claude como tu memoria de trabajo</div>
+        <div class="lesson-meta">⏱ 6 min · Productividad</div>
+      </div>
+      <div class="lesson-status" id="status-claude-2">✓</div>
+      <div class="lesson-chevron">⌄</div>
+    </div>
+    <div class="lesson-body">
+      <div class="lesson-content">
+        <h3>La ventaja del contexto largo</h3>
+        <p>Claude puede mantener conversaciones muy largas sin perder el hilo. Esto lo hace ideal para proyectos complejos donde necesitas que "recuerde" mucha información.</p>
+
+        <div class="tip" style="border-color:var(--claude)">
+          <div class="tip-label" style="color:var(--claude)">💡 Truco Pro</div>
+          <p>Al inicio de una conversación larga, <strong>dumpea todo el contexto relevante</strong>: documentos, decisiones previas, restricciones. Claude lo usará durante toda la sesión sin que tengas que repetirlo.</p>
+        </div>
+
+        <h3>Técnica: el briefing inicial</h3>
+        <p>En lugar de ir pregunta a pregunta, empieza con un "briefing" completo. Así Claude entiende el panorama completo y sus respuestas serán más coherentes y útiles.</p>
+
+        <div class="prompt-example">
+          <div class="label">📋 Plantilla de briefing inicial</div>
+          <pre>## Contexto del proyecto
+[Descripción en 2-3 líneas de qué es y para qué]
+
+## Yo soy
+[Tu rol y lo que sabe que es relevante]
+
+## Restricciones importantes
+- [Restricción 1]
+- [Restricción 2]
+
+## Lo que necesito en esta sesión
+[Lista de tareas o preguntas que vas a trabajar]
+
+¿Lo has entendido todo? Empieza con la primera tarea cuando estés listo.</pre>
+          <button class="copy-btn" onclick="copyText(this, '## Contexto del proyecto\n[Descripción en 2-3 líneas]\n\n## Yo soy\n[Tu rol]\n\n## Restricciones importantes\n- [Restricción 1]\n\n## Lo que necesito en esta sesión\n[Lista de tareas]')">Copiar</button>
+        </div>
+
+        <h3>Casos de uso perfectos para Claude</h3>
+        <p><strong>Análisis de documentos largos:</strong> Pega un contrato, informe o propuesta y hazle preguntas. Claude lo procesa todo.</p>
+        <p><strong>Iteración de textos:</strong> Claude recuerda las versiones anteriores y entiende por qué quieres cambios.</p>
+        <p><strong>Toma de decisiones compleja:</strong> Dale todos los pros y contras y pídele que razone contigo paso a paso.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label"><span class="icon">✍️</span> Ejercicio — Práctica</div>
+        <h4>Escribe tu propio briefing inicial</h4>
+        <p>Piensa en un proyecto real en el que estés trabajando ahora. Escribe el briefing inicial que le darías a Claude usando la plantilla anterior.</p>
+        <textarea class="practice-textarea" id="practice-claude-2" placeholder="## Contexto del proyecto
+Estoy preparando...
+
+## Yo soy
+Soy [rol] en [empresa/equipo]...
+
+## Restricciones importantes
+- ...
+
+## Lo que necesito en esta sesión
+1. ..."></textarea>
+        <div class="practice-actions">
+          <button class="btn-check claude-btn" onclick="checkPractice('claude-2')">Evaluar mi briefing</button>
+          <button class="show-answer-btn" onclick="showAnswer('claude-2')">Ver ejemplo</button>
+        </div>
+        <div class="answer-reveal" id="answer-claude-2">
+          <div class="answer-label">✅ Ejemplo de briefing bien hecho</div>
+          <pre>## Contexto del proyecto
+Estamos lanzando una nueva línea de producto para pymes en Q3.
+Es un software de facturación. El mayor problema es que nuestros 
+potenciales clientes usan Excel y no ven el valor de cambiar.
+
+## Yo soy
+Soy responsable de marketing, con presupuesto limitado (5k€/mes).
+No tengo equipo de diseño propio.
+
+## Restricciones importantes
+- No podemos prometer más de lo que el producto hace hoy
+- El tono debe ser accesible, no tech-heavy
+- Lanzamiento fijo: 15 de septiembre
+
+## Lo que necesito en esta sesión
+1. Propuesta de mensajes clave para la landing page
+2. Ideas para campaña de email a leads existentes
+3. Opinión sobre si vale la pena hacer caso de éxito antes del lanzamiento</pre>
+        </div>
+      </div>
+
+      <button class="complete-btn" id="complete-claude-2" onclick="completeLesson('claude-2')">
+        ✓ Marcar como completada
+      </button>
+    </div>
+  </div>
+
+  <!-- L3 -->
+  <div class="lesson" id="lesson-claude-3">
+    <div class="lesson-header" onclick="toggleLesson('claude-3')">
+      <div class="lesson-num" style="background:rgba(217,124,74,0.15);color:var(--claude)">3</div>
+      <div class="lesson-title-group">
+        <div class="lesson-title">Pensamiento paso a paso: razonamiento complejo</div>
+        <div class="lesson-meta">⏱ 7 min · Avanzado</div>
+      </div>
+      <div class="lesson-status" id="status-claude-3">✓</div>
+      <div class="lesson-chevron">⌄</div>
+    </div>
+    <div class="lesson-body">
+      <div class="lesson-content">
+        <h3>Chain of Thought: pídele que piense en voz alta</h3>
+        <p>Para problemas complejos, pedir a Claude que "piense paso a paso" o que "muestre su razonamiento" mejora significativamente la calidad de sus respuestas. No es magia: simplemente le das espacio para no ir directo a la conclusión.</p>
+
+        <div class="tip" style="border-color:var(--claude)">
+          <div class="tip-label" style="color:var(--claude)">🔑 Frases clave</div>
+          <p>Añade al final de tu prompt: <strong>"Razona paso a paso"</strong> · <strong>"Muéstrame tu proceso de pensamiento"</strong> · <strong>"Antes de responder, explica tu enfoque"</strong> · <strong>"Piensa en voz alta"</strong></p>
+        </div>
+
+        <h3>Cuándo usar razonamiento paso a paso</h3>
+        <p><strong>✅ Úsalo cuando:</strong> Hay decisiones con trade-offs, análisis de datos complejos, problemas con múltiples variables, o cuando necesitas entender el "por qué" de la respuesta.</p>
+        <p><strong>❌ No lo necesitas cuando:</strong> Pides escritura creativa, resúmenes simples, traducciones, o tareas de un solo paso.</p>
+
+        <div class="prompt-example">
+          <div class="label">🔍 Ejemplo: decisión de negocio</div>
+          <pre>Tengo que decidir si contratar a un freelance por 3 meses (4.500€)
+o invertir en una herramienta SaaS anual (2.400€/año).
+La tarea es gestionar nuestras redes sociales.
+Tenemos 2 personas en el equipo con algo de tiempo disponible.
+
+Razona paso a paso considerando:
+1. Coste real a 12 meses
+2. Calidad y consistencia del output
+3. Flexibilidad y riesgo
+Y dame una recomendación final clara con su justificación.</pre>
+          <button class="copy-btn" onclick="copyText(this, '')">Copiar</button>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label"><span class="icon">🧠</span> Ejercicio — Quiz</div>
+        <h4>¿En qué situación es MÁS útil pedir razonamiento paso a paso?</h4>
+        <div class="quiz-options" id="quiz-claude-3">
+          <button class="quiz-option" onclick="checkQuiz('claude-3', this, false)">A) "Tradúceme este párrafo al inglés"</button>
+          <button class="quiz-option" onclick="checkQuiz('claude-3', this, true)">B) "Analiza si deberíamos expandirnos a Portugal o México primero, dado nuestro equipo de 5 personas y presupuesto de 50k€"</button>
+          <button class="quiz-option" onclick="checkQuiz('claude-3', this, false)">C) "Escríbeme un email de felicitación de cumpleaños"</button>
+          <button class="quiz-option" onclick="checkQuiz('claude-3', this, false)">D) "Dame 3 nombres para nuestro nuevo producto"</button>
+        </div>
+        <div class="quiz-feedback" id="feedback-claude-3"></div>
+      </div>
+
+      <button class="complete-btn" id="complete-claude-3" onclick="completeLesson('claude-3')">
+        ✓ Marcar como completada
+      </button>
+    </div>
+  </div>
+
+  <!-- L4 -->
+  <div class="lesson" id="lesson-claude-4">
+    <div class="lesson-header" onclick="toggleLesson('claude-4')">
+      <div class="lesson-num" style="background:rgba(217,124,74,0.15);color:var(--claude)">4</div>
+      <div class="lesson-title-group">
+        <div class="lesson-title">Claude Code: programa sin saber programar</div>
+        <div class="lesson-meta">⏱ 10 min · Técnico</div>
+      </div>
+      <div class="lesson-status" id="status-claude-4">✓</div>
+      <div class="lesson-chevron">⌄</div>
+    </div>
+    <div class="lesson-body">
+      <div class="lesson-content">
+        <h3>¿Qué es Claude Code?</h3>
+        <p>Claude Code es una herramienta de terminal que permite a Claude trabajar directamente en tu código: leer archivos, hacer cambios, ejecutar tests y solucionar bugs. No es solo un chatbot de código — es un agente que actúa en tu repositorio.</p>
+
+        <div class="tip" style="border-color:var(--claude)">
+          <div class="tip-label" style="color:var(--claude)">👥 Para no técnicos</div>
+          <p>Incluso si no sabes programar, puedes usar Claude Code para <strong>automatizar tareas repetitivas</strong>, <strong>generar scripts simples</strong> o <strong>entender código que te han mandado</strong>. No necesitas entender cada línea — necesitas saber qué resultado quieres.</p>
+        </div>
+
+        <h3>Comandos básicos para empezar</h3>
+        <div class="prompt-example">
+          <div class="label">💻 Flujo básico en Claude Code</div>
+          <pre># Instalar
+npm install -g @anthropic-ai/claude-code
+
+# Abrir en tu carpeta de proyecto
+cd mi-proyecto
+claude
+
+# Ejemplos de lo que puedes pedirle:
+> "Explícame qué hace este proyecto"
+> "Encuentra y corrige el bug que hace que el login falle"
+> "Añade validación de email al formulario de registro"
+> "Escribe tests para la función de pago"
+> "Refactoriza este archivo para que sea más legible"</pre>
+          <button class="copy-btn" onclick="copyText(this, 'npm install -g @anthropic-ai/claude-code')">Copiar</button>
+        </div>
+
+        <h3>El truco más potente: describir el resultado, no el código</h3>
+        <p>No digas: "Crea una función async que haga fetch a la API y gestione errores". Di: "Cuando el usuario haga clic en Guardar, quiero que los datos se envíen al servidor y si hay un error, aparezca un mensaje en rojo debajo del formulario". Claude traduce el resultado al código.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label"><span class="icon">✍️</span> Ejercicio — Práctica</div>
+        <h4>Formula tu primera tarea para Claude Code</h4>
+        <p>Piensa en algo que harías en tu trabajo que implique datos, archivos o repetición. Descríbelo como si se lo explicaras a un programador, enfocándote en el resultado que quieres.</p>
+        <textarea class="practice-textarea" id="practice-claude-4" placeholder="Ej: Tengo una carpeta con 200 facturas en PDF. Quiero que extraiga de cada una el número de factura, la fecha y el importe total, y me lo ponga en un Excel con esas tres columnas..."></textarea>
+        <div class="practice-actions">
+          <button class="btn-check claude-btn" onclick="checkPractice('claude-4')">Ver feedback</button>
+          <button class="show-answer-btn" onclick="showAnswer('claude-4')">Ver ejemplo</button>
+        </div>
+        <div class="answer-reveal" id="answer-claude-4">
+          <div class="answer-label">✅ Ejemplo bien descrito para Claude Code</div>
+          <pre>Tengo un CSV de ventas del año pasado con las columnas:
+fecha, cliente, producto, cantidad, precio_unitario.
+
+Necesito:
+1. Calcular el total (cantidad × precio) para cada fila
+2. Agrupar por cliente y sumar sus totales anuales
+3. Ordenar de mayor a menor gasto
+4. Exportar el resultado a un Excel nuevo llamado "top_clientes_2024.xlsx"
+
+El archivo original se llama "ventas_2024.csv" y está en el escritorio.</pre>
+        </div>
+      </div>
+
+      <button class="complete-btn" id="complete-claude-4" onclick="completeLesson('claude-4')">
+        ✓ Marcar como completada
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ GEMINI ══════════ -->
+<section class="tool-section" id="section-gemini">
+  <div class="tool-header">
+    <div class="tool-tag" style="color:var(--gemini)">
+      <span class="dot" style="background:var(--gemini)"></span> Módulo 2
+    </div>
+    <h2>Gemini</h2>
+    <p>El modelo de Google destaca en multimodalidad, integración con el ecosistema Google y búsqueda de información actualizada.</p>
+  </div>
+
+  <!-- G1 -->
+  <div class="lesson" id="lesson-gemini-1">
+    <div class="lesson-header" onclick="toggleLesson('gemini-1')">
+      <div class="lesson-num" style="background:rgba(74,155,217,0.15);color:var(--gemini)">1</div>
+      <div class="lesson-title-group">
+        <div class="lesson-title">Gemini y Google Workspace: tu asistente en el día a día</div>
+        <div class="lesson-meta">⏱ 7 min · Productividad</div>
+      </div>
+      <div class="lesson-status" id="status-gemini-1">✓</div>
+      <div class="lesson-chevron">⌄</div>
+    </div>
+    <div class="lesson-body">
+      <div class="lesson-content">
+        <h3>Gemini en Gmail, Docs y Drive</h3>
+        <p>Si tu equipo usa Google Workspace, Gemini está integrado directamente en las apps que ya usas. Esto cambia completamente la productividad diaria.</p>
+
+        <div class="tip" style="border-color:var(--gemini)">
+          <div class="tip-label" style="color:var(--gemini)">🌟 Dónde encontrarlo</div>
+          <p>En Gmail: botón ✦ en la barra lateral. En Docs: menú Insertar → "Ayúdame a escribir". En Drive: busca "Gemini" en el panel derecho.</p>
+        </div>
+
+        <h3>Casos de uso en Gmail</h3>
+        <p><strong>Resumir hilos largos:</strong> "Resume este hilo de email en 5 puntos clave y dame las acciones pendientes"</p>
+        <p><strong>Redactar respuestas:</strong> "Escribe una respuesta profesional declinando la reunión pero dejando la puerta abierta"</p>
+        <p><strong>Cambiar tono:</strong> "Haz este email más directo y más corto, que suene a startup"</p>
+
+        <h3>Casos de uso en Google Docs</h3>
+        <div class="prompt-example">
+          <div class="label">📄 Prompts útiles en Docs</div>
+          <pre>"Resume este documento en un párrafo ejecutivo"
+"Identifica los 3 riesgos principales que menciona el documento"
+"Convierte este texto en formato de presentación con bullets"
+"Reescribe la sección de conclusiones de forma más persuasiva"
+"¿Qué información falta en este informe?"</pre>
+          <button class="copy-btn" onclick="copyText(this, '')">Copiar</button>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label"><span class="icon">🧠</span> Ejercicio — Quiz</div>
+        <h4>¿Para qué tarea es más útil Gemini integrado en Google Workspace?</h4>
+        <div class="quiz-options" id="quiz-gemini-1">
+          <button class="quiz-option" onclick="checkQuiz('gemini-1', this, false)">A) Escribir código Python desde cero</button>
+          <button class="quiz-option" onclick="checkQuiz('gemini-1', this, true)">B) Resumir un hilo de 30 emails y extraer las decisiones tomadas</button>
+          <button class="quiz-option" onclick="checkQuiz('gemini-1', this, false)">C) Diseñar la arquitectura de una base de datos</button>
+          <button class="quiz-option" onclick="checkQuiz('gemini-1', this, false)">D) Analizar el comportamiento de usuarios en una app</button>
+        </div>
+        <div class="quiz-feedback" id="feedback-gemini-1"></div>
+      </div>
+
+      <button class="complete-btn" id="complete-gemini-1" onclick="completeLesson('gemini-1')">
+        ✓ Marcar como completada
+      </button>
+    </div>
+  </div>
+
+  <!-- G2 -->
+  <div class="lesson" id="lesson-gemini-2">
+    <div class="lesson-header" onclick="toggleLesson('gemini-2')">
+      <div class="lesson-num" style="background:rgba(74,155,217,0.15);color:var(--gemini)">2</div>
+      <div class="lesson-title-group">
+        <div class="lesson-title">Multimodalidad: imágenes, PDFs y más</div>
+        <div class="lesson-meta">⏱ 8 min · Productividad</div>
+      </div>
+      <div class="lesson-status" id="status-gemini-2">✓</div>
+      <div class="lesson-chevron">⌄</div>
+    </div>
+    <div class="lesson-body">
+      <div class="lesson-content">
+        <h3>Gemini ve lo que tú ves</h3>
+        <p>Gemini puede analizar imágenes, gráficas, capturas de pantalla y PDFs directamente. Esto abre un mundo de posibilidades para tareas que antes requerían horas de trabajo manual.</p>
+
+        <div class="tip" style="border-color:var(--gemini)">
+          <div class="tip-label" style="color:var(--gemini)">📎 Cómo usarlo</div>
+          <p>En gemini.google.com, haz clic en el clip 📎 y sube una imagen, captura o PDF. Luego pregúntale sobre el contenido.</p>
+        </div>
+
+        <h3>Qué puedes hacer con imágenes y PDFs</h3>
+        <p><strong>Gráficas e informes:</strong> Sube una gráfica y pide interpretación: "¿Qué tendencia muestra este gráfico y qué acciones sugeriría?"</p>
+        <p><strong>Capturas de pantalla:</strong> Foto a un error en pantalla: "¿Qué está pasando aquí y cómo lo soluciono?"</p>
+        <p><strong>Facturas y documentos:</strong> "Extrae todos los datos de esta factura en formato JSON"</p>
+        <p><strong>Comparar diseños:</strong> "Compara estas dos versiones de la landing y dime cuál es más clara y por qué"</p>
+
+        <div class="prompt-example">
+          <div class="label">🖼️ Prompts para análisis visual</div>
+          <pre>"Describe qué muestra esta imagen en detalle"
+"¿Qué problemas de UX ves en esta captura?"
+"Extrae todos los datos numéricos de este gráfico"
+"¿Este diseño cumple con las buenas prácticas de accesibilidad?"
+"Resume los puntos clave de este PDF en 5 bullets"</pre>
+          <button class="copy-btn" onclick="copyText(this, '')">Copiar</button>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label"><span class="icon">✍️</span> Ejercicio — Práctica</div>
+        <h4>Diseña un prompt para análisis visual</h4>
+        <p>Piensa en un documento, gráfica o imagen que uses habitualmente en tu trabajo. Escribe el prompt que le darías a Gemini al subirlo.</p>
+        <textarea class="practice-textarea" id="practice-gemini-2" placeholder="Ej: Tengo un dashboard de Google Analytics con datos del último mes. Le subiría la captura y le preguntaría..."></textarea>
+        <div class="practice-actions">
+          <button class="btn-check gemini-btn" onclick="checkPractice('gemini-2')">Ver feedback</button>
+          <button class="show-answer-btn" onclick="showAnswer('gemini-2')">Ver ejemplo</button>
+        </div>
+        <div class="answer-reveal" id="answer-gemini-2">
+          <div class="answer-label">✅ Ejemplo de análisis visual bien planteado</div>
+          <pre>[Subiendo captura del dashboard de ventas mensual]
+
+"Este es nuestro dashboard de ventas de octubre.
+Analiza:
+1. ¿Qué métrica está cayendo más preocupantemente?
+2. ¿Hay algún patrón semanal (días de la semana) visible?
+3. ¿Qué 2-3 acciones concretas sugerirías basándote en estos datos?
+
+Contexto: somos un ecommerce de moda, ticket medio 65€, 
+nuestro pico suele ser los jueves y viernes."</pre>
+        </div>
+      </div>
+
+      <button class="complete-btn" id="complete-gemini-2" onclick="completeLesson('gemini-2')">
+        ✓ Marcar como completada
+      </button>
+    </div>
+  </div>
+
+  <!-- G3 -->
+  <div class="lesson" id="lesson-gemini-3">
+    <div class="lesson-header" onclick="toggleLesson('gemini-3')">
+      <div class="lesson-num" style="background:rgba(74,155,217,0.15);color:var(--gemini)">3</div>
+      <div class="lesson-title-group">
+        <div class="lesson-title">Deep Research: investigación en profundidad</div>
+        <div class="lesson-meta">⏱ 6 min · Investigación</div>
+      </div>
+      <div class="lesson-status" id="status-gemini-3">✓</div>
+      <div class="lesson-chevron">⌄</div>
+    </div>
+    <div class="lesson-body">
+      <div class="lesson-content">
+        <h3>Gemini Deep Research</h3>
+        <p>Deep Research es una función de Gemini Advanced que hace investigaciones exhaustivas de forma autónoma. No solo busca — razona, sintetiza y produce informes estructurados citando fuentes.</p>
+
+        <div class="tip" style="border-color:var(--gemini)">
+          <div class="tip-label" style="color:var(--gemini)">⏱ Cuándo usarlo</div>
+          <p>Cuando necesites un análisis que normalmente te llevaría <strong>2-4 horas de investigación manual</strong>: análisis de mercado, benchmark de competidores, investigación de tendencias, due diligence inicial.</p>
+        </div>
+
+        <h3>Cómo activarlo</h3>
+        <p>En gemini.google.com → selecciona "Deep Research" en el menú inferior antes de enviar tu mensaje. Gemini te mostrará el plan de investigación antes de ejecutarlo.</p>
+
+        <div class="prompt-example">
+          <div class="label">🔍 Ejemplos de Deep Research</div>
+          <pre>"Haz un análisis del mercado de herramientas de gestión de proyectos 
+para equipos de 10-50 personas en España. Incluye los 5 principales 
+players, sus precios, sus puntos fuertes/débiles y las tendencias 
+del mercado en los últimos 12 meses."
+
+"Investiga las mejores prácticas actuales para reducir el churn 
+en SaaS B2B con ARR inferior a 1M€. Cita estudios y casos reales."</pre>
+          <button class="copy-btn" onclick="copyText(this, '')">Copiar</button>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label"><span class="icon">🧠</span> Ejercicio — Quiz</div>
+        <h4>¿Cuál de estas tareas es la MEJOR candidata para Deep Research?</h4>
+        <div class="quiz-options" id="quiz-gemini-3">
+          <button class="quiz-option" onclick="checkQuiz('gemini-3', this, false)">A) "¿Cuánto es 15% de 340€?"</button>
+          <button class="quiz-option" onclick="checkQuiz('gemini-3', this, false)">B) "Tradúceme esta frase al francés"</button>
+          <button class="quiz-option" onclick="checkQuiz('gemini-3', this, true)">C) "Analiza el panorama competitivo de las fintech de pagos B2B en Europa en 2025"</button>
+          <button class="quiz-option" onclick="checkQuiz('gemini-3', this, false)">D) "Escríbeme un email de bienvenida para nuevos clientes"</button>
+        </div>
+        <div class="quiz-feedback" id="feedback-gemini-3"></div>
+      </div>
+
+      <button class="complete-btn" id="complete-gemini-3" onclick="completeLesson('gemini-3')">
+        ✓ Marcar como completada
+      </button>
+    </div>
+  </div>
+
+  <!-- G4 -->
+  <div class="lesson" id="lesson-gemini-4">
+    <div class="lesson-header" onclick="toggleLesson('gemini-4')">
+      <div class="lesson-num" style="background:rgba(74,155,217,0.15);color:var(--gemini)">4</div>
+      <div class="lesson-title-group">
+        <div class="lesson-title">Gems: crea tu asistente personalizado</div>
+        <div class="lesson-meta">⏱ 8 min · Personalización</div>
+      </div>
+      <div class="lesson-status" id="status-gemini-4">✓</div>
+      <div class="lesson-chevron">⌄</div>
+    </div>
+    <div class="lesson-body">
+      <div class="lesson-content">
+        <h3>¿Qué son los Gems?</h3>
+        <p>Los Gems son versiones personalizadas de Gemini con instrucciones específicas, tono y contexto fijo. Creas un Gem una vez y lo reutilizas siempre que quieras, sin tener que repetir el contexto.</p>
+
+        <div class="tip" style="border-color:var(--gemini)">
+          <div class="tip-label" style="color:var(--gemini)">💎 Dónde crearlos</div>
+          <p>En gemini.google.com → "Mis Gems" en el panel izquierdo → "Nuevo Gem". Define el nombre, instrucciones y comportamiento.</p>
+        </div>
+
+        <h3>Ideas de Gems para tu equipo</h3>
+        <p><strong>Gem "Revisor de Emails":</strong> Revisa mis emails y mejora el tono, claridad y profesionalidad. Soy director de operaciones de startup tech.</p>
+        <p><strong>Gem "Analista de Datos":</strong> Analiza datos que te comparta e identifica siempre: tendencias, anomalías y acciones recomendadas. Somos una empresa de retail online.</p>
+        <p><strong>Gem "Facilitador de Reuniones":</strong> Toma mis notas caóticas de reunión y devuélvelas como: resumen ejecutivo + decisiones tomadas + próximos pasos con responsables.</p>
+
+        <div class="prompt-example">
+          <div class="label">💎 Plantilla para crear un Gem</div>
+          <pre">Nombre: [Nombre descriptivo]
+
+Instrucciones:
+Eres un asistente especializado en [área].
+Tu usuario es [rol] en [tipo de empresa/sector].
+
+Siempre que te contacten:
+- [Comportamiento 1]
+- [Comportamiento 2]
+- [Comportamiento 3]
+
+Tono: [formal/casual/técnico/accesible]
+Formato de respuesta preferido: [bullets/párrafos/tablas]
+
+Nunca:
+- [Restricción 1]
+- [Restricción 2]</pre>
+          <button class="copy-btn" onclick="copyText(this, '')">Copiar</button>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label"><span class="icon">✍️</span> Ejercicio — Práctica</div>
+        <h4>Diseña tu primer Gem</h4>
+        <p>Piensa en la tarea repetitiva de tu trabajo donde más tiempo pierdes explicando contexto. Diseña un Gem que lo resuelva usando la plantilla anterior.</p>
+        <textarea class="practice-textarea" id="practice-gemini-4" placeholder="Nombre del Gem: ...
+
+Instrucciones:
+Eres un asistente especializado en..."></textarea>
+        <div class="practice-actions">
+          <button class="btn-check gemini-btn" onclick="checkPractice('gemini-4')">Ver feedback</button>
+          <button class="show-answer-btn" onclick="showAnswer('gemini-4')">Ver ejemplo</button>
+        </div>
+        <div class="answer-reveal" id="answer-gemini-4">
+          <div class="answer-label">✅ Ejemplo de Gem bien definido</div>
+          <pre>Nombre: Redactor de Propuestas Comerciales
+
+Instrucciones:
+Eres un experto en redacción de propuestas comerciales B2B.
+Tu usuario es del equipo de ventas de una empresa de consultoría IT.
+
+Cuando te compartan información de un cliente o proyecto:
+- Estructura siempre la propuesta en: Resumen ejecutivo → Problema identificado → Solución propuesta → Por qué nosotros → Inversión → Próximos pasos
+- Usa lenguaje orientado a beneficios, no a características
+- Adapta el tono al sector del cliente (más formal para banca, más directo para startups)
+
+Tono: profesional pero cercano
+Formato: estructura con títulos, párrafos cortos y bullets donde aplique
+
+Nunca:
+- Inventes datos o estadísticas
+- Uses jerga demasiado técnica sin explicarla</pre>
+        </div>
+      </div>
+
+      <button class="complete-btn" id="complete-gemini-4" onclick="completeLesson('gemini-4')">
+        ✓ Marcar como completada
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ KIRO ══════════ -->
+<section class="tool-section" id="section-kiro">
+  <div class="tool-header">
+    <div class="tool-tag" style="color:var(--kiro)">
+      <span class="dot" style="background:var(--kiro)"></span> Módulo 3
+    </div>
+    <h2>Kiro</h2>
+    <p>El IDE agéntico de AWS que va más allá de generar código: planifica, especifica y construye features completas desde tu descripción en lenguaje natural.</p>
+  </div>
+
+  <!-- K1 -->
+  <div class="lesson" id="lesson-kiro-1">
+    <div class="lesson-header" onclick="toggleLesson('kiro-1')">
+      <div class="lesson-num" style="background:rgba(124,74,217,0.15);color:var(--kiro)">1</div>
+      <div class="lesson-title-group">
+        <div class="lesson-title">Kiro vs otros IDEs IA: qué lo hace diferente</div>
+        <div class="lesson-meta">⏱ 8 min · Fundamentos</div>
+      </div>
+      <div class="lesson-status" id="status-kiro-1">✓</div>
+      <div class="lesson-chevron">⌄</div>
+    </div>
+    <div class="lesson-body">
+      <div class="lesson-content">
+        <h3>El problema del "vibe coding"</h3>
+        <p>La mayoría de herramientas de IA para código hacen "vibe coding": tú describes algo vagamente, la IA genera código, tú corriges, repites hasta que funciona. Para proyectos pequeños está bien. Para proyectos reales, es caótico.</p>
+
+        <div class="tip" style="border-color:var(--kiro)">
+          <div class="tip-label" style="color:var(--kiro)">👻 Dato curioso</div>
+          <p>El logo de Kiro es un fantasma. Su nombre significa "encrucijada" en japonés (きろ). Es un IDE basado en VS Code desarrollado por AWS.</p>
+        </div>
+
+        <h3>La diferencia: Spec-Driven Development</h3>
+        <p>Kiro introduce un flujo diferente. Antes de escribir una línea de código:</p>
+        <p><strong>1. Requirements:</strong> Convierte tu descripción en criterios de aceptación formales</p>
+        <p><strong>2. Design:</strong> Propone la arquitectura y decisiones técnicas</p>
+        <p><strong>3. Tasks:</strong> Genera un plan de implementación con tareas ordenadas por dependencia</p>
+        <p><strong>Solo entonces</strong> empieza a escribir código.</p>
+
+        <div class="prompt-example">
+          <div class="label">⚡ Kiro vs Cursor — en una frase</div>
+          <pre>Cursor: "genera código rápido, itera"
+Kiro:   "planifica primero, implementa con estructura"
+
+¿Cuándo usar cada uno?
+→ Bug fix rápido o prototipo: Cursor o Claude Code
+→ Feature nueva en proyecto grande: Kiro</pre>
+          <button class="copy-btn" onclick="copyText(this, '')">Copiar</button>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label"><span class="icon">🧠</span> Ejercicio — Quiz</div>
+        <h4>¿Para qué proyecto encaja MEJOR Kiro?</h4>
+        <div class="quiz-options" id="quiz-kiro-1">
+          <button class="quiz-option" onclick="checkQuiz('kiro-1', this, false)">A) Corregir un error de ortografía en la web</button>
+          <button class="quiz-option" onclick="checkQuiz('kiro-1', this, false)">B) Cambiar el color de un botón en producción</button>
+          <button class="quiz-option" onclick="checkQuiz('kiro-1', this, true)">C) Añadir un sistema completo de notificaciones con email, push y preferencias de usuario</button>
+          <button class="quiz-option" onclick="checkQuiz('kiro-1', this, false)">D) Generar 20 textos de producto para la tienda online</button>
+        </div>
+        <div class="quiz-feedback" id="feedback-kiro-1"></div>
+      </div>
+
+      <button class="complete-btn" id="complete-kiro-1" onclick="completeLesson('kiro-1')">
+        ✓ Marcar como completada
+      </button>
+    </div>
+  </div>
+
+  <!-- K2 -->
+  <div class="lesson" id="lesson-kiro-2">
+    <div class="lesson-header" onclick="toggleLesson('kiro-2')">
+      <div class="lesson-num" style="background:rgba(124,74,217,0.15);color:var(--kiro)">2</div>
+      <div class="lesson-title-group">
+        <div class="lesson-title">Tu primera Spec: de idea a plan de implementación</div>
+        <div class="lesson-meta">⏱ 10 min · Práctico</div>
+      </div>
+      <div class="lesson-status" id="status-kiro-2">✓</div>
+      <div class="lesson-chevron">⌄</div>
+    </div>
+    <div class="lesson-body">
+      <div class="lesson-content">
+        <h3>Cómo crear una Spec en Kiro</h3>
+        <p>En Kiro, abre el panel de chat → selecciona "Spec" → describe tu feature. Kiro hará preguntas de clarificación y luego generará tres documentos: requirements.md, design.md y tasks.md.</p>
+
+        <div class="tip" style="border-color:var(--kiro)">
+          <div class="tip-label" style="color:var(--kiro)">📋 Lo que genera Kiro</div>
+          <p><strong>requirements.md:</strong> Historias de usuario + criterios de aceptación · <strong>design.md:</strong> Arquitectura + decisiones técnicas · <strong>tasks.md:</strong> Lista de tareas ordenadas con dependencias</p>
+        </div>
+
+        <h3>Cómo describir una feature a Kiro</h3>
+        <p>No necesitas usar jerga técnica. Describe la feature desde la perspectiva del usuario final:</p>
+
+        <div class="prompt-example">
+          <div class="label">✅ Descripción efectiva para Kiro Spec</div>
+          <pre>Quiero añadir un sistema de invitaciones a nuestra app.
+
+Los usuarios deberían poder:
+- Invitar a compañeros por email desde su cuenta
+- Los invitados reciben un email con un link que les pre-rellena el registro
+- El usuario que invita ve en su perfil cuántas invitaciones ha enviado y cuáles han aceptado
+- Los admins pueden ver un listado global de todas las invitaciones
+
+Restricciones:
+- Cada usuario puede invitar máximo 10 personas
+- Las invitaciones caducan a los 7 días
+- No reinvitar a emails que ya son usuarios</pre>
+          <button class="copy-btn" onclick="copyText(this, '')">Copiar</button>
+        </div>
+
+        <h3>Después de la Spec: el bucle de implementación</h3>
+        <p>Una vez Kiro genera las tasks, puedes ir tarea a tarea activando el <strong>modo Autopilot</strong> o aprobando cada cambio manualmente. Para proyectos importantes, aprobación manual siempre.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label"><span class="icon">✍️</span> Ejercicio — Práctica</div>
+        <h4>Escribe tu primera descripción de Spec</h4>
+        <p>Elige una feature que tu equipo necesite añadir a algún sistema o app. Descríbela como se la explicarías a Kiro, desde la perspectiva del usuario.</p>
+        <textarea class="practice-textarea" id="practice-kiro-2" placeholder="Quiero añadir [feature] a nuestra [app/sistema].
+
+Los usuarios deberían poder:
+- ...
+- ...
+
+Restricciones:
+- ..."></textarea>
+        <div class="practice-actions">
+          <button class="btn-check kiro-btn" onclick="checkPractice('kiro-2')">Ver feedback</button>
+          <button class="show-answer-btn" onclick="showAnswer('kiro-2')">Ver ejemplo</button>
+        </div>
+        <div class="answer-reveal" id="answer-kiro-2">
+          <div class="answer-label">✅ Ejemplo de Spec bien escrita</div>
+          <pre>Quiero añadir un dashboard de métricas para managers en nuestra 
+herramienta de gestión de proyectos.
+
+Los managers deberían poder:
+- Ver un resumen semanal del avance de todos sus proyectos activos
+- Identificar rápidamente qué proyectos están en riesgo (atrasados o bloqueados)
+- Ver la carga de trabajo de cada miembro del equipo (tareas asignadas vs completadas)
+- Exportar el resumen en PDF para enviarlo a dirección
+
+Restricciones:
+- Solo accesible para roles "Manager" o "Admin", no para empleados base
+- El dashboard debe cargar en menos de 2 segundos
+- Los datos deben estar actualizados en tiempo real
+- En móvil debe verse correctamente (responsive)
+- Sin gráficas complejas: solo números y colores (verde/amarillo/rojo)</pre>
+        </div>
+      </div>
+
+      <button class="complete-btn" id="complete-kiro-2" onclick="completeLesson('kiro-2')">
+        ✓ Marcar como completada
+      </button>
+    </div>
+  </div>
+
+  <!-- K3 -->
+  <div class="lesson" id="lesson-kiro-3">
+    <div class="lesson-header" onclick="toggleLesson('kiro-3')">
+      <div class="lesson-num" style="background:rgba(124,74,217,0.15);color:var(--kiro)">3</div>
+      <div class="lesson-title-group">
+        <div class="lesson-title">Agent Hooks: automatiza tu flujo de desarrollo</div>
+        <div class="lesson-meta">⏱ 8 min · Avanzado · Técnico</div>
+      </div>
+      <div class="lesson-status" id="status-kiro-3">✓</div>
+      <div class="lesson-chevron">⌄</div>
+    </div>
+    <div class="lesson-body">
+      <div class="lesson-content">
+        <h3>¿Qué son los Agent Hooks?</h3>
+        <p>Los Hooks son automatizaciones que se ejecutan cuando pasan cosas en tu proyecto: cuando guardas un archivo, cuando creas uno nuevo, cuando haces un commit. Son como GitHub Actions pero dentro de tu IDE y con IA.</p>
+
+        <div class="tip" style="border-color:var(--kiro)">
+          <div class="tip-label" style="color:var(--kiro)">⚡ Para no técnicos</div>
+          <p>Imagina que cada vez que guardas un archivo de código, automáticamente se actualiza la documentación. O que cuando añades una función, se generan los tests automáticamente. Eso es un Hook.</p>
+        </div>
+
+        <h3>Hooks más útiles para equipos</h3>
+        <p><strong>Auto-documentación:</strong> "Cuando guarde cualquier función nueva, genera automáticamente el comentario JSDoc explicando qué hace, qué recibe y qué devuelve"</p>
+        <p><strong>Tests automáticos:</strong> "Cuando añada una función nueva a utils/, genera un test unitario básico en el archivo de tests correspondiente"</p>
+        <p><strong>Revisión de seguridad:</strong> "Cuando modifique archivos de autenticación, revisa que no haya vulnerabilidades obvias y añade un comentario con el resultado"</p>
+
+        <div class="prompt-example">
+          <div class="label">🔧 Cómo definir un Hook en Kiro</div>
+          <pre"># En Kiro: panel lateral → "Hooks" → "New Hook"
+
+Trigger: On file save
+Filter: *.py (solo archivos Python)
+
+Prompt del agente:
+"Cuando se guarde este archivo:
+1. Revisa si hay funciones sin docstring
+2. Añade docstrings en formato Google Style donde falten
+3. Si la función es compleja (más de 20 líneas), añade comentarios inline
+No modifiques la lógica del código, solo la documentación."</pre>
+          <button class="copy-btn" onclick="copyText(this, '')">Copiar</button>
+        </div>
+
+        <h3>Steering files: guía el comportamiento global de Kiro</h3>
+        <p>Los archivos de Steering (.kiro/steering/) son instrucciones permanentes para Kiro sobre cómo debe comportarse en tu proyecto. Define convenciones de código, arquitectura preferida, qué librerías usar o prohibir.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label"><span class="icon">🧠</span> Ejercicio — Quiz</div>
+        <h4>¿Cuál de estos es el mejor candidato para un Hook?</h4>
+        <div class="quiz-options" id="quiz-kiro-3">
+          <button class="quiz-option" onclick="checkQuiz('kiro-3', this, false)">A) Revisar manualmente el código de un compañero una vez a la semana</button>
+          <button class="quiz-option" onclick="checkQuiz('kiro-3', this, false)">B) Escribir la descripción del commit cada vez que haces push</button>
+          <button class="quiz-option" onclick="checkQuiz('kiro-3', this, true)">C) Generar automáticamente el changelog actualizado cada vez que se modifica el archivo de versiones</button>
+          <button class="quiz-option" onclick="checkQuiz('kiro-3', this, false)">D) Decidir qué features implementar en el siguiente sprint</button>
+        </div>
+        <div class="quiz-feedback" id="feedback-kiro-3"></div>
+      </div>
+
+      <button class="complete-btn" id="complete-kiro-3" onclick="completeLesson('kiro-3')">
+        ✓ Marcar como completada
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ RETO SEMANAL ══════════ -->
+<section class="comparison-section" id="section-reto">
+  <div style="padding-top:80px">
+    <div id="reto-loading" style="text-align:center;padding:60px 0;color:var(--muted)">
+      <div style="font-size:2rem;margin-bottom:12px">⏳</div>
+      <div style="font-size:0.9rem">Cargando reto de la semana...</div>
+    </div>
+    <div id="reto-content" style="display:none">
+      <!-- Header -->
+      <div style="margin-bottom:40px">
+        <div style="display:inline-flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);padding:5px 14px;border-radius:100px;font-size:0.75rem;color:var(--muted);margin-bottom:16px">
+          🗓️ <span id="reto-semana"></span>
+        </div>
+        <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--kiro);margin-bottom:10px">🎯 Reto Semanal</div>
+        <h2 id="reto-titulo" style="font-family:var(--font-head);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:12px"></h2>
+        <p id="reto-descripcion" style="color:var(--muted);font-size:1rem;max-width:560px"></p>
+        <div style="margin-top:16px;display:flex;align-items:center;gap:8px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--success);animation:pulse 2s infinite"></div>
+          <span style="font-size:0.8rem;color:var(--success)">Actualizado cada lunes automáticamente</span>
+        </div>
+      </div>
+
+      <!-- Tema badge -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:32px;display:flex;align-items:center;gap:12px">
+        <span style="font-size:1.2rem">📚</span>
+        <div>
+          <div style="font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px">Tema de la semana</div>
+          <div id="reto-tema" style="font-size:0.9rem;color:var(--text);font-weight:500"></div>
+        </div>
+      </div>
+
+      <!-- Ejercicios -->
+      <div id="reto-ejercicios" style="display:flex;flex-direction:column;gap:20px"></div>
+
+      <!-- Footer -->
+      <div style="margin-top:40px;padding:20px 24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <div style="font-size:0.85rem;color:var(--muted)">💡 Comparte tus resultados con tu equipo y discutid qué estrategias funcionaron mejor</div>
+        <button onclick="showSection('sandbox')" style="background:var(--kiro);color:white;border:none;padding:10px 18px;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;cursor:pointer;">Practicar en el Sandbox →</button>
+      </div>
+    </div>
+    <div id="reto-error" style="display:none;text-align:center;padding:60px 0">
+      <div style="font-size:2rem;margin-bottom:12px">😕</div>
+      <div style="color:var(--muted);font-size:0.9rem;margin-bottom:16px">No se pudo cargar el reto semanal.</div>
+      <div style="font-size:0.8rem;color:var(--muted)">Asegúrate de que el workflow <strong>Reto Semanal IA</strong> se ha ejecutado al menos una vez en GitHub Actions.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SANDBOX ══════════ -->
+<section class="comparison-section" id="section-sandbox">
+  <div style="padding-top:80px">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:8px">
+      <h2 style="font-family:var(--font-head);font-size:2rem;font-weight:800;letter-spacing:-0.02em">Sandbox IA</h2>
+      <div id="sandbox-key-status" style="font-size:0.8rem;color:var(--muted)">Sin API key configurada</div>
+    </div>
+    <p style="color:var(--muted);margin-bottom:32px">Practica tus prompts en tiempo real con Groq (gratis). Usa los prompts de las lecciones o escribe los tuyos.</p>
+
+    <!-- API KEY -->
+    <div id="sandbox-key-box" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:28px">
+      <div style="font-family:var(--font-head);font-weight:700;font-size:0.95rem;margin-bottom:6px">🔑 Configura tu API key de Groq</div>
+      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:16px">Gratis en <a href="https://console.groq.com" target="_blank" style="color:var(--gemini)">console.groq.com</a> → API Keys → Create. Se guarda solo en tu navegador.</p>
+      <div style="display:flex;gap:10px">
+        <input type="password" id="groq-key-input" placeholder="gsk_..." style="flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-family:var(--font-body);font-size:0.88rem;" />
+        <button onclick="saveGroqKey()" style="background:var(--kiro);color:white;border:none;padding:10px 20px;border-radius:8px;font-family:var(--font-body);font-weight:500;cursor:pointer;font-size:0.88rem;">Guardar</button>
+        <button onclick="clearGroqKey()" style="background:none;border:1px solid var(--border);color:var(--muted);padding:10px 16px;border-radius:8px;font-family:var(--font-body);cursor:pointer;font-size:0.88rem;">Borrar</button>
+      </div>
+    </div>
+
+    <!-- PROMPT STARTERS -->
+    <div style="margin-bottom:16px">
+      <div style="font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">⚡ Prompts de inicio rápido</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px" id="starter-btns">
+        <button class="starter-btn" onclick="loadStarter('rol')">Prompt con rol</button>
+        <button class="starter-btn" onclick="loadStarter('cadena')">Prompt encadenado</button>
+        <button class="starter-btn" onclick="loadStarter('analisis')">Análisis de texto</button>
+        <button class="starter-btn" onclick="loadStarter('email')">Mejorar email</button>
+        <button class="starter-btn" onclick="loadStarter('decision')">Tomar decisión</button>
+        <button class="starter-btn" onclick="loadStarter('spec')">Spec para Kiro</button>
+      </div>
+    </div>
+
+    <!-- SYSTEM PROMPT -->
+    <div style="margin-bottom:12px">
+      <label style="font-size:0.8rem;color:var(--muted);display:block;margin-bottom:6px">Contexto del sistema (opcional — define el rol de la IA)</label>
+      <input type="text" id="sandbox-system" placeholder="Ej: Eres un consultor de marketing especializado en startups B2B..." style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-family:var(--font-body);font-size:0.88rem;" />
+    </div>
+
+    <!-- MAIN TEXTAREA -->
+    <textarea id="sandbox-prompt" class="practice-textarea" style="min-height:160px;font-size:0.92rem;" placeholder="Escribe aquí tu prompt...&#10;&#10;Consejo: sé específico sobre el resultado que quieres. Incluye contexto, restricciones y formato de salida."></textarea>
+
+    <div style="display:flex;gap:10px;margin-top:12px;align-items:center;flex-wrap:wrap">
+      <button onclick="runSandbox()" id="sandbox-run-btn" style="background:var(--kiro);color:white;border:none;padding:12px 24px;border-radius:8px;font-family:var(--font-body);font-weight:500;cursor:pointer;font-size:0.92rem;transition:all 0.2s;">
+        ▶ Enviar prompt
+      </button>
+      <button onclick="clearSandbox()" style="background:none;border:1px solid var(--border);color:var(--muted);padding:12px 16px;border-radius:8px;font-family:var(--font-body);cursor:pointer;font-size:0.88rem;">Limpiar</button>
+      <div style="flex:1"></div>
+      <select id="sandbox-model" style="background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:10px 12px;border-radius:8px;font-family:var(--font-body);font-size:0.82rem;">
+        <option value="llama-3.1-8b-instant">Llama 3.1 8B (rápido)</option>
+        <option value="llama-3.3-70b-versatile">Llama 3.3 70B (potente)</option>
+        <option value="mixtral-8x7b-32768">Mixtral 8x7B (contexto largo)</option>
+      </select>
+    </div>
+
+    <!-- RESPONSE -->
+    <div id="sandbox-response-box" style="display:none;margin-top:24px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <div style="font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--success)">✓ Respuesta</div>
+        <div id="sandbox-meta" style="font-size:0.75rem;color:var(--muted)"></div>
+      </div>
+      <div id="sandbox-response" style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px;font-size:0.9rem;line-height:1.75;white-space:pre-wrap;word-break:break-word;color:var(--text);"></div>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button onclick="copySandboxResponse()" style="background:none;border:1px solid var(--border);color:var(--muted);padding:8px 14px;border-radius:6px;font-family:var(--font-body);font-size:0.8rem;cursor:pointer;">Copiar respuesta</button>
+        <button onclick="saveSandboxNote()" style="background:none;border:1px solid var(--border);color:var(--muted);padding:8px 14px;border-radius:6px;font-family:var(--font-body);font-size:0.8rem;cursor:pointer;">Guardar como nota</button>
+      </div>
+    </div>
+
+    <!-- NOTES -->
+    <div id="sandbox-notes-box" style="margin-top:32px;display:none">
+      <div style="font-family:var(--font-head);font-weight:700;font-size:0.95rem;margin-bottom:12px">📝 Mis notas guardadas</div>
+      <div id="sandbox-notes-list" style="display:flex;flex-direction:column;gap:10px"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ PROGRESO ══════════ -->
+<section class="progress-section" id="section-progress">
+  <div style="padding: 80px 0 40px">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:8px">
+      <h2 style="font-family:var(--font-head);font-size:2rem;font-weight:800;letter-spacing:-0.02em">Mi progreso</h2>
+      <button onclick="exportPDF()" style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 18px;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--text)'" onmouseout="this.style.borderColor='var(--border)'">
+        📄 Exportar PDF
+      </button>
+    </div>
+    <p style="color:var(--muted);margin-bottom:40px">Lleva el control de tu aprendizaje</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num" id="stat-total" style="color:var(--text)">0</div>
+        <div class="stat-label">Lecciones completadas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-pct" style="color:var(--success)">0%</div>
+        <div class="stat-label">Completado total</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-remaining" style="color:var(--muted)">11</div>
+        <div class="stat-label">Lecciones restantes</div>
+      </div>
+    </div>
+
+    <div class="tool-progress-list">
+      <div class="tool-progress-item">
+        <div class="tool-progress-header">
+          <div class="tool-progress-name" style="color:var(--claude)">Claude</div>
+          <div class="tool-progress-pct" id="pct-claude" style="color:var(--claude)">0%</div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill-bar" id="bar-claude" style="background:var(--claude);width:0%"></div>
+        </div>
+      </div>
+      <div class="tool-progress-item">
+        <div class="tool-progress-header">
+          <div class="tool-progress-name" style="color:var(--gemini)">Gemini</div>
+          <div class="tool-progress-pct" id="pct-gemini" style="color:var(--gemini)">0%</div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill-bar" id="bar-gemini" style="background:var(--gemini);width:0%"></div>
+        </div>
+      </div>
+      <div class="tool-progress-item">
+        <div class="tool-progress-header">
+          <div class="tool-progress-name" style="color:var(--kiro)">Kiro</div>
+          <div class="tool-progress-pct" id="pct-kiro" style="color:var(--kiro)">0%</div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill-bar" id="bar-kiro" style="background:var(--kiro);width:0%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /main -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+// ─── STATE ───
+const LESSONS = {
+  claude: ['claude-1','claude-2','claude-3','claude-4'],
+  gemini: ['gemini-1','gemini-2','gemini-3','gemini-4'],
+  kiro:   ['kiro-1','kiro-2','kiro-3']
+};
+const LESSON_TITLES = {
+  'claude-1': 'El arte del prompt: cómo hablarle a Claude',
+  'claude-2': 'Contexto largo: Claude como tu memoria de trabajo',
+  'claude-3': 'Pensamiento paso a paso: razonamiento complejo',
+  'claude-4': 'Claude Code: programa sin saber programar',
+  'gemini-1': 'Gemini y Google Workspace: tu asistente en el día a día',
+  'gemini-2': 'Multimodalidad: imágenes, PDFs y más',
+  'gemini-3': 'Deep Research: investigación en profundidad',
+  'gemini-4': 'Gems: crea tu asistente personalizado',
+  'kiro-1':   'Kiro vs otros IDEs IA: qué lo hace diferente',
+  'kiro-2':   'Tu primera Spec: de idea a plan de implementación',
+  'kiro-3':   'Agent Hooks: automatiza tu flujo de desarrollo',
+};
+const TOTAL = 11;
+let completed = JSON.parse(localStorage.getItem('ai-mc-completed') || '[]');
+let sandboxNotes = JSON.parse(localStorage.getItem('ai-mc-notes') || '[]');
+let currentSection = 'home';
+
+// ─── INIT ───
+window.addEventListener('DOMContentLoaded', () => {
+  completed.forEach(id => markDone(id));
+  updateProgress();
+  document.getElementById('home').style.display = 'flex';
+  initSandbox();
+  // Starter button styles
+  document.querySelectorAll('.starter-btn').forEach(b => {
+    Object.assign(b.style, {
+      background:'var(--surface2)', border:'1px solid var(--border)',
+      color:'var(--muted)', padding:'6px 14px', borderRadius:'6px',
+      fontFamily:'var(--font-body)', fontSize:'0.8rem', cursor:'pointer',
+      transition:'all 0.15s'
+    });
+    b.onmouseover = () => { b.style.color='var(--text)'; b.style.borderColor='var(--text)'; };
+    b.onmouseout  = () => { b.style.color='var(--muted)'; b.style.borderColor='var(--border)'; };
+  });
+});
+
+// ─── NAVIGATION ───
+function showSection(name) {
+  currentSection = name;
+  document.getElementById('home').style.display = name === 'home' ? 'flex' : 'none';
+  ['claude','gemini','kiro'].forEach(t => {
+    const el = document.getElementById('section-'+t);
+    if (el) el.classList.toggle('active', name === t);
+  });
+  const reto     = document.getElementById('section-reto');
+  const sandbox  = document.getElementById('section-sandbox');
+  const progress = document.getElementById('section-progress');
+  if (reto)     { reto.classList.toggle('active', name === 'reto'); if (name==='reto') loadReto(); }
+  if (sandbox)  sandbox.classList.toggle('active', name === 'sandbox');
+  if (progress) { progress.classList.toggle('active', name === 'progress'); updateProgress(); }
+  document.querySelectorAll('.nav-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.tool === name);
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── LESSONS ───
+function toggleLesson(id) {
+  const el = document.getElementById('lesson-'+id);
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.lesson.open').forEach(l => l.classList.remove('open'));
+  if (!isOpen) el.classList.add('open');
+}
+
+// ─── QUIZ ───
+function checkQuiz(lessonId, btn, isCorrect) {
+  const container = document.getElementById('quiz-'+lessonId);
+  const feedback  = document.getElementById('feedback-'+lessonId);
+  if (container.querySelector('.correct') || container.querySelector('.wrong')) return;
+  container.querySelectorAll('.quiz-option').forEach(b => b.classList.add('disabled'));
+  btn.classList.add(isCorrect ? 'correct' : 'wrong');
+  feedback.classList.add('show');
+  if (isCorrect) {
+    feedback.classList.add('correct');
+    feedback.textContent = '✓ ¡Correcto! ' + getQuizExplanation(lessonId, true);
+  } else {
+    feedback.classList.add('wrong');
+    feedback.textContent = '✗ No es la mejor opción. ' + getQuizExplanation(lessonId, false);
+    container.querySelectorAll('.quiz-option').forEach(b => {
+      if (b.onclick && b.onclick.toString().includes('true')) b.classList.add('correct');
+    });
+  }
+}
+
+function getQuizExplanation(id, correct) {
+  const map = {
+    'claude-1': { t: 'El prompt C incluye rol, contexto específico, objetivo claro, restricciones y formato esperado — los 5 elementos clave.', f: 'Falta contexto, objetivo específico y formato esperado.' },
+    'claude-3': { t: 'Es una decisión con múltiples variables y trade-offs — exactamente cuando el razonamiento paso a paso añade más valor.', f: 'Esta tarea es demasiado simple para necesitar razonamiento explícito.' },
+    'gemini-1': { t: 'Resumir hilos largos y extraer información estructurada de emails es donde Gemini integrado en Gmail brilla especialmente.', f: 'Esa tarea no aprovecha la integración nativa de Gemini con Google Workspace.' },
+    'gemini-3': { t: 'Un análisis de mercado exhaustivo requiere investigación amplia, síntesis de múltiples fuentes y razonamiento — perfecto para Deep Research.', f: 'Esa tarea es demasiado simple o puntual para justificar Deep Research.' },
+    'kiro-1':   { t: 'Un sistema de notificaciones complejo con múltiples componentes, integrations y lógica es donde Kiro y su spec-driven development dan el mayor valor.', f: 'Kiro es overkill para tareas simples o cambios puntuales.' },
+    'kiro-3':   { t: 'Generar changelog automáticamente al modificar el archivo de versiones es exactamente el tipo de tarea repetitiva, predecible y accionable por un evento — perfecta para un Hook.', f: 'Esa tarea requiere criterio humano o no tiene un trigger de evento claro.' },
+  };
+  return correct ? map[id]?.t || '' : map[id]?.f || '';
+}
+
+// ─── PRACTICE ───
+function checkPractice(id) {
+  const ta = document.getElementById('practice-'+id);
+  if (!ta.value.trim()) { ta.style.borderColor = 'var(--error)'; setTimeout(() => ta.style.borderColor = '', 2000); return; }
+  ta.style.borderColor = 'var(--success)';
+  showAnswer(id);
+}
+
+function showAnswer(id) {
+  const el = document.getElementById('answer-'+id);
+  if (el) { el.classList.add('show'); el.scrollIntoView({ behavior:'smooth', block:'nearest' }); }
+}
+
+// ─── COMPLETE ───
+function completeLesson(id) {
+  if (!completed.includes(id)) {
+    completed.push(id);
+    localStorage.setItem('ai-mc-completed', JSON.stringify(completed));
+  }
+  markDone(id);
+  updateProgress();
+}
+
+function markDone(id) {
+  const lesson = document.getElementById('lesson-'+id);
+  const btn    = document.getElementById('complete-'+id);
+  if (lesson) lesson.classList.add('completed');
+  if (btn)    { btn.textContent = '✓ Completada'; btn.classList.add('done'); }
+}
+
+// ─── PROGRESS ───
+function updateProgress() {
+  const total = completed.length;
+  const pct = Math.round((total / TOTAL) * 100);
+  document.getElementById('globalProgress').style.width = pct + '%';
+  document.getElementById('stat-total').textContent = total;
+  document.getElementById('stat-pct').textContent = pct + '%';
+  document.getElementById('stat-remaining').textContent = TOTAL - total;
+  ['claude','gemini','kiro'].forEach(tool => {
+    const lessons = LESSONS[tool];
+    const done = lessons.filter(l => completed.includes(l)).length;
+    const p = Math.round((done / lessons.length) * 100);
+    const bar = document.getElementById('bar-'+tool);
+    const pctEl = document.getElementById('pct-'+tool);
+    if (bar) bar.style.width = p + '%';
+    if (pctEl) pctEl.textContent = p + '%';
+  });
+}
+
+// ─── COPY ───
+function copyText(btn, text) {
+  if (!text) {
+    const pre = btn.closest('.prompt-example').querySelector('pre');
+    text = pre ? pre.textContent : '';
+  }
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '¡Copiado!';
+    setTimeout(() => btn.textContent = orig, 1500);
+  });
+}
+
+// ══════════════════════════════════════
+// ─── PDF EXPORT ───
+// ══════════════════════════════════════
+function exportPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4' });
+  const W = 210, margin = 18, lineH = 7, col = margin;
+  let y = 20;
+
+  const addText = (text, size, bold, color) => {
+    doc.setFontSize(size);
+    doc.setFont('helvetica', bold ? 'bold' : 'normal');
+    doc.setTextColor(...(color || [40,40,50]));
+    const lines = doc.splitTextToSize(String(text), W - margin*2);
+    lines.forEach(line => {
+      if (y > 275) { doc.addPage(); y = 20; }
+      doc.text(line, col, y);
+      y += size * 0.45;
+    });
+    y += 2;
+  };
+
+  const addLine = () => {
+    doc.setDrawColor(200,200,210);
+    doc.line(margin, y, W-margin, y);
+    y += 5;
+  };
+
+  // Header
+  doc.setFillColor(12,12,15);
+  doc.rect(0, 0, W, 28, 'F');
+  doc.setFontSize(18); doc.setFont('helvetica','bold');
+  doc.setTextColor(232,232,240);
+  doc.text('AI Masterclass — Mi Progreso', margin, 16);
+  doc.setFontSize(9); doc.setFont('helvetica','normal');
+  doc.setTextColor(107,107,128);
+  doc.text('Exportado el ' + new Date().toLocaleDateString('es-ES', {day:'2-digit',month:'long',year:'numeric'}), margin, 23);
+  y = 38;
+
+  // Stats
+  const total = completed.length;
+  const pct = Math.round((total/TOTAL)*100);
+  addText(`Progreso general: ${total} de ${TOTAL} lecciones completadas (${pct}%)`, 12, true, [40,40,50]);
+  addLine();
+
+  // Per tool
+  ['claude','gemini','kiro'].forEach(tool => {
+    const lessons = LESSONS[tool];
+    const done = lessons.filter(l => completed.includes(l)).length;
+    const color = tool==='claude' ? [217,124,74] : tool==='gemini' ? [74,155,217] : [124,74,217];
+    addText(`${tool.charAt(0).toUpperCase()+tool.slice(1)}: ${done}/${lessons.length} lecciones`, 11, true, color);
+    lessons.forEach(id => {
+      const isDone = completed.includes(id);
+      const mark = isDone ? '✓' : '○';
+      doc.setFontSize(9); doc.setFont('helvetica','normal');
+      doc.setTextColor(isDone ? 60 : 150, isDone ? 180 : 150, isDone ? 100 : 160);
+      doc.text(`  ${mark}  ${LESSON_TITLES[id]}`, col, y);
+      y += 6;
+    });
+    y += 4;
+  });
+
+  addLine();
+
+  // Saved notes
+  if (sandboxNotes.length > 0) {
+    addText('Notas del Sandbox', 12, true, [40,40,50]);
+    y += 2;
+    sandboxNotes.forEach((note, i) => {
+      addText(`Nota ${i+1} — ${note.date}`, 9, true, [107,107,128]);
+      addText(`Prompt: ${note.prompt}`, 8, false, [80,80,100]);
+      addText(`Respuesta: ${note.response.slice(0,300)}${note.response.length>300?'...':''}`, 8, false, [60,60,80]);
+      y += 3;
+    });
+  } else {
+    addText('Sin notas guardadas del Sandbox todavía.', 9, false, [150,150,160]);
+  }
+
+  doc.save('ai-masterclass-progreso.pdf');
+}
+
+// ══════════════════════════════════════
+// ─── RETO SEMANAL ───
+// ══════════════════════════════════════
+let retoLoaded = false;
+
+async function loadReto() {
+  if (retoLoaded) return;
+  const loading = document.getElementById('reto-loading');
+  const content = document.getElementById('reto-content');
+  const error   = document.getElementById('reto-error');
+
+  try {
+    const res = await fetch('reto-semanal.json?v=' + Date.now());
+    if (!res.ok) throw new Error('No encontrado');
+    const data = await res.json();
+
+    // Header
+    const monday = new Date(data.semana);
+    const opts = { day:'numeric', month:'long', year:'numeric' };
+    document.getElementById('reto-semana').textContent =
+      'Semana del ' + monday.toLocaleDateString('es-ES', opts);
+    document.getElementById('reto-titulo').textContent = data.titulo || '';
+    document.getElementById('reto-descripcion').textContent = data.descripcion || '';
+    document.getElementById('reto-tema').textContent = data.tema || '';
+
+    // Ejercicios
+    const container = document.getElementById('reto-ejercicios');
+    const toolColor = { Claude:'var(--claude)', Gemini:'var(--gemini)', Kiro:'var(--kiro)' };
+    const nivelColor = { Basico:'var(--success)', Intermedio:'var(--gemini)', Avanzado:'var(--claude)' };
+    const nivelIcon  = { Basico:'🟢', Intermedio:'🟡', Avanzado:'🔴' };
+
+    container.innerHTML = (data.ejercicios || []).map((ej, i) => {
+      const color = toolColor[ej.herramienta] || 'var(--muted)';
+      const nColor = nivelColor[ej.nivel] || 'var(--muted)';
+      const nIcon  = nivelIcon[ej.nivel] || '⚪';
+      const doneKey = `reto-done-${data.semana}-${ej.id}`;
+      const isDone = localStorage.getItem(doneKey) === '1';
+      return `
+      <div class="card" id="reto-card-${ej.id}" style="${isDone ? 'border-color:var(--success)' : ''}">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:${color}">${ej.herramienta}</span>
+            <span style="width:1px;height:12px;background:var(--border)"></span>
+            <span style="font-size:0.72rem;color:${nColor}">${nIcon} ${ej.nivel}</span>
+            <span style="width:1px;height:12px;background:var(--border)"></span>
+            <span style="font-size:0.72rem;color:var(--muted)">⏱ ${ej.tiempo_estimado || '15 min'}</span>
+          </div>
+          <span style="font-size:0.72rem;font-weight:600;color:var(--muted)">Ejercicio ${ej.id}</span>
+        </div>
+        <h3 style="font-family:var(--font-head);font-weight:700;font-size:1.05rem;margin-bottom:8px">${ej.titulo}</h3>
+        <p style="font-size:0.85rem;color:${color};font-weight:500;margin-bottom:12px">🎯 ${ej.objetivo}</p>
+        <div style="background:var(--surface2);border-radius:8px;padding:14px 16px;margin-bottom:12px;font-size:0.88rem;color:var(--muted);line-height:1.7;white-space:pre-wrap">${ej.instrucciones}</div>
+        <div style="background:rgba(74,217,124,0.06);border:1px solid rgba(74,217,124,0.2);border-radius:8px;padding:10px 14px;margin-bottom:16px">
+          <span style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--success)">✓ Criterio de éxito</span>
+          <p style="font-size:0.85rem;color:var(--text);margin-top:4px">${ej.criterio_exito}</p>
+        </div>
+        <button onclick="marcarRetoHecho('${data.semana}', ${ej.id}, this)" 
+          class="complete-btn ${isDone ? 'done' : ''}" id="reto-btn-${ej.id}">
+          ${isDone ? '✓ Completado' : '✓ Marcar como completado'}
+        </button>
+      </div>`;
+    }).join('');
+
+    loading.style.display = 'none';
+    content.style.display = 'block';
+    retoLoaded = true;
+
+  } catch(e) {
+    loading.style.display = 'none';
+    error.style.display = 'block';
+    console.error('Error cargando reto:', e);
+  }
+}
+
+function marcarRetoHecho(semana, id, btn) {
+  const key  = `reto-done-${semana}-${id}`;
+  const card = document.getElementById('reto-card-'+id);
+  localStorage.setItem(key, '1');
+  btn.textContent = '✓ Completado';
+  btn.classList.add('done');
+  if (card) card.style.borderColor = 'var(--success)';
+}
+
+// ══════════════════════════════════════
+// ─── GROQ SANDBOX ───
+// ══════════════════════════════════════
+const STARTERS = {
+  rol: {
+    system: 'Eres un consultor de negocio con 15 años de experiencia en startups B2B.',
+    prompt: 'Nuestra tasa de conversión de trial a pago está en el 8%. La media del sector es 15%.\nIdentifica las 3 causas más probables y da una acción concreta para cada una.\nFormato: causa + acción en máximo 2 líneas cada una.'
+  },
+  cadena: {
+    system: '',
+    prompt: 'Paso 1: Lista 5 ideas de contenido para LinkedIn sobre productividad con IA.\nPaso 2: Para la idea más original, escribe el primer párrafo del post.\nPaso 3: Sugiere 3 hashtags relevantes.\n\nHaz los 3 pasos en orden, separados claramente.'
+  },
+  analisis: {
+    system: 'Eres un analista de comunicación experto.',
+    prompt: 'Analiza este texto y dame:\n1. Tono principal (en 2 palabras)\n2. Mensaje implícito que transmite\n3. Una mejora concreta\n\nTexto: "Hemos decidido explorar nuevas oportunidades de negocio que nos permitan diversificar nuestra propuesta de valor para el ecosistema de clientes."'
+  },
+  email: {
+    system: '',
+    prompt: 'Mejora este email para que sea más directo, profesional y fácil de leer. Máximo 5 líneas.\n\nEmail original:\n"Hola, me pongo en contacto contigo porque quería hablar de la posibilidad de que quizás podríamos tener una reunión para ver si hay algún tipo de sinergias entre nuestras empresas que pudiera ser de mutuo interés para ambas partes."'
+  },
+  decision: {
+    system: 'Eres un asesor estratégico que ayuda a tomar decisiones con marcos claros.',
+    prompt: 'Tengo que decidir si contratar a una persona de ventas senior (60k€/año) o invertir ese presupuesto en marketing digital.\nSomos una startup B2B SaaS con 200k€ ARR y ciclo de venta de 3 meses.\nRazona paso a paso y dame una recomendación clara con su justificación.'
+  },
+  spec: {
+    system: 'Eres Kiro, un IDE agéntico. Cuando recibes una descripción de feature, generas un spec estructurado.',
+    prompt: 'Feature: Sistema de onboarding para nuevos usuarios.\nLos usuarios nuevos deben pasar por 4 pasos guiados al registrarse: configurar perfil, invitar al equipo, crear primer proyecto y conectar herramienta externa.\nPueden saltar pasos y retomarlo después.\n\nGenera: requisitos, diseño básico y lista de tareas ordenadas.'
+  }
+};
+
+function initSandbox() {
+  const key = localStorage.getItem('ai-mc-groq-key');
+  updateKeyStatus(key);
+  if (key) document.getElementById('groq-key-input').value = key;
+  renderNotes();
+}
+
+function saveGroqKey() {
+  const key = document.getElementById('groq-key-input').value.trim();
+  if (!key.startsWith('gsk_')) {
+    alert('La key de Groq debe empezar por "gsk_"');
+    return;
+  }
+  localStorage.setItem('ai-mc-groq-key', key);
+  updateKeyStatus(key);
+}
+
+function clearGroqKey() {
+  localStorage.removeItem('ai-mc-groq-key');
+  document.getElementById('groq-key-input').value = '';
+  updateKeyStatus(null);
+}
+
+function updateKeyStatus(key) {
+  const el = document.getElementById('sandbox-key-status');
+  if (key) {
+    el.textContent = '✓ API key configurada';
+    el.style.color = 'var(--success)';
+  } else {
+    el.textContent = 'Sin API key configurada';
+    el.style.color = 'var(--muted)';
+  }
+}
+
+function loadStarter(name) {
+  const s = STARTERS[name];
+  if (!s) return;
+  document.getElementById('sandbox-system').value = s.system;
+  document.getElementById('sandbox-prompt').value = s.prompt;
+  document.getElementById('sandbox-response-box').style.display = 'none';
+}
+
+async function runSandbox() {
+  const key = localStorage.getItem('ai-mc-groq-key');
+  if (!key) { alert('Primero configura tu API key de Groq arriba.'); return; }
+
+  const prompt = document.getElementById('sandbox-prompt').value.trim();
+  if (!prompt) { alert('Escribe un prompt primero.'); return; }
+
+  const system = document.getElementById('sandbox-system').value.trim();
+  const model  = document.getElementById('sandbox-model').value;
+  const btn    = document.getElementById('sandbox-run-btn');
+  const respBox = document.getElementById('sandbox-response-box');
+  const respEl  = document.getElementById('sandbox-response');
+  const metaEl  = document.getElementById('sandbox-meta');
+
+  btn.textContent = '⏳ Enviando...';
+  btn.disabled = true;
+  respBox.style.display = 'none';
+
+  const messages = [];
+  if (system) messages.push({ role:'system', content:system });
+  messages.push({ role:'user', content:prompt });
+
+  try {
+    const t0 = Date.now();
+    const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'Authorization':'Bearer '+key, 'Content-Type':'application/json' },
+      body: JSON.stringify({ model, messages, temperature:0.7 })
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.error?.message || 'Error '+res.status);
+    }
+
+    const data = await res.json();
+    const text  = data.choices[0].message.content;
+    const ms    = Date.now() - t0;
+    const tokens = data.usage?.total_tokens || '?';
+
+    respEl.textContent = text;
+    metaEl.textContent = `${model} · ${tokens} tokens · ${(ms/1000).toFixed(1)}s`;
+    respBox.style.display = 'block';
+    respBox.scrollIntoView({ behavior:'smooth', block:'nearest' });
+
+  } catch(e) {
+    alert('Error: ' + e.message);
+  } finally {
+    btn.textContent = '▶ Enviar prompt';
+    btn.disabled = false;
+  }
+}
+
+function clearSandbox() {
+  document.getElementById('sandbox-prompt').value = '';
+  document.getElementById('sandbox-system').value = '';
+  document.getElementById('sandbox-response-box').style.display = 'none';
+}
+
+function copySandboxResponse() {
+  const text = document.getElementById('sandbox-response').textContent;
+  navigator.clipboard.writeText(text).then(() => alert('¡Respuesta copiada!'));
+}
+
+function saveSandboxNote() {
+  const prompt   = document.getElementById('sandbox-prompt').value.trim();
+  const response = document.getElementById('sandbox-response').textContent.trim();
+  if (!response) return;
+  const note = {
+    date: new Date().toLocaleDateString('es-ES'),
+    prompt: prompt.slice(0,150) + (prompt.length>150?'...':''),
+    response
+  };
+  sandboxNotes.unshift(note);
+  if (sandboxNotes.length > 20) sandboxNotes = sandboxNotes.slice(0,20);
+  localStorage.setItem('ai-mc-notes', JSON.stringify(sandboxNotes));
+  renderNotes();
+  alert('✓ Nota guardada');
+}
+
+function deleteNote(i) {
+  sandboxNotes.splice(i,1);
+  localStorage.setItem('ai-mc-notes', JSON.stringify(sandboxNotes));
+  renderNotes();
+}
+
+function renderNotes() {
+  const box  = document.getElementById('sandbox-notes-box');
+  const list = document.getElementById('sandbox-notes-list');
+  if (!sandboxNotes.length) { box.style.display='none'; return; }
+  box.style.display = 'block';
+  list.innerHTML = sandboxNotes.map((n,i) => `
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <span style="font-size:0.75rem;color:var(--muted)">${n.date}</span>
+        <button onclick="deleteNote(${i})" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:0.75rem;">✕ Borrar</button>
+      </div>
+      <div style="font-size:0.82rem;color:var(--text);font-weight:500;margin-bottom:6px">${n.prompt}</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">${n.response.slice(0,200)}${n.response.length>200?'…':''}</div>
+    </div>
+  `).join('');
+}
+</script>
+</body>
+</html>
