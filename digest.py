@@ -241,13 +241,17 @@ def summarize_with_groq(articles: list) -> list:
             time.sleep(10)
             continue
 
-        # Groq a veces añade texto antes del bloque JSON
+         # Limpiar markdown si viene con backticks
         if "```json" in raw:
             raw = raw.split("```json")[1].split("```")[0]
         elif "```" in raw:
             raw = raw.split("```")[1].split("```")[0]
+        # Buscar el inicio del JSON aunque venga precedido de texto
+        start = raw.find('{')
+        if start > 0:
+            raw = raw[start:]
         raw = raw.strip()
-
+        
         try:
             data = json.loads(raw)
             items = data.get("items", [])
