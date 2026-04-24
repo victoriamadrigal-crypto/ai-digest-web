@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 Resumen IA — 24/04/2026</title>
+    <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #0f0f1a; color: #e0e0e0;
+        min-height: 100vh; padding: 0 16px 48px;
+    }
+    header {
+        max-width: 860px; margin: 0 auto;
+        padding: 40px 0 24px; border-bottom: 1px solid #2a2a3e; margin-bottom: 32px;
+    }
+    header h1 {
+        font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 700; color: #ffffff;
+        display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    .badge {
+        font-size: 0.75rem; background: #1e3a5f; color: #60a5fa;
+        padding: 4px 10px; border-radius: 20px; font-weight: 500; white-space: nowrap;
+    }
+    .subtitle { margin-top: 8px; font-size: 0.9rem; color: #6b7280; }
+    .layout {
+        max-width: 860px; margin: 0 auto;
+        display: grid; grid-template-columns: 1fr 220px; gap: 32px; align-items: start;
+    }
+    @media (max-width: 640px) {
+        .layout { grid-template-columns: 1fr; }
+        .sidebar { order: -1; }
+    }
+    .news-list { display: flex; flex-direction: column; gap: 16px; }
+    .card {
+        background: #1a1a2e; border: 1px solid #2a2a3e; border-radius: 14px;
+        padding: 24px 28px; transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover { border-color: #4a90d9; transform: translateY(-2px); }
+    .card h2 {
+        font-size: 1.05rem; font-weight: 600; color: #ffffff;
+        line-height: 1.4; margin-bottom: 10px;
+    }
+    .card p { font-size: 0.9rem; color: #9ca3af; line-height: 1.65; margin-bottom: 16px; }
+    .card a.read-more {
+        display: inline-flex; align-items: center; gap: 6px;
+        font-size: 0.85rem; font-weight: 500; color: #60a5fa; text-decoration: none;
+        padding: 6px 14px; border: 1px solid #1e3a5f; border-radius: 6px;
+        transition: background 0.2s, color 0.2s;
+    }
+    .card a.read-more:hover { background: #1e3a5f; color: #93c5fd; }
+    .sidebar {
+        background: #1a1a2e; border: 1px solid #2a2a3e; border-radius: 14px;
+        padding: 20px; position: sticky; top: 20px;
+    }
+    .sidebar h3 {
+        font-size: 0.85rem; font-weight: 600; color: #ffffff;
+        margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .sidebar ul li a {
+        font-size: 0.85rem; color: #60a5fa; text-decoration: none;
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 4px 0; border-bottom: 1px solid #2a2a3e; transition: color 0.15s;
+    }
+    .sidebar ul li a:hover { color: #93c5fd; }
+    .sidebar ul li a .count { font-size: 0.75rem; color: #4b5563; }
+    .sidebar ul li.active a { color: #ffffff; font-weight: 600; }
+    footer {
+        max-width: 860px; margin: 40px auto 0;
+        text-align: center; font-size: 0.78rem; color: #4b5563;
+    }
+    .back-link {
+        display: inline-flex; align-items: center; gap: 6px;
+        font-size: 0.85rem; color: #60a5fa; text-decoration: none; margin-bottom: 24px;
+    }
+    .back-link:hover { color: #93c5fd; }
+</style>
+</head>
+<body>
+    <header>
+        <a class="back-link" href="../index.html">← Volver a hoy</a>
+        <h1>🤖 Resumen IA <span class="badge">24/04/2026</span></h1>
+        <p class="subtitle">Edición del 24/04/2026</p>
+    </header>
+    <div class="layout">
+        <section class="news-list">
+            <article class="card">
+                <h2>El Tool-Overuse Illusion: por qué los LLM prefieren herramientas externas sobre el conocimiento interno</h2>
+                <p>Un estudio reciente ha descubierto que los LLMs (modelos de lenguaje de gran escala) prefieren utilizar herramientas externas en lugar de depender de su conocimiento interno. Esto puede ser un problema para la eficiencia y la escalabilidad de los LLMs.</p>
+                <a class="read-more" href="https://arxiv.org/abs/2604.19749" target="_blank" rel="noopener">Leer más →</a>
+            </article>
+            <article class="card">
+                <h2>Gobierno y madurez en la IA: un marco de gobernanza y un índice de madurez para la IA en dominios intensivos en aprendizaje</h2>
+                <p>Un equipo de investigadores ha propuesto un marco de gobernanza y un índice de madurez para la IA en dominios intensivos en aprendizaje, como la educación y la investigación. Esto busca abordar la falta de regulación en la IA generativa.</p>
+                <a class="read-more" href="https://arxiv.org/abs/2604.19751" target="_blank" rel="noopener">Leer más →</a>
+            </article>
+            <article class="card">
+                <h2>Reforzando la razón de privacidad en los LLM mediante simulacros normativos de la ficción</h2>
+                <p>Un estudio ha propuesto utilizar simulacros normativos de la ficción para reforzar la razón de privacidad en los LLMs. Esto busca alinear las prácticas de manejo de información de los LLMs con las expectativas de privacidad de sus usuarios.</p>
+                <a class="read-more" href="https://arxiv.org/abs/2604.20904" target="_blank" rel="noopener">Leer más →</a>
+            </article>
+            <article class="card">
+                <h2>¿Merece la pena pagar por almacenamiento extra en la nube para tu móvil?</h2>
+                <p>Con el aumento de la cantidad de datos en nuestros teléfonos, servicios como Google Drive o iCloud pueden ser una alternativa para liberar espacio. Pero ¿merece la pena pagar por almacenamiento extra en la nube?</p>
+                <a class="read-more" href="https://elpais.com/tecnologia/tu-tecnologia/2026-04-24/merece-la-pena-pagar-por-almacenamiento-extra-en-la-nube-para-tu-movil.html" target="_blank" rel="noopener">Leer más →</a>
+            </article>
+            <article class="card">
+                <h2>La IA en la educación: un marco de gobernanza y un índice de madurez para la IA en dominios intensivos en aprendizaje</h2>
+                <p>Un equipo de investigadores ha propuesto un marco de gobernanza y un índice de madurez para la IA en dominios intensivos en aprendizaje, como la educación y la investigación. Esto busca abordar la falta de regulación en la IA generativa.</p>
+                <a class="read-more" href="https://arxiv.org/abs/2604.19751" target="_blank" rel="noopener">Leer más →</a>
+            </article></section>
+        
+        <aside class="sidebar">
+            <h3>📅 Ediciones anteriores</h3>
+            <ul>
+            <li>
+                <a href="../archive/2026-04-23.html">
+                    23 Apr 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-04-22.html">
+                    22 Apr 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-04-21.html">
+                    21 Apr 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li></ul>
+        </aside>
+    </div>
+    <footer>
+        Generado con Groq + Llama 3.1 &middot;
+        Fuentes: Arxiv, The Batch, VentureBeat, MIT Tech Review, Xataka, Hipertextual, El País
+    </footer>
+</body>
+</html>
