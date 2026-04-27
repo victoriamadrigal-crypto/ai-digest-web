@@ -1,48 +1,68 @@
 {
-  "semana": "2026-04-20",
-  "num_semana": 17,
-  "tema": "uso de Kiro: spec-driven development en proyectos reales",
-  "titulo": "Desarrollo con Kiro",
-  "descripcion": "Mejora proyectos con spec-driven",
+  "semana": "2026-04-27",
+  "num_semana": 18,
+  "tema": "IA para creación de contenido y narrativa de marca",
+  "titulo": "IA Crea Contenido",
+  "descripcion": "Mejora la narrativa de marca",
   "ejercicios": [
     {
       "id": 1,
-      "herramienta": "Kiro",
+      "herramienta": "Claude",
       "nivel": "Basico",
-      "titulo": "Intro a Kiro",
-      "objetivo": "Aprender a utilizar Kiro para especificar requisitos",
-      "instrucciones": "Abre Kiro y crea un nuevo proyecto. Utiliza el prompt 'Especifica los requisitos para un sistema de gestión de inventario' para empezar.",
-      "criterio_exito": "El usuario ha creado un proyecto en Kiro y ha iniciado la especificación de requisitos",
+      "titulo": "Genera Texto",
+      "objetivo": "Aprender a generar contenido básico con Claude",
+      "pasos": [
+        "Ingresa a la versión gratuita de Claude",
+        "Introduce un tema de interés como prompt",
+        "Genera y revisa el texto producido"
+      ],
+      "instrucciones": "Usa Claude para generar un breve texto sobre un tema de tu elección.",
+      "criterio_exito": "El texto generado es coherente y relevante al tema",
       "tiempo_estimado": "10 min"
     },
     {
       "id": 2,
       "herramienta": "Gemini",
       "nivel": "Basico",
-      "titulo": "Análisis con Gemini",
-      "objetivo": "Aprender a analizar datos con Gemini",
-      "instrucciones": "Abre Gemini y carga un conjunto de datos de ejemplo. Utiliza el prompt 'Analiza los datos y proporciona conclusiones' para obtener resultados.",
-      "criterio_exito": "El usuario ha cargado datos en Gemini y ha obtenido conclusiones",
+      "titulo": "Resumen Automático",
+      "objetivo": "Aprender a resumir textos con Gemini",
+      "pasos": [
+        "Accede a la versión gratuita de Gemini",
+        "Copia y pega un texto largo en la herramienta",
+        "Configura y genera un resumen del texto"
+      ],
+      "instrucciones": "Utiliza Gemini para resumir un artículo de noticias.",
+      "criterio_exito": "El resumen captura los puntos clave del texto original",
       "tiempo_estimado": "10 min"
     },
     {
       "id": 3,
-      "herramienta": "Claude y Kiro",
+      "herramienta": "Kiro",
       "nivel": "Intermedio",
-      "titulo": "Integración Claude-Kiro",
-      "objetivo": "Aprender a integrar Claude con Kiro para mejorar la especificación de requisitos",
-      "instrucciones": "Abre Claude y crea un nuevo documento. Conecta Kiro para importar requisitos y utiliza el prompt 'Crea un documento que combine la especificación de requisitos con la capacidad de análisis de Claude'",
-      "criterio_exito": "El usuario ha integrado Claude con Kiro y ha creado un documento que combina ambas herramientas",
+      "titulo": "Narrativa de Marca",
+      "objetivo": "Desarrollar una narrativa de marca con Kiro",
+      "pasos": [
+        "Ingresa a Kiro y crea un nuevo proyecto",
+        "Define la identidad de la marca y su público objetivo",
+        "Usa Kiro para generar contenidos coherentes con la narrativa"
+      ],
+      "instrucciones": "Crea una narrativa de marca para un producto o servicio ficticio.",
+      "criterio_exito": "La narrativa es consistente y atractiva para el público objetivo",
       "tiempo_estimado": "20 min"
     },
     {
       "id": 4,
-      "herramienta": "Gemini y Kiro",
+      "herramienta": "Claude y Gemini",
       "nivel": "Intermedio",
-      "titulo": "Análisis y especificación",
-      "objetivo": "Aprender a utilizar Gemini y Kiro para analizar y especificar requisitos de manera efectiva",
-      "instrucciones": "Abre Gemini y carga un conjunto de datos. Conecta Kiro para importar requisitos y analiza los datos para proporcionar conclusiones que mejoren la especificación de requisitos",
-      "criterio_exito": "El usuario ha utilizado Gemini y Kiro para analizar y especificar requisitos de manera efectiva",
+      "titulo": "Contenido Multiformato",
+      "objetivo": "Generar contenido en diferentes formatos con Claude y Gemini",
+      "pasos": [
+        "Usa Claude para generar un guión para un video",
+        "Convierte el guión en un artículo de blog con Gemini",
+        "Revisa y ajusta el contenido para cada formato"
+      ],
+      "instrucciones": "Crea un contenido multiformato sobre un tema específico.",
+      "criterio_exito": "El contenido es adaptado efectivamente a cada formato",
       "tiempo_estimado": "20 min"
     }
   ]
