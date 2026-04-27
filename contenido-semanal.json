@@ -1,0 +1,189 @@
+{
+  "semana": "2026-04-27",
+  "tema": "agentes IA: cuándo delegar decisiones a la IA",
+  "tip": {
+    "semana": "2026-04-27",
+    "tema": "agentes IA: cuándo delegar decisiones a la IA",
+    "emoji": "🤖",
+    "titulo": "Delegación de decisiones a IA",
+    "resumen": "Delega decisiones a la IA para mejorar la eficiencia",
+    "explicacion": "La delegación de decisiones a la IA es una técnica que implica identificar tareas repetitivas o basadas en reglas y transferirlas a un agente de IA. Esto funciona porque la IA puede procesar grandes cantidades de datos de manera rápida y precisa, liberando a los humanos para enfocarse en tareas más complejas y creativas. La clave para aplicar esta técnica es identificar las tareas que sean adecuadas para la automatización y definir claramente los parámetros de decisión.",
+    "ejemplo_prompt": "Ejemplo de prompt para delegar decisiones a la IA: 'Desarrolla un modelo de clasificación de texto que clasifique los correos electrónicos de soporte en categorías predefinidas y responda automáticamente a los correos electrónicos que no requieren intervención humana. Utiliza un conjunto de datos de entrenamiento de 10.000 correos electrónicos y evalúa el modelo con un conjunto de datos de prueba de 2.000 correos electrónicos. La precisión del modelo debe ser de al menos 90% para considerarse exitoso.'",
+    "cuando_usarlo": "Este tip se puede aplicar en situaciones como la automatización de la respuesta a correos electrónicos de soporte, la clasificación de documentos en una base de datos o la detección de anomalías en un conjunto de datos. También se puede utilizar en la toma de decisiones financieras, como la identificación de patrones de gasto o la optimización de inversiones.",
+    "herramienta": "Todas"
+  },
+  "lecciones": [
+    {
+      "id": "extra-18-1",
+      "semana": "2026-04-27",
+      "herramienta": "Claude",
+      "nivel": "Avanzado",
+      "titulo": "Delegación de Decisiones",
+      "subtitulo": "Aprenderá a identificar cuándo delegar decisiones a la IA de manera efectiva",
+      "duracion": "25 min",
+      "teoria": {
+        "concepto": "Delegación de Decisiones",
+        "explicacion": "La delegación de decisiones a la IA implica transferir la autoridad de tomar decisiones a un sistema de inteligencia artificial. Esto puede ser beneficioso en situaciones donde la IA puede procesar grandes cantidades de datos y tomar decisiones más rápidas y precisas que los humanos. Sin embargo, es importante considerar los riesgos y limitaciones de la delegación de decisiones a la IA, como la posibilidad de errores y la falta de transparencia en el proceso de toma de decisiones. La delegación de decisiones a la IA requiere una cuidadosa evaluación de los beneficios y riesgos potenciales, así como la implementación de mecanismos de control y supervisión para garantizar que la IA tome decisiones responsables y éticas. La clave para una delegación de decisiones exitosa es establecer claros límites y directrices para la IA, y asegurarse de que el sistema esté diseñado para tomar decisiones que se alineen con los objetivos y valores de la organización.",
+        "analogia": "Imagínese que tiene un asistente personal que puede tomar decisiones en su nombre. Al igual que un asistente personal, la IA puede tomar decisiones más rápidas y precisas que los humanos, pero también requiere supervisión y orientación para garantizar que tome decisiones responsables y éticas.",
+        "cuando_usarlo": [
+          "Cuando se necesitan decisiones rápidas y precisas en situaciones de alta presión",
+          "Cuando se dispone de grandes cantidades de datos para analizar y procesar",
+          "Cuando se busca reducir la carga de trabajo y aumentar la eficiencia",
+          "Cuando se requiere una toma de decisiones objetiva y libre de sesgos"
+        ]
+      },
+      "ejemplo": {
+        "caso": "Una empresa de seguros quiere automatizar el proceso de evaluación de riesgos para nuevos clientes",
+        "prompt_malo": "Escribe un programa que evalúe el riesgo de un cliente",
+        "prompt_bueno": "Diseña un algoritmo que evalúe el riesgo de un cliente basado en su historial crediticio, antecedentes penales y otros factores relevantes, y proporcione una puntuación de riesgo que se ajuste a nuestras políticas de aseguramiento",
+        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite a la IA tomar decisiones más informadas y precisas"
+      },
+      "practica": {
+        "titulo": "Evaluación de Riesgo de Cliente",
+        "objetivo": "Conseguir una puntuación de riesgo precisa para un cliente",
+        "prompt_practica": "Diseña un algoritmo que evalúe el riesgo de un cliente basado en su historial crediticio, antecedentes penales y otros factores relevantes, y proporcione una puntuación de riesgo que se ajuste a nuestras políticas de aseguramiento. El cliente es una persona física que solicita un seguro de automóvil. El histórico crediticio del cliente es bueno, pero tiene un antecedente penal por conducción imprudente. El cliente tiene un ingreso anual de $50,000 y conduce un vehículo de lujo. La puntuación de riesgo debe ser un número entre 1 y 10, donde 1 es el riesgo más bajo y 10 es el riesgo más alto. La salida debe ser un número que represente la puntuación de riesgo del cliente.",
+        "pasos": [
+          "Acceda a la plataforma de Claude y cree un nuevo proyecto",
+          "Introduzca el prompt de práctica en la plataforma y ejecute el algoritmo",
+          "Verifique la salida y ajuste el algoritmo según sea necesario para obtener una puntuación de riesgo precisa",
+          "Evalúe la puntuación de riesgo y determine si el cliente es elegible para el seguro",
+          "Guarde el proyecto y documente los resultados para futuras referencias"
+        ],
+        "criterio_exito": "La puntuación de riesgo del cliente es precisa y se ajusta a las políticas de aseguramiento de la empresa"
+      },
+      "recursos": [
+        "Curso de aprendizaje automático en Claude",
+        "Documentación de la API de Claude"
+      ]
+    },
+    {
+      "id": "extra-18-2",
+      "semana": "2026-04-27",
+      "herramienta": "Gemini",
+      "nivel": "Avanzado",
+      "titulo": "Toma de Decisiones",
+      "subtitulo": "Aprenderá a diseñar algoritmos de toma de decisiones para la IA",
+      "duracion": "25 min",
+      "teoria": {
+        "concepto": "Toma de Decisiones",
+        "explicacion": "La toma de decisiones es el proceso de seleccionar la mejor opción entre varias alternativas. En la IA, la toma de decisiones se puede lograr mediante algoritmos que evalúan las opciones y seleccionan la mejor según criterios predeterminados. La toma de decisiones en la IA puede ser clasificada en dos categorías: toma de decisiones determinística y toma de decisiones probabilística. La toma de decisiones determinística implica seleccionar la mejor opción según reglas y criterios preestablecidos, mientras que la toma de decisiones probabilística implica seleccionar la mejor opción según probabilidades y incertidumbres.",
+        "analogia": "Imagínese que está en una encrucijada y debe decidir qué camino tomar. La IA puede ayudar a tomar la decisión evaluando las opciones y seleccionando la mejor según criterios como la distancia, el tráfico y el clima.",
+        "cuando_usarlo": [
+          "Cuando se necesitan decisiones rápidas y precisas en situaciones de alta presión",
+          "Cuando se dispone de grandes cantidades de datos para analizar y procesar",
+          "Cuando se busca reducir la carga de trabajo y aumentar la eficiencia",
+          "Cuando se requiere una toma de decisiones objetiva y libre de sesgos"
+        ]
+      },
+      "ejemplo": {
+        "caso": "Una empresa de logística quiere automatizar el proceso de asignación de rutas para sus camiones",
+        "prompt_malo": "Escribe un programa que asigne rutas a los camiones",
+        "prompt_bueno": "Diseña un algoritmo que asigne rutas a los camiones basado en la ubicación de los clientes, la capacidad de los camiones y los tiempos de entrega, y proporcione la ruta más eficiente para cada camión",
+        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite a la IA tomar decisiones más informadas y precisas"
+      },
+      "practica": {
+        "titulo": "Asignación de Rutas",
+        "objetivo": "Conseguir la ruta más eficiente para un camión",
+        "prompt_practica": "Diseña un algoritmo que asigne rutas a los camiones basado en la ubicación de los clientes, la capacidad de los camiones y los tiempos de entrega, y proporcione la ruta más eficiente para cada camión. El camión tiene una capacidad de 10 toneladas y debe entregar paquetes a 5 clientes en diferentes ubicaciones. La distancia entre cada ubicación es de 10 kilómetros y el tiempo de entrega es de 30 minutos. La salida debe ser una lista de instrucciones que indiquen la ruta más eficiente para el camión.",
+        "pasos": [
+          "Acceda a la plataforma de Gemini y cree un nuevo proyecto",
+          "Introduzca el prompt de práctica en la plataforma y ejecute el algoritmo",
+          "Verifique la salida y ajuste el algoritmo según sea necesario para obtener la ruta más eficiente",
+          "Evalúe la ruta y determine si es la más eficiente",
+          "Guarde el proyecto y documente los resultados para futuras referencias"
+        ],
+        "criterio_exito": "La ruta asignada al camión es la más eficiente y se ajusta a los requisitos de la empresa"
+      },
+      "recursos": [
+        "Curso de algoritmos de toma de decisiones en Gemini",
+        "Documentación de la API de Gemini"
+      ]
+    },
+    {
+      "id": "extra-18-3",
+      "semana": "2026-04-27",
+      "herramienta": "Kiro",
+      "nivel": "Avanzado",
+      "titulo": "Aprendizaje por Refuerzo",
+      "subtitulo": "Aprenderá a diseñar algoritmos de aprendizaje por refuerzo para la IA",
+      "duracion": "25 min",
+      "teoria": {
+        "concepto": "Aprendizaje por Refuerzo",
+        "explicacion": "El aprendizaje por refuerzo es un tipo de aprendizaje automático que implica entrenar a un agente para tomar decisiones que maximicen una recompensa. El agente aprende a través de ensayos y errores, y ajusta su comportamiento según la recompensa recibida. El aprendizaje por refuerzo se puede aplicar en una variedad de dominios, desde juegos hasta robótica y finanzas.",
+        "analogia": "Imagínese que está jugando un juego y quiere maximizar su puntuación. La IA puede aprender a jugar el juego mediante aprendizaje por refuerzo, ajustando su estrategia según la recompensa recibida.",
+        "cuando_usarlo": [
+          "Cuando se necesita tomar decisiones en entornos dinámicos y cambiantes",
+          "Cuando se dispone de grandes cantidades de datos para analizar y procesar",
+          "Cuando se busca reducir la carga de trabajo y aumentar la eficiencia",
+          "Cuando se requiere una toma de decisiones objetiva y libre de sesgos"
+        ]
+      },
+      "ejemplo": {
+        "caso": "Una empresa de juegos quiere crear un agente que juegue al ajedrez",
+        "prompt_malo": "Escribe un programa que juegue al ajedrez",
+        "prompt_bueno": "Diseña un algoritmo de aprendizaje por refuerzo que juegue al ajedrez y maximice la puntuación, y proporcione la estrategia de juego más efectiva",
+        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite a la IA tomar decisiones más informadas y precisas"
+      },
+      "practica": {
+        "titulo": "Juego de Ajedrez",
+        "objetivo": "Conseguir la estrategia de juego más efectiva para un agente de ajedrez",
+        "prompt_practica": "Diseña un algoritmo de aprendizaje por refuerzo que juegue al ajedrez y maximice la puntuación, y proporcione la estrategia de juego más efectiva. El agente debe jugar contra un oponente humano y ajustar su estrategia según la recompensa recibida. La salida debe ser una lista de movimientos que indiquen la estrategia de juego más efectiva para el agente.",
+        "pasos": [
+          "Acceda a la plataforma de Kiro y cree un nuevo proyecto",
+          "Introduzca el prompt de práctica en la plataforma y ejecute el algoritmo",
+          "Verifique la salida y ajuste el algoritmo según sea necesario para obtener la estrategia de juego más efectiva",
+          "Evalúe la estrategia y determine si es la más efectiva",
+          "Guarde el proyecto y documente los resultados para futuras referencias"
+        ],
+        "criterio_exito": "La estrategia de juego del agente es la más efectiva y se ajusta a los requisitos de la empresa"
+      },
+      "recursos": [
+        "Curso de aprendizaje por refuerzo en Kiro",
+        "Documentación de la API de Kiro"
+      ]
+    },
+    {
+      "id": "extra-18-4",
+      "semana": "2026-04-27",
+      "herramienta": "Claude",
+      "nivel": "Avanzado",
+      "titulo": "Toma de Decisiones Ética",
+      "subtitulo": "Aprenderá a diseñar algoritmos de toma de decisiones ética para la IA",
+      "duracion": "25 min",
+      "teoria": {
+        "concepto": "Toma de Decisiones Ética",
+        "explicacion": "La toma de decisiones ética implica considerar las implicaciones morales y éticas de las decisiones tomadas por la IA. Esto requiere un enfoque cuidadoso y reflexivo, ya que las decisiones de la IA pueden tener un impacto significativo en las personas y la sociedad. La toma de decisiones ética en la IA se puede lograr mediante algoritmos que evalúen las opciones y seleccionen la mejor según criterios éticos.",
+        "analogia": "Imagínese que está en una situación en la que debe tomar una decisión que afecta a muchas personas. La IA puede ayudar a tomar la decisión evaluando las opciones y seleccionando la mejor según criterios éticos.",
+        "cuando_usarlo": [
+          "Cuando se necesitan decisiones que tengan un impacto significativo en las personas y la sociedad",
+          "Cuando se dispone de grandes cantidades de datos para analizar y procesar",
+          "Cuando se busca reducir la carga de trabajo y aumentar la eficiencia",
+          "Cuando se requiere una toma de decisiones objetiva y libre de sesgos"
+        ]
+      },
+      "ejemplo": {
+        "caso": "Una empresa de salud quiere automatizar el proceso de diagnóstico de enfermedades",
+        "prompt_malo": "Escribe un programa que diagnostique enfermedades",
+        "prompt_bueno": "Diseña un algoritmo que diagnostique enfermedades y proporcione un plan de tratamiento personalizado, y considere las implicaciones éticas de la decisión",
+        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite a la IA tomar decisiones más informadas y precisas"
+      },
+      "practica": {
+        "titulo": "Diagnóstico de Enfermedades",
+        "objetivo": "Conseguir un plan de tratamiento personalizado para un paciente",
+        "prompt_practica": "Diseña un algoritmo que diagnostique enfermedades y proporcione un plan de tratamiento personalizado, y considere las implicaciones éticas de la decisión. El paciente tiene un historial médico complejo y requiere un plan de tratamiento personalizado. La salida debe ser un plan de tratamiento que incluya la medicación, el tratamiento y el seguimiento necesario.",
+        "pasos": [
+          "Acceda a la plataforma de Claude y cree un nuevo proyecto",
+          "Introduzca el prompt de práctica en la plataforma y ejecute el algoritmo",
+          "Verifique la salida y ajuste el algoritmo según sea necesario para obtener un plan de tratamiento personalizado",
+          "Evalúe el plan de tratamiento y determine si es el más efectivo",
+          "Guarde el proyecto y documente los resultados para futuras referencias"
+        ],
+        "criterio_exito": "El plan de tratamiento es personalizado y se ajusta a las necesidades del paciente"
+      },
+      "recursos": [
+        "Curso de toma de decisiones ética en Claude",
+        "Documentación de la API de Claude"
+      ]
+    }
+  ]
+}

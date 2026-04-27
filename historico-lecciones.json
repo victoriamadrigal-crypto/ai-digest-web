@@ -1,0 +1,42 @@
+[
+  {
+    "semana": "2026-04-27",
+    "tema": "agentes IA: cuándo delegar decisiones a la IA",
+    "id": "extra-18-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Delegación de Decisiones",
+    "subtitulo": "Aprenderá a identificar cuándo delegar decisiones a la IA de manera efectiva",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-04-27",
+    "tema": "agentes IA: cuándo delegar decisiones a la IA",
+    "id": "extra-18-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Toma de Decisiones",
+    "subtitulo": "Aprenderá a diseñar algoritmos de toma de decisiones para la IA",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-04-27",
+    "tema": "agentes IA: cuándo delegar decisiones a la IA",
+    "id": "extra-18-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Aprendizaje por Refuerzo",
+    "subtitulo": "Aprenderá a diseñar algoritmos de aprendizaje por refuerzo para la IA",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-04-27",
+    "tema": "agentes IA: cuándo delegar decisiones a la IA",
+    "id": "extra-18-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Toma de Decisiones Ética",
+    "subtitulo": "Aprenderá a diseñar algoritmos de toma de decisiones ética para la IA",
+    "duracion": "25 min"
+  }
+]
