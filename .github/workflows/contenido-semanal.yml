@@ -2,7 +2,6 @@ name: Contenido Semanal IA
 
 on:
   schedule:
-    # Cada lunes a las 7:30 UTC (9:30 Madrid) — 30 min después del digest
     - cron: "30 7 * * 1"
   workflow_dispatch:
 
@@ -12,12 +11,6 @@ jobs:
 
     permissions:
       contents: write
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout
@@ -54,13 +47,3 @@ jobs:
             git commit -m "chore: contenido semanal $(date +%Y-%m-%d) [skip ci]"
             git push
           fi
-
-      - name: Subir a GitHub Pages
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-
-      - name: Publicar en GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        timeout-minutes: 10
