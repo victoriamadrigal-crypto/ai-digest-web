@@ -1619,7 +1619,7 @@ function showSection(name) {
     const el = document.getElementById('section-'+s);
     if (el) el.classList.toggle('active', name === s);
   });
-  if (name === 'reto')     ();
+  if (name === 'reto')     loadReto();
   if (name === 'extra')    loadExtra();
   if (name === 'historico') loadHistorico();
   if (name === 'progress') updateProgress();
@@ -2061,27 +2061,98 @@ async function loadReto() {
     if (!res.ok) throw new Error('No encontrado');
     const data = await res.json();
 
+    // Header
     const monday = new Date(data.semana);
     const opts = { day:'numeric', month:'long', year:'numeric' };
-    document.getElementById('reto-semana').textContent = 'Semana del ' + monday.toLocaleDateString('es-ES', opts);
+    document.getElementById('reto-semana').textContent =
+      'Semana del ' + monday.toLocaleDateString('es-ES', opts);
     document.getElementById('reto-titulo').textContent = data.titulo || '';
     document.getElementById('reto-descripcion').textContent = data.descripcion || '';
     document.getElementById('reto-tema').textContent = data.tema || '';
 
+    // Ejercicios
     const container = document.getElementById('reto-ejercicios');
-    const toolColor  = { Claude:'var(--claude)', Gemini:'var(--gemini)', Kiro:'var(--kiro)' };
+    const toolColor = { Claude:'var(--claude)', Gemini:'var(--gemini)', Kiro:'var(--kiro)' };
     const nivelColor = { Basico:'var(--success)', Intermedio:'var(--gemini)', Avanzado:'var(--claude)' };
     const nivelIcon  = { Basico:'🟢', Intermedio:'🟡', Avanzado:'🔴' };
 
-    container.innerHTML = (data.ejercicios || []).map((ej) => {
-      const color  = toolColor[ej.herramienta]  || 'var(--muted)';
+    container.innerHTML = (data.ejercicios || []).map((ej, i) => {
+      const color = toolColor[ej.herramienta] || 'var(--muted)';
       const nColor = nivelColor[ej.nivel] || 'var(--muted)';
-      const nIcon  = nivelIcon[ej.nivel]  || '⚪';
+      const nIcon  = nivelIcon[ej.nivel] || '⚪';
       const doneKey = `reto-done-${data.semana}-${ej.id}`;
-      const isDone  = localStorage.getItem(doneKey) === '1';
+      const isDone = localStorage.getItem(doneKey) === '1';
 
       const contextoHTML = ej.contexto ? `
-        <p style="font-size:0.87rem;color:var(--muted);line-height:1.65;margi
+        <p style="font-size:0.87rem;color:var(--muted);line-height:1.65;margin-bottom:14px">${ej.contexto}</p>` : '';
+
+      const promptHTML = ej.prompt_ejemplo ? `
+        <div style="background:var(--surface2);border-radius:8px;padding:14px 16px;margin-bottom:14px;position:relative">
+          <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:${color};margin-bottom:8px">📋 Prompt — copia y pega</div>
+          <pre style="font-size:0.83rem;color:var(--text);white-space:pre-wrap;word-break:break-word;line-height:1.6;font-family:'Courier New',monospace">${ej.prompt_ejemplo}</pre>
+          <button onclick="copiarPromptReto(this)"
+            style="position:absolute;top:10px;right:10px;background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:4px 10px;border-radius:6px;font-size:0.7rem;cursor:pointer">Copiar</button>
+        </div>` : '';
+
+      const pasos = ej.pasos || [];
+      const pasosHTML = pasos.length ? `
+        <div style="margin-bottom:14px">
+          <div style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:10px">📋 Pasos a seguir</div>
+          ${pasos.map((paso, pi) => `
+            <div style="display:flex;gap:12px;margin-bottom:10px">
+              <div style="min-width:24px;height:24px;border-radius:50%;
+                          background:${color==='var(--claude)'?'rgba(217,124,74,0.15)':color==='var(--gemini)'?'rgba(74,155,217,0.15)':'rgba(124,74,217,0.15)'};
+                          color:${color};font-size:0.75rem;font-weight:700;
+                          display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">${pi+1}</div>
+              <div style="font-size:0.87rem;color:var(--text);line-height:1.6">${paso}</div>
+            </div>`).join('')}
+        </div>` : '';
+
+      const consejoHTML = ej.consejo_pro ? `
+        <div style="background:var(--surface2);border-left:3px solid ${color};padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:14px">
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:${color};margin-bottom:4px">⚡ Consejo Pro</div>
+          <p style="font-size:0.88rem;color:var(--text);margin:0">${ej.consejo_pro}</p>
+        </div>` : '';
+
+      return `
+      <div class="card" id="reto-card-${ej.id}" style="${isDone ? 'border-color:var(--success)' : ''}">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:${color}">${ej.herramienta}</span>
+            <span style="width:1px;height:12px;background:var(--border)"></span>
+            <span style="font-size:0.72rem;color:${nColor}">${nIcon} ${ej.nivel}</span>
+            <span style="width:1px;height:12px;background:var(--border)"></span>
+            <span style="font-size:0.72rem;color:var(--muted)">⏱ ${ej.tiempo_estimado || '15 min'}</span>
+          </div>
+          <span style="font-size:0.72rem;font-weight:600;color:var(--muted)">Ejercicio ${ej.id}</span>
+        </div>
+        <h3 style="font-family:var(--font-head);font-weight:700;font-size:1.05rem;margin-bottom:8px">${ej.titulo}</h3>
+        <p style="font-size:0.85rem;color:${color};font-weight:500;margin-bottom:12px">🎯 ${ej.objetivo}</p>
+        ${contextoHTML}
+        ${promptHTML}
+        ${pasosHTML}
+        ${consejoHTML}
+        <div style="background:rgba(74,217,124,0.06);border:1px solid rgba(74,217,124,0.2);border-radius:8px;padding:10px 14px;margin-bottom:16px">
+          <span style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--success)">✓ Criterio de éxito</span>
+          <p style="font-size:0.85rem;color:var(--text);margin-top:4px">${ej.criterio_exito}</p>
+        </div>
+        <button onclick="marcarRetoHecho('${data.semana}', ${ej.id}, this)" 
+          class="complete-btn ${isDone ? 'done' : ''}" id="reto-btn-${ej.id}">
+          ${isDone ? '✓ Completado' : '✓ Marcar como completado'}
+        </button>
+      </div>`;
+    }).join('');
+
+    loading.style.display = 'none';
+    content.style.display = 'block';
+    retoLoaded = true;
+
+  } catch(e) {
+    loading.style.display = 'none';
+    error.style.display = 'block';
+    console.error('Error cargando reto:', e);
+  }
+}
 
 function marcarRetoHecho(semana, id, btn) {
   const key  = `reto-done-${semana}-${id}`;
@@ -2090,6 +2161,15 @@ function marcarRetoHecho(semana, id, btn) {
   btn.textContent = '✓ Completado';
   btn.classList.add('done');
   if (card) card.style.borderColor = 'var(--success)';
+}
+
+function copiarPromptReto(btn) {
+  const pre = btn.closest('div').querySelector('pre');
+  if (!pre) return;
+  navigator.clipboard.writeText(pre.textContent).then(() => {
+    btn.textContent = '¡Copiado!';
+    setTimeout(() => btn.textContent = 'Copiar', 1500);
+  });
 }
 
 // ══════════════════════════════════════
