@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual de uso — AI Masterclass</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0c0c0f; --surface: #141418; --surface2: #1c1c22;
+  --border: #2a2a35; --text: #e8e8f0; --muted: #6b6b80;
+  --claude: #d97c4a; --gemini: #4a9bd9; --kiro: #7c4ad9;
+  --success: #4ad97c;
+  --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --radius: 14px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body); background: var(--bg);
+  color: var(--text); line-height: 1.6; font-size: 16px;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(12,12,15,0.9); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 1rem; color: var(--text); text-decoration: none; }
+.nav-logo span { color: var(--claude); }
+.back-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.85rem; color: var(--muted); text-decoration: none;
+  padding: 6px 14px; border: 1px solid var(--border); border-radius: 8px;
+  transition: all 0.2s;
+}
+.back-btn:hover { color: var(--text); border-color: var(--text); }
+
+/* HERO */
+.hero {
+  padding: 64px 24px 48px; text-align: center;
+  border-bottom: 1px solid var(--border);
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(217,124,74,0.06) 0%, transparent 70%);
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--surface2); border: 1px solid var(--border);
+  padding: 5px 14px; border-radius: 100px;
+  font-size: 0.78rem; color: var(--muted); margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px;
+}
+.hero p { color: var(--muted); font-size: 1.05rem; max-width: 520px; margin: 0 auto 32px; }
+.toc {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+}
+.toc a {
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 7px 16px; border-radius: 8px; font-size: 0.82rem;
+  color: var(--muted); text-decoration: none; transition: all 0.2s;
+}
+.toc a:hover { color: var(--text); border-color: var(--text); }
+
+/* CONTENT */
+.content { max-width: 760px; margin: 0 auto; padding: 48px 24px 96px; }
+
+/* SECTION */
+.section { margin-bottom: 56px; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.section h2 {
+  font-family: var(--font-head); font-size: 1.8rem; font-weight: 800;
+  letter-spacing: -0.02em; margin-bottom: 12px;
+}
+.section > p { color: var(--muted); margin-bottom: 24px; line-height: 1.7; }
+
+/* CARDS */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 24px; margin-bottom: 12px;
+}
+.card h3 {
+  font-family: var(--font-head); font-weight: 700; font-size: 1rem;
+  margin-bottom: 6px; display: flex; align-items: center; gap: 10px;
+}
+.card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+/* STEPS */
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step {
+  display: flex; gap: 16px; position: relative;
+  padding-bottom: 24px;
+}
+.step:last-child { padding-bottom: 0; }
+.step::before {
+  content: ''; position: absolute;
+  left: 19px; top: 40px; bottom: 0;
+  width: 2px; background: var(--border);
+}
+.step:last-child::before { display: none; }
+.step-num {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-weight: 800; font-size: 0.9rem;
+  background: var(--surface2); border: 2px solid var(--border);
+  position: relative; z-index: 1;
+}
+.step-body { flex: 1; padding-top: 8px; }
+.step-body h4 {
+  font-family: var(--font-head); font-weight: 700; font-size: 1rem;
+  margin-bottom: 6px;
+}
+.step-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+/* TIP BOX */
+.tip {
+  background: var(--surface2); border-left: 3px solid;
+  padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0;
+  font-size: 0.88rem;
+}
+.tip strong { display: block; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.tip p { color: var(--text); margin: 0; }
+
+/* MODULE GRID */
+.module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (max-width: 580px) { .module-grid { grid-template-columns: 1fr; } }
+.module-card {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 18px;
+}
+.module-card .tool {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.module-card h4 { font-family: var(--font-head); font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+.module-card p { font-size: 0.78rem; color: var(--muted); }
+
+/* FAQ */
+.faq-item {
+  border-bottom: 1px solid var(--border); padding: 18px 0; cursor: pointer;
+}
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q {
+  display: flex; justify-content: space-between; align-items: center;
+  font-weight: 500; font-size: 0.95rem;
+}
+.faq-q .chevron { color: var(--muted); transition: transform 0.3s; }
+.faq-item.open .chevron { transform: rotate(180deg); }
+.faq-a { display: none; font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-top: 10px; }
+.faq-item.open .faq-a { display: block; }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border); padding: 32px 24px;
+  text-align: center; font-size: 0.78rem; color: var(--muted);
+}
+footer a { color: var(--gemini); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="ai-learning.html">AI<span>Masterclass</span></a>
+  <a class="back-btn" href="ai-learning.html">← Volver al curso</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">📖 Documentación · Versión 2.0</div>
+  <h1>Manual de uso</h1>
+  <p>Todo lo que necesitas saber para sacar el máximo partido a AI Masterclass en 5 minutos.</p>
+  <div class="toc">
+    <a href="#que-es">¿Qué es?</a>
+    <a href="#modulos">Los módulos</a>
+    <a href="#primeros-pasos">Primeros pasos</a>
+    <a href="#reto">Reto semanal</a>
+    <a href="#sandbox">Sandbox</a>
+    <a href="#progreso">Mi progreso</a>
+    <a href="#faq">Preguntas frecuentes</a>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- QUÉ ES -->
+  <div class="section" id="que-es">
+    <div class="section-tag" style="color:var(--claude)">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--claude)"></span>
+      Introducción
+    </div>
+    <h2>¿Qué es AI Masterclass?</h2>
+    <p>AI Masterclass es una plataforma de aprendizaje diseñada para equipos mixtos (técnicos y no técnicos) que ya conocen las IAs pero quieren sacarles más partido. No es un curso teórico — todo está orientado a la práctica inmediata en el trabajo real.</p>
+
+    <div class="card">
+      <h3>🎓 11 lecciones base permanentes</h3>
+      <p>Fundamentos y técnicas esenciales de Claude, Gemini y Kiro. Siempre disponibles, puedes volver a ellas cuando quieras.</p>
+    </div>
+    <div class="card">
+      <h3>⚡ 4 lecciones avanzadas nuevas cada semana</h3>
+      <p>Generadas automáticamente cada lunes con técnicas avanzadas, casos de uso reales y ejemplos de prompts listos para copiar.</p>
+    </div>
+    <div class="card">
+      <h3>🎯 Reto semanal con ejercicios guiados</h3>
+      <p>4 ejercicios prácticos cada semana con pasos detallados, prompts de ejemplo y criterios de éxito claros.</p>
+    </div>
+    <div class="card">
+      <h3>🧪 Sandbox para practicar en tiempo real</h3>
+      <p>Prueba tus prompts directamente en la plataforma usando Groq (gratis) sin salir de la página.</p>
+    </div>
+  </div>
+
+  <!-- MÓDULOS -->
+  <div class="section" id="modulos">
+    <div class="section-tag" style="color:var(--gemini)">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--gemini)"></span>
+      Contenido
+    </div>
+    <h2>Los módulos del curso</h2>
+    <p>El curso está organizado en 3 módulos permanentes, uno por herramienta. Cada módulo tiene lecciones con teoría, ejemplos de prompts y ejercicios.</p>
+
+    <div class="module-grid">
+      <div class="module-card">
+        <div class="tool" style="color:var(--claude)">Claude</div>
+        <h4>4 lecciones</h4>
+        <p>Prompts efectivos · Contexto largo · Razonamiento · Claude Code</p>
+      </div>
+      <div class="module-card">
+        <div class="tool" style="color:var(--gemini)">Gemini</div>
+        <h4>4 lecciones</h4>
+        <p>Google Workspace · Multimodalidad · Deep Research · Gems</p>
+      </div>
+      <div class="module-card">
+        <div class="tool" style="color:var(--kiro)">Kiro</div>
+        <h4>3 lecciones</h4>
+        <p>Spec-driven dev · Crear Specs · Agent Hooks</p>
+      </div>
+    </div>
+
+    <div class="tip" style="border-color:var(--gemini);margin-top:20px">
+      <strong style="color:var(--gemini)">💡 Recomendación</strong>
+      <p>Si eres nuevo, empieza por el módulo de Claude — sus técnicas de prompting son universales y te ayudarán en las otras herramientas también.</p>
+    </div>
+  </div>
+
+  <!-- PRIMEROS PASOS -->
+  <div class="section" id="primeros-pasos">
+    <div class="section-tag" style="color:var(--kiro)">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--kiro)"></span>
+      Cómo empezar
+    </div>
+    <h2>Primeros pasos</h2>
+    <p>Puedes empezar en 2 minutos sin configurar nada. Solo si quieres usar el Sandbox necesitarás una API key gratuita.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num" style="border-color:var(--claude);color:var(--claude)">1</div>
+        <div class="step-body">
+          <h4>Abre el curso</h4>
+          <p>Ve a la URL del curso. No necesitas cuenta ni registro — todo funciona directamente en el navegador.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="border-color:var(--claude);color:var(--claude)">2</div>
+        <div class="step-body">
+          <h4>Elige un módulo</h4>
+          <p>Usa la barra de navegación superior para ir a Claude, Gemini o Kiro. Haz clic en cualquier lección para expandirla.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="border-color:var(--claude);color:var(--claude)">3</div>
+        <div class="step-body">
+          <h4>Lee y practica</h4>
+          <p>Cada lección tiene teoría, ejemplos de prompts con botón "Copiar" y ejercicios. Responde los quizzes y completa los ejercicios de práctica.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="border-color:var(--claude);color:var(--claude)">4</div>
+        <div class="step-body">
+          <h4>Marca las lecciones completadas</h4>
+          <p>Al terminar cada lección, haz clic en "Marcar como completada". Tu progreso se guarda automáticamente en el navegador.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="border-color:var(--claude);color:var(--claude)">5</div>
+        <div class="step-body">
+          <h4>Explora el Reto Semanal</h4>
+          <p>Cada lunes aparecen 4 ejercicios nuevos en "🎯 Reto Semanal". Son ejercicios guiados paso a paso — perfectos para practicar en equipo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RETO SEMANAL -->
+  <div class="section" id="reto">
+    <div class="section-tag" style="color:var(--success)">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--success)"></span>
+      Reto Semanal
+    </div>
+    <h2>Cómo funciona el Reto Semanal</h2>
+    <p>Cada lunes a las 9h se generan automáticamente 4 ejercicios nuevos relacionados con un tema de IA. El objetivo es que el equipo los practique durante la semana y compare resultados.</p>
+
+    <div class="card">
+      <h3>🟢 Ejercicios Básicos (x2)</h3>
+      <p>Para cualquier persona del equipo. Incluyen pasos muy detallados y un prompt completo listo para copiar. No requieren experiencia técnica.</p>
+    </div>
+    <div class="card">
+      <h3>🟡 Ejercicios Intermedios (x2)</h3>
+      <p>Para quienes ya tienen algo de experiencia con las IAs. Requieren adaptar el prompt y tomar decisiones sobre cómo enfocar la tarea.</p>
+    </div>
+
+    <div class="tip" style="border-color:var(--success)">
+      <strong style="color:var(--success)">✅ Cómo sacarle partido en equipo</strong>
+      <p>Dedica 15 minutos a la semana a hacer al menos un ejercicio. Luego comparte el resultado con un compañero y comparad los outputs — las diferencias de enfoque son muy reveladoras.</p>
+    </div>
+
+    <div class="tip" style="border-color:var(--muted)">
+      <strong style="color:var(--muted)">🗓️ Rotación de temas</strong>
+      <p>El sistema rota entre 25 temas diferentes de forma automática — nunca se repite el mismo tema en menos de 6 meses. Los temas cubren desde prompting avanzado hasta detección de alucinaciones, pasando por casos de uso por rol.</p>
+    </div>
+  </div>
+
+  <!-- LECCIONES EXTRA -->
+  <div class="section" id="extra">
+    <div class="section-tag" style="color:var(--kiro)">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--kiro)"></span>
+      Lecciones Extra
+    </div>
+    <h2>Lecciones avanzadas semanales</h2>
+    <p>Cada semana se generan 4 lecciones extra de nivel avanzado sobre el tema de la semana. Cada lección incluye teoría, comparación de prompts (malo vs bueno) y un ejercicio de práctica guiado.</p>
+
+    <div class="card">
+      <h3>📖 Estructura de cada lección extra</h3>
+      <p><strong style="color:var(--text)">Teoría</strong> — Explicación del concepto con analogía del mundo real y cuándo usarlo.<br><br>
+      <strong style="color:var(--text)">Ejemplo real</strong> — Comparativa de cómo NO y cómo SÍ hacer la tarea, con prompts completos.<br><br>
+      <strong style="color:var(--text)">Práctica</strong> — Ejercicio guiado con prompt listo para copiar y pasos detallados.</p>
+    </div>
+
+    <div class="card">
+      <h3>📚 Histórico completo</h3>
+      <p>Todas las lecciones generadas se guardan en el histórico. Puedes acceder a cualquier semana anterior desde el botón "Ver histórico completo" en la sección de lecciones extra.</p>
+    </div>
+  </div>
+
+  <!-- SANDBOX -->
+  <div class="section" id="sandbox">
+    <div class="section-tag" style="color:var(--gemini)">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--gemini)"></span>
+      Sandbox
+    </div>
+    <h2>Cómo usar el Sandbox</h2>
+    <p>El Sandbox te permite probar prompts en tiempo real usando Groq (gratuito). Necesitas configurar tu API key una sola vez.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num" style="border-color:var(--gemini);color:var(--gemini)">1</div>
+        <div class="step-body">
+          <h4>Obtén tu API key de Groq (gratis)</h4>
+          <p>Ve a <a href="https://console.groq.com" target="_blank" style="color:var(--gemini)">console.groq.com</a> → crea una cuenta → API Keys → Create API Key. La key empieza por <code style="background:var(--surface2);padding:2px 6px;border-radius:4px;font-size:0.82rem">gsk_</code></p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="border-color:var(--gemini);color:var(--gemini)">2</div>
+        <div class="step-body">
+          <h4>Configúrala en el Sandbox</h4>
+          <p>En la sección Sandbox, pega tu key en el campo "Configura tu API key de Groq" y haz clic en Guardar. Solo lo harás una vez — se guarda en tu navegador.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="border-color:var(--gemini);color:var(--gemini)">3</div>
+        <div class="step-body">
+          <h4>Escribe o carga un prompt</h4>
+          <p>Puedes escribir tu propio prompt o usar uno de los 6 prompts de inicio rápido para empezar. Opcionalmente añade un contexto del sistema.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="border-color:var(--gemini);color:var(--gemini)">4</div>
+        <div class="step-body">
+          <h4>Envía y analiza la respuesta</h4>
+          <p>Haz clic en "Enviar prompt". Verás la respuesta junto con el modelo usado, los tokens consumidos y el tiempo de respuesta. Puedes guardar la respuesta como nota.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip" style="border-color:var(--gemini)">
+      <strong style="color:var(--gemini)">🎛️ Modelos disponibles</strong>
+      <p><strong>Llama 3.1 8B</strong> — Más rápido, ideal para pruebas rápidas · <strong>Llama 3.3 70B</strong> — Más potente, mejor calidad · <strong>Mixtral 8x7B</strong> — Mejor para textos largos y contexto amplio</p>
+    </div>
+  </div>
+
+  <!-- PROGRESO -->
+  <div class="section" id="progreso">
+    <div class="section-tag" style="color:var(--claude)">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--claude)"></span>
+      Progreso
+    </div>
+    <h2>Mi progreso y exportación</h2>
+    <p>La sección "Mi progreso" muestra cuántas lecciones has completado, el porcentaje por herramienta y las notas guardadas del Sandbox.</p>
+
+    <div class="card">
+      <h3>💾 Dónde se guarda tu progreso</h3>
+      <p>Todo se guarda en el <strong style="color:var(--text)">localStorage de tu navegador</strong> — no necesitas cuenta ni servidor. Esto significa que tu progreso está ligado al navegador y dispositivo que uses. Si cambias de navegador o limpias los datos del navegador, el progreso se reinicia.</p>
+    </div>
+
+    <div class="card">
+      <h3>📄 Exportar a PDF</h3>
+      <p>Desde "Mi progreso" puedes exportar un PDF con tus lecciones completadas, el porcentaje por herramienta y las notas del Sandbox. Útil para revisiones de equipo o para compartir tu avance con tu manager.</p>
+    </div>
+
+    <div class="tip" style="border-color:var(--claude)">
+      <strong style="color:var(--claude)">👥 Para managers de equipo</strong>
+      <p>Pide a cada miembro del equipo que exporte su PDF de progreso una vez al mes. Es una forma sencilla de ver quién está avanzando y en qué herramientas necesita más apoyo — sin dashboards ni sistemas complejos.</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section" id="faq">
+    <div class="section-tag" style="color:var(--muted)">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--muted)"></span>
+      FAQ
+    </div>
+    <h2>Preguntas frecuentes</h2>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">¿Tiene algún coste usar la plataforma? <span class="chevron">⌄</span></div>
+      <div class="faq-a">La plataforma en sí es completamente gratuita. El Sandbox usa la API de Groq, que también tiene un tier gratuito más que suficiente para uso normal (1.500 peticiones/día). Solo pagarías si superases ese límite, lo cual es muy difícil con uso habitual.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">¿Con qué frecuencia se actualiza el contenido? <span class="chevron">⌄</span></div>
+      <div class="faq-a">Cada lunes a las 9h se generan automáticamente: el Tip de la semana, 4 lecciones avanzadas nuevas y 4 ejercicios del Reto Semanal. Las 11 lecciones base son permanentes y no cambian.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">¿Puedo usar el curso en el móvil? <span class="chevron">⌄</span></div>
+      <div class="faq-a">Sí, la plataforma es responsive y funciona en móvil. Para el Sandbox es más cómodo usar un ordenador ya que necesitas escribir prompts largos, pero las lecciones y retos se ven perfectamente en cualquier dispositivo.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">¿Mi progreso se comparte con el resto del equipo? <span class="chevron">⌄</span></div>
+      <div class="faq-a">No. El progreso se guarda solo en tu navegador y es completamente privado. Para compartirlo con tu equipo o manager, usa el botón "Exportar PDF" en la sección "Mi progreso".</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">¿Qué pasa si el contenido semanal no se carga? <span class="chevron">⌄</span></div>
+      <div class="faq-a">El contenido semanal (Reto, Tip y Lecciones Extra) se genera cada lunes mediante un proceso automático en GitHub Actions. Si no se carga, puede ser que el proceso aún no haya corrido esa semana o que haya habido un error. Las 11 lecciones base siempre están disponibles independientemente de esto.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">¿Puedo sugerir temas o mejoras? <span class="chevron">⌄</span></div>
+      <div class="faq-a">La plataforma está alojada en GitHub — puedes abrir un issue en el repositorio con tu sugerencia. También puedes hablar con la persona que administra el repo en tu equipo para que añada o cambie contenido.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">¿Necesito tener cuentas en Claude, Gemini y Kiro? <span class="chevron">⌄</span></div>
+      <div class="faq-a">Para las lecciones teóricas no necesitas nada. Para practicar los ejercicios sí necesitarás acceso a las herramientas. Claude y Gemini tienen versiones gratuitas en claude.ai y gemini.google.com. Kiro es gratuito en su fase de preview en kiro.dev.</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  AI Masterclass · <a href="ai-learning.html">Volver al curso</a> · Actualizado automáticamente cada semana
+</footer>
+
+<script>
+function toggleFaq(el) {
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>
