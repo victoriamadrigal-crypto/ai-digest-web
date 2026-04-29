@@ -11,15 +11,15 @@ import requests
 
 SOURCES = [
     # Internacionales (en inglés)
-    {"url": "https://rss.arxiv.org/rss/cs.AI",                                                    "lang": "en", "name": "Arxiv cs.AI"},
-    {"url": "https://rss.arxiv.org/rss/cs.LG",                                                    "lang": "en", "name": "Arxiv cs.LG"},
+    {"url": "https://techcrunch.com/tag/artificial-intelligence/",                                                    "lang": "en", "name": "Arxiv cs.AI"},
+    {"url": "https://deepmind.google/blog/",                                                    "lang": "en", "name": "Arxiv cs.LG"},
     {"url": "https://www.deeplearning.ai/the-batch/feed/",                                         "lang": "en", "name": "The Batch"},
-    {"url": "https://venturebeat.com/category/ai/feed/",                                           "lang": "en", "name": "VentureBeat AI"},
+    {"url": "https://www.forbes.com/ai/",                                           "lang": "en", "name": "VentureBeat AI"},
     {"url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",                 "lang": "en", "name": "MIT Tech Review"},
     # Españolas (en español)
-    {"url": "https://www.technologyreview.es/feed/",                                               "lang": "es", "name": "MIT Tech Review ES"},
-    {"url": "https://www.xataka.com/tag/inteligencia-artificial/feed",                            "lang": "es", "name": "Xataka IA"},
-    {"url": "https://hipertextual.com/feed",                                                       "lang": "es", "name": "Hipertextual"},
+    {"url": "https://www.monosestocasticos.com/",                                               "lang": "es", "name": "MIT Tech Review ES"},
+    {"url": "hhttps://aplicacionesai.substack.com/",                            "lang": "es", "name": "Xataka IA"},
+    {"url": "https://mentesartificiales.substack.com/",                                                       "lang": "es", "name": "Hipertextual"},
     {"url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/tecnologia/portada","lang": "es", "name": "El País Tecnología"},
 ]
 
