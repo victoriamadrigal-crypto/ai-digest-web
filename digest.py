@@ -11,16 +11,16 @@ import requests
 
 SOURCES = [
     # Internacionales (en inglés)
-    {"url": "https://techcrunch.com/tag/artificial-intelligence/",                                                    "lang": "en", "name": "Arxiv cs.AI"},
-    {"url": "https://deepmind.google/blog/",                                                    "lang": "en", "name": "Arxiv cs.LG"},
-    {"url": "https://www.deeplearning.ai/the-batch/feed/",                                         "lang": "en", "name": "The Batch"},
-    {"url": "https://www.forbes.com/ai/",                                           "lang": "en", "name": "VentureBeat AI"},
-    {"url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",                 "lang": "en", "name": "MIT Tech Review"},
+    {"url": "https://techcrunch.com/tag/artificial-intelligence/feed/",          "lang": "en", "name": "TechCrunch AI"},
+    {"url": "https://www.deeplearning.ai/the-batch/feed/",                        "lang": "en", "name": "The Batch"},
+    {"url": "https://www.technologyreview.com/topic/artificial-intelligence/feed","lang": "en", "name": "MIT Tech Review"},
+    {"url": "https://venturebeat.com/category/ai/feed/",                          "lang": "en", "name": "VentureBeat AI"},
+    {"url": "https://feeds.feedburner.com/blogspot/gJZg",                         "lang": "en", "name": "Google DeepMind"},
     # Españolas (en español)
-    {"url": "https://www.monosestocasticos.com/",                                               "lang": "es", "name": "MIT Tech Review ES"},
-    {"url": "hhttps://aplicacionesai.substack.com/",                            "lang": "es", "name": "Xataka IA"},
-    {"url": "https://mentesartificiales.substack.com/",                                                       "lang": "es", "name": "Hipertextual"},
-    {"url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/tecnologia/portada","lang": "es", "name": "El País Tecnología"},
+    {"url": "https://aplicacionesai.substack.com/feed",                           "lang": "es", "name": "Aplicaciones IA"},
+    {"url": "https://mentesartificiales.substack.com/feed",                       "lang": "es", "name": "Mentes Artificiales"},
+    {"url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/tecnologia/portada", "lang": "es", "name": "El País Tecnología"},
+    {"url": "https://www.xataka.com/tag/inteligencia-artificial/feed",            "lang": "es", "name": "Xataka IA"},
 ]
 
 MAX_PER_SOURCE  = 2
