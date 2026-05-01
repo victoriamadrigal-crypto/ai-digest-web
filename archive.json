@@ -46,5 +46,11 @@
     "label": "30 Apr 2026",
     "count": 5,
     "file": "archive/2026-04-30.html"
+  },
+  {
+    "date": "2026-05-01",
+    "label": "01 May 2026",
+    "count": 5,
+    "file": "archive/2026-05-01.html"
   }
 ]
