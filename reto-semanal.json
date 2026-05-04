@@ -1,93 +1,93 @@
 {
-  "semana": "2026-04-27",
-  "num_semana": 18,
-  "tema": "IA para creación de contenido y narrativa de marca",
-  "titulo": "Creación de contenido",
-  "descripcion": "Contenido atractivo con IA",
+  "semana": "2026-05-04",
+  "num_semana": 19,
+  "tema": "optimización de prompts: de vago a preciso",
+  "titulo": "Optimiza tus prompts",
+  "descripcion": "Mejora la precisión de tus resultados",
   "ejercicios": [
     {
       "id": 1,
       "herramienta": "Claude",
       "nivel": "Basico",
-      "titulo": "Texto atractivo",
-      "objetivo": "Aprender a generar texto atractivo con Claude",
-      "contexto": "Este ejercicio es útil para crear contenido de marketing y publicidad. Con Claude, puedes generar texto atractivo y personalizado para tus campañas. Esto te ayudará a ahorrar tiempo y esfuerzo en la creación de contenido",
-      "prompt_ejemplo": "Escribe un anuncio publicitario para un nuevo producto de tecnología, dirigido a jóvenes adultos, con un tono divertido y emocionante, incluyendo características como velocidad, diseño innovador y precio asequible. El anuncio debe ser de 150 palabras y contener un llamado a la acción para visitar la tienda en línea. Asegúrate de incluir al menos dos emojis como 📱 y 💻 para hacerlo más atractivo",
+      "titulo": "Prompt básico",
+      "objetivo": "Aprender a crear un prompt claro y conciso",
+      "contexto": "Este ejercicio es útil para entender cómo funcionan los modelos de lenguaje y cómo pueden ser aplicados en tareas de escritura automática. En el trabajo real, esto puede ser útil para generar contenido de manera eficiente.",
+      "prompt_ejemplo": "Escribe un artículo de 200 palabras sobre los beneficios del ejercicio físico regular para la salud mental, dirigido a un público adulto joven, con un tono formal y un formato de artículo de blog. Asegúrate de incluir al menos dos puntos clave y una conclusión breve. El artículo debe ser original y no contener errores gramaticales o de puntuación.",
       "pasos": [
-        "Ve a https://www.claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Crear cuenta'",
-        "Una vez dentro, haz clic en el botón 'Comenzar' en la pantalla de bienvenida. Verás una interfaz con un campo de texto grande",
-        "Copia el prompt de ejemplo que aparece arriba en esta lección",
-        "Pégalo en el campo de texto 'Ingrese su prompt'. Antes de enviarlo, sustituye 'nuevo producto de tecnología' por el nombre de tu producto real",
-        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta",
-        "Lee la respuesta y evalúa: ¿el texto es atractivo y divertido? ¿Incluye las características y el llamado a la acción solicitados? Si no cumple, prueba añadir al final del prompt: 'con un tono más juvenil y enérgico'",
-        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura"
+        "Ve a https://www.claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Sign up' en la esquina superior derecha.",
+        "Una vez dentro, haz clic en el botón 'New Prompt' en la barra superior. Verás un campo de texto vacío donde puedes escribir tu prompt.",
+        "Copia el prompt de ejemplo que aparece arriba en esta lección.",
+        "Pégalo en el campo de texto 'Prompt' y ajusta el parámetro 'Length' a 200 palabras. Antes de enviarlo, sustituye 'los beneficios del ejercicio físico regular' por un tema de tu interés.",
+        "Haz clic en el botón 'Generate' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
+        "Lee la respuesta y evalúa: si el artículo generado es coherente y aborda el tema de manera clara. Si no cumple, prueba añadir al final del prompt: 'Utilice un tono formal y evite jerga técnica'.",
+        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
       ],
-      "criterio_exito": "El texto generado es de 150 palabras, incluye características como velocidad y diseño innovador, y contiene un llamado a la acción para visitar la tienda en línea",
+      "criterio_exito": "El artículo generado debe tener al menos 200 palabras, ser gramaticalmente correcto y abordar el tema de manera clara y concisa.",
       "tiempo_estimado": "15 min",
-      "consejo_pro": "Utiliza el parámetro 'tono' en el prompt para ajustar el estilo del texto generado. Por ejemplo, puedes agregar 'tono: formal' o 'tono: divertido' para cambiar el estilo del texto"
+      "consejo_pro": "Asegúrate de especificar el formato de salida esperado, como un artículo de blog o un informe, para ayudar al modelo a entender el contexto y generar contenido más relevante."
     },
     {
       "id": 2,
       "herramienta": "Gemini",
       "nivel": "Basico",
-      "titulo": "Resumen de contenido",
-      "objetivo": "Aprender a generar resúmenes de contenido con Gemini",
-      "contexto": "Este ejercicio es útil para resumir artículos y documentos largos. Con Gemini, puedes generar resúmenes precisos y concisos. Esto te ayudará a ahorrar tiempo y esfuerzo en la lectura y comprensión de contenido",
-      "prompt_ejemplo": "Resumen del artículo 'La importancia de la Inteligencia Artificial en la industria' publicado en la revista 'Tecnología y Negocios' en enero de 2023. El resumen debe ser de 100 palabras y contener los puntos principales del artículo. Asegúrate de incluir al menos una estadística o dato interesante para hacerlo más atractivo",
+      "titulo": "Prompt con restricciones",
+      "objetivo": "Aprender a crear un prompt con restricciones claras",
+      "contexto": "Este ejercicio es útil para entender cómo los modelos de lenguaje pueden ser utilizados para generar contenido que cumpla con ciertas restricciones. En el trabajo real, esto puede ser útil para generar contenido que se ajuste a ciertas políticas o regulaciones.",
+      "prompt_ejemplo": "Escribe un poema de 14 líneas sobre la naturaleza, sin utilizar la palabra 'naturaleza' o 'mundo', con un tono reflexivo y un formato de soneto. Asegúrate de incluir al menos una metáfora y una alusión a la estación del año. El poema debe ser original y no contener errores gramaticales o de puntuación.",
       "pasos": [
-        "Ve a https://gemini.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Crear cuenta'",
-        "Una vez dentro, haz clic en el botón 'Comenzar' en la pantalla de bienvenida. Verás una interfaz con un campo de texto grande",
-        "Copia el prompt de ejemplo que aparece arriba en esta lección",
-        "Pégolo en el campo de texto 'Ingrese su prompt'. Antes de enviarlo, sustituye 'artículo' por el título real del artículo que deseas resumir",
-        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta",
-        "Lee la respuesta y evalúa: ¿el resumen es preciso y conciso? ¿Incluye los puntos principales del artículo? Si no cumple, prueba añadir al final del prompt: 'con un enfoque en las tendencias actuales'",
-        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura"
+        "Ve a https://gemini.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Sign up' en la esquina superior derecha.",
+        "Una vez dentro, haz clic en el botón 'New Prompt' en la barra superior. Verás un campo de texto vacío donde puedes escribir tu prompt.",
+        "Copia el prompt de ejemplo que aparece arriba en esta lección.",
+        "Pégalo en el campo de texto 'Prompt' y ajusta el parámetro 'Length' a 14 líneas. Antes de enviarlo, sustituye 'la naturaleza' por un tema de tu interés.",
+        "Haz clic en el botón 'Generate' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
+        "Lee la respuesta y evalúa: si el poema generado es coherente y cumple con las restricciones especificadas. Si no cumple, prueba añadir al final del prompt: 'Utilice un lenguaje formal y evite la jerga técnica'.",
+        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
       ],
-      "criterio_exito": "El resumen generado es de 100 palabras y contiene los puntos principales del artículo",
-      "tiempo_estimado": "10 min",
-      "consejo_pro": "Utiliza el parámetro 'longitud' en el prompt para ajustar la longitud del resumen. Por ejemplo, puedes agregar 'longitud: 50 palabras' para generar un resumen más corto"
+      "criterio_exito": "El poema generado debe tener al menos 14 líneas, ser gramaticalmente correcto y cumplir con las restricciones especificadas.",
+      "tiempo_estimado": "15 min",
+      "consejo_pro": "Asegúrate de especificar claramente las restricciones y los parámetros del prompt, como el formato y el tono, para ayudar al modelo a entender el contexto y generar contenido más relevante."
     },
     {
       "id": 3,
       "herramienta": "Kiro",
       "nivel": "Intermedio",
-      "titulo": "Contenido de blog",
-      "objetivo": "Aprender a generar contenido de blog con Kiro",
-      "contexto": "Este ejercicio es útil para crear contenido de blog de alta calidad. Con Kiro, puedes generar artículos bien investigados y escritos. Esto te ayudará a atraer y retener a tu audiencia",
-      "prompt_ejemplo": "Escribe un artículo de blog sobre 'La importancia de la seguridad en la nube' para un público de profesionales de TI. El artículo debe ser de 500 palabras y contener secciones sobre la introducción, beneficios, desafíos y conclusiones. Asegúrate de incluir al menos tres estadísticas o datos interesantes para hacerlo más atractivo",
+      "titulo": "Prompt con contexto",
+      "objetivo": "Aprender a crear un prompt con contexto claro",
+      "contexto": "Este ejercicio es útil para entender cómo los modelos de lenguaje pueden ser utilizados para generar contenido que se ajuste a un contexto específico. En el trabajo real, esto puede ser útil para generar contenido que se ajuste a una campaña de marketing o una estrategia de comunicación.",
+      "prompt_ejemplo": "Escribe un correo electrónico de 150 palabras para un cliente que ha expresado interés en un producto de tecnología, con un tono amigable y un formato de correo electrónico comercial. Asegúrate de incluir al menos dos puntos clave sobre el producto y una llamada a la acción. El correo electrónico debe ser original y no contener errores gramaticales o de puntuación. El contexto es que el cliente ha expresado interés en el producto en una feria de tecnología y ha proporcionado su correo electrónico para obtener más información.",
       "pasos": [
-        "Ve a https://kiro.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Crear cuenta'",
-        "Una vez dentro, haz clic en el botón 'Comenzar' en la pantalla de bienvenida. Verás una interfaz con un campo de texto grande",
-        "Copia el prompt de ejemplo que aparece arriba en esta lección",
-        "Pégolo en el campo de texto 'Ingrese su prompt'. Antes de enviarlo, sustituye 'seguridad en la nube' por el tema real que deseas tratar",
-        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 10 y 30 segundos a que aparezca la respuesta",
-        "Lee la respuesta y evalúa: ¿el artículo es bien investigado y escrito? ¿Incluye secciones sobre introducción, beneficios, desafíos y conclusiones? Si no cumple, prueba añadir al final del prompt: 'con un enfoque en las mejores prácticas'",
-        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura"
+        "Ve a https://kiro.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Sign up' en la esquina superior derecha.",
+        "Una vez dentro, haz clic en el botón 'New Prompt' en la barra superior. Verás un campo de texto vacío donde puedes escribir tu prompt.",
+        "Copia el prompt de ejemplo que aparece arriba en esta lección.",
+        "Pégalo en el campo de texto 'Prompt' y ajusta el parámetro 'Length' a 150 palabras. Antes de enviarlo, sustituye 'el producto de tecnología' por un producto de tu interés.",
+        "Haz clic en el botón 'Generate' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
+        "Lee la respuesta y evalúa: si el correo electrónico generado es coherente y se ajusta al contexto proporcionado. Si no cumple, prueba añadir al final del prompt: 'Utilice un lenguaje amigable y evite la jerga técnica'.",
+        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
       ],
-      "criterio_exito": "El artículo generado es de 500 palabras y contiene secciones sobre introducción, beneficios, desafíos y conclusiones",
-      "tiempo_estimado": "30 min",
-      "consejo_pro": "Utiliza el parámetro 'tono' en el prompt para ajustar el estilo del artículo. Por ejemplo, puedes agregar 'tono: formal' o 'tono: conversacional' para cambiar el estilo del artículo"
+      "criterio_exito": "El correo electrónico generado debe tener al menos 150 palabras, ser gramaticalmente correcto y ajustarse al contexto proporcionado.",
+      "tiempo_estimado": "20 min",
+      "consejo_pro": "Asegúrate de proporcionar un contexto claro y detallado, incluyendo cualquier información relevante sobre el producto o la audiencia, para ayudar al modelo a generar contenido más relevante y personalizado."
     },
     {
       "id": 4,
       "herramienta": "Claude",
       "nivel": "Intermedio",
-      "titulo": "Guion de video",
-      "objetivo": "Aprender a generar guiones de video con Claude",
-      "contexto": "Este ejercicio es útil para crear contenido de video de alta calidad. Con Claude, puedes generar guiones bien estructurados y escritos. Esto te ayudará a comunicar tus ideas de manera efectiva",
-      "prompt_ejemplo": "Escribe un guion de video para un anuncio publicitario de 60 segundos sobre 'La importancia de la sostenibilidad en la industria' para un público de consumidores conscientes. El guion debe contener una introducción, un problema, una solución y un llamado a la acción. Asegúrate de incluir al menos dos estadísticas o datos interesantes para hacerlo más atractivo",
+      "titulo": "Prompt con múltiples requisitos",
+      "objetivo": "Aprender a crear un prompt con múltiples requisitos claros",
+      "contexto": "Este ejercicio es útil para entender cómo los modelos de lenguaje pueden ser utilizados para generar contenido que cumpla con múltiples requisitos. En el trabajo real, esto puede ser útil para generar contenido que se ajuste a una variedad de necesidades y audiencias.",
+      "prompt_ejemplo": "Escribe un informe de 250 palabras sobre el impacto del cambio climático en la economía, con un tono formal y un formato de informe académico. Asegúrate de incluir al menos tres puntos clave sobre el impacto del cambio climático en la economía y una conclusión breve. El informe debe ser original y no contener errores gramaticales o de puntuación. Además, debe incluir una tabla o gráfico que ilustre los datos clave. El contexto es que el informe es para un curso de economía y debe ser presentado en una semana.",
       "pasos": [
-        "Ve a https://www.claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Crear cuenta'",
-        "Una vez dentro, haz clic en el botón 'Comenzar' en la pantalla de bienvenida. Verás una interfaz con un campo de texto grande",
-        "Copia el prompt de ejemplo que aparece arriba en esta lección",
-        "Pégolo en el campo de texto 'Ingrese su prompt'. Antes de enviarlo, sustituye 'sostenibilidad en la industria' por el tema real que deseas tratar",
-        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 10 y 30 segundos a que aparezca la respuesta",
-        "Lee la respuesta y evalúa: ¿el guion es bien estructurado y escrito? ¿Incluye una introducción, un problema, una solución y un llamado a la acción? Si no cumple, prueba añadir al final del prompt: 'con un enfoque en las emociones'",
-        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura"
+        "Ve a https://www.claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Sign up' en la esquina superior derecha.",
+        "Una vez dentro, haz clic en el botón 'New Prompt' en la barra superior. Verás un campo de texto vacío donde puedes escribir tu prompt.",
+        "Copia el prompt de ejemplo que aparece arriba en esta lección.",
+        "Pégalo en el campo de texto 'Prompt' y ajusta el parámetro 'Length' a 250 palabras. Antes de enviarlo, sustituye 'el cambio climático' por un tema de tu interés.",
+        "Haz clic en el botón 'Generate' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
+        "Lee la respuesta y evalúa: si el informe generado es coherente y cumple con los requisitos especificados. Si no cumple, prueba añadir al final del prompt: 'Utilice un lenguaje formal y evite la jerga técnica'.",
+        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
       ],
-      "criterio_exito": "El guion generado contiene una introducción, un problema, una solución y un llamado a la acción",
-      "tiempo_estimado": "30 min",
-      "consejo_pro": "Utiliza el parámetro 'formato' en el prompt para ajustar el formato del guion. Por ejemplo, puedes agregar 'formato: guion de video' para generar un guion específico para video"
+      "criterio_exito": "El informe generado debe tener al menos 250 palabras, ser gramaticalmente correcto y cumplir con los requisitos especificados, incluyendo la tabla o gráfico.",
+      "tiempo_estimado": "25 min",
+      "consejo_pro": "Asegúrate de especificar claramente los requisitos y parámetros del prompt, incluyendo el formato y el tono, y de proporcionar un contexto claro y detallado, para ayudar al modelo a generar contenido más relevante y personalizado."
     }
   ]
 }
