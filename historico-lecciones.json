@@ -38,5 +38,45 @@
     "titulo": "Toma de Decisiones Ética",
     "subtitulo": "Aprenderá a diseñar algoritmos de toma de decisiones ética para la IA",
     "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-04",
+    "tema": "RAG y gestión de conocimiento con IA",
+    "id": "extra-19-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Optimización RAG",
+    "subtitulo": "Aprenderá a optimizar la recuperación de información en RAG",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-04",
+    "tema": "RAG y gestión de conocimiento con IA",
+    "id": "extra-19-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Gestión de conocimiento",
+    "subtitulo": "Aprenderá a gestionar y mantener la base de conocimiento de un sistema de RAG",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-04",
+    "tema": "RAG y gestión de conocimiento con IA",
+    "id": "extra-19-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Análisis de conocimiento",
+    "subtitulo": "Aprenderá a analizar y evaluar la base de conocimiento de un sistema de RAG",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-04",
+    "tema": "RAG y gestión de conocimiento con IA",
+    "id": "extra-19-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Integración de fuentes de conocimiento",
+    "subtitulo": "Aprenderá a integrar fuentes de conocimiento para mejorar la precisión y la relevancia de las respuestas del sistema de RAG",
+    "duracion": "25 min"
   }
 ]
