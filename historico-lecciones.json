@@ -78,5 +78,45 @@
     "titulo": "Integración de fuentes de conocimiento",
     "subtitulo": "Aprenderá a integrar fuentes de conocimiento para mejorar la precisión y la relevancia de las respuestas del sistema de RAG",
     "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-11",
+    "tema": "evaluación y benchmarking de modelos para casos de uso reales",
+    "id": "extra-20-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Evaluación de Modelos",
+    "subtitulo": "Aprenderá a evaluar modelos de IA de manera efectiva",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-11",
+    "tema": "evaluación y benchmarking de modelos para casos de uso reales",
+    "id": "extra-20-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Benchmarking de Modelos",
+    "subtitulo": "Aprenderá a comparar modelos de IA de manera efectiva",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-11",
+    "tema": "evaluación y benchmarking de modelos para casos de uso reales",
+    "id": "extra-20-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Evaluación de Modelos de Regresión",
+    "subtitulo": "Aprenderá a evaluar modelos de regresión de manera efectiva",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-11",
+    "tema": "evaluación y benchmarking de modelos para casos de uso reales",
+    "id": "extra-20-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Evaluación de Modelos de Clustering",
+    "subtitulo": "Aprenderá a evaluar modelos de clustering de manera efectiva",
+    "duracion": "25 min"
   }
 ]

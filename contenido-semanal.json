@@ -1,188 +1,184 @@
 {
-  "semana": "2026-05-04",
-  "tema": "RAG y gestión de conocimiento con IA",
+  "semana": "2026-05-11",
+  "tema": "evaluación y benchmarking de modelos para casos de uso reales",
   "tip": {
-    "semana": "2026-05-04",
-    "tema": "RAG y gestión de conocimiento con IA",
-    "emoji": "💡",
-    "titulo": "RAG para conocimiento",
-    "resumen": "Aplica RAG para gestionar conocimiento",
-    "explicacion": "La técnica RAG (Rojo, Amarillo, Verde) se utiliza para categorizar y priorizar el conocimiento en función de su relevancia y actualidad. Esto permite a los profesionales identificar áreas de conocimiento que requieren actualización o revisión. La IA puede ayudar a automatizar este proceso mediante algoritmos de clasificación y análisis de texto. La técnica RAG es especialmente útil en entornos donde la información cambia rápidamente.",
-    "ejemplo_prompt": "Para aplicar la técnica RAG con IA, puedes utilizar el siguiente prompt en una herramienta de lenguaje natural como Claude: 'Clasifica los siguientes artículos de investigación en Rojo (obsoleto), Amarillo (relevante pero no actualizado) o Verde (actualizado y relevante) en función de su fecha de publicación y contenido: [lista de artículos de investigación]'. Luego, puedes utilizar los resultados para actualizar y refinar tu base de conocimiento.",
-    "cuando_usarlo": "Cuando se necesite actualizar una base de conocimiento, al inicio de un nuevo proyecto o cuando se produzcan cambios significativos en la industria",
+    "semana": "2026-05-11",
+    "tema": "evaluación y benchmarking de modelos para casos de uso reales",
+    "emoji": "📊",
+    "titulo": "Evaluación de Modelos con SHAP",
+    "resumen": "Evaluación de modelos con SHAP para entender predicciones",
+    "explicacion": "La técnica SHAP (SHapley Additive exPlanations) es una herramienta para explicar y evaluar modelos de aprendizaje automático, asignando un valor a cada característica de un modelo para entender su contribución a la predicción final. Esto funciona bien porque proporciona una visión detallada de cómo cada característica influye en la predicción. Se utiliza cuando se necesita una comprensión profunda de los modelos y sus predicciones.",
+    "ejemplo_prompt": "Utiliza la biblioteca SHAP en Python con el comando `shap.initjs()` y luego `shap.force_plot()` para visualizar la contribución de cada característica en un modelo de clasificación, como `shap.force_plot(shap_values, X_test, matplotlib=True)`",
+    "cuando_usarlo": "Se aplica en la evaluación de modelos de crédito, en la detección de fraude y en la optimización de procesos de marketing",
     "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-19-1",
-      "semana": "2026-05-04",
+      "id": "extra-20-1",
+      "semana": "2026-05-11",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Optimización RAG",
-      "subtitulo": "Aprenderá a optimizar la recuperación de información en RAG",
+      "titulo": "Evaluación de Modelos",
+      "subtitulo": "Aprenderá a evaluar modelos de IA de manera efectiva",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Recuperación de información",
-        "explicacion": "La recuperación de información es el proceso de encontrar y recuperar información relevante de una gran base de datos o conocimiento. En el contexto de RAG, la recuperación de información es crucial para proporcionar respuestas precisas y relevantes a las consultas del usuario. La recuperación de información implica la indexación de la base de conocimiento, la creación de modelos de lenguaje y la aplicación de algoritmos de recuperación de información. La optimización de la recuperación de información es fundamental para mejorar la precisión y la eficiencia de los sistemas de RAG.",
-        "analogia": "La recuperación de información es similar a buscar un libro en una biblioteca. Debes saber dónde buscar, cómo buscar y qué buscar para encontrar el libro correcto.",
+        "concepto": "Evaluación de Modelos",
+        "explicacion": "La evaluación de modelos es un paso crucial en el desarrollo de sistemas de inteligencia artificial. Permite determinar la precisión y eficacia de un modelo en un conjunto de datos específico. Esto es importante porque ayuda a identificar áreas de mejora y a comparar diferentes modelos. La evaluación se puede realizar mediante métricas como la precisión, la recall y la F1-score. Es fundamental elegir la métrica adecuada según el problema que se esté tratando de resolver.",
+        "analogia": "La evaluación de modelos es similar a evaluar el rendimiento de un atleta en una competencia. Se miden los logros y se comparan con los objetivos establecidos para determinar el nivel de éxito.",
         "cuando_usarlo": [
-          "Cuando se necesita recuperar información precisa y relevante",
-          "Cuando la base de conocimiento es grande y compleja",
-          "Cuando se necesita mejorar la eficiencia de la recuperación de información",
-          "Cuando se necesita reducir el tiempo de respuesta de los sistemas de RAG"
+          "Cuando se desarrolla un nuevo modelo de IA",
+          "Cuando se necesita comparar diferentes modelos",
+          "Cuando se busca mejorar la precisión de un modelo existente",
+          "Cuando se necesita evaluar el impacto de un modelo en un negocio o organización"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de RAG para responder a consultas de clientes",
-        "prompt_malo": "¿Cuál es la respuesta a la consulta del cliente?",
-        "prompt_bueno": "¿Cuál es la respuesta más precisa y relevante a la consulta del cliente, considerando su historial de compras y preferencias?",
-        "por_que_mejor": "El prompt bueno es mejor porque considera el contexto y la información adicional del cliente, lo que permite proporcionar una respuesta más precisa y relevante."
+        "caso": "Un caso de uso real es el desarrollo de un modelo de clasificación de imágenes para un sitio web de compras en línea",
+        "prompt_malo": "Escribe un programa que clasifique imágenes",
+        "prompt_bueno": "Desarrolla un modelo de clasificación de imágenes que pueda distinguir entre 10 categorías de productos en un sitio web de compras en línea, utilizando un conjunto de datos de 10.000 imágenes etiquetadas y evaluando su rendimiento mediante la precisión y la recall",
+        "por_que_mejor": "El prompt bueno es mejor porque especifica claramente el objetivo, el conjunto de datos y las métricas de evaluación"
       },
       "practica": {
-        "titulo": "Optimizar la recuperación de información en RAG",
-        "objetivo": "Mejorar la precisión y eficiencia de la recuperación de información en un sistema de RAG",
-        "prompt_practica": "Crear un modelo de lenguaje que permita recuperar información precisa y relevante de una base de conocimiento de 100.000 documentos, considerando la frecuencia de las palabras y la estructura de los documentos. La salida debe ser un conjunto de 10 documentos más relevantes para la consulta del usuario.",
+        "titulo": "Evaluación de Modelos de Clasificación",
+        "objetivo": "Evaluar el rendimiento de un modelo de clasificación de imágenes",
+        "prompt_practica": "Desarrolla un modelo de clasificación de imágenes que pueda distinguir entre 5 categorías de productos en un sitio web de compras en línea, utilizando un conjunto de datos de 5.000 imágenes etiquetadas y evaluando su rendimiento mediante la precisión y la recall. Utiliza la herramienta Claude para desarrollar y evaluar el modelo. El modelo debe ser capaz de clasificar imágenes con un tamaño de 256x256 píxeles y debe ser entrenado durante 10 épocas. La precisión y la recall deben ser calculadas y comparadas con un modelo de clasificación básico.",
         "pasos": [
-          "Paso 1: Crear un conjunto de entrenamiento con 10.000 documentos y 100 consultas de ejemplo",
-          "Paso 2: Utilizar la herramienta Claude para crear un modelo de lenguaje y entrenarlo con el conjunto de entrenamiento",
-          "Paso 3: Evaluar el modelo con un conjunto de prueba de 1.000 consultas y medir la precisión y la eficiencia de la recuperación de información",
-          "Paso 4: Refinar el modelo ajustando los hiperparámetros y evaluando nuevamente su desempeño",
-          "Paso 5: Implementar el modelo en un sistema de RAG y evaluar su desempeño en un entorno real"
+          "Paso 1: Acceder a la plataforma de Claude y crear un nuevo proyecto de clasificación de imágenes",
+          "Paso 2: Cargar el conjunto de datos de 5.000 imágenes etiquetadas y dividirlo en conjuntos de entrenamiento y prueba",
+          "Paso 3: Desarrollar y entrenar el modelo de clasificación utilizando la herramienta Claude",
+          "Paso 4: Evaluar el rendimiento del modelo mediante la precisión y la recall, y compararlo con un modelo de clasificación básico",
+          "Paso 5: Guardar y aplicar el modelo evaluado para futuras mejoras"
         ],
-        "criterio_exito": "La precisión de la recuperación de información es mayor al 90% y el tiempo de respuesta es menor a 1 segundo"
+        "criterio_exito": "El modelo debe ser capaz de clasificar imágenes con una precisión del 90% y una recall del 85%"
       },
       "recursos": [
-        "Técnica de indexación de documentos",
-        "Algoritmos de recuperación de información"
+        "La documentación oficial de Claude para el desarrollo de modelos de clasificación de imágenes"
       ]
     },
     {
-      "id": "extra-19-2",
-      "semana": "2026-05-04",
+      "id": "extra-20-2",
+      "semana": "2026-05-11",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Gestión de conocimiento",
-      "subtitulo": "Aprenderá a gestionar y mantener la base de conocimiento de un sistema de RAG",
+      "titulo": "Benchmarking de Modelos",
+      "subtitulo": "Aprenderá a comparar modelos de IA de manera efectiva",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Gestión de conocimiento",
-        "explicacion": "La gestión de conocimiento es el proceso de crear, almacenar, recuperar y mantener la base de conocimiento de un sistema de RAG. La gestión de conocimiento implica la creación de un modelo de conocimiento, la integración de fuentes de conocimiento y la actualización y refinamiento continuo de la base de conocimiento. La gestión de conocimiento es fundamental para mantener la precisión y la relevancia de las respuestas del sistema de RAG.",
-        "analogia": "La gestión de conocimiento es similar a mantener una biblioteca. Debes agregar nuevos libros, eliminar libros obsoletos y mantener la organización y el orden de la biblioteca.",
+        "concepto": "Benchmarking de Modelos",
+        "explicacion": "El benchmarking de modelos es un proceso que permite comparar el rendimiento de diferentes modelos de IA en un conjunto de datos específico. Esto es importante porque ayuda a identificar el modelo más adecuado para un problema específico y a evaluar el impacto de diferentes técnicas de optimización. El benchmarking se puede realizar mediante métricas como el tiempo de entrenamiento, el uso de memoria y la precisión.",
+        "analogia": "El benchmarking de modelos es similar a comparar el rendimiento de diferentes coches en una pista de carreras. Se miden los tiempos de vuelta y se comparan para determinar el coche más rápido.",
         "cuando_usarlo": [
-          "Cuando se necesita crear una base de conocimiento para un sistema de RAG",
-          "Cuando la base de conocimiento es desactualizada o incompleta",
-          "Cuando se necesita mejorar la precisión y la relevancia de las respuestas del sistema de RAG",
-          "Cuando se necesita reducir el tiempo y el esfuerzo requeridos para mantener la base de conocimiento"
+          "Cuando se necesita comparar diferentes modelos de IA",
+          "Cuando se busca evaluar el impacto de diferentes técnicas de optimización",
+          "Cuando se necesita identificar el modelo más adecuado para un problema específico",
+          "Cuando se necesita evaluar el rendimiento de un modelo en diferentes conjuntos de datos"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de RAG para responder a consultas de clientes",
-        "prompt_malo": "¿Cuál es la respuesta a la consulta del cliente?",
-        "prompt_bueno": "¿Cuál es la respuesta más precisa y relevante a la consulta del cliente, considerando su historial de compras y preferencias, y utilizando la base de conocimiento actualizada y refinada?",
-        "por_que_mejor": "El prompt bueno es mejor porque considera la base de conocimiento actualizada y refinada, lo que permite proporcionar una respuesta más precisa y relevante."
+        "caso": "Un caso de uso real es el desarrollo de un modelo de clasificación de texto para un sitio web de noticias",
+        "prompt_malo": "Escribe un programa que clasifique texto",
+        "prompt_bueno": "Desarrolla un modelo de clasificación de texto que pueda distinguir entre 10 categorías de noticias en un sitio web de noticias, utilizando un conjunto de datos de 10.000 artículos etiquetados y evaluando su rendimiento mediante la precisión y la recall, y compara su rendimiento con un modelo de clasificación básico",
+        "por_que_mejor": "El prompt bueno es mejor porque especifica claramente el objetivo, el conjunto de datos y las métricas de evaluación"
       },
       "practica": {
-        "titulo": "Gestionar y mantener la base de conocimiento de un sistema de RAG",
-        "objetivo": "Crear y mantener una base de conocimiento precisa y relevante para un sistema de RAG",
-        "prompt_practica": "Crear un modelo de conocimiento que incluya 10.000 conceptos y 100 relaciones entre ellos, y utilizar la herramienta Gemini para integrar 5 fuentes de conocimiento y actualizar la base de conocimiento cada semana. La salida debe ser un informe que describa la precisión y la relevancia de la base de conocimiento.",
+        "titulo": "Benchmarking de Modelos de Clasificación de Texto",
+        "objetivo": "Comparar el rendimiento de diferentes modelos de clasificación de texto",
+        "prompt_practica": "Desarrolla tres modelos de clasificación de texto que puedan distinguir entre 5 categorías de noticias en un sitio web de noticias, utilizando un conjunto de datos de 5.000 artículos etiquetados y evaluando su rendimiento mediante la precisión y la recall. Utiliza la herramienta Gemini para desarrollar y evaluar los modelos. Los modelos deben ser capaces de clasificar artículos con un tamaño de 256 palabras y deben ser entrenados durante 10 épocas. La precisión y la recall deben ser calculadas y comparadas entre los tres modelos.",
         "pasos": [
-          "Paso 1: Crear un modelo de conocimiento con 10.000 conceptos y 100 relaciones entre ellos",
-          "Paso 2: Utilizar la herramienta Gemini para integrar 5 fuentes de conocimiento y actualizar la base de conocimiento",
-          "Paso 3: Evaluar la precisión y la relevancia de la base de conocimiento utilizando un conjunto de prueba de 1.000 consultas",
-          "Paso 4: Refinar la base de conocimiento ajustando los parámetros de integración y evaluando nuevamente su desempeño",
-          "Paso 5: Implementar la base de conocimiento en un sistema de RAG y evaluar su desempeño en un entorno real"
+          "Paso 1: Acceder a la plataforma de Gemini y crear un nuevo proyecto de clasificación de texto",
+          "Paso 2: Cargar el conjunto de datos de 5.000 artículos etiquetados y dividirlo en conjuntos de entrenamiento y prueba",
+          "Paso 3: Desarrollar y entrenar los tres modelos de clasificación utilizando la herramienta Gemini",
+          "Paso 4: Evaluar el rendimiento de los tres modelos mediante la precisión y la recall, y compararlos entre sí",
+          "Paso 5: Guardar y aplicar el modelo más adecuado para futuras mejoras"
         ],
-        "criterio_exito": "La precisión de la base de conocimiento es mayor al 95% y el tiempo de respuesta es menor a 1 segundo"
+        "criterio_exito": "El modelo más adecuado debe ser capaz de clasificar artículos con una precisión del 90% y una recall del 85%"
       },
       "recursos": [
-        "Técnica de creación de modelos de conocimiento",
-        "Herramientas de integración de fuentes de conocimiento"
+        "La documentación oficial de Gemini para el desarrollo de modelos de clasificación de texto"
       ]
     },
     {
-      "id": "extra-19-3",
-      "semana": "2026-05-04",
+      "id": "extra-20-3",
+      "semana": "2026-05-11",
       "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Análisis de conocimiento",
-      "subtitulo": "Aprenderá a analizar y evaluar la base de conocimiento de un sistema de RAG",
+      "titulo": "Evaluación de Modelos de Regresión",
+      "subtitulo": "Aprenderá a evaluar modelos de regresión de manera efectiva",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Análisis de conocimiento",
-        "explicacion": "El análisis de conocimiento es el proceso de evaluar y analizar la base de conocimiento de un sistema de RAG para identificar patrones, relaciones y tendencias. El análisis de conocimiento implica la aplicación de técnicas de aprendizaje automático y análisis de datos para extraer insights y recomendaciones de la base de conocimiento. El análisis de conocimiento es fundamental para mejorar la precisión y la relevancia de las respuestas del sistema de RAG.",
-        "analogia": "El análisis de conocimiento es similar a analizar un informe de ventas. Debes identificar patrones y tendencias en los datos para tomar decisiones informadas.",
+        "concepto": "Evaluación de Modelos de Regresión",
+        "explicacion": "La evaluación de modelos de regresión es un proceso que permite determinar la precisión y eficacia de un modelo de regresión en un conjunto de datos específico. Esto es importante porque ayuda a identificar áreas de mejora y a comparar diferentes modelos. La evaluación se puede realizar mediante métricas como el error cuadrático medio y el coeficiente de determinación.",
+        "analogia": "La evaluación de modelos de regresión es similar a evaluar la precisión de un predictor de precios de acciones. Se miden los errores y se comparan con los objetivos establecidos para determinar el nivel de éxito.",
         "cuando_usarlo": [
-          "Cuando se necesita evaluar la precisión y la relevancia de la base de conocimiento",
-          "Cuando se necesita identificar patrones y tendencias en la base de conocimiento",
-          "Cuando se necesita mejorar la precisión y la relevancia de las respuestas del sistema de RAG",
-          "Cuando se necesita reducir el tiempo y el esfuerzo requeridos para mantener la base de conocimiento"
+          "Cuando se desarrolla un nuevo modelo de regresión",
+          "Cuando se necesita comparar diferentes modelos de regresión",
+          "Cuando se busca mejorar la precisión de un modelo de regresión existente",
+          "Cuando se necesita evaluar el impacto de un modelo de regresión en un negocio o organización"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de RAG para responder a consultas de clientes",
-        "prompt_malo": "¿Cuál es la respuesta a la consulta del cliente?",
-        "prompt_bueno": "¿Cuál es la respuesta más precisa y relevante a la consulta del cliente, considerando su historial de compras y preferencias, y utilizando el análisis de conocimiento para identificar patrones y tendencias en la base de conocimiento?",
-        "por_que_mejor": "El prompt bueno es mejor porque considera el análisis de conocimiento para identificar patrones y tendencias en la base de conocimiento, lo que permite proporcionar una respuesta más precisa y relevante."
+        "caso": "Un caso de uso real es el desarrollo de un modelo de regresión para predecir el precio de una casa",
+        "prompt_malo": "Escribe un programa que prediga el precio de una casa",
+        "prompt_bueno": "Desarrolla un modelo de regresión que pueda predecir el precio de una casa en función de variables como el tamaño, el número de habitaciones y la ubicación, utilizando un conjunto de datos de 1.000 casas y evaluando su rendimiento mediante el error cuadrático medio y el coeficiente de determinación",
+        "por_que_mejor": "El prompt bueno es mejor porque especifica claramente el objetivo, el conjunto de datos y las métricas de evaluación"
       },
       "practica": {
-        "titulo": "Analizar y evaluar la base de conocimiento de un sistema de RAG",
-        "objetivo": "Evaluar y analizar la base de conocimiento de un sistema de RAG para identificar patrones y tendencias",
-        "prompt_practica": "Utilizar la herramienta Kiro para analizar la base de conocimiento de 10.000 documentos y identificar 10 patrones y tendencias en la base de conocimiento. La salida debe ser un informe que describa los patrones y tendencias identificados y las recomendaciones para mejorar la precisión y la relevancia de las respuestas del sistema de RAG.",
+        "titulo": "Evaluación de Modelos de Regresión",
+        "objetivo": "Evaluar el rendimiento de un modelo de regresión",
+        "prompt_practica": "Desarrolla un modelo de regresión que pueda predecir el precio de una casa en función de variables como el tamaño, el número de habitaciones y la ubicación, utilizando un conjunto de datos de 1.000 casas y evaluando su rendimiento mediante el error cuadrático medio y el coeficiente de determinación. Utiliza la herramienta Kiro para desarrollar y evaluar el modelo. El modelo debe ser capaz de predecir el precio de una casa con un error cuadrático medio de 10.000 y un coeficiente de determinación de 0.8.",
         "pasos": [
-          "Paso 1: Utilizar la herramienta Kiro para analizar la base de conocimiento de 10.000 documentos",
-          "Paso 2: Identificar 10 patrones y tendencias en la base de conocimiento",
-          "Paso 3: Evaluar la precisión y la relevancia de los patrones y tendencias identificados",
-          "Paso 4: Refinar los patrones y tendencias identificados ajustando los parámetros de análisis y evaluando nuevamente su desempeño",
-          "Paso 5: Implementar las recomendaciones para mejorar la precisión y la relevancia de las respuestas del sistema de RAG"
+          "Paso 1: Acceder a la plataforma de Kiro y crear un nuevo proyecto de regresión",
+          "Paso 2: Cargar el conjunto de datos de 1.000 casas y dividirlo en conjuntos de entrenamiento y prueba",
+          "Paso 3: Desarrollar y entrenar el modelo de regresión utilizando la herramienta Kiro",
+          "Paso 4: Evaluar el rendimiento del modelo mediante el error cuadrático medio y el coeficiente de determinación",
+          "Paso 5: Guardar y aplicar el modelo evaluado para futuras mejoras"
         ],
-        "criterio_exito": "La precisión de los patrones y tendencias identificados es mayor al 90% y el tiempo de respuesta es menor a 1 segundo"
+        "criterio_exito": "El modelo debe ser capaz de predecir el precio de una casa con un error cuadrático medio de 10.000 y un coeficiente de determinación de 0.8"
       },
       "recursos": [
-        "Técnica de análisis de conocimiento",
-        "Herramientas de aprendizaje automático"
+        "La documentación oficial de Kiro para el desarrollo de modelos de regresión"
       ]
     },
     {
-      "id": "extra-19-4",
-      "semana": "2026-05-04",
+      "id": "extra-20-4",
+      "semana": "2026-05-11",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Integración de fuentes de conocimiento",
-      "subtitulo": "Aprenderá a integrar fuentes de conocimiento para mejorar la precisión y la relevancia de las respuestas del sistema de RAG",
+      "titulo": "Evaluación de Modelos de Clustering",
+      "subtitulo": "Aprenderá a evaluar modelos de clustering de manera efectiva",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Integración de fuentes de conocimiento",
-        "explicacion": "La integración de fuentes de conocimiento es el proceso de combinar y unificar fuentes de conocimiento diferentes para crear una base de conocimiento más completa y precisa. La integración de fuentes de conocimiento implica la aplicación de técnicas de fusión de datos y aprendizaje automático para combinar las fuentes de conocimiento y eliminar la redundancia y la inconsistencia. La integración de fuentes de conocimiento es fundamental para mejorar la precisión y la relevancia de las respuestas del sistema de RAG.",
-        "analogia": "La integración de fuentes de conocimiento es similar a combinar diferentes fuentes de información para crear un informe completo y preciso.",
+        "concepto": "Evaluación de Modelos de Clustering",
+        "explicacion": "La evaluación de modelos de clustering es un proceso que permite determinar la calidad y eficacia de un modelo de clustering en un conjunto de datos específico. Esto es importante porque ayuda a identificar áreas de mejora y a comparar diferentes modelos. La evaluación se puede realizar mediante métricas como la silueta y el índice de Calinski-Harabasz.",
+        "analogia": "La evaluación de modelos de clustering es similar a evaluar la calidad de un sistema de recomendación de productos. Se miden la precisión y la relevancia de las recomendaciones para determinar el nivel de éxito.",
         "cuando_usarlo": [
-          "Cuando se necesita combinar fuentes de conocimiento diferentes",
-          "Cuando se necesita mejorar la precisión y la relevancia de las respuestas del sistema de RAG",
-          "Cuando se necesita reducir la redundancia y la inconsistencia en la base de conocimiento",
-          "Cuando se necesita aumentar la confianza en las respuestas del sistema de RAG"
+          "Cuando se desarrolla un nuevo modelo de clustering",
+          "Cuando se necesita comparar diferentes modelos de clustering",
+          "Cuando se busca mejorar la calidad de un modelo de clustering existente",
+          "Cuando se necesita evaluar el impacto de un modelo de clustering en un negocio o organización"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de RAG para responder a consultas de clientes",
-        "prompt_malo": "¿Cuál es la respuesta a la consulta del cliente?",
-        "prompt_bueno": "¿Cuál es la respuesta más precisa y relevante a la consulta del cliente, considerando su historial de compras y preferencias, y utilizando la integración de fuentes de conocimiento para combinar fuentes de conocimiento diferentes?",
-        "por_que_mejor": "El prompt bueno es mejor porque considera la integración de fuentes de conocimiento para combinar fuentes de conocimiento diferentes, lo que permite proporcionar una respuesta más precisa y relevante."
+        "caso": "Un caso de uso real es el desarrollo de un modelo de clustering para segmentar clientes",
+        "prompt_malo": "Escribe un programa que segmente clientes",
+        "prompt_bueno": "Desarrolla un modelo de clustering que pueda segmentar clientes en función de variables como la edad, el género y el comportamiento de compra, utilizando un conjunto de datos de 10.000 clientes y evaluando su rendimiento mediante la silueta y el índice de Calinski-Harabasz",
+        "por_que_mejor": "El prompt bueno es mejor porque especifica claramente el objetivo, el conjunto de datos y las métricas de evaluación"
       },
       "practica": {
-        "titulo": "Integrar fuentes de conocimiento para mejorar la precisión y la relevancia de las respuestas del sistema de RAG",
-        "objetivo": "Combinar fuentes de conocimiento diferentes para crear una base de conocimiento más completa y precisa",
-        "prompt_practica": "Utilizar la herramienta Claude para integrar 5 fuentes de conocimiento y crear una base de conocimiento que incluya 10.000 conceptos y 100 relaciones entre ellos. La salida debe ser un informe que describa la precisión y la relevancia de la base de conocimiento.",
+        "titulo": "Evaluación de Modelos de Clustering",
+        "objetivo": "Evaluar el rendimiento de un modelo de clustering",
+        "prompt_practica": "Desarrolla un modelo de clustering que pueda segmentar clientes en función de variables como la edad, el género y el comportamiento de compra, utilizando un conjunto de datos de 10.000 clientes y evaluando su rendimiento mediante la silueta y el índice de Calinski-Harabasz. Utiliza la herramienta Claude para desarrollar y evaluar el modelo. El modelo debe ser capaz de segmentar clientes en 5 clusters con una silueta de 0.5 y un índice de Calinski-Harabasz de 1000.",
         "pasos": [
-          "Paso 1: Utilizar la herramienta Claude para integrar 5 fuentes de conocimiento",
-          "Paso 2: Crear una base de conocimiento que incluya 10.000 conceptos y 100 relaciones entre ellos",
-          "Paso 3: Evaluar la precisión y la relevancia de la base de conocimiento",
-          "Paso 4: Refinar la base de conocimiento ajustando los parámetros de integración y evaluando nuevamente su desempeño",
-          "Paso 5: Implementar la base de conocimiento en un sistema de RAG y evaluar su desempeño en un entorno real"
+          "Paso 1: Acceder a la plataforma de Claude y crear un nuevo proyecto de clustering",
+          "Paso 2: Cargar el conjunto de datos de 10.000 clientes y dividirlo en conjuntos de entrenamiento y prueba",
+          "Paso 3: Desarrollar y entrenar el modelo de clustering utilizando la herramienta Claude",
+          "Paso 4: Evaluar el rendimiento del modelo mediante la silueta y el índice de Calinski-Harabasz",
+          "Paso 5: Guardar y aplicar el modelo evaluado para futuras mejoras"
         ],
-        "criterio_exito": "La precisión de la base de conocimiento es mayor al 95% y el tiempo de respuesta es menor a 1 segundo"
+        "criterio_exito": "El modelo debe ser capaz de segmentar clientes en 5 clusters con una silueta de 0.5 y un índice de Calinski-Harabasz de 1000"
       },
       "recursos": [
-        "Técnica de fusión de datos",
-        "Herramientas de aprendizaje automático"
+        "La documentación oficial de Claude para el desarrollo de modelos de clustering"
       ]
     }
   ]
