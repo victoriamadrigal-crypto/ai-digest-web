@@ -1,184 +1,188 @@
 {
-  "semana": "2026-05-11",
-  "tema": "evaluación y benchmarking de modelos para casos de uso reales",
+  "semana": "2026-05-18",
+  "tema": "IA multimodal: combinar texto, imagen y audio",
   "tip": {
-    "semana": "2026-05-11",
-    "tema": "evaluación y benchmarking de modelos para casos de uso reales",
-    "emoji": "📊",
-    "titulo": "Evaluación de Modelos con SHAP",
-    "resumen": "Evaluación de modelos con SHAP para entender predicciones",
-    "explicacion": "La técnica SHAP (SHapley Additive exPlanations) es una herramienta para explicar y evaluar modelos de aprendizaje automático, asignando un valor a cada característica de un modelo para entender su contribución a la predicción final. Esto funciona bien porque proporciona una visión detallada de cómo cada característica influye en la predicción. Se utiliza cuando se necesita una comprensión profunda de los modelos y sus predicciones.",
-    "ejemplo_prompt": "Utiliza la biblioteca SHAP en Python con el comando `shap.initjs()` y luego `shap.force_plot()` para visualizar la contribución de cada característica en un modelo de clasificación, como `shap.force_plot(shap_values, X_test, matplotlib=True)`",
-    "cuando_usarlo": "Se aplica en la evaluación de modelos de crédito, en la detección de fraude y en la optimización de procesos de marketing",
-    "herramienta": "Todas"
+    "semana": "2026-05-18",
+    "tema": "IA multimodal: combinar texto, imagen y audio",
+    "emoji": "🤖",
+    "titulo": "Fusión de modalidades para análisis",
+    "resumen": "Combina texto, imagen y audio para análisis avanzado",
+    "explicacion": "La técnica de fusión de modalidades permite combinar diferentes tipos de datos para obtener resultados más precisos y completos. Esto se logra mediante la integración de modelos de aprendizaje automático especializados en cada modalidad, lo que permite capturar patrones y relaciones complejas. La fusión de modalidades es especialmente útil en aplicaciones donde la información se encuentra dispersa en diferentes formatos, como en análisis de sentimiento o detección de objetos en imágenes.",
+    "ejemplo_prompt": "Utiliza el comando `fusion_modalidades(texto='Esta es una reseña de un producto', imagen='imagen_producto.jpg', audio='audio_resenia.wav')` en Claude para analizar la reseña y determinar el sentimiento del cliente. Luego, ajusta los parámetros de confianza y umbrales para optimizar los resultados.",
+    "cuando_usarlo": "En proyectos de análisis de sentimiento, detección de objetos en imágenes o reconocimiento de voz en audio",
+    "herramienta": "Claude"
   },
   "lecciones": [
     {
-      "id": "extra-20-1",
-      "semana": "2026-05-11",
+      "id": "extra-21-1",
+      "semana": "2026-05-18",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Evaluación de Modelos",
-      "subtitulo": "Aprenderá a evaluar modelos de IA de manera efectiva",
+      "titulo": "Fusion de Modalidades",
+      "subtitulo": "Aprenderá a combinar texto, imagen y audio para análisis avanzados",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Evaluación de Modelos",
-        "explicacion": "La evaluación de modelos es un paso crucial en el desarrollo de sistemas de inteligencia artificial. Permite determinar la precisión y eficacia de un modelo en un conjunto de datos específico. Esto es importante porque ayuda a identificar áreas de mejora y a comparar diferentes modelos. La evaluación se puede realizar mediante métricas como la precisión, la recall y la F1-score. Es fundamental elegir la métrica adecuada según el problema que se esté tratando de resolver.",
-        "analogia": "La evaluación de modelos es similar a evaluar el rendimiento de un atleta en una competencia. Se miden los logros y se comparan con los objetivos establecidos para determinar el nivel de éxito.",
+        "concepto": "Fusión de características",
+        "explicacion": "La fusión de características es una técnica utilizada en el procesamiento de lenguaje natural y el aprendizaje automático para combinar diferentes tipos de características o modalidades de datos, como texto, imagen y audio, en un solo espacio de características. Esto permite a los modelos de aprendizaje automático capturar relaciones y patrones más complejos en los datos. La fusión de características es importante porque permite a los modelos de aprendizaje automático aprovechar la información de diferentes fuentes y mejorar su precisión. La fusión de características se puede realizar de diferentes maneras, como la concatenación de características, la suma de características o la fusión de características mediante un modelo de aprendizaje automático.",
+        "analogia": "La fusión de características es similar a la forma en que los humanos procesamos la información sensorial, combinando la información visual, auditiva y táctil para entender el mundo que nos rodea.",
         "cuando_usarlo": [
-          "Cuando se desarrolla un nuevo modelo de IA",
-          "Cuando se necesita comparar diferentes modelos",
-          "Cuando se busca mejorar la precisión de un modelo existente",
-          "Cuando se necesita evaluar el impacto de un modelo en un negocio o organización"
+          "Cuando se necesita analizar datos de diferentes fuentes",
+          "Cuando se necesita mejorar la precisión de los modelos de aprendizaje automático",
+          "Cuando se necesita capturar relaciones complejas en los datos",
+          "Cuando se necesita realizar análisis de sentimiento en texto y audio"
         ]
       },
       "ejemplo": {
-        "caso": "Un caso de uso real es el desarrollo de un modelo de clasificación de imágenes para un sitio web de compras en línea",
-        "prompt_malo": "Escribe un programa que clasifique imágenes",
-        "prompt_bueno": "Desarrolla un modelo de clasificación de imágenes que pueda distinguir entre 10 categorías de productos en un sitio web de compras en línea, utilizando un conjunto de datos de 10.000 imágenes etiquetadas y evaluando su rendimiento mediante la precisión y la recall",
-        "por_que_mejor": "El prompt bueno es mejor porque especifica claramente el objetivo, el conjunto de datos y las métricas de evaluación"
+        "caso": "Análisis de sentimiento en texto y audio",
+        "prompt_malo": "¿Cuál es el sentimiento del texto?",
+        "prompt_bueno": "Analice el sentimiento del texto y el audio proporcionado y proporcione una respuesta detallada que incluya la emoción principal, la intensidad y la razón por la que se siente de esa manera.",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y permite al modelo de aprendizaje automático capturar relaciones más complejas entre el texto y el audio."
       },
       "practica": {
-        "titulo": "Evaluación de Modelos de Clasificación",
-        "objetivo": "Evaluar el rendimiento de un modelo de clasificación de imágenes",
-        "prompt_practica": "Desarrolla un modelo de clasificación de imágenes que pueda distinguir entre 5 categorías de productos en un sitio web de compras en línea, utilizando un conjunto de datos de 5.000 imágenes etiquetadas y evaluando su rendimiento mediante la precisión y la recall. Utiliza la herramienta Claude para desarrollar y evaluar el modelo. El modelo debe ser capaz de clasificar imágenes con un tamaño de 256x256 píxeles y debe ser entrenado durante 10 épocas. La precisión y la recall deben ser calculadas y comparadas con un modelo de clasificación básico.",
+        "titulo": "Fusión de características para análisis de sentimiento",
+        "objetivo": "Aprender a combinar texto y audio para analizar el sentimiento",
+        "prompt_practica": "Usted es un analista de sentimiento que necesita analizar el sentimiento de un texto y un audio proporcionados. El texto es: 'Me encanta el nuevo producto, es increíble'. El audio es un clip de audio de 10 segundos de una persona hablando sobre el producto. Utilice la herramienta Claude para analizar el sentimiento del texto y el audio y proporcione una respuesta detallada que incluya la emoción principal, la intensidad y la razón por la que se siente de esa manera. La respuesta debe ser de al menos 100 palabras.",
         "pasos": [
-          "Paso 1: Acceder a la plataforma de Claude y crear un nuevo proyecto de clasificación de imágenes",
-          "Paso 2: Cargar el conjunto de datos de 5.000 imágenes etiquetadas y dividirlo en conjuntos de entrenamiento y prueba",
-          "Paso 3: Desarrollar y entrenar el modelo de clasificación utilizando la herramienta Claude",
-          "Paso 4: Evaluar el rendimiento del modelo mediante la precisión y la recall, y compararlo con un modelo de clasificación básico",
-          "Paso 5: Guardar y aplicar el modelo evaluado para futuras mejoras"
+          "Paso 1: Ingrese a la herramienta Claude y cree un nuevo proyecto",
+          "Paso 2: Suba el texto y el audio proporcionados a la herramienta",
+          "Paso 3: Seleccione la opción de análisis de sentimiento y configure los parámetros según sea necesario",
+          "Paso 4: Ejecute el análisis y revise los resultados",
+          "Paso 5: Refine los resultados según sea necesario y guarde la respuesta final"
         ],
-        "criterio_exito": "El modelo debe ser capaz de clasificar imágenes con una precisión del 90% y una recall del 85%"
+        "criterio_exito": "La respuesta final debe incluir la emoción principal, la intensidad y la razón por la que se siente de esa manera, y debe ser de al menos 100 palabras."
       },
       "recursos": [
-        "La documentación oficial de Claude para el desarrollo de modelos de clasificación de imágenes"
+        "Técnica de fusión de características",
+        "Análisis de sentimiento en texto y audio"
       ]
     },
     {
-      "id": "extra-20-2",
-      "semana": "2026-05-11",
+      "id": "extra-21-2",
+      "semana": "2026-05-18",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Benchmarking de Modelos",
-      "subtitulo": "Aprenderá a comparar modelos de IA de manera efectiva",
-      "duracion": "25 min",
+      "titulo": "Reconocimiento de Patrones",
+      "subtitulo": "Aprenderá a reconocer patrones en texto, imagen y audio",
+      "duracion": "20 min",
       "teoria": {
-        "concepto": "Benchmarking de Modelos",
-        "explicacion": "El benchmarking de modelos es un proceso que permite comparar el rendimiento de diferentes modelos de IA en un conjunto de datos específico. Esto es importante porque ayuda a identificar el modelo más adecuado para un problema específico y a evaluar el impacto de diferentes técnicas de optimización. El benchmarking se puede realizar mediante métricas como el tiempo de entrenamiento, el uso de memoria y la precisión.",
-        "analogia": "El benchmarking de modelos es similar a comparar el rendimiento de diferentes coches en una pista de carreras. Se miden los tiempos de vuelta y se comparan para determinar el coche más rápido.",
+        "concepto": "Reconocimiento de patrones",
+        "explicacion": "El reconocimiento de patrones es una técnica utilizada en el aprendizaje automático para identificar patrones en los datos. Esto se puede hacer utilizando diferentes algoritmos y técnicas, como la detección de bordes, la detección de esquinas y la segmentación de imágenes. El reconocimiento de patrones es importante porque permite a los modelos de aprendizaje automático capturar relaciones complejas en los datos y hacer predicciones más precisas.",
+        "analogia": "El reconocimiento de patrones es similar a la forma en que los humanos reconocemos patrones en la naturaleza, como la forma en que las hojas crecen en las plantas o la forma en que los ríos fluyen.",
         "cuando_usarlo": [
-          "Cuando se necesita comparar diferentes modelos de IA",
-          "Cuando se busca evaluar el impacto de diferentes técnicas de optimización",
-          "Cuando se necesita identificar el modelo más adecuado para un problema específico",
-          "Cuando se necesita evaluar el rendimiento de un modelo en diferentes conjuntos de datos"
+          "Cuando se necesita identificar patrones en los datos",
+          "Cuando se necesita hacer predicciones más precisas",
+          "Cuando se necesita capturar relaciones complejas en los datos",
+          "Cuando se necesita realizar análisis de imágenes y audio"
         ]
       },
       "ejemplo": {
-        "caso": "Un caso de uso real es el desarrollo de un modelo de clasificación de texto para un sitio web de noticias",
-        "prompt_malo": "Escribe un programa que clasifique texto",
-        "prompt_bueno": "Desarrolla un modelo de clasificación de texto que pueda distinguir entre 10 categorías de noticias en un sitio web de noticias, utilizando un conjunto de datos de 10.000 artículos etiquetados y evaluando su rendimiento mediante la precisión y la recall, y compara su rendimiento con un modelo de clasificación básico",
-        "por_que_mejor": "El prompt bueno es mejor porque especifica claramente el objetivo, el conjunto de datos y las métricas de evaluación"
+        "caso": "Reconocimiento de patrones en imágenes",
+        "prompt_malo": "¿Qué objeto hay en la imagen?",
+        "prompt_bueno": "Identifique los patrones en la imagen y proporcione una descripción detallada de los objetos y las relaciones entre ellos.",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y permite al modelo de aprendizaje automático capturar relaciones más complejas en la imagen."
       },
       "practica": {
-        "titulo": "Benchmarking de Modelos de Clasificación de Texto",
-        "objetivo": "Comparar el rendimiento de diferentes modelos de clasificación de texto",
-        "prompt_practica": "Desarrolla tres modelos de clasificación de texto que puedan distinguir entre 5 categorías de noticias en un sitio web de noticias, utilizando un conjunto de datos de 5.000 artículos etiquetados y evaluando su rendimiento mediante la precisión y la recall. Utiliza la herramienta Gemini para desarrollar y evaluar los modelos. Los modelos deben ser capaces de clasificar artículos con un tamaño de 256 palabras y deben ser entrenados durante 10 épocas. La precisión y la recall deben ser calculadas y comparadas entre los tres modelos.",
+        "titulo": "Reconocimiento de patrones en imágenes",
+        "objetivo": "Aprender a reconocer patrones en imágenes",
+        "prompt_practica": "Usted es un analista de imágenes que necesita identificar los patrones en una imagen proporcionada. La imagen es un paisaje con montañas, ríos y árboles. Utilice la herramienta Gemini para identificar los patrones en la imagen y proporcione una descripción detallada de los objetos y las relaciones entre ellos. La respuesta debe ser de al menos 100 palabras.",
         "pasos": [
-          "Paso 1: Acceder a la plataforma de Gemini y crear un nuevo proyecto de clasificación de texto",
-          "Paso 2: Cargar el conjunto de datos de 5.000 artículos etiquetados y dividirlo en conjuntos de entrenamiento y prueba",
-          "Paso 3: Desarrollar y entrenar los tres modelos de clasificación utilizando la herramienta Gemini",
-          "Paso 4: Evaluar el rendimiento de los tres modelos mediante la precisión y la recall, y compararlos entre sí",
-          "Paso 5: Guardar y aplicar el modelo más adecuado para futuras mejoras"
+          "Paso 1: Ingrese a la herramienta Gemini y cree un nuevo proyecto",
+          "Paso 2: Suba la imagen proporcionada a la herramienta",
+          "Paso 3: Seleccione la opción de reconocimiento de patrones y configure los parámetros según sea necesario",
+          "Paso 4: Ejecute el análisis y revise los resultados",
+          "Paso 5: Refine los resultados según sea necesario y guarde la respuesta final"
         ],
-        "criterio_exito": "El modelo más adecuado debe ser capaz de clasificar artículos con una precisión del 90% y una recall del 85%"
+        "criterio_exito": "La respuesta final debe incluir una descripción detallada de los objetos y las relaciones entre ellos, y debe ser de al menos 100 palabras."
       },
       "recursos": [
-        "La documentación oficial de Gemini para el desarrollo de modelos de clasificación de texto"
+        "Técnica de reconocimiento de patrones",
+        "Análisis de imágenes"
       ]
     },
     {
-      "id": "extra-20-3",
-      "semana": "2026-05-11",
+      "id": "extra-21-3",
+      "semana": "2026-05-18",
       "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Evaluación de Modelos de Regresión",
-      "subtitulo": "Aprenderá a evaluar modelos de regresión de manera efectiva",
+      "titulo": "Generación de Texto",
+      "subtitulo": "Aprenderá a generar texto basado en imágenes y audio",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Evaluación de Modelos de Regresión",
-        "explicacion": "La evaluación de modelos de regresión es un proceso que permite determinar la precisión y eficacia de un modelo de regresión en un conjunto de datos específico. Esto es importante porque ayuda a identificar áreas de mejora y a comparar diferentes modelos. La evaluación se puede realizar mediante métricas como el error cuadrático medio y el coeficiente de determinación.",
-        "analogia": "La evaluación de modelos de regresión es similar a evaluar la precisión de un predictor de precios de acciones. Se miden los errores y se comparan con los objetivos establecidos para determinar el nivel de éxito.",
+        "concepto": "Generación de texto",
+        "explicacion": "La generación de texto es una técnica utilizada en el aprendizaje automático para generar texto basado en imágenes y audio. Esto se puede hacer utilizando diferentes algoritmos y técnicas, como la generación de texto condicional y la generación de texto no condicional. La generación de texto es importante porque permite a los modelos de aprendizaje automático generar texto coherente y relevante basado en la información proporcionada.",
+        "analogia": "La generación de texto es similar a la forma en que los humanos generamos texto basado en nuestras experiencias y conocimientos.",
         "cuando_usarlo": [
-          "Cuando se desarrolla un nuevo modelo de regresión",
-          "Cuando se necesita comparar diferentes modelos de regresión",
-          "Cuando se busca mejorar la precisión de un modelo de regresión existente",
-          "Cuando se necesita evaluar el impacto de un modelo de regresión en un negocio o organización"
+          "Cuando se necesita generar texto basado en imágenes y audio",
+          "Cuando se necesita crear contenido de manera automática",
+          "Cuando se necesita mejorar la precisión de los modelos de aprendizaje automático",
+          "Cuando se necesita realizar análisis de sentimiento en texto y audio"
         ]
       },
       "ejemplo": {
-        "caso": "Un caso de uso real es el desarrollo de un modelo de regresión para predecir el precio de una casa",
-        "prompt_malo": "Escribe un programa que prediga el precio de una casa",
-        "prompt_bueno": "Desarrolla un modelo de regresión que pueda predecir el precio de una casa en función de variables como el tamaño, el número de habitaciones y la ubicación, utilizando un conjunto de datos de 1.000 casas y evaluando su rendimiento mediante el error cuadrático medio y el coeficiente de determinación",
-        "por_que_mejor": "El prompt bueno es mejor porque especifica claramente el objetivo, el conjunto de datos y las métricas de evaluación"
+        "caso": "Generación de texto basado en imágenes",
+        "prompt_malo": "¿Qué hay en la imagen?",
+        "prompt_bueno": "Genere un texto coherente y relevante basado en la imagen proporcionada.",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y permite al modelo de aprendizaje automático generar texto más coherente y relevante."
       },
       "practica": {
-        "titulo": "Evaluación de Modelos de Regresión",
-        "objetivo": "Evaluar el rendimiento de un modelo de regresión",
-        "prompt_practica": "Desarrolla un modelo de regresión que pueda predecir el precio de una casa en función de variables como el tamaño, el número de habitaciones y la ubicación, utilizando un conjunto de datos de 1.000 casas y evaluando su rendimiento mediante el error cuadrático medio y el coeficiente de determinación. Utiliza la herramienta Kiro para desarrollar y evaluar el modelo. El modelo debe ser capaz de predecir el precio de una casa con un error cuadrático medio de 10.000 y un coeficiente de determinación de 0.8.",
+        "titulo": "Generación de texto basado en imágenes",
+        "objetivo": "Aprender a generar texto basado en imágenes",
+        "prompt_practica": "Usted es un escritor que necesita generar un texto coherente y relevante basado en una imagen proporcionada. La imagen es un paisaje con montañas, ríos y árboles. Utilice la herramienta Kiro para generar un texto coherente y relevante basado en la imagen. La respuesta debe ser de al menos 100 palabras.",
         "pasos": [
-          "Paso 1: Acceder a la plataforma de Kiro y crear un nuevo proyecto de regresión",
-          "Paso 2: Cargar el conjunto de datos de 1.000 casas y dividirlo en conjuntos de entrenamiento y prueba",
-          "Paso 3: Desarrollar y entrenar el modelo de regresión utilizando la herramienta Kiro",
-          "Paso 4: Evaluar el rendimiento del modelo mediante el error cuadrático medio y el coeficiente de determinación",
-          "Paso 5: Guardar y aplicar el modelo evaluado para futuras mejoras"
+          "Paso 1: Ingrese a la herramienta Kiro y cree un nuevo proyecto",
+          "Paso 2: Suba la imagen proporcionada a la herramienta",
+          "Paso 3: Seleccione la opción de generación de texto y configure los parámetros según sea necesario",
+          "Paso 4: Ejecute el análisis y revise los resultados",
+          "Paso 5: Refine los resultados según sea necesario y guarde la respuesta final"
         ],
-        "criterio_exito": "El modelo debe ser capaz de predecir el precio de una casa con un error cuadrático medio de 10.000 y un coeficiente de determinación de 0.8"
+        "criterio_exito": "La respuesta final debe incluir un texto coherente y relevante basado en la imagen, y debe ser de al menos 100 palabras."
       },
       "recursos": [
-        "La documentación oficial de Kiro para el desarrollo de modelos de regresión"
+        "Técnica de generación de texto",
+        "Análisis de imágenes"
       ]
     },
     {
-      "id": "extra-20-4",
-      "semana": "2026-05-11",
+      "id": "extra-21-4",
+      "semana": "2026-05-18",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Evaluación de Modelos de Clustering",
-      "subtitulo": "Aprenderá a evaluar modelos de clustering de manera efectiva",
-      "duracion": "25 min",
+      "titulo": "Análisis de Sentimiento",
+      "subtitulo": "Aprenderá a analizar el sentimiento en texto y audio",
+      "duracion": "20 min",
       "teoria": {
-        "concepto": "Evaluación de Modelos de Clustering",
-        "explicacion": "La evaluación de modelos de clustering es un proceso que permite determinar la calidad y eficacia de un modelo de clustering en un conjunto de datos específico. Esto es importante porque ayuda a identificar áreas de mejora y a comparar diferentes modelos. La evaluación se puede realizar mediante métricas como la silueta y el índice de Calinski-Harabasz.",
-        "analogia": "La evaluación de modelos de clustering es similar a evaluar la calidad de un sistema de recomendación de productos. Se miden la precisión y la relevancia de las recomendaciones para determinar el nivel de éxito.",
+        "concepto": "Análisis de sentimiento",
+        "explicacion": "El análisis de sentimiento es una técnica utilizada en el aprendizaje automático para analizar el sentimiento en texto y audio. Esto se puede hacer utilizando diferentes algoritmos y técnicas, como la detección de emociones y la detección de sentimiento. El análisis de sentimiento es importante porque permite a los modelos de aprendizaje automático capturar relaciones complejas en los datos y hacer predicciones más precisas.",
+        "analogia": "El análisis de sentimiento es similar a la forma en que los humanos analizamos el sentimiento en las interacciones sociales.",
         "cuando_usarlo": [
-          "Cuando se desarrolla un nuevo modelo de clustering",
-          "Cuando se necesita comparar diferentes modelos de clustering",
-          "Cuando se busca mejorar la calidad de un modelo de clustering existente",
-          "Cuando se necesita evaluar el impacto de un modelo de clustering en un negocio o organización"
+          "Cuando se necesita analizar el sentimiento en texto y audio",
+          "Cuando se necesita hacer predicciones más precisas",
+          "Cuando se necesita capturar relaciones complejas en los datos",
+          "Cuando se necesita realizar análisis de sentimiento en texto y audio"
         ]
       },
       "ejemplo": {
-        "caso": "Un caso de uso real es el desarrollo de un modelo de clustering para segmentar clientes",
-        "prompt_malo": "Escribe un programa que segmente clientes",
-        "prompt_bueno": "Desarrolla un modelo de clustering que pueda segmentar clientes en función de variables como la edad, el género y el comportamiento de compra, utilizando un conjunto de datos de 10.000 clientes y evaluando su rendimiento mediante la silueta y el índice de Calinski-Harabasz",
-        "por_que_mejor": "El prompt bueno es mejor porque especifica claramente el objetivo, el conjunto de datos y las métricas de evaluación"
+        "caso": "Análisis de sentimiento en texto",
+        "prompt_malo": "¿Qué sentimiento hay en el texto?",
+        "prompt_bueno": "Analice el sentimiento en el texto proporcionado y proporcione una descripción detallada de las emociones y sentimientos presentes.",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y permite al modelo de aprendizaje automático capturar relaciones más complejas en el texto."
       },
       "practica": {
-        "titulo": "Evaluación de Modelos de Clustering",
-        "objetivo": "Evaluar el rendimiento de un modelo de clustering",
-        "prompt_practica": "Desarrolla un modelo de clustering que pueda segmentar clientes en función de variables como la edad, el género y el comportamiento de compra, utilizando un conjunto de datos de 10.000 clientes y evaluando su rendimiento mediante la silueta y el índice de Calinski-Harabasz. Utiliza la herramienta Claude para desarrollar y evaluar el modelo. El modelo debe ser capaz de segmentar clientes en 5 clusters con una silueta de 0.5 y un índice de Calinski-Harabasz de 1000.",
+        "titulo": "Análisis de sentimiento en texto",
+        "objetivo": "Aprender a analizar el sentimiento en texto",
+        "prompt_practica": "Usted es un analista de sentimiento que necesita analizar el sentimiento en un texto proporcionado. El texto es: 'Me encanta el nuevo producto, es increíble'. Utilice la herramienta Claude para analizar el sentimiento en el texto y proporcione una descripción detallada de las emociones y sentimientos presentes. La respuesta debe ser de al menos 100 palabras.",
         "pasos": [
-          "Paso 1: Acceder a la plataforma de Claude y crear un nuevo proyecto de clustering",
-          "Paso 2: Cargar el conjunto de datos de 10.000 clientes y dividirlo en conjuntos de entrenamiento y prueba",
-          "Paso 3: Desarrollar y entrenar el modelo de clustering utilizando la herramienta Claude",
-          "Paso 4: Evaluar el rendimiento del modelo mediante la silueta y el índice de Calinski-Harabasz",
-          "Paso 5: Guardar y aplicar el modelo evaluado para futuras mejoras"
+          "Paso 1: Ingrese a la herramienta Claude y cree un nuevo proyecto",
+          "Paso 2: Suba el texto proporcionado a la herramienta",
+          "Paso 3: Seleccione la opción de análisis de sentimiento y configure los parámetros según sea necesario",
+          "Paso 4: Ejecute el análisis y revise los resultados",
+          "Paso 5: Refine los resultados según sea necesario y guarde la respuesta final"
         ],
-        "criterio_exito": "El modelo debe ser capaz de segmentar clientes en 5 clusters con una silueta de 0.5 y un índice de Calinski-Harabasz de 1000"
+        "criterio_exito": "La respuesta final debe incluir una descripción detallada de las emociones y sentimientos presentes, y debe ser de al menos 100 palabras."
       },
       "recursos": [
-        "La documentación oficial de Claude para el desarrollo de modelos de clustering"
+        "Técnica de análisis de sentimiento",
+        "Análisis de texto"
       ]
     }
   ]

@@ -118,5 +118,45 @@
     "titulo": "Evaluación de Modelos de Clustering",
     "subtitulo": "Aprenderá a evaluar modelos de clustering de manera efectiva",
     "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-18",
+    "tema": "IA multimodal: combinar texto, imagen y audio",
+    "id": "extra-21-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Fusion de Modalidades",
+    "subtitulo": "Aprenderá a combinar texto, imagen y audio para análisis avanzados",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-18",
+    "tema": "IA multimodal: combinar texto, imagen y audio",
+    "id": "extra-21-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Reconocimiento de Patrones",
+    "subtitulo": "Aprenderá a reconocer patrones en texto, imagen y audio",
+    "duracion": "20 min"
+  },
+  {
+    "semana": "2026-05-18",
+    "tema": "IA multimodal: combinar texto, imagen y audio",
+    "id": "extra-21-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Generación de Texto",
+    "subtitulo": "Aprenderá a generar texto basado en imágenes y audio",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-18",
+    "tema": "IA multimodal: combinar texto, imagen y audio",
+    "id": "extra-21-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Análisis de Sentimiento",
+    "subtitulo": "Aprenderá a analizar el sentimiento en texto y audio",
+    "duracion": "20 min"
   }
 ]
