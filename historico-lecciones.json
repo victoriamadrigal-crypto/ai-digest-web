@@ -158,5 +158,45 @@
     "titulo": "Análisis de Sentimiento",
     "subtitulo": "Aprenderá a analizar el sentimiento en texto y audio",
     "duracion": "20 min"
+  },
+  {
+    "semana": "2026-05-25",
+    "tema": "fine-tuning vs prompting: cuándo usar cada enfoque",
+    "id": "extra-22-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Fine-Tuning Básico",
+    "subtitulo": "Aprenderá a ajustar modelos de lenguaje para tareas específicas",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-25",
+    "tema": "fine-tuning vs prompting: cuándo usar cada enfoque",
+    "id": "extra-22-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Prompting Avanzado",
+    "subtitulo": "Aprenderá a diseñar prompts efectivos para tareas de lenguaje natural",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-25",
+    "tema": "fine-tuning vs prompting: cuándo usar cada enfoque",
+    "id": "extra-22-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Fine-Tuning con Datos Escasos",
+    "subtitulo": "Aprenderá a ajustar modelos de lenguaje con conjuntos de datos limitados",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-05-25",
+    "tema": "fine-tuning vs prompting: cuándo usar cada enfoque",
+    "id": "extra-22-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Evaluación de Modelos",
+    "subtitulo": "Aprenderá a evaluar y comparar modelos de lenguaje para tareas específicas",
+    "duracion": "25 min"
   }
 ]

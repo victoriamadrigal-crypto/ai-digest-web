@@ -1,188 +1,184 @@
 {
-  "semana": "2026-05-18",
-  "tema": "IA multimodal: combinar texto, imagen y audio",
+  "semana": "2026-05-25",
+  "tema": "fine-tuning vs prompting: cuándo usar cada enfoque",
   "tip": {
-    "semana": "2026-05-18",
-    "tema": "IA multimodal: combinar texto, imagen y audio",
-    "emoji": "🤖",
-    "titulo": "Fusión de modalidades para análisis",
-    "resumen": "Combina texto, imagen y audio para análisis avanzado",
-    "explicacion": "La técnica de fusión de modalidades permite combinar diferentes tipos de datos para obtener resultados más precisos y completos. Esto se logra mediante la integración de modelos de aprendizaje automático especializados en cada modalidad, lo que permite capturar patrones y relaciones complejas. La fusión de modalidades es especialmente útil en aplicaciones donde la información se encuentra dispersa en diferentes formatos, como en análisis de sentimiento o detección de objetos en imágenes.",
-    "ejemplo_prompt": "Utiliza el comando `fusion_modalidades(texto='Esta es una reseña de un producto', imagen='imagen_producto.jpg', audio='audio_resenia.wav')` en Claude para analizar la reseña y determinar el sentimiento del cliente. Luego, ajusta los parámetros de confianza y umbrales para optimizar los resultados.",
-    "cuando_usarlo": "En proyectos de análisis de sentimiento, detección de objetos en imágenes o reconocimiento de voz en audio",
-    "herramienta": "Claude"
+    "semana": "2026-05-25",
+    "tema": "fine-tuning vs prompting: cuándo usar cada enfoque",
+    "emoji": "💡",
+    "titulo": "Fine-Tuning vs Prompting",
+    "resumen": "Elige entre fine-tuning y prompting",
+    "explicacion": "La técnica de fine-tuning se utiliza para adaptar un modelo preentrenado a un conjunto específico de datos, mientras que el prompting se utiliza para generar respuestas a partir de un modelo preentrenado sin necesidad de adaptarlo. La elección entre ambas técnicas depende del tamaño y la complejidad de los datos, así como del objetivo específico del proyecto. El fine-tuning es más adecuado para proyectos que requieren una alta precisión y un conjunto de datos grande, mientras que el prompting es más adecuado para proyectos que requieren una respuesta rápida y un conjunto de datos pequeño.",
+    "ejemplo_prompt": "Fine-tuning: `python transformers.Trainer(model=mi_modelo, args=mi_args, train_dataset=mi_dataset, eval_dataset=mi_dataset_eval, compute_metrics=mi_metrica)`. Prompting: `respuesta = modelo.generate(prompt='¿Cuál es el significado de la vida?', max_length=100)`",
+    "cuando_usarlo": "Cuando se necesita una alta precisión en un proyecto, cuando se tiene un conjunto de datos grande y complejo, y cuando se requiere una respuesta personalizada a una consulta específica",
+    "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-21-1",
-      "semana": "2026-05-18",
+      "id": "extra-22-1",
+      "semana": "2026-05-25",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Fusion de Modalidades",
-      "subtitulo": "Aprenderá a combinar texto, imagen y audio para análisis avanzados",
+      "titulo": "Fine-Tuning Básico",
+      "subtitulo": "Aprenderá a ajustar modelos de lenguaje para tareas específicas",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Fusión de características",
-        "explicacion": "La fusión de características es una técnica utilizada en el procesamiento de lenguaje natural y el aprendizaje automático para combinar diferentes tipos de características o modalidades de datos, como texto, imagen y audio, en un solo espacio de características. Esto permite a los modelos de aprendizaje automático capturar relaciones y patrones más complejos en los datos. La fusión de características es importante porque permite a los modelos de aprendizaje automático aprovechar la información de diferentes fuentes y mejorar su precisión. La fusión de características se puede realizar de diferentes maneras, como la concatenación de características, la suma de características o la fusión de características mediante un modelo de aprendizaje automático.",
-        "analogia": "La fusión de características es similar a la forma en que los humanos procesamos la información sensorial, combinando la información visual, auditiva y táctil para entender el mundo que nos rodea.",
+        "concepto": "Fine-Tuning",
+        "explicacion": "Fine-Tuning es una técnica utilizada para ajustar un modelo de lenguaje pre-entrenado a una tarea específica. Esto se logra mediante la actualización de los pesos del modelo utilizando un conjunto de datos más pequeño y especializado. Esta técnica es importante porque permite a los modelos de lenguaje aprender patrones y relaciones específicas de una tarea en particular, lo que puede mejorar significativamente su rendimiento. Fine-Tuning es especialmente útil cuando se dispone de un conjunto de datos limitado para la tarea específica, ya que puede aprovechar el conocimiento previo del modelo pre-entrenado.",
+        "analogia": "Imagínese que tiene un atlas mundial y quiere actualizar la información sobre una ciudad en particular. En lugar de crear un nuevo atlas desde cero, puede tomar el atlas existente y actualizar solo la información de la ciudad que le interesa. De esta manera, ahorra tiempo y recursos, y puede aprovechar la información previa para mejorar la precisión.",
         "cuando_usarlo": [
-          "Cuando se necesita analizar datos de diferentes fuentes",
-          "Cuando se necesita mejorar la precisión de los modelos de aprendizaje automático",
-          "Cuando se necesita capturar relaciones complejas en los datos",
-          "Cuando se necesita realizar análisis de sentimiento en texto y audio"
+          "Cuando se dispone de un conjunto de datos pequeño para la tarea específica",
+          "Cuando se necesita una alta precisión en la tarea",
+          "Cuando se quiere aprovechar el conocimiento previo de un modelo pre-entrenado",
+          "Cuando se necesita adaptar un modelo a un dominio específico"
         ]
       },
       "ejemplo": {
-        "caso": "Análisis de sentimiento en texto y audio",
-        "prompt_malo": "¿Cuál es el sentimiento del texto?",
-        "prompt_bueno": "Analice el sentimiento del texto y el audio proporcionado y proporcione una respuesta detallada que incluya la emoción principal, la intensidad y la razón por la que se siente de esa manera.",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y permite al modelo de aprendizaje automático capturar relaciones más complejas entre el texto y el audio."
+        "caso": "Un sistema de recomendación de productos en línea",
+        "prompt_malo": "¿Qué productos debería recomendar a un usuario que busca productos de electrónica?",
+        "prompt_bueno": "Recomiende productos de electrónica a un usuario que busca un regalo para su hijo de 12 años, considerando su interés en la tecnología y su presupuesto de $100",
+        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite al modelo de lenguaje entender mejor las necesidades del usuario y proporcionar recomendaciones más relevantes."
       },
       "practica": {
-        "titulo": "Fusión de características para análisis de sentimiento",
-        "objetivo": "Aprender a combinar texto y audio para analizar el sentimiento",
-        "prompt_practica": "Usted es un analista de sentimiento que necesita analizar el sentimiento de un texto y un audio proporcionados. El texto es: 'Me encanta el nuevo producto, es increíble'. El audio es un clip de audio de 10 segundos de una persona hablando sobre el producto. Utilice la herramienta Claude para analizar el sentimiento del texto y el audio y proporcione una respuesta detallada que incluya la emoción principal, la intensidad y la razón por la que se siente de esa manera. La respuesta debe ser de al menos 100 palabras.",
+        "titulo": "Ajustar un modelo de lenguaje para recomendar productos",
+        "objetivo": "Aprender a ajustar un modelo de lenguaje para recomendar productos en línea",
+        "prompt_practica": "Ajusta un modelo de lenguaje para recomendar productos de electrónica a un usuario que busca un regalo para su hijo de 12 años, considerando su interés en la tecnología y su presupuesto de $100. El modelo debe proporcionar 3 recomendaciones de productos con una breve descripción de cada uno. Utiliza el conjunto de datos de productos de electrónica proporcionado y ajusta el modelo durante 5 épocas con una tasa de aprendizaje de 0.01.",
         "pasos": [
-          "Paso 1: Ingrese a la herramienta Claude y cree un nuevo proyecto",
-          "Paso 2: Suba el texto y el audio proporcionados a la herramienta",
-          "Paso 3: Seleccione la opción de análisis de sentimiento y configure los parámetros según sea necesario",
-          "Paso 4: Ejecute el análisis y revise los resultados",
-          "Paso 5: Refine los resultados según sea necesario y guarde la respuesta final"
+          "Paso 1: Acceda a la plataforma de Claude y cree un nuevo proyecto",
+          "Paso 2: Cargue el conjunto de datos de productos de electrónica y ajuste el modelo de lenguaje durante 5 épocas",
+          "Paso 3: Verifique el rendimiento del modelo utilizando una métrica de evaluación adecuada",
+          "Paso 4: Refine el modelo ajustando la tasa de aprendizaje y el número de épocas",
+          "Paso 5: Guarde el modelo ajustado y utilícelo para proporcionar recomendaciones de productos en línea"
         ],
-        "criterio_exito": "La respuesta final debe incluir la emoción principal, la intensidad y la razón por la que se siente de esa manera, y debe ser de al menos 100 palabras."
+        "criterio_exito": "El modelo ajustado proporciona recomendaciones de productos relevantes y precisas para el usuario"
       },
       "recursos": [
-        "Técnica de fusión de características",
-        "Análisis de sentimiento en texto y audio"
+        "Curso de ajuste de modelos de lenguaje en la plataforma de Claude"
       ]
     },
     {
-      "id": "extra-21-2",
-      "semana": "2026-05-18",
+      "id": "extra-22-2",
+      "semana": "2026-05-25",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Reconocimiento de Patrones",
-      "subtitulo": "Aprenderá a reconocer patrones en texto, imagen y audio",
-      "duracion": "20 min",
-      "teoria": {
-        "concepto": "Reconocimiento de patrones",
-        "explicacion": "El reconocimiento de patrones es una técnica utilizada en el aprendizaje automático para identificar patrones en los datos. Esto se puede hacer utilizando diferentes algoritmos y técnicas, como la detección de bordes, la detección de esquinas y la segmentación de imágenes. El reconocimiento de patrones es importante porque permite a los modelos de aprendizaje automático capturar relaciones complejas en los datos y hacer predicciones más precisas.",
-        "analogia": "El reconocimiento de patrones es similar a la forma en que los humanos reconocemos patrones en la naturaleza, como la forma en que las hojas crecen en las plantas o la forma en que los ríos fluyen.",
-        "cuando_usarlo": [
-          "Cuando se necesita identificar patrones en los datos",
-          "Cuando se necesita hacer predicciones más precisas",
-          "Cuando se necesita capturar relaciones complejas en los datos",
-          "Cuando se necesita realizar análisis de imágenes y audio"
-        ]
-      },
-      "ejemplo": {
-        "caso": "Reconocimiento de patrones en imágenes",
-        "prompt_malo": "¿Qué objeto hay en la imagen?",
-        "prompt_bueno": "Identifique los patrones en la imagen y proporcione una descripción detallada de los objetos y las relaciones entre ellos.",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y permite al modelo de aprendizaje automático capturar relaciones más complejas en la imagen."
-      },
-      "practica": {
-        "titulo": "Reconocimiento de patrones en imágenes",
-        "objetivo": "Aprender a reconocer patrones en imágenes",
-        "prompt_practica": "Usted es un analista de imágenes que necesita identificar los patrones en una imagen proporcionada. La imagen es un paisaje con montañas, ríos y árboles. Utilice la herramienta Gemini para identificar los patrones en la imagen y proporcione una descripción detallada de los objetos y las relaciones entre ellos. La respuesta debe ser de al menos 100 palabras.",
-        "pasos": [
-          "Paso 1: Ingrese a la herramienta Gemini y cree un nuevo proyecto",
-          "Paso 2: Suba la imagen proporcionada a la herramienta",
-          "Paso 3: Seleccione la opción de reconocimiento de patrones y configure los parámetros según sea necesario",
-          "Paso 4: Ejecute el análisis y revise los resultados",
-          "Paso 5: Refine los resultados según sea necesario y guarde la respuesta final"
-        ],
-        "criterio_exito": "La respuesta final debe incluir una descripción detallada de los objetos y las relaciones entre ellos, y debe ser de al menos 100 palabras."
-      },
-      "recursos": [
-        "Técnica de reconocimiento de patrones",
-        "Análisis de imágenes"
-      ]
-    },
-    {
-      "id": "extra-21-3",
-      "semana": "2026-05-18",
-      "herramienta": "Kiro",
-      "nivel": "Avanzado",
-      "titulo": "Generación de Texto",
-      "subtitulo": "Aprenderá a generar texto basado en imágenes y audio",
+      "titulo": "Prompting Avanzado",
+      "subtitulo": "Aprenderá a diseñar prompts efectivos para tareas de lenguaje natural",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Generación de texto",
-        "explicacion": "La generación de texto es una técnica utilizada en el aprendizaje automático para generar texto basado en imágenes y audio. Esto se puede hacer utilizando diferentes algoritmos y técnicas, como la generación de texto condicional y la generación de texto no condicional. La generación de texto es importante porque permite a los modelos de aprendizaje automático generar texto coherente y relevante basado en la información proporcionada.",
-        "analogia": "La generación de texto es similar a la forma en que los humanos generamos texto basado en nuestras experiencias y conocimientos.",
+        "concepto": "Prompting",
+        "explicacion": "Prompting es la técnica de diseñar inputs o preguntas para un modelo de lenguaje que permitan obtener respuestas precisas y relevantes. Esta técnica es importante porque permite a los usuarios aprovechar el conocimiento y la capacidad del modelo de lenguaje para realizar tareas específicas. Prompting avanzado implica diseñar prompts que aprovechen al máximo las capacidades del modelo y minimicen la ambigüedad y la incertidumbre.",
+        "analogia": "Imagínese que está tratando de encontrar un libro en una biblioteca. Si solo busca por el título, puede obtener muchos resultados irrelevantes. Sin embargo, si busca por el título, el autor y la fecha de publicación, es más probable que encuentre el libro exacto que está buscando.",
         "cuando_usarlo": [
-          "Cuando se necesita generar texto basado en imágenes y audio",
-          "Cuando se necesita crear contenido de manera automática",
-          "Cuando se necesita mejorar la precisión de los modelos de aprendizaje automático",
-          "Cuando se necesita realizar análisis de sentimiento en texto y audio"
+          "Cuando se necesita una respuesta precisa y relevante para una tarea específica",
+          "Cuando se dispone de un modelo de lenguaje avanzado con capacidades de procesamiento de lenguaje natural",
+          "Cuando se quiere aprovechar la capacidad del modelo para aprender patrones y relaciones en el lenguaje",
+          "Cuando se necesita diseñar un sistema de diálogo o conversación"
         ]
       },
       "ejemplo": {
-        "caso": "Generación de texto basado en imágenes",
-        "prompt_malo": "¿Qué hay en la imagen?",
-        "prompt_bueno": "Genere un texto coherente y relevante basado en la imagen proporcionada.",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y permite al modelo de aprendizaje automático generar texto más coherente y relevante."
+        "caso": "Un sistema de asistencia virtual para responder preguntas de clientes",
+        "prompt_malo": "¿Qué es lo que el cliente quiere saber?",
+        "prompt_bueno": "El cliente ha preguntado sobre el estado de su pedido. Por favor, proporcione una respuesta clara y concisa sobre el estado actual del pedido, incluyendo la fecha de entrega estimada y cualquier información adicional relevante.",
+        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite al modelo de lenguaje entender mejor la pregunta del cliente y proporcionar una respuesta más relevante y precisa."
       },
       "practica": {
-        "titulo": "Generación de texto basado en imágenes",
-        "objetivo": "Aprender a generar texto basado en imágenes",
-        "prompt_practica": "Usted es un escritor que necesita generar un texto coherente y relevante basado en una imagen proporcionada. La imagen es un paisaje con montañas, ríos y árboles. Utilice la herramienta Kiro para generar un texto coherente y relevante basado en la imagen. La respuesta debe ser de al menos 100 palabras.",
+        "titulo": "Diseñar un prompt efectivo para un sistema de asistencia virtual",
+        "objetivo": "Aprender a diseñar prompts efectivos para un sistema de asistencia virtual",
+        "prompt_practica": "Diseñe un prompt para un sistema de asistencia virtual que permita al modelo de lenguaje responder a la pregunta de un cliente sobre el estado de su pedido. El prompt debe incluir la información necesaria para que el modelo pueda proporcionar una respuesta clara y concisa. Utilice la plataforma de Gemini para probar y refinar su prompt.",
         "pasos": [
-          "Paso 1: Ingrese a la herramienta Kiro y cree un nuevo proyecto",
-          "Paso 2: Suba la imagen proporcionada a la herramienta",
-          "Paso 3: Seleccione la opción de generación de texto y configure los parámetros según sea necesario",
-          "Paso 4: Ejecute el análisis y revise los resultados",
-          "Paso 5: Refine los resultados según sea necesario y guarde la respuesta final"
+          "Paso 1: Acceda a la plataforma de Gemini y cree un nuevo proyecto",
+          "Paso 2: Diseñe un prompt inicial y pruébalo con el modelo de lenguaje",
+          "Paso 3: Verifique el rendimiento del prompt y refine su diseño según sea necesario",
+          "Paso 4: Pruebe y refine el prompt varias veces hasta obtener una respuesta satisfactoria",
+          "Paso 5: Guarde el prompt refinado y utilícelo en el sistema de asistencia virtual"
         ],
-        "criterio_exito": "La respuesta final debe incluir un texto coherente y relevante basado en la imagen, y debe ser de al menos 100 palabras."
+        "criterio_exito": "El prompt diseñado permite al modelo de lenguaje proporcionar respuestas precisas y relevantes a las preguntas de los clientes"
       },
       "recursos": [
-        "Técnica de generación de texto",
-        "Análisis de imágenes"
+        "Curso de diseño de prompts en la plataforma de Gemini"
       ]
     },
     {
-      "id": "extra-21-4",
-      "semana": "2026-05-18",
-      "herramienta": "Claude",
+      "id": "extra-22-3",
+      "semana": "2026-05-25",
+      "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Análisis de Sentimiento",
-      "subtitulo": "Aprenderá a analizar el sentimiento en texto y audio",
-      "duracion": "20 min",
+      "titulo": "Fine-Tuning con Datos Escasos",
+      "subtitulo": "Aprenderá a ajustar modelos de lenguaje con conjuntos de datos limitados",
+      "duracion": "25 min",
       "teoria": {
-        "concepto": "Análisis de sentimiento",
-        "explicacion": "El análisis de sentimiento es una técnica utilizada en el aprendizaje automático para analizar el sentimiento en texto y audio. Esto se puede hacer utilizando diferentes algoritmos y técnicas, como la detección de emociones y la detección de sentimiento. El análisis de sentimiento es importante porque permite a los modelos de aprendizaje automático capturar relaciones complejas en los datos y hacer predicciones más precisas.",
-        "analogia": "El análisis de sentimiento es similar a la forma en que los humanos analizamos el sentimiento en las interacciones sociales.",
+        "concepto": "Fine-Tuning con Datos Escasos",
+        "explicacion": "Fine-Tuning con datos escasos es una técnica utilizada para ajustar un modelo de lenguaje pre-entrenado con un conjunto de datos limitado. Esto puede ser útil en situaciones donde no se dispone de suficientes datos para entrenar un modelo desde cero. La clave para el éxito en esta técnica es seleccionar los datos más relevantes y representativos del conjunto de datos disponible.",
+        "analogia": "Imagínese que está tratando de aprender un nuevo idioma, pero solo tiene acceso a un diccionario pequeño. Aunque no puede aprender todo el idioma, puede enfocarse en las palabras y frases más comunes y útiles para comunicarse de manera efectiva.",
         "cuando_usarlo": [
-          "Cuando se necesita analizar el sentimiento en texto y audio",
-          "Cuando se necesita hacer predicciones más precisas",
-          "Cuando se necesita capturar relaciones complejas en los datos",
-          "Cuando se necesita realizar análisis de sentimiento en texto y audio"
+          "Cuando se dispone de un conjunto de datos limitado para la tarea específica",
+          "Cuando se necesita una alta precisión en la tarea",
+          "Cuando se quiere aprovechar el conocimiento previo de un modelo pre-entrenado",
+          "Cuando se necesita adaptar un modelo a un dominio específico"
         ]
       },
       "ejemplo": {
-        "caso": "Análisis de sentimiento en texto",
-        "prompt_malo": "¿Qué sentimiento hay en el texto?",
-        "prompt_bueno": "Analice el sentimiento en el texto proporcionado y proporcione una descripción detallada de las emociones y sentimientos presentes.",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y permite al modelo de aprendizaje automático capturar relaciones más complejas en el texto."
+        "caso": "Un sistema de clasificación de textos para un dominio específico",
+        "prompt_malo": "¿Qué categoría corresponde a este texto?",
+        "prompt_bueno": "Clasifique el siguiente texto en una de las categorías predefinidas, considerando el contexto y el contenido del texto",
+        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite al modelo de lenguaje entender mejor el texto y clasificarlo de manera más precisa."
       },
       "practica": {
-        "titulo": "Análisis de sentimiento en texto",
-        "objetivo": "Aprender a analizar el sentimiento en texto",
-        "prompt_practica": "Usted es un analista de sentimiento que necesita analizar el sentimiento en un texto proporcionado. El texto es: 'Me encanta el nuevo producto, es increíble'. Utilice la herramienta Claude para analizar el sentimiento en el texto y proporcione una descripción detallada de las emociones y sentimientos presentes. La respuesta debe ser de al menos 100 palabras.",
+        "titulo": "Ajustar un modelo de lenguaje con un conjunto de datos limitado",
+        "objetivo": "Aprender a ajustar un modelo de lenguaje con un conjunto de datos limitado",
+        "prompt_practica": "Ajuste un modelo de lenguaje pre-entrenado para clasificar textos en un dominio específico, utilizando un conjunto de datos limitado de 100 ejemplos. El modelo debe clasificar los textos en una de las 5 categorías predefinidas. Utilice la plataforma de Kiro para probar y refinar su modelo.",
         "pasos": [
-          "Paso 1: Ingrese a la herramienta Claude y cree un nuevo proyecto",
-          "Paso 2: Suba el texto proporcionado a la herramienta",
-          "Paso 3: Seleccione la opción de análisis de sentimiento y configure los parámetros según sea necesario",
-          "Paso 4: Ejecute el análisis y revise los resultados",
-          "Paso 5: Refine los resultados según sea necesario y guarde la respuesta final"
+          "Paso 1: Acceda a la plataforma de Kiro y cree un nuevo proyecto",
+          "Paso 2: Cargue el conjunto de datos limitado y ajuste el modelo de lenguaje",
+          "Paso 3: Verifique el rendimiento del modelo y refine su ajuste según sea necesario",
+          "Paso 4: Pruebe y refine el modelo varias veces hasta obtener una clasificación precisa",
+          "Paso 5: Guarde el modelo ajustado y utilícelo para clasificar textos en el dominio específico"
         ],
-        "criterio_exito": "La respuesta final debe incluir una descripción detallada de las emociones y sentimientos presentes, y debe ser de al menos 100 palabras."
+        "criterio_exito": "El modelo ajustado clasifica los textos de manera precisa y efectiva en el dominio específico"
       },
       "recursos": [
-        "Técnica de análisis de sentimiento",
-        "Análisis de texto"
+        "Curso de ajuste de modelos de lenguaje con datos escasos en la plataforma de Kiro"
+      ]
+    },
+    {
+      "id": "extra-22-4",
+      "semana": "2026-05-25",
+      "herramienta": "Claude",
+      "nivel": "Avanzado",
+      "titulo": "Evaluación de Modelos",
+      "subtitulo": "Aprenderá a evaluar y comparar modelos de lenguaje para tareas específicas",
+      "duracion": "25 min",
+      "teoria": {
+        "concepto": "Evaluación de Modelos",
+        "explicacion": "La evaluación de modelos es el proceso de medir el rendimiento de un modelo de lenguaje en una tarea específica. Esto es crucial para determinar si un modelo es adecuado para una tarea en particular y para identificar áreas de mejora. La evaluación de modelos implica la selección de métricas de evaluación relevantes, la recopilación de datos de prueba y la comparación de los resultados de diferentes modelos.",
+        "analogia": "Imagínese que está tratando de elegir un coche nuevo. Antes de tomar una decisión, querrá comparar las características y el rendimiento de diferentes modelos para determinar cuál es el mejor para sus necesidades.",
+        "cuando_usarlo": [
+          "Cuando se necesita evaluar el rendimiento de un modelo de lenguaje",
+          "Cuando se quiere comparar diferentes modelos para una tarea específica",
+          "Cuando se necesita identificar áreas de mejora en un modelo",
+          "Cuando se quiere seleccionar el mejor modelo para una tarea en particular"
+        ]
+      },
+      "ejemplo": {
+        "caso": "Un sistema de recomendación de productos en línea",
+        "prompt_malo": "¿Qué modelo de lenguaje es el mejor para recomendar productos?",
+        "prompt_bueno": "Evalúe el rendimiento de dos modelos de lenguaje diferentes para recomendar productos en línea, considerando la precisión, la cobertura y la diversidad de las recomendaciones",
+        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite evaluar y comparar los modelos de manera más efectiva."
+      },
+      "practica": {
+        "titulo": "Evaluar y comparar modelos de lenguaje para una tarea específica",
+        "objetivo": "Aprender a evaluar y comparar modelos de lenguaje para una tarea específica",
+        "prompt_practica": "Evalúe y compare el rendimiento de dos modelos de lenguaje diferentes para una tarea de clasificación de textos. Utilice la plataforma de Claude para probar y evaluar los modelos, y compare los resultados en términos de precisión, cobertura y diversidad. Utilice los siguientes parámetros: conjunto de datos de prueba de 500 ejemplos, 5 categorías de clasificación, y una métrica de evaluación de precisión.",
+        "pasos": [
+          "Paso 1: Acceda a la plataforma de Claude y cree un nuevo proyecto",
+          "Paso 2: Cargue los dos modelos de lenguaje y el conjunto de datos de prueba",
+          "Paso 3: Evalúe el rendimiento de cada modelo utilizando la métrica de evaluación seleccionada",
+          "Paso 4: Compare los resultados de los dos modelos y determine cuál es el mejor para la tarea",
+          "Paso 5: Guarde los resultados de la evaluación y utilícelos para seleccionar el mejor modelo para la tarea"
+        ],
+        "criterio_exito": "Los modelos se evalúan y comparan de manera efectiva, y se selecciona el mejor modelo para la tarea"
+      },
+      "recursos": [
+        "Curso de evaluación de modelos de lenguaje en la plataforma de Claude"
       ]
     }
   ]
