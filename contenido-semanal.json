@@ -1,184 +1,188 @@
 {
-  "semana": "2026-05-25",
-  "tema": "fine-tuning vs prompting: cuándo usar cada enfoque",
+  "semana": "2026-06-01",
+  "tema": "seguridad y privacidad al usar IA en entornos empresariales",
   "tip": {
-    "semana": "2026-05-25",
-    "tema": "fine-tuning vs prompting: cuándo usar cada enfoque",
-    "emoji": "💡",
-    "titulo": "Fine-Tuning vs Prompting",
-    "resumen": "Elige entre fine-tuning y prompting",
-    "explicacion": "La técnica de fine-tuning se utiliza para adaptar un modelo preentrenado a un conjunto específico de datos, mientras que el prompting se utiliza para generar respuestas a partir de un modelo preentrenado sin necesidad de adaptarlo. La elección entre ambas técnicas depende del tamaño y la complejidad de los datos, así como del objetivo específico del proyecto. El fine-tuning es más adecuado para proyectos que requieren una alta precisión y un conjunto de datos grande, mientras que el prompting es más adecuado para proyectos que requieren una respuesta rápida y un conjunto de datos pequeño.",
-    "ejemplo_prompt": "Fine-tuning: `python transformers.Trainer(model=mi_modelo, args=mi_args, train_dataset=mi_dataset, eval_dataset=mi_dataset_eval, compute_metrics=mi_metrica)`. Prompting: `respuesta = modelo.generate(prompt='¿Cuál es el significado de la vida?', max_length=100)`",
-    "cuando_usarlo": "Cuando se necesita una alta precisión en un proyecto, cuando se tiene un conjunto de datos grande y complejo, y cuando se requiere una respuesta personalizada a una consulta específica",
+    "semana": "2026-06-01",
+    "tema": "seguridad y privacidad al usar IA en entornos empresariales",
+    "emoji": "🔒",
+    "titulo": "Encriptación de datos en modelos de IA",
+    "resumen": "Protege datos sensibles con encriptación",
+    "explicacion": "La encriptación de datos es crucial para proteger la información confidencial en entornos empresariales. Al encriptar los datos de entrenamiento y prueba, se evita el acceso no autorizado y se garantiza la privacidad. Esto es especialmente importante en industrias reguladas como la salud y las finanzas. La técnica de encriptación homomórfica permite realizar operaciones sobre datos encriptados sin necesidad de desencriptarlos.",
+    "ejemplo_prompt": "Para implementar la encriptación homomórfica en un modelo de IA, puedes utilizar la biblioteca de Python 'cryptography' y el algoritmo de encriptación 'FHE' (Fully Homomorphic Encryption). Por ejemplo: 'from cryptography.fernet import Fernet; key = Fernet.generate_key(); cipher_suite = Fernet(key); cipher_text = cipher_suite.encrypt(b'Esta es una cadena de texto que se va a encriptar')'",
+    "cuando_usarlo": "Al entrenar modelos de IA con datos sensibles, al compartir datos con terceros y al almacenar datos en la nube",
     "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-22-1",
-      "semana": "2026-05-25",
+      "id": "extra-23-1",
+      "semana": "2026-06-01",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Fine-Tuning Básico",
-      "subtitulo": "Aprenderá a ajustar modelos de lenguaje para tareas específicas",
+      "titulo": "Privacidad en IA",
+      "subtitulo": "Aprenderá a proteger la privacidad en entornos de IA empresarial",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Fine-Tuning",
-        "explicacion": "Fine-Tuning es una técnica utilizada para ajustar un modelo de lenguaje pre-entrenado a una tarea específica. Esto se logra mediante la actualización de los pesos del modelo utilizando un conjunto de datos más pequeño y especializado. Esta técnica es importante porque permite a los modelos de lenguaje aprender patrones y relaciones específicas de una tarea en particular, lo que puede mejorar significativamente su rendimiento. Fine-Tuning es especialmente útil cuando se dispone de un conjunto de datos limitado para la tarea específica, ya que puede aprovechar el conocimiento previo del modelo pre-entrenado.",
-        "analogia": "Imagínese que tiene un atlas mundial y quiere actualizar la información sobre una ciudad en particular. En lugar de crear un nuevo atlas desde cero, puede tomar el atlas existente y actualizar solo la información de la ciudad que le interesa. De esta manera, ahorra tiempo y recursos, y puede aprovechar la información previa para mejorar la precisión.",
+        "concepto": "Diferenciación de datos",
+        "explicacion": "La diferenciación de datos es una técnica utilizada para proteger la privacidad en entornos de IA. Consiste en agregar ruido a los datos para evitar que se puedan identificar individualmente. Esto es importante porque los datos pueden ser sensibles y no deben ser compartidos con terceros. La diferenciación de datos es una forma de proteger la privacidad sin sacrificar la precisión de los modelos de IA. Por ejemplo, en un modelo de predicción de enfermedades, la diferenciación de datos puede ayudar a proteger la identidad de los pacientes. La técnica consiste en agregar ruido a los datos de entrenamiento, de manera que el modelo no pueda aprender patrones individuales. Esto se logra mediante la adición de ruido aleatorio a los datos, lo que hace que sea imposible identificar a los individuos. La diferenciación de datos es especialmente útil en entornos de IA donde se trabajan con datos sensibles, como la salud o las finanzas.",
+        "analogia": "La diferenciación de datos es como agregar ruido a una conversación para evitar que se puedan escuchar las palabras individuales",
         "cuando_usarlo": [
-          "Cuando se dispone de un conjunto de datos pequeño para la tarea específica",
-          "Cuando se necesita una alta precisión en la tarea",
-          "Cuando se quiere aprovechar el conocimiento previo de un modelo pre-entrenado",
-          "Cuando se necesita adaptar un modelo a un dominio específico"
+          "Cuando se trabajan con datos sensibles",
+          "Cuando se necesita proteger la identidad de los individuos",
+          "Cuando se requiere una alta precisión en los modelos de IA",
+          "Cuando se necesita cumplir con regulaciones de privacidad"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de recomendación de productos en línea",
-        "prompt_malo": "¿Qué productos debería recomendar a un usuario que busca productos de electrónica?",
-        "prompt_bueno": "Recomiende productos de electrónica a un usuario que busca un regalo para su hijo de 12 años, considerando su interés en la tecnología y su presupuesto de $100",
-        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite al modelo de lenguaje entender mejor las necesidades del usuario y proporcionar recomendaciones más relevantes."
+        "caso": "Un modelo de predicción de enfermedades que utiliza datos de pacientes",
+        "prompt_malo": "Entrenar un modelo de IA con datos de pacientes sin agregar ruido",
+        "prompt_bueno": "Entrenar un modelo de IA con datos de pacientes con diferenciación de datos para proteger la privacidad",
+        "por_que_mejor": "El prompt bueno es mejor porque agrega ruido a los datos para proteger la privacidad de los pacientes"
       },
       "practica": {
-        "titulo": "Ajustar un modelo de lenguaje para recomendar productos",
-        "objetivo": "Aprender a ajustar un modelo de lenguaje para recomendar productos en línea",
-        "prompt_practica": "Ajusta un modelo de lenguaje para recomendar productos de electrónica a un usuario que busca un regalo para su hijo de 12 años, considerando su interés en la tecnología y su presupuesto de $100. El modelo debe proporcionar 3 recomendaciones de productos con una breve descripción de cada uno. Utiliza el conjunto de datos de productos de electrónica proporcionado y ajusta el modelo durante 5 épocas con una tasa de aprendizaje de 0.01.",
+        "titulo": "Aplicar diferenciación de datos a un modelo de IA",
+        "objetivo": "Aprender a aplicar diferenciación de datos a un modelo de IA para proteger la privacidad",
+        "prompt_practica": "Utilice Claude para entrenar un modelo de IA con datos de pacientes y aplique diferenciación de datos para proteger la privacidad. Los datos deben incluir la edad, el sexo y los síntomas de los pacientes. El modelo debe predecir la probabilidad de que un paciente tenga una enfermedad determinada. La precisión del modelo debe ser de al menos 90%. Los datos deben ser generados aleatoriamente y deben incluir un mínimo de 1000 pacientes. El modelo debe ser entrenado durante un máximo de 10 minutos. La salida del modelo debe ser un archivo CSV que incluya la predicción para cada paciente.",
         "pasos": [
-          "Paso 1: Acceda a la plataforma de Claude y cree un nuevo proyecto",
-          "Paso 2: Cargue el conjunto de datos de productos de electrónica y ajuste el modelo de lenguaje durante 5 épocas",
-          "Paso 3: Verifique el rendimiento del modelo utilizando una métrica de evaluación adecuada",
-          "Paso 4: Refine el modelo ajustando la tasa de aprendizaje y el número de épocas",
-          "Paso 5: Guarde el modelo ajustado y utilícelo para proporcionar recomendaciones de productos en línea"
+          "Paso 1: Ir a la página de Claude y crear un nuevo proyecto de IA",
+          "Paso 2: Cargar los datos de pacientes y seleccionar la opción de diferenciación de datos",
+          "Paso 3: Configurar el modelo de IA y seleccionar la opción de entrenamiento con diferenciación de datos",
+          "Paso 4: Evaluar la precisión del modelo y refinar los parámetros de entrenamiento hasta alcanzar una precisión de al menos 90%",
+          "Paso 5: Guardar el modelo y exportar los resultados a un archivo CSV"
         ],
-        "criterio_exito": "El modelo ajustado proporciona recomendaciones de productos relevantes y precisas para el usuario"
+        "criterio_exito": "El modelo de IA debe predecir la probabilidad de que un paciente tenga una enfermedad determinada con una precisión de al menos 90%"
       },
       "recursos": [
-        "Curso de ajuste de modelos de lenguaje en la plataforma de Claude"
+        "Técnica de diferenciación de datos",
+        "Modelos de IA con privacidad"
       ]
     },
     {
-      "id": "extra-22-2",
-      "semana": "2026-05-25",
+      "id": "extra-23-2",
+      "semana": "2026-06-01",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Prompting Avanzado",
-      "subtitulo": "Aprenderá a diseñar prompts efectivos para tareas de lenguaje natural",
+      "titulo": "Seguridad en IA",
+      "subtitulo": "Aprenderá a proteger la seguridad en entornos de IA empresarial",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Prompting",
-        "explicacion": "Prompting es la técnica de diseñar inputs o preguntas para un modelo de lenguaje que permitan obtener respuestas precisas y relevantes. Esta técnica es importante porque permite a los usuarios aprovechar el conocimiento y la capacidad del modelo de lenguaje para realizar tareas específicas. Prompting avanzado implica diseñar prompts que aprovechen al máximo las capacidades del modelo y minimicen la ambigüedad y la incertidumbre.",
-        "analogia": "Imagínese que está tratando de encontrar un libro en una biblioteca. Si solo busca por el título, puede obtener muchos resultados irrelevantes. Sin embargo, si busca por el título, el autor y la fecha de publicación, es más probable que encuentre el libro exacto que está buscando.",
+        "concepto": "Autenticación de acceso",
+        "explicacion": "La autenticación de acceso es una técnica utilizada para proteger la seguridad en entornos de IA. Consiste en verificar la identidad de los usuarios que acceden a los sistemas de IA. Esto es importante porque los sistemas de IA pueden contener información sensible y no deben ser accesibles para todos. La autenticación de acceso es una forma de proteger la seguridad sin sacrificar la funcionalidad de los sistemas de IA. Por ejemplo, en un sistema de IA que maneja datos financieros, la autenticación de acceso puede ayudar a proteger la información de los clientes. La técnica consiste en verificar la identidad de los usuarios mediante una combinación de nombre de usuario y contraseña, o mediante métodos de autenticación más avanzados como la autenticación biométrica.",
+        "analogia": "La autenticación de acceso es como una puerta que solo permite el acceso a los usuarios autorizados",
         "cuando_usarlo": [
-          "Cuando se necesita una respuesta precisa y relevante para una tarea específica",
-          "Cuando se dispone de un modelo de lenguaje avanzado con capacidades de procesamiento de lenguaje natural",
-          "Cuando se quiere aprovechar la capacidad del modelo para aprender patrones y relaciones en el lenguaje",
-          "Cuando se necesita diseñar un sistema de diálogo o conversación"
+          "Cuando se trabajan con datos sensibles",
+          "Cuando se necesita proteger la identidad de los usuarios",
+          "Cuando se requiere una alta seguridad en los sistemas de IA",
+          "Cuando se necesita cumplir con regulaciones de seguridad"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de asistencia virtual para responder preguntas de clientes",
-        "prompt_malo": "¿Qué es lo que el cliente quiere saber?",
-        "prompt_bueno": "El cliente ha preguntado sobre el estado de su pedido. Por favor, proporcione una respuesta clara y concisa sobre el estado actual del pedido, incluyendo la fecha de entrega estimada y cualquier información adicional relevante.",
-        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite al modelo de lenguaje entender mejor la pregunta del cliente y proporcionar una respuesta más relevante y precisa."
+        "caso": "Un sistema de IA que maneja datos financieros",
+        "prompt_malo": "Acceder al sistema de IA sin autenticación de acceso",
+        "prompt_bueno": "Acceder al sistema de IA con autenticación de acceso para proteger la seguridad",
+        "por_que_mejor": "El prompt bueno es mejor porque verifica la identidad de los usuarios para proteger la seguridad"
       },
       "practica": {
-        "titulo": "Diseñar un prompt efectivo para un sistema de asistencia virtual",
-        "objetivo": "Aprender a diseñar prompts efectivos para un sistema de asistencia virtual",
-        "prompt_practica": "Diseñe un prompt para un sistema de asistencia virtual que permita al modelo de lenguaje responder a la pregunta de un cliente sobre el estado de su pedido. El prompt debe incluir la información necesaria para que el modelo pueda proporcionar una respuesta clara y concisa. Utilice la plataforma de Gemini para probar y refinar su prompt.",
+        "titulo": "Aplicar autenticación de acceso a un sistema de IA",
+        "objetivo": "Aprender a aplicar autenticación de acceso a un sistema de IA para proteger la seguridad",
+        "prompt_practica": "Utilice Gemini para crear un sistema de IA que maneje datos financieros y aplique autenticación de acceso para proteger la seguridad. Los datos deben incluir la información de los clientes y las transacciones financieras. El sistema debe verificar la identidad de los usuarios mediante una combinación de nombre de usuario y contraseña. La autenticación debe ser realizada mediante un protocolo de autenticación seguro como SSL/TLS. La salida del sistema debe ser un mensaje de bienvenida personalizado para cada usuario autorizado.",
         "pasos": [
-          "Paso 1: Acceda a la plataforma de Gemini y cree un nuevo proyecto",
-          "Paso 2: Diseñe un prompt inicial y pruébalo con el modelo de lenguaje",
-          "Paso 3: Verifique el rendimiento del prompt y refine su diseño según sea necesario",
-          "Paso 4: Pruebe y refine el prompt varias veces hasta obtener una respuesta satisfactoria",
-          "Paso 5: Guarde el prompt refinado y utilícelo en el sistema de asistencia virtual"
+          "Paso 1: Ir a la página de Gemini y crear un nuevo proyecto de IA",
+          "Paso 2: Cargar los datos de los clientes y las transacciones financieras",
+          "Paso 3: Configurar el sistema de IA para que verifique la identidad de los usuarios mediante autenticación de acceso",
+          "Paso 4: Evaluar la seguridad del sistema y refinar los parámetros de autenticación hasta alcanzar un nivel de seguridad adecuado",
+          "Paso 5: Guardar el sistema y exportar los resultados a un archivo CSV"
         ],
-        "criterio_exito": "El prompt diseñado permite al modelo de lenguaje proporcionar respuestas precisas y relevantes a las preguntas de los clientes"
+        "criterio_exito": "El sistema de IA debe verificar la identidad de los usuarios y permitir el acceso solo a los usuarios autorizados"
       },
       "recursos": [
-        "Curso de diseño de prompts en la plataforma de Gemini"
+        "Técnica de autenticación de acceso",
+        "Protocolos de autenticación seguros"
       ]
     },
     {
-      "id": "extra-22-3",
-      "semana": "2026-05-25",
+      "id": "extra-23-3",
+      "semana": "2026-06-01",
       "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Fine-Tuning con Datos Escasos",
-      "subtitulo": "Aprenderá a ajustar modelos de lenguaje con conjuntos de datos limitados",
+      "titulo": "Privacidad en datos",
+      "subtitulo": "Aprenderá a proteger la privacidad en datos en entornos de IA empresarial",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Fine-Tuning con Datos Escasos",
-        "explicacion": "Fine-Tuning con datos escasos es una técnica utilizada para ajustar un modelo de lenguaje pre-entrenado con un conjunto de datos limitado. Esto puede ser útil en situaciones donde no se dispone de suficientes datos para entrenar un modelo desde cero. La clave para el éxito en esta técnica es seleccionar los datos más relevantes y representativos del conjunto de datos disponible.",
-        "analogia": "Imagínese que está tratando de aprender un nuevo idioma, pero solo tiene acceso a un diccionario pequeño. Aunque no puede aprender todo el idioma, puede enfocarse en las palabras y frases más comunes y útiles para comunicarse de manera efectiva.",
+        "concepto": "Anonimización de datos",
+        "explicacion": "La anonimización de datos es una técnica utilizada para proteger la privacidad en datos en entornos de IA. Consiste en eliminar o modificar los datos que permiten identificar a los individuos. Esto es importante porque los datos pueden ser sensibles y no deben ser compartidos con terceros. La anonimización de datos es una forma de proteger la privacidad sin sacrificar la utilidad de los datos. Por ejemplo, en un conjunto de datos que incluye la información de los clientes, la anonimización de datos puede ayudar a proteger la identidad de los clientes. La técnica consiste en eliminar o modificar los datos que permiten identificar a los individuos, como la dirección, el teléfono o el correo electrónico.",
+        "analogia": "La anonimización de datos es como eliminar la etiqueta de identificación de un paquete para evitar que se sepa quién lo envió",
         "cuando_usarlo": [
-          "Cuando se dispone de un conjunto de datos limitado para la tarea específica",
-          "Cuando se necesita una alta precisión en la tarea",
-          "Cuando se quiere aprovechar el conocimiento previo de un modelo pre-entrenado",
-          "Cuando se necesita adaptar un modelo a un dominio específico"
+          "Cuando se trabajan con datos sensibles",
+          "Cuando se necesita proteger la identidad de los individuos",
+          "Cuando se requiere una alta privacidad en los datos",
+          "Cuando se necesita cumplir con regulaciones de privacidad"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de clasificación de textos para un dominio específico",
-        "prompt_malo": "¿Qué categoría corresponde a este texto?",
-        "prompt_bueno": "Clasifique el siguiente texto en una de las categorías predefinidas, considerando el contexto y el contenido del texto",
-        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite al modelo de lenguaje entender mejor el texto y clasificarlo de manera más precisa."
+        "caso": "Un conjunto de datos que incluye la información de los clientes",
+        "prompt_malo": "Compartir los datos sin anonimizar",
+        "prompt_bueno": "Compartir los datos con anonimización para proteger la privacidad",
+        "por_que_mejor": "El prompt bueno es mejor porque elimina o modifica los datos que permiten identificar a los individuos"
       },
       "practica": {
-        "titulo": "Ajustar un modelo de lenguaje con un conjunto de datos limitado",
-        "objetivo": "Aprender a ajustar un modelo de lenguaje con un conjunto de datos limitado",
-        "prompt_practica": "Ajuste un modelo de lenguaje pre-entrenado para clasificar textos en un dominio específico, utilizando un conjunto de datos limitado de 100 ejemplos. El modelo debe clasificar los textos en una de las 5 categorías predefinidas. Utilice la plataforma de Kiro para probar y refinar su modelo.",
+        "titulo": "Aplicar anonimización de datos a un conjunto de datos",
+        "objetivo": "Aprender a aplicar anonimización de datos a un conjunto de datos para proteger la privacidad",
+        "prompt_practica": "Utilice Kiro para crear un conjunto de datos que incluya la información de los clientes y aplique anonimización de datos para proteger la privacidad. Los datos deben incluir la dirección, el teléfono y el correo electrónico de los clientes. La anonimización debe ser realizada mediante la eliminación o modificación de los datos que permiten identificar a los individuos. La salida del conjunto de datos debe ser un archivo CSV que incluya la información anonimizada de los clientes.",
         "pasos": [
-          "Paso 1: Acceda a la plataforma de Kiro y cree un nuevo proyecto",
-          "Paso 2: Cargue el conjunto de datos limitado y ajuste el modelo de lenguaje",
-          "Paso 3: Verifique el rendimiento del modelo y refine su ajuste según sea necesario",
-          "Paso 4: Pruebe y refine el modelo varias veces hasta obtener una clasificación precisa",
-          "Paso 5: Guarde el modelo ajustado y utilícelo para clasificar textos en el dominio específico"
+          "Paso 1: Ir a la página de Kiro y crear un nuevo proyecto de IA",
+          "Paso 2: Cargar los datos de los clientes",
+          "Paso 3: Configurar el conjunto de datos para que aplique anonimización de datos",
+          "Paso 4: Evaluar la privacidad del conjunto de datos y refinar los parámetros de anonimización hasta alcanzar un nivel de privacidad adecuado",
+          "Paso 5: Guardar el conjunto de datos y exportar los resultados a un archivo CSV"
         ],
-        "criterio_exito": "El modelo ajustado clasifica los textos de manera precisa y efectiva en el dominio específico"
+        "criterio_exito": "El conjunto de datos debe incluir la información anonimizada de los clientes"
       },
       "recursos": [
-        "Curso de ajuste de modelos de lenguaje con datos escasos en la plataforma de Kiro"
+        "Técnica de anonimización de datos",
+        "Herramientas de anonimización de datos"
       ]
     },
     {
-      "id": "extra-22-4",
-      "semana": "2026-05-25",
-      "herramienta": "Claude",
+      "id": "extra-23-4",
+      "semana": "2026-06-01",
+      "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Evaluación de Modelos",
-      "subtitulo": "Aprenderá a evaluar y comparar modelos de lenguaje para tareas específicas",
+      "titulo": "Seguridad en sistemas",
+      "subtitulo": "Aprenderá a proteger la seguridad en sistemas de IA empresarial",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Evaluación de Modelos",
-        "explicacion": "La evaluación de modelos es el proceso de medir el rendimiento de un modelo de lenguaje en una tarea específica. Esto es crucial para determinar si un modelo es adecuado para una tarea en particular y para identificar áreas de mejora. La evaluación de modelos implica la selección de métricas de evaluación relevantes, la recopilación de datos de prueba y la comparación de los resultados de diferentes modelos.",
-        "analogia": "Imagínese que está tratando de elegir un coche nuevo. Antes de tomar una decisión, querrá comparar las características y el rendimiento de diferentes modelos para determinar cuál es el mejor para sus necesidades.",
+        "concepto": "Firewall de IA",
+        "explicacion": "Un firewall de IA es una técnica utilizada para proteger la seguridad en sistemas de IA. Consiste en un sistema de defensa que bloquea el acceso no autorizado a los sistemas de IA. Esto es importante porque los sistemas de IA pueden ser vulnerables a ataques cibernéticos y no deben ser accesibles para todos. Un firewall de IA es una forma de proteger la seguridad sin sacrificar la funcionalidad de los sistemas de IA. Por ejemplo, en un sistema de IA que maneja datos financieros, un firewall de IA puede ayudar a proteger la información de los clientes. La técnica consiste en bloquear el acceso no autorizado a los sistemas de IA mediante reglas de seguridad y protocolos de autenticación.",
+        "analogia": "Un firewall de IA es como una puerta que solo permite el acceso a los usuarios autorizados",
         "cuando_usarlo": [
-          "Cuando se necesita evaluar el rendimiento de un modelo de lenguaje",
-          "Cuando se quiere comparar diferentes modelos para una tarea específica",
-          "Cuando se necesita identificar áreas de mejora en un modelo",
-          "Cuando se quiere seleccionar el mejor modelo para una tarea en particular"
+          "Cuando se trabajan con datos sensibles",
+          "Cuando se necesita proteger la identidad de los usuarios",
+          "Cuando se requiere una alta seguridad en los sistemas de IA",
+          "Cuando se necesita cumplir con regulaciones de seguridad"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de recomendación de productos en línea",
-        "prompt_malo": "¿Qué modelo de lenguaje es el mejor para recomendar productos?",
-        "prompt_bueno": "Evalúe el rendimiento de dos modelos de lenguaje diferentes para recomendar productos en línea, considerando la precisión, la cobertura y la diversidad de las recomendaciones",
-        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite evaluar y comparar los modelos de manera más efectiva."
+        "caso": "Un sistema de IA que maneja datos financieros",
+        "prompt_malo": "Acceder al sistema de IA sin firewall",
+        "prompt_bueno": "Acceder al sistema de IA con firewall para proteger la seguridad",
+        "por_que_mejor": "El prompt bueno es mejor porque bloquea el acceso no autorizado a los sistemas de IA"
       },
       "practica": {
-        "titulo": "Evaluar y comparar modelos de lenguaje para una tarea específica",
-        "objetivo": "Aprender a evaluar y comparar modelos de lenguaje para una tarea específica",
-        "prompt_practica": "Evalúe y compare el rendimiento de dos modelos de lenguaje diferentes para una tarea de clasificación de textos. Utilice la plataforma de Claude para probar y evaluar los modelos, y compare los resultados en términos de precisión, cobertura y diversidad. Utilice los siguientes parámetros: conjunto de datos de prueba de 500 ejemplos, 5 categorías de clasificación, y una métrica de evaluación de precisión.",
+        "titulo": "Aplicar firewall de IA a un sistema de IA",
+        "objetivo": "Aprender a aplicar firewall de IA a un sistema de IA para proteger la seguridad",
+        "prompt_practica": "Utilice Kiro para crear un sistema de IA que maneje datos financieros y aplique firewall de IA para proteger la seguridad. Los datos deben incluir la información de los clientes y las transacciones financieras. El firewall debe bloquear el acceso no autorizado a los sistemas de IA mediante reglas de seguridad y protocolos de autenticación. La salida del sistema debe ser un mensaje de bienvenida personalizado para cada usuario autorizado.",
         "pasos": [
-          "Paso 1: Acceda a la plataforma de Claude y cree un nuevo proyecto",
-          "Paso 2: Cargue los dos modelos de lenguaje y el conjunto de datos de prueba",
-          "Paso 3: Evalúe el rendimiento de cada modelo utilizando la métrica de evaluación seleccionada",
-          "Paso 4: Compare los resultados de los dos modelos y determine cuál es el mejor para la tarea",
-          "Paso 5: Guarde los resultados de la evaluación y utilícelos para seleccionar el mejor modelo para la tarea"
+          "Paso 1: Ir a la página de Kiro y crear un nuevo proyecto de IA",
+          "Paso 2: Cargar los datos de los clientes y las transacciones financieras",
+          "Paso 3: Configurar el sistema de IA para que aplique firewall de IA",
+          "Paso 4: Evaluar la seguridad del sistema y refinar los parámetros de firewall hasta alcanzar un nivel de seguridad adecuado",
+          "Paso 5: Guardar el sistema y exportar los resultados a un archivo CSV"
         ],
-        "criterio_exito": "Los modelos se evalúan y comparan de manera efectiva, y se selecciona el mejor modelo para la tarea"
+        "criterio_exito": "El sistema de IA debe bloquear el acceso no autorizado y permitir el acceso solo a los usuarios autorizados"
       },
       "recursos": [
-        "Curso de evaluación de modelos de lenguaje en la plataforma de Claude"
+        "Técnica de firewall de IA",
+        "Herramientas de firewall de IA"
       ]
     }
   ]

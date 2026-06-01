@@ -198,5 +198,45 @@
     "titulo": "Evaluación de Modelos",
     "subtitulo": "Aprenderá a evaluar y comparar modelos de lenguaje para tareas específicas",
     "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-01",
+    "tema": "seguridad y privacidad al usar IA en entornos empresariales",
+    "id": "extra-23-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Privacidad en IA",
+    "subtitulo": "Aprenderá a proteger la privacidad en entornos de IA empresarial",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-01",
+    "tema": "seguridad y privacidad al usar IA en entornos empresariales",
+    "id": "extra-23-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Seguridad en IA",
+    "subtitulo": "Aprenderá a proteger la seguridad en entornos de IA empresarial",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-01",
+    "tema": "seguridad y privacidad al usar IA en entornos empresariales",
+    "id": "extra-23-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Privacidad en datos",
+    "subtitulo": "Aprenderá a proteger la privacidad en datos en entornos de IA empresarial",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-01",
+    "tema": "seguridad y privacidad al usar IA en entornos empresariales",
+    "id": "extra-23-4",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Seguridad en sistemas",
+    "subtitulo": "Aprenderá a proteger la seguridad en sistemas de IA empresarial",
+    "duracion": "25 min"
   }
 ]
