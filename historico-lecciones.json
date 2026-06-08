@@ -238,5 +238,45 @@
     "titulo": "Seguridad en sistemas",
     "subtitulo": "Aprenderá a proteger la seguridad en sistemas de IA empresarial",
     "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-08",
+    "tema": "IA para análisis de sentimiento y voz del cliente",
+    "id": "extra-24-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Análisis Sentimiento",
+    "subtitulo": "Aprenderá a analizar sentimientos con Claude",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-08",
+    "tema": "IA para análisis de sentimiento y voz del cliente",
+    "id": "extra-24-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Clasificación de Texto",
+    "subtitulo": "Aprenderá a clasificar texto con Gemini",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-08",
+    "tema": "IA para análisis de sentimiento y voz del cliente",
+    "id": "extra-24-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Análisis de Voz",
+    "subtitulo": "Aprenderá a analizar la voz del cliente con Kiro",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-08",
+    "tema": "IA para análisis de sentimiento y voz del cliente",
+    "id": "extra-24-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Detección de Tendencias",
+    "subtitulo": "Aprenderá a detectar tendencias con Claude",
+    "duracion": "25 min"
   }
 ]

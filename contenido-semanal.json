@@ -1,188 +1,184 @@
 {
-  "semana": "2026-06-01",
-  "tema": "seguridad y privacidad al usar IA en entornos empresariales",
+  "semana": "2026-06-08",
+  "tema": "IA para análisis de sentimiento y voz del cliente",
   "tip": {
-    "semana": "2026-06-01",
-    "tema": "seguridad y privacidad al usar IA en entornos empresariales",
-    "emoji": "🔒",
-    "titulo": "Encriptación de datos en modelos de IA",
-    "resumen": "Protege datos sensibles con encriptación",
-    "explicacion": "La encriptación de datos es crucial para proteger la información confidencial en entornos empresariales. Al encriptar los datos de entrenamiento y prueba, se evita el acceso no autorizado y se garantiza la privacidad. Esto es especialmente importante en industrias reguladas como la salud y las finanzas. La técnica de encriptación homomórfica permite realizar operaciones sobre datos encriptados sin necesidad de desencriptarlos.",
-    "ejemplo_prompt": "Para implementar la encriptación homomórfica en un modelo de IA, puedes utilizar la biblioteca de Python 'cryptography' y el algoritmo de encriptación 'FHE' (Fully Homomorphic Encryption). Por ejemplo: 'from cryptography.fernet import Fernet; key = Fernet.generate_key(); cipher_suite = Fernet(key); cipher_text = cipher_suite.encrypt(b'Esta es una cadena de texto que se va a encriptar')'",
-    "cuando_usarlo": "Al entrenar modelos de IA con datos sensibles, al compartir datos con terceros y al almacenar datos en la nube",
+    "semana": "2026-06-08",
+    "tema": "IA para análisis de sentimiento y voz del cliente",
+    "emoji": "💡",
+    "titulo": "Análisis de Sentimiento con Embeddings",
+    "resumen": "Mejora la precisión del análisis de sentimiento",
+    "explicacion": "La técnica de embeddings de palabras como Word2Vec o GloVe permite representar palabras en un espacio vectorial, lo que facilita el análisis de sentimiento. Esto funciona porque las palabras con significados similares se encuentran cerca en el espacio vectorial, lo que mejora la precisión del análisis. Se puede utilizar para identificar patrones y tendencias en la voz del cliente.",
+    "ejemplo_prompt": "Utiliza el modelo de lenguaje para generar embeddings de palabras y luego clasifica los comentarios de los clientes en positivos, negativos o neutrales. Por ejemplo, puedes utilizar la biblioteca spaCy con el modelo 'en_core_web_sm' y la función 'word2vec' para generar embeddings y luego entrenar un modelo de clasificación como el Naive Bayes o el Support Vector Machine.",
+    "cuando_usarlo": "Cuando se necesite analizar grandes cantidades de texto, cuando se requiere una mayor precisión en el análisis de sentimiento o cuando se necesita identificar patrones y tendencias en la voz del cliente",
     "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-23-1",
-      "semana": "2026-06-01",
+      "id": "extra-24-1",
+      "semana": "2026-06-08",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Privacidad en IA",
-      "subtitulo": "Aprenderá a proteger la privacidad en entornos de IA empresarial",
+      "titulo": "Análisis Sentimiento",
+      "subtitulo": "Aprenderá a analizar sentimientos con Claude",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Diferenciación de datos",
-        "explicacion": "La diferenciación de datos es una técnica utilizada para proteger la privacidad en entornos de IA. Consiste en agregar ruido a los datos para evitar que se puedan identificar individualmente. Esto es importante porque los datos pueden ser sensibles y no deben ser compartidos con terceros. La diferenciación de datos es una forma de proteger la privacidad sin sacrificar la precisión de los modelos de IA. Por ejemplo, en un modelo de predicción de enfermedades, la diferenciación de datos puede ayudar a proteger la identidad de los pacientes. La técnica consiste en agregar ruido a los datos de entrenamiento, de manera que el modelo no pueda aprender patrones individuales. Esto se logra mediante la adición de ruido aleatorio a los datos, lo que hace que sea imposible identificar a los individuos. La diferenciación de datos es especialmente útil en entornos de IA donde se trabajan con datos sensibles, como la salud o las finanzas.",
-        "analogia": "La diferenciación de datos es como agregar ruido a una conversación para evitar que se puedan escuchar las palabras individuales",
+        "concepto": "Análisis de Sentimiento",
+        "explicacion": "El análisis de sentimiento es una técnica de procesamiento de lenguaje natural que se utiliza para determinar la actitud o sentimiento expresado en un texto. Esta técnica es importante porque permite a las empresas y organizaciones entender la percepción que tienen los clientes sobre sus productos o servicios. El análisis de sentimiento se utiliza comúnmente en la minería de opiniones, el análisis de redes sociales y la evaluación de la satisfacción del cliente. La técnica funciona analizando el lenguaje utilizado en un texto y comparándolo con un conjunto de palabras y frases que han sido etiquetadas como positivas, negativas o neutras.",
+        "analogia": "Un ejemplo del mundo real es un restaurante que analiza las reseñas de sus clientes para entender qué les gusta y qué no, y así mejorar su servicio",
         "cuando_usarlo": [
-          "Cuando se trabajan con datos sensibles",
-          "Cuando se necesita proteger la identidad de los individuos",
-          "Cuando se requiere una alta precisión en los modelos de IA",
-          "Cuando se necesita cumplir con regulaciones de privacidad"
+          "Cuando se necesita evaluar la satisfacción del cliente",
+          "Cuando se necesita analizar las opiniones de los clientes sobre un producto o servicio",
+          "Cuando se necesita identificar patrones y tendencias en las opiniones de los clientes",
+          "Cuando se necesita tomar decisiones informadas basadas en la opinión de los clientes"
         ]
       },
       "ejemplo": {
-        "caso": "Un modelo de predicción de enfermedades que utiliza datos de pacientes",
-        "prompt_malo": "Entrenar un modelo de IA con datos de pacientes sin agregar ruido",
-        "prompt_bueno": "Entrenar un modelo de IA con datos de pacientes con diferenciación de datos para proteger la privacidad",
-        "por_que_mejor": "El prompt bueno es mejor porque agrega ruido a los datos para proteger la privacidad de los pacientes"
+        "caso": "Un caso de uso real es analizar las reseñas de un producto en una tienda en línea",
+        "prompt_malo": "¿Qué tal es este producto?",
+        "prompt_bueno": "Analiza el sentimiento de las reseñas de este producto y proporciona un resumen de los puntos fuertes y débiles",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona un resultado más detallado y útil para entender la opinión de los clientes"
       },
       "practica": {
-        "titulo": "Aplicar diferenciación de datos a un modelo de IA",
-        "objetivo": "Aprender a aplicar diferenciación de datos a un modelo de IA para proteger la privacidad",
-        "prompt_practica": "Utilice Claude para entrenar un modelo de IA con datos de pacientes y aplique diferenciación de datos para proteger la privacidad. Los datos deben incluir la edad, el sexo y los síntomas de los pacientes. El modelo debe predecir la probabilidad de que un paciente tenga una enfermedad determinada. La precisión del modelo debe ser de al menos 90%. Los datos deben ser generados aleatoriamente y deben incluir un mínimo de 1000 pacientes. El modelo debe ser entrenado durante un máximo de 10 minutos. La salida del modelo debe ser un archivo CSV que incluya la predicción para cada paciente.",
+        "titulo": "Análisis de Sentimiento con Claude",
+        "objetivo": "Conseguirás analizar el sentimiento de un conjunto de reseñas de un producto",
+        "prompt_practica": "Analiza el sentimiento de las siguientes reseñas de un producto y proporciona un resumen de los puntos fuertes y débiles. Las reseñas son: 'Me encanta este producto, es excelente', 'No me gusta este producto, es muy caro', 'Este producto es decente, pero no es lo que esperaba'. Proporciona un resultado en formato de porcentaje de sentimiento positivo, negativo y neutro",
         "pasos": [
-          "Paso 1: Ir a la página de Claude y crear un nuevo proyecto de IA",
-          "Paso 2: Cargar los datos de pacientes y seleccionar la opción de diferenciación de datos",
-          "Paso 3: Configurar el modelo de IA y seleccionar la opción de entrenamiento con diferenciación de datos",
-          "Paso 4: Evaluar la precisión del modelo y refinar los parámetros de entrenamiento hasta alcanzar una precisión de al menos 90%",
-          "Paso 5: Guardar el modelo y exportar los resultados a un archivo CSV"
+          "Paso 1: Ingresa a la plataforma de Claude y selecciona la opción de análisis de sentimiento",
+          "Paso 2: Copia y pega las reseñas en el campo de texto proporcionado",
+          "Paso 3: Selecciona el idioma y el modelo de análisis de sentimiento",
+          "Paso 4: Haz clic en el botón de análisis y espera a que se muestren los resultados",
+          "Paso 5: Evalúa los resultados y refina el análisis según sea necesario"
         ],
-        "criterio_exito": "El modelo de IA debe predecir la probabilidad de que un paciente tenga una enfermedad determinada con una precisión de al menos 90%"
+        "criterio_exito": "Un resultado que muestra un porcentaje de sentimiento positivo, negativo y neutro para cada reseña"
       },
       "recursos": [
-        "Técnica de diferenciación de datos",
-        "Modelos de IA con privacidad"
+        "La documentación oficial de Claude sobre análisis de sentimiento"
       ]
     },
     {
-      "id": "extra-23-2",
-      "semana": "2026-06-01",
+      "id": "extra-24-2",
+      "semana": "2026-06-08",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Seguridad en IA",
-      "subtitulo": "Aprenderá a proteger la seguridad en entornos de IA empresarial",
+      "titulo": "Clasificación de Texto",
+      "subtitulo": "Aprenderá a clasificar texto con Gemini",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Autenticación de acceso",
-        "explicacion": "La autenticación de acceso es una técnica utilizada para proteger la seguridad en entornos de IA. Consiste en verificar la identidad de los usuarios que acceden a los sistemas de IA. Esto es importante porque los sistemas de IA pueden contener información sensible y no deben ser accesibles para todos. La autenticación de acceso es una forma de proteger la seguridad sin sacrificar la funcionalidad de los sistemas de IA. Por ejemplo, en un sistema de IA que maneja datos financieros, la autenticación de acceso puede ayudar a proteger la información de los clientes. La técnica consiste en verificar la identidad de los usuarios mediante una combinación de nombre de usuario y contraseña, o mediante métodos de autenticación más avanzados como la autenticación biométrica.",
-        "analogia": "La autenticación de acceso es como una puerta que solo permite el acceso a los usuarios autorizados",
+        "concepto": "Clasificación de Texto",
+        "explicacion": "La clasificación de texto es una técnica de procesamiento de lenguaje natural que se utiliza para asignar una etiqueta o categoría a un texto en función de su contenido. Esta técnica es importante porque permite a las empresas y organizaciones automatizar la clasificación de textos y mejorar la eficiencia en la toma de decisiones. La clasificación de texto se utiliza comúnmente en la clasificación de spam, la detección de fraude y la clasificación de documentos.",
+        "analogia": "Un ejemplo del mundo real es un sistema de clasificación de correos electrónicos que asigna una etiqueta de 'spam' o 'no spam' a cada correo electrónico",
         "cuando_usarlo": [
-          "Cuando se trabajan con datos sensibles",
-          "Cuando se necesita proteger la identidad de los usuarios",
-          "Cuando se requiere una alta seguridad en los sistemas de IA",
-          "Cuando se necesita cumplir con regulaciones de seguridad"
+          "Cuando se necesita clasificar textos en categorías predefinidas",
+          "Cuando se necesita automatizar la clasificación de textos",
+          "Cuando se necesita mejorar la eficiencia en la toma de decisiones",
+          "Cuando se necesita detectar patrones y tendencias en textos"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de IA que maneja datos financieros",
-        "prompt_malo": "Acceder al sistema de IA sin autenticación de acceso",
-        "prompt_bueno": "Acceder al sistema de IA con autenticación de acceso para proteger la seguridad",
-        "por_que_mejor": "El prompt bueno es mejor porque verifica la identidad de los usuarios para proteger la seguridad"
+        "caso": "Un caso de uso real es clasificar correos electrónicos como spam o no spam",
+        "prompt_malo": "¿Es este correo electrónico spam?",
+        "prompt_bueno": "Clasifica este correo electrónico como spam o no spam y proporciona un motivo para la clasificación",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona un resultado más detallado y útil para entender la clasificación"
       },
       "practica": {
-        "titulo": "Aplicar autenticación de acceso a un sistema de IA",
-        "objetivo": "Aprender a aplicar autenticación de acceso a un sistema de IA para proteger la seguridad",
-        "prompt_practica": "Utilice Gemini para crear un sistema de IA que maneje datos financieros y aplique autenticación de acceso para proteger la seguridad. Los datos deben incluir la información de los clientes y las transacciones financieras. El sistema debe verificar la identidad de los usuarios mediante una combinación de nombre de usuario y contraseña. La autenticación debe ser realizada mediante un protocolo de autenticación seguro como SSL/TLS. La salida del sistema debe ser un mensaje de bienvenida personalizado para cada usuario autorizado.",
+        "titulo": "Clasificación de Texto con Gemini",
+        "objetivo": "Conseguirás clasificar un conjunto de textos en categorías predefinidas",
+        "prompt_practica": "Clasifica los siguientes textos en las categorías de 'política', 'deportes' o 'entretenimiento'. Los textos son: 'El equipo de fútbol ganó el campeonato', 'La nueva película de acción es un éxito', 'El presidente anunció un nuevo plan de economía'. Proporciona un resultado en formato de etiqueta de categoría para cada texto",
         "pasos": [
-          "Paso 1: Ir a la página de Gemini y crear un nuevo proyecto de IA",
-          "Paso 2: Cargar los datos de los clientes y las transacciones financieras",
-          "Paso 3: Configurar el sistema de IA para que verifique la identidad de los usuarios mediante autenticación de acceso",
-          "Paso 4: Evaluar la seguridad del sistema y refinar los parámetros de autenticación hasta alcanzar un nivel de seguridad adecuado",
-          "Paso 5: Guardar el sistema y exportar los resultados a un archivo CSV"
+          "Paso 1: Ingresa a la plataforma de Gemini y selecciona la opción de clasificación de texto",
+          "Paso 2: Copia y pega los textos en el campo de texto proporcionado",
+          "Paso 3: Selecciona el modelo de clasificación de texto y las categorías predefinidas",
+          "Paso 4: Haz clic en el botón de clasificación y espera a que se muestren los resultados",
+          "Paso 5: Evalúa los resultados y refina la clasificación según sea necesario"
         ],
-        "criterio_exito": "El sistema de IA debe verificar la identidad de los usuarios y permitir el acceso solo a los usuarios autorizados"
+        "criterio_exito": "Un resultado que muestra una etiqueta de categoría para cada texto"
       },
       "recursos": [
-        "Técnica de autenticación de acceso",
-        "Protocolos de autenticación seguros"
+        "La documentación oficial de Gemini sobre clasificación de texto"
       ]
     },
     {
-      "id": "extra-23-3",
-      "semana": "2026-06-01",
+      "id": "extra-24-3",
+      "semana": "2026-06-08",
       "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Privacidad en datos",
-      "subtitulo": "Aprenderá a proteger la privacidad en datos en entornos de IA empresarial",
+      "titulo": "Análisis de Voz",
+      "subtitulo": "Aprenderá a analizar la voz del cliente con Kiro",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Anonimización de datos",
-        "explicacion": "La anonimización de datos es una técnica utilizada para proteger la privacidad en datos en entornos de IA. Consiste en eliminar o modificar los datos que permiten identificar a los individuos. Esto es importante porque los datos pueden ser sensibles y no deben ser compartidos con terceros. La anonimización de datos es una forma de proteger la privacidad sin sacrificar la utilidad de los datos. Por ejemplo, en un conjunto de datos que incluye la información de los clientes, la anonimización de datos puede ayudar a proteger la identidad de los clientes. La técnica consiste en eliminar o modificar los datos que permiten identificar a los individuos, como la dirección, el teléfono o el correo electrónico.",
-        "analogia": "La anonimización de datos es como eliminar la etiqueta de identificación de un paquete para evitar que se sepa quién lo envió",
+        "concepto": "Análisis de Voz del Cliente",
+        "explicacion": "El análisis de voz del cliente es una técnica de procesamiento de lenguaje natural que se utiliza para entender la opinión y las necesidades de los clientes. Esta técnica es importante porque permite a las empresas y organizaciones mejorar la satisfacción del cliente y aumentar la lealtad. El análisis de voz del cliente se utiliza comúnmente en la evaluación de la satisfacción del cliente, la detección de patrones y tendencias en las opiniones de los clientes y la identificación de oportunidades de mejora.",
+        "analogia": "Un ejemplo del mundo real es un sistema de feedback de clientes que analiza las opiniones de los clientes y proporciona recomendaciones para mejorar",
         "cuando_usarlo": [
-          "Cuando se trabajan con datos sensibles",
-          "Cuando se necesita proteger la identidad de los individuos",
-          "Cuando se requiere una alta privacidad en los datos",
-          "Cuando se necesita cumplir con regulaciones de privacidad"
+          "Cuando se necesita entender la opinión y las necesidades de los clientes",
+          "Cuando se necesita mejorar la satisfacción del cliente",
+          "Cuando se necesita detectar patrones y tendencias en las opiniones de los clientes",
+          "Cuando se necesita identificar oportunidades de mejora"
         ]
       },
       "ejemplo": {
-        "caso": "Un conjunto de datos que incluye la información de los clientes",
-        "prompt_malo": "Compartir los datos sin anonimizar",
-        "prompt_bueno": "Compartir los datos con anonimización para proteger la privacidad",
-        "por_que_mejor": "El prompt bueno es mejor porque elimina o modifica los datos que permiten identificar a los individuos"
+        "caso": "Un caso de uso real es analizar las opiniones de los clientes sobre un producto",
+        "prompt_malo": "¿Qué tal es este producto?",
+        "prompt_bueno": "Analiza la voz del cliente sobre este producto y proporciona un resumen de los puntos fuertes y débiles",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona un resultado más detallado y útil para entender la opinión de los clientes"
       },
       "practica": {
-        "titulo": "Aplicar anonimización de datos a un conjunto de datos",
-        "objetivo": "Aprender a aplicar anonimización de datos a un conjunto de datos para proteger la privacidad",
-        "prompt_practica": "Utilice Kiro para crear un conjunto de datos que incluya la información de los clientes y aplique anonimización de datos para proteger la privacidad. Los datos deben incluir la dirección, el teléfono y el correo electrónico de los clientes. La anonimización debe ser realizada mediante la eliminación o modificación de los datos que permiten identificar a los individuos. La salida del conjunto de datos debe ser un archivo CSV que incluya la información anonimizada de los clientes.",
+        "titulo": "Análisis de Voz del Cliente con Kiro",
+        "objetivo": "Conseguirás analizar la voz del cliente sobre un producto",
+        "prompt_practica": "Analiza la voz del cliente sobre el siguiente producto y proporciona un resumen de los puntos fuertes y débiles. El producto es un teléfono inteligente y las opiniones de los clientes son: 'Me encanta este teléfono, es muy rápido', 'No me gusta este teléfono, la batería es muy débil', 'Este teléfono es decente, pero no es lo que esperaba'. Proporciona un resultado en formato de porcentaje de satisfacción del cliente",
         "pasos": [
-          "Paso 1: Ir a la página de Kiro y crear un nuevo proyecto de IA",
-          "Paso 2: Cargar los datos de los clientes",
-          "Paso 3: Configurar el conjunto de datos para que aplique anonimización de datos",
-          "Paso 4: Evaluar la privacidad del conjunto de datos y refinar los parámetros de anonimización hasta alcanzar un nivel de privacidad adecuado",
-          "Paso 5: Guardar el conjunto de datos y exportar los resultados a un archivo CSV"
+          "Paso 1: Ingresa a la plataforma de Kiro y selecciona la opción de análisis de voz del cliente",
+          "Paso 2: Copia y pega las opiniones de los clientes en el campo de texto proporcionado",
+          "Paso 3: Selecciona el modelo de análisis de voz del cliente y las opciones de configuración",
+          "Paso 4: Haz clic en el botón de análisis y espera a que se muestren los resultados",
+          "Paso 5: Evalúa los resultados y refina el análisis según sea necesario"
         ],
-        "criterio_exito": "El conjunto de datos debe incluir la información anonimizada de los clientes"
+        "criterio_exito": "Un resultado que muestra un porcentaje de satisfacción del cliente"
       },
       "recursos": [
-        "Técnica de anonimización de datos",
-        "Herramientas de anonimización de datos"
+        "La documentación oficial de Kiro sobre análisis de voz del cliente"
       ]
     },
     {
-      "id": "extra-23-4",
-      "semana": "2026-06-01",
-      "herramienta": "Kiro",
+      "id": "extra-24-4",
+      "semana": "2026-06-08",
+      "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Seguridad en sistemas",
-      "subtitulo": "Aprenderá a proteger la seguridad en sistemas de IA empresarial",
+      "titulo": "Detección de Tendencias",
+      "subtitulo": "Aprenderá a detectar tendencias con Claude",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Firewall de IA",
-        "explicacion": "Un firewall de IA es una técnica utilizada para proteger la seguridad en sistemas de IA. Consiste en un sistema de defensa que bloquea el acceso no autorizado a los sistemas de IA. Esto es importante porque los sistemas de IA pueden ser vulnerables a ataques cibernéticos y no deben ser accesibles para todos. Un firewall de IA es una forma de proteger la seguridad sin sacrificar la funcionalidad de los sistemas de IA. Por ejemplo, en un sistema de IA que maneja datos financieros, un firewall de IA puede ayudar a proteger la información de los clientes. La técnica consiste en bloquear el acceso no autorizado a los sistemas de IA mediante reglas de seguridad y protocolos de autenticación.",
-        "analogia": "Un firewall de IA es como una puerta que solo permite el acceso a los usuarios autorizados",
+        "concepto": "Detección de Tendencias",
+        "explicacion": "La detección de tendencias es una técnica de procesamiento de lenguaje natural que se utiliza para identificar patrones y tendencias en grandes conjuntos de datos. Esta técnica es importante porque permite a las empresas y organizaciones tomar decisiones informadas y anticiparse a los cambios en el mercado. La detección de tendencias se utiliza comúnmente en la evaluación de la satisfacción del cliente, la detección de fraude y la identificación de oportunidades de mejora.",
+        "analogia": "Un ejemplo del mundo real es un sistema de análisis de mercado que identifica tendencias en las ventas y proporciona recomendaciones para mejorar",
         "cuando_usarlo": [
-          "Cuando se trabajan con datos sensibles",
-          "Cuando se necesita proteger la identidad de los usuarios",
-          "Cuando se requiere una alta seguridad en los sistemas de IA",
-          "Cuando se necesita cumplir con regulaciones de seguridad"
+          "Cuando se necesita identificar patrones y tendencias en grandes conjuntos de datos",
+          "Cuando se necesita tomar decisiones informadas",
+          "Cuando se necesita anticiparse a los cambios en el mercado",
+          "Cuando se necesita identificar oportunidades de mejora"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de IA que maneja datos financieros",
-        "prompt_malo": "Acceder al sistema de IA sin firewall",
-        "prompt_bueno": "Acceder al sistema de IA con firewall para proteger la seguridad",
-        "por_que_mejor": "El prompt bueno es mejor porque bloquea el acceso no autorizado a los sistemas de IA"
+        "caso": "Un caso de uso real es detectar tendencias en las opiniones de los clientes sobre un producto",
+        "prompt_malo": "¿Qué tal es este producto?",
+        "prompt_bueno": "Detecta las tendencias en las opiniones de los clientes sobre este producto y proporciona un resumen de los puntos fuertes y débiles",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona un resultado más detallado y útil para entender las tendencias"
       },
       "practica": {
-        "titulo": "Aplicar firewall de IA a un sistema de IA",
-        "objetivo": "Aprender a aplicar firewall de IA a un sistema de IA para proteger la seguridad",
-        "prompt_practica": "Utilice Kiro para crear un sistema de IA que maneje datos financieros y aplique firewall de IA para proteger la seguridad. Los datos deben incluir la información de los clientes y las transacciones financieras. El firewall debe bloquear el acceso no autorizado a los sistemas de IA mediante reglas de seguridad y protocolos de autenticación. La salida del sistema debe ser un mensaje de bienvenida personalizado para cada usuario autorizado.",
+        "titulo": "Detección de Tendencias con Claude",
+        "objetivo": "Conseguirás detectar tendencias en las opiniones de los clientes sobre un producto",
+        "prompt_practica": "Detecta las tendencias en las opiniones de los clientes sobre el siguiente producto y proporciona un resumen de los puntos fuertes y débiles. El producto es un teléfono inteligente y las opiniones de los clientes son: 'Me encanta este teléfono, es muy rápido', 'No me gusta este teléfono, la batería es muy débil', 'Este teléfono es decente, pero no es lo que esperaba'. Proporciona un resultado en formato de gráfico de tendencias",
         "pasos": [
-          "Paso 1: Ir a la página de Kiro y crear un nuevo proyecto de IA",
-          "Paso 2: Cargar los datos de los clientes y las transacciones financieras",
-          "Paso 3: Configurar el sistema de IA para que aplique firewall de IA",
-          "Paso 4: Evaluar la seguridad del sistema y refinar los parámetros de firewall hasta alcanzar un nivel de seguridad adecuado",
-          "Paso 5: Guardar el sistema y exportar los resultados a un archivo CSV"
+          "Paso 1: Ingresa a la plataforma de Claude y selecciona la opción de detección de tendencias",
+          "Paso 2: Copia y pega las opiniones de los clientes en el campo de texto proporcionado",
+          "Paso 3: Selecciona el modelo de detección de tendencias y las opciones de configuración",
+          "Paso 4: Haz clic en el botón de análisis y espera a que se muestren los resultados",
+          "Paso 5: Evalúa los resultados y refina el análisis según sea necesario"
         ],
-        "criterio_exito": "El sistema de IA debe bloquear el acceso no autorizado y permitir el acceso solo a los usuarios autorizados"
+        "criterio_exito": "Un resultado que muestra un gráfico de tendencias"
       },
       "recursos": [
-        "Técnica de firewall de IA",
-        "Herramientas de firewall de IA"
+        "La documentación oficial de Claude sobre detección de tendencias"
       ]
     }
   ]
