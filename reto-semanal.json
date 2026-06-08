@@ -1,93 +1,92 @@
 {
-  "semana": "2026-06-01",
-  "num_semana": 23,
-  "tema": "uso ético y responsable de IA en entornos profesionales",
-  "titulo": "IA Ética",
-  "descripcion": "Importa para decisiones informadas",
+  "semana": "2026-06-08",
+  "num_semana": 24,
+  "tema": "prompting avanzado: técnicas de few-shot y chain-of-thought",
+  "titulo": "Dominio Prompting",
+  "descripcion": "Mejora la eficiencia con IA",
   "ejercicios": [
     {
       "id": 1,
       "herramienta": "Claude",
       "nivel": "Basico",
-      "titulo": "IA Ética Básica",
-      "objetivo": "Aprender a formular preguntas éticas en IA",
-      "contexto": "En el trabajo, la IA ética es crucial para decisiones informadas. Este ejercicio ayuda a comprender cómo formular preguntas éticas en IA. La herramienta Claude es ideal para esto.",
-      "prompt_ejemplo": "Escribe un informe de 200 palabras sobre cómo una empresa de tecnología puede implementar prácticas de IA ética en su proceso de toma de decisiones, considerando la privacidad de los datos de los clientes y la transparencia en el uso de algoritmos. Asegúrate de incluir recomendaciones específicas para la capacitación del personal y la implementación de auditorías regulares. La respuesta debe ser en formato de informe ejecutivo y contener al menos tres puntos clave.",
+      "titulo": "Prompting Básico",
+      "objetivo": "Aprender a crear prompts efectivos",
+      "contexto": "Este ejercicio es útil para entender cómo crear instrucciones claras para la IA. En el trabajo real, esto se aplica a la automatización de tareas y la generación de contenido",
+      "prompt_ejemplo": "Escribe un correo electrónico formal dirigido a un gerente de marketing, solicitando una reunión para discutir una propuesta de campaña publicitaria. El correo debe incluir una breve introducción, un resumen de la propuesta y una llamada a la acción. El tono debe ser profesional y amigable. La respuesta debe estar en formato de correo electrónico completo, incluyendo asunto, destinatario y remitente.",
       "pasos": [
-        "Ve a https://claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Sign Up'.",
-        "Una vez dentro, haz clic en 'New Prompt'. Verás un campo de texto grande para escribir tu prompt.",
-        "Copia el prompt de ejemplo que aparece arriba en esta lección.",
-        "Pégalo en el campo de texto de Claude. Antes de enviarlo, sustituye 'empresa de tecnología' por el nombre de tu empresa o una empresa que conozcas.",
-        "Haz clic en el botón 'Generate' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
-        "Lee la respuesta y evalúa: si la respuesta incluye al menos tres puntos clave sobre la implementación de prácticas de IA ética. Si no cumple, prueba añadir al final del prompt: 'y proporciona ejemplos concretos de cada punto'.",
-        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
+        "Ve a https://claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Crear cuenta'",
+        "Una vez dentro, haz clic en 'Crear nuevo prompt'. Verás un campo de texto grande donde puedes escribir tu prompt",
+        "Copia el prompt de ejemplo que aparece arriba en esta lección",
+        "Pégalo en el campo de texto 'Ingrese su prompt aquí'. Antes de enviarlo, sustituye 'gerente de marketing' por el nombre de la persona a la que te diriges en tu caso real",
+        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta",
+        "Lee la respuesta y evalúa: la respuesta debe incluir un asunto, un destinatario y un remitente, y debe estar escrita en un tono profesional y amigable. Si no cumple, prueba añadiendo al final del prompt: 'Asegúrate de incluir todos los detalles de contacto'",
+        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura"
       ],
-      "criterio_exito": "La respuesta incluye al menos tres puntos clave sobre la implementación de prácticas de IA ética",
+      "criterio_exito": "La respuesta generada incluye todos los elementos solicitados y está escrita en un tono adecuado",
       "tiempo_estimado": "15 min",
-      "consejo_pro": "Utiliza la función de 'Refine' de Claude para ajustar la respuesta a tus necesidades específicas, permitiéndote obtener resultados más precisos y relevantes."
+      "consejo_pro": "Utiliza palabras clave específicas de tu industria en el prompt para obtener respuestas más relevantes y personalizadas"
     },
     {
       "id": 2,
       "herramienta": "Gemini",
       "nivel": "Basico",
-      "titulo": "Análisis de Riesgos",
-      "objetivo": "Aprender a identificar riesgos en proyectos de IA",
-      "contexto": "En proyectos de IA, identificar riesgos es crucial. Gemini es una herramienta útil para este propósito. Este ejercicio te ayudará a comprender cómo analizar riesgos en proyectos de IA.",
-      "prompt_ejemplo": "Identifica y describe tres riesgos potenciales en un proyecto de implementación de IA para el análisis de sentimientos en redes sociales, considerando la privacidad de los datos y la precisión de los algoritmos. La respuesta debe incluir una breve descripción de cada riesgo y posibles estrategias de mitigación en un formato de lista numerada.",
+      "titulo": "Few-Shot Learning",
+      "objetivo": "Aprender a utilizar el aprendizaje de pocos disparos",
+      "contexto": "Este ejercicio es útil para entender cómo la IA puede aprender de ejemplos limitados. En el trabajo real, esto se aplica a la clasificación de texto y la detección de sentimiento",
+      "prompt_ejemplo": "Clasifica los siguientes textos como positivos o negativos: 'Me encantó el servicio', 'El producto fue defectuoso', 'La experiencia fue increíble'. Utiliza el aprendizaje de pocos disparos para entrenar el modelo y luego clasifica el texto 'El restaurante tenía una atmósfera agradable'. La respuesta debe incluir la clasificación de cada texto y la explicación de por qué se tomó esa decisión",
       "pasos": [
-        "Ve a https://gemini.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Get Started'.",
-        "Una vez dentro, haz clic en 'New Conversation'. Verás un campo de texto para interactuar con Gemini.",
-        "Copia el prompt de ejemplo que aparece arriba en esta lección.",
-        "Pégalo en el campo de texto de Gemini. Antes de enviarlo, sustituye 'proyecto de implementación de IA' por el nombre de un proyecto real o hipotético que estés considerando.",
-        "Haz clic en el botón 'Send' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
-        "Lee la respuesta y evalúa: si la respuesta incluye al menos tres riesgos potenciales con descripciones y estrategias de mitigación. Si no cumple, prueba añadir al final del prompt: 'y explica cómo afectarían al proyecto'.",
-        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
+        "Ve a https://gemini.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Registro'",
+        "Una vez dentro, haz clic en 'Crear nuevo proyecto'. Verás un menú desplegable con opciones de tarea",
+        "Selecciona 'Clasificación de texto' y luego 'Aprendizaje de pocos disparos'",
+        "Copia el prompt de ejemplo que aparece arriba en esta lección y pégalo en el campo de texto 'Ingrese su prompt aquí'",
+        "Haz clic en el botón 'Entrenar' y espera a que el modelo se entrene. Luego, haz clic en 'Clasificar' para ver las clasificaciones de los textos",
+        "Lee las clasificaciones y evalúa: las clasificaciones deben ser coherentes con el tono de cada texto. Si no cumple, prueba ajustando los parámetros de entrenamiento",
+        "Guarda las clasificaciones que más te gusten copiándolas a un documento o nota para referencia futura"
       ],
-      "criterio_exito": "La respuesta incluye al menos tres riesgos potenciales con descripciones y estrategias de mitigación",
-      "tiempo_estimado": "15 min",
-      "consejo_pro": "Utiliza la capacidad de Gemini para generar respuestas en diferentes formatos, como listas o tablas, para presentar los riesgos y estrategias de manera clara y organizada."
+      "criterio_exito": "Las clasificaciones generadas son coherentes con el tono de cada texto",
+      "tiempo_estimado": "20 min",
+      "consejo_pro": "Utiliza un conjunto de datos diverso y representativo para entrenar el modelo, para mejorar la precisión de las clasificaciones"
     },
     {
       "id": 3,
       "herramienta": "Kiro",
       "nivel": "Intermedio",
-      "titulo": "Evaluación de Impacto",
-      "objetivo": "Aprender a evaluar el impacto de la IA en la sociedad",
-      "contexto": "La IA puede tener un impacto significativo en la sociedad. Kiro es una herramienta que puede ayudar a evaluar este impacto. Este ejercicio te ayudará a comprender cómo evaluar el impacto de la IA en la sociedad.",
-      "prompt_ejemplo": "Evalúa el impacto potencial de un sistema de IA diseñado para automatizar la toma de decisiones en un banco, considerando aspectos como la privacidad de los clientes, la equidad en la concesión de préstamos y el impacto en el empleo. La respuesta debe incluir una evaluación detallada de los posibles beneficios y desafíos, así como recomendaciones para mitigar los riesgos. La respuesta debe ser en formato de informe detallado de al menos 250 palabras.",
+      "titulo": "Chain-of-Thought",
+      "objetivo": "Aprender a crear cadenas de pensamiento",
+      "contexto": "Este ejercicio es útil para entender cómo la IA puede razonar y tomar decisiones. En el trabajo real, esto se aplica a la resolución de problemas complejos",
+      "prompt_ejemplo": "Un fabricante de automóviles quiere aumentar la eficiencia de su línea de producción. La empresa tiene 5 máquinas que pueden producir 100 unidades por hora cada una. Sin embargo, la empresa solo puede producir 400 unidades por hora debido a limitaciones de suministro. ¿Cuál es la mejor estrategia para aumentar la producción? Utiliza una cadena de pensamiento para analizar el problema y proponer una solución. La respuesta debe incluir una descripción detallada de la cadena de pensamiento y la solución propuesta",
       "pasos": [
-        "Ve a https://kiro.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Sign Up'.",
-        "Una vez dentro, haz clic en 'New Project'. Verás un campo de texto para describir tu proyecto.",
-        "Copia el prompt de ejemplo que aparece arriba en esta lección.",
-        "Pégalo en el campo de texto de Kiro. Antes de enviarlo, sustituye 'sistema de IA' por el nombre de un sistema real o hipotético que estés considerando.",
-        "Haz clic en el botón 'Analyze' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
-        "Lee la respuesta y evalúa: si la respuesta incluye una evaluación detallada de los posibles beneficios y desafíos, así como recomendaciones para mitigar los riesgos. Si no cumple, prueba añadir al final del prompt: 'y proporciona un plan de acción para implementar las recomendaciones'.",
-        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
+        "Ve a https://kiro.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Crear cuenta'",
+        "Una vez dentro, haz clic en 'Crear nuevo proyecto'. Verás un menú desplegable con opciones de tarea",
+        "Selecciona 'Resolución de problemas' y luego 'Cadena de pensamiento'",
+        "Copia el prompt de ejemplo que aparece arriba en esta lección y pégalo en el campo de texto 'Ingrese su prompt aquí'",
+        "Haz clic en el botón 'Analizar' y espera a que el modelo genere una cadena de pensamiento",
+        "Lee la cadena de pensamiento y evalúa: la cadena de pensamiento debe incluir una descripción clara del problema, una identificación de las limitaciones y una propuesta de solución. Si no cumple, prueba ajustando los parámetros de análisis",
+        "Guarda la cadena de pensamiento que más te guste copiándola a un documento o nota para referencia futura"
       ],
-      "criterio_exito": "La respuesta incluye una evaluación detallada de los posibles beneficios y desafíos, así como recomendaciones para mitigar los riesgos",
+      "criterio_exito": "La cadena de pensamiento generada es coherente y lógica, y la solución propuesta es factible",
       "tiempo_estimado": "30 min",
-      "consejo_pro": "Utiliza la función de 'Collaboration' de Kiro para trabajar con otros en la evaluación del impacto, permitiéndote obtener perspectivas más amplias y completas."
+      "consejo_pro": "Utiliza una variedad de fuentes de información para alimentar la cadena de pensamiento, para obtener una comprensión más completa del problema"
     },
     {
       "id": 4,
       "herramienta": "Claude",
       "nivel": "Intermedio",
-      "titulo": "Desarrollo de Políticas",
-      "objetivo": "Aprender a desarrollar políticas de IA ética",
-      "contexto": "Desarrollar políticas de IA ética es crucial para cualquier organización. Claude puede ayudar en este proceso. Este ejercicio te ayudará a comprender cómo desarrollar políticas de IA ética.",
-      "prompt_ejemplo": "Desarrolla un conjunto de políticas para el uso ético de la IA en una empresa de salud, considerando aspectos como la privacidad de los datos de los pacientes, la seguridad de los sistemas y la transparencia en la toma de decisiones. La respuesta debe incluir al menos cinco políticas específicas, junto con justificaciones y recomendaciones para su implementación. La respuesta debe ser en formato de documento de políticas de al menos 300 palabras.",
+      "titulo": "Prompting Avanzado",
+      "objetivo": "Aprender a crear prompts avanzados",
+      "contexto": "Este ejercicio es útil para entender cómo la IA puede generar contenido complejo. En el trabajo real, esto se aplica a la creación de informes y presentaciones",
+      "prompt_ejemplo": "Crea un informe detallado sobre el impacto del cambio climático en la industria agrícola. El informe debe incluir una introducción, una sección de antecedentes, una sección de análisis y una sección de conclusiones. Utiliza una variedad de fuentes de información para respaldar tus argumentos. La respuesta debe incluir un resumen ejecutivo, una tabla de contenido y una bibliografía",
       "pasos": [
-        "Ve a https://claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Sign Up'.",
-        "Una vez dentro, haz clic en 'New Document'. Verás un campo de texto para escribir tu documento.",
-        "Copia el prompt de ejemplo que aparece arriba en esta lección.",
-        "Pégalo en el campo de texto de Claude. Antes de enviarlo, sustituye 'empresa de salud' por el nombre de tu empresa o una empresa que conozcas.",
-        "Haz clic en el botón 'Generate' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
-        "Lee la respuesta y evalúa: si la respuesta incluye al menos cinco políticas específicas, junto con justificaciones y recomendaciones para su implementación. Si no cumple, prueba añadir al final del prompt: 'y proporciona un plan de implementación para cada política'.",
-        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
+        "Ve a https://claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Crear cuenta'",
+        "Una vez dentro, haz clic en 'Crear nuevo prompt'. Verás un campo de texto grande donde puedes escribir tu prompt",
+        "Copia el prompt de ejemplo que aparece arriba en esta lección y pégalo en el campo de texto 'Ingrese su prompt aquí'",
+        "Haz clic en el botón 'Generar' y espera a que el modelo genere el informe",
+        "Lee el informe y evalúa: el informe debe incluir todas las secciones solicitadas y debe estar bien organizado y estructurado. Si no cumple, prueba ajustando los parámetros de generación",
+        "Guarda el informe que más te guste copiándolo a un documento o nota para referencia futura"
       ],
-      "criterio_exito": "La respuesta incluye al menos cinco políticas específicas, junto con justificaciones y recomendaciones para su implementación",
-      "tiempo_estimado": "30 min",
-      "consejo_pro": "Utiliza la función de 'Revision' de Claude para revisar y refinar las políticas desarrolladas, asegurándote de que sean claras, concisas y efectivas."
+      "criterio_exito": "El informe generado es completo y bien estructurado, y incluye una variedad de fuentes de información",
+      "tiempo_estimado": "45 min",
+      "consejo_pro": "Utiliza una variedad de palabras clave y frases de búsqueda para ayudar al modelo a generar contenido relevante y preciso"
     }
   ]
 }
