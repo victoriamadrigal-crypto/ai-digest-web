@@ -278,5 +278,45 @@
     "titulo": "Detección de Tendencias",
     "subtitulo": "Aprenderá a detectar tendencias con Claude",
     "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-15",
+    "tema": "automatización avanzada: MCP y herramientas externas",
+    "id": "extra-25-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Automatización Avanzada",
+    "subtitulo": "Aprenderá a automatizar tareas complejas utilizando Claude",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-15",
+    "tema": "automatización avanzada: MCP y herramientas externas",
+    "id": "extra-25-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Integración de Herramientas",
+    "subtitulo": "Aprenderá a integrar herramientas y sistemas utilizando Gemini",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-15",
+    "tema": "automatización avanzada: MCP y herramientas externas",
+    "id": "extra-25-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Automatización de Tareas",
+    "subtitulo": "Aprenderá a automatizar tareas complejas utilizando Kiro",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-15",
+    "tema": "automatización avanzada: MCP y herramientas externas",
+    "id": "extra-25-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Optimización de Procesos",
+    "subtitulo": "Aprenderá a optimizar procesos utilizando Claude",
+    "duracion": "25 min"
   }
 ]

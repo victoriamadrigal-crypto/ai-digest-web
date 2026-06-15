@@ -1,184 +1,184 @@
 {
-  "semana": "2026-06-08",
-  "tema": "IA para análisis de sentimiento y voz del cliente",
+  "semana": "2026-06-15",
+  "tema": "automatización avanzada: MCP y herramientas externas",
   "tip": {
-    "semana": "2026-06-08",
-    "tema": "IA para análisis de sentimiento y voz del cliente",
-    "emoji": "💡",
-    "titulo": "Análisis de Sentimiento con Embeddings",
-    "resumen": "Mejora la precisión del análisis de sentimiento",
-    "explicacion": "La técnica de embeddings de palabras como Word2Vec o GloVe permite representar palabras en un espacio vectorial, lo que facilita el análisis de sentimiento. Esto funciona porque las palabras con significados similares se encuentran cerca en el espacio vectorial, lo que mejora la precisión del análisis. Se puede utilizar para identificar patrones y tendencias en la voz del cliente.",
-    "ejemplo_prompt": "Utiliza el modelo de lenguaje para generar embeddings de palabras y luego clasifica los comentarios de los clientes en positivos, negativos o neutrales. Por ejemplo, puedes utilizar la biblioteca spaCy con el modelo 'en_core_web_sm' y la función 'word2vec' para generar embeddings y luego entrenar un modelo de clasificación como el Naive Bayes o el Support Vector Machine.",
-    "cuando_usarlo": "Cuando se necesite analizar grandes cantidades de texto, cuando se requiere una mayor precisión en el análisis de sentimiento o cuando se necesita identificar patrones y tendencias en la voz del cliente",
+    "semana": "2026-06-15",
+    "tema": "automatización avanzada: MCP y herramientas externas",
+    "emoji": "🤖",
+    "titulo": "Automatiza con MCP y API",
+    "resumen": "Automatiza procesos con MCP y API",
+    "explicacion": "La técnica de automatización avanzada con MCP (Modelo de Control de Procesos) y herramientas externas como API permite integrar sistemas y procesos de manera eficiente. Esto se logra mediante la creación de flujos de trabajo personalizados que interactúan con herramientas externas a través de API, lo que reduce la carga de trabajo manual y aumenta la productividad. Esta técnica es especialmente útil en entornos empresariales donde la integración de sistemas y la automatización de procesos son clave para el éxito.",
+    "ejemplo_prompt": "Para automatizar un proceso de aprobación de solicitudes de compra, se puede crear un flujo de trabajo en MCP que envíe una solicitud de aprobación a un gestor a través de la API de un sistema de gestión de compras, y luego actualice el estado de la solicitud en el sistema de gestión de compras según la respuesta del gestor. El comando para enviar la solicitud de aprobación podría ser: 'curl -X POST https://api.sistema-de-gestion-de-compras.com/aprobacion -H 'Authorization: Bearer token-de-acceso' -d '{\"id_solicitud\": 123, \"monto\": 1000}'",
+    "cuando_usarlo": "Cuando se necesita integrar sistemas de gestión de compras con flujos de trabajo de aprobación, cuando se requiere automatizar la actualización de estados de solicitudes en un sistema de gestión de compras, o cuando se necesita enviar notificaciones a gestores a través de un sistema de mensajería instantánea",
     "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-24-1",
-      "semana": "2026-06-08",
+      "id": "extra-25-1",
+      "semana": "2026-06-15",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Análisis Sentimiento",
-      "subtitulo": "Aprenderá a analizar sentimientos con Claude",
+      "titulo": "Automatización Avanzada",
+      "subtitulo": "Aprenderá a automatizar tareas complejas utilizando Claude",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Análisis de Sentimiento",
-        "explicacion": "El análisis de sentimiento es una técnica de procesamiento de lenguaje natural que se utiliza para determinar la actitud o sentimiento expresado en un texto. Esta técnica es importante porque permite a las empresas y organizaciones entender la percepción que tienen los clientes sobre sus productos o servicios. El análisis de sentimiento se utiliza comúnmente en la minería de opiniones, el análisis de redes sociales y la evaluación de la satisfacción del cliente. La técnica funciona analizando el lenguaje utilizado en un texto y comparándolo con un conjunto de palabras y frases que han sido etiquetadas como positivas, negativas o neutras.",
-        "analogia": "Un ejemplo del mundo real es un restaurante que analiza las reseñas de sus clientes para entender qué les gusta y qué no, y así mejorar su servicio",
+        "concepto": "Automatización de Procesos",
+        "explicacion": "La automatización de procesos es la capacidad de un sistema para ejecutar tareas de manera autónoma, sin la intervención directa de un humano. Esto se logra a través de la programación de flujos de trabajo y la integración de herramientas y sistemas. La automatización de procesos es importante porque permite aumentar la eficiencia, reducir los errores y mejorar la productividad. Funciona a través de la creación de reglas y condiciones que determinan cuándo y cómo se deben ejecutar las tareas. Se utiliza en una variedad de industrias, desde la manufactura hasta los servicios financieros.",
+        "analogia": "Un ejemplo de automatización de procesos en la vida real es un sistema de iluminación inteligente en una casa. El sistema puede estar programado para encender y apagar las luces en función de la hora del día y la ocupación de la habitación.",
         "cuando_usarlo": [
-          "Cuando se necesita evaluar la satisfacción del cliente",
-          "Cuando se necesita analizar las opiniones de los clientes sobre un producto o servicio",
-          "Cuando se necesita identificar patrones y tendencias en las opiniones de los clientes",
-          "Cuando se necesita tomar decisiones informadas basadas en la opinión de los clientes"
+          "Cuando se necesitan ejecutar tareas repetitivas y rutinarias",
+          "Cuando se requiere una alta precisión y exactitud",
+          "Cuando se necesita integrar múltiples sistemas y herramientas",
+          "Cuando se busca reducir los costos y mejorar la eficiencia"
         ]
       },
       "ejemplo": {
-        "caso": "Un caso de uso real es analizar las reseñas de un producto en una tienda en línea",
-        "prompt_malo": "¿Qué tal es este producto?",
-        "prompt_bueno": "Analiza el sentimiento de las reseñas de este producto y proporciona un resumen de los puntos fuertes y débiles",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona un resultado más detallado y útil para entender la opinión de los clientes"
+        "caso": "Un ejemplo de automatización de procesos es la creación de un sistema que envíe correos electrónicos de bienvenida a los nuevos clientes de una empresa",
+        "prompt_malo": "Escribe un correo electrónico de bienvenida para nuevos clientes",
+        "prompt_bueno": "Crea un correo electrónico de bienvenida personalizado para nuevos clientes, incluyendo su nombre y información de contacto, y envíalo automáticamente cuando se registren en nuestro sitio web",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y especificidad sobre lo que se necesita, lo que permite a Claude generar un correo electrónico más personalizado y efectivo"
       },
       "practica": {
-        "titulo": "Análisis de Sentimiento con Claude",
-        "objetivo": "Conseguirás analizar el sentimiento de un conjunto de reseñas de un producto",
-        "prompt_practica": "Analiza el sentimiento de las siguientes reseñas de un producto y proporciona un resumen de los puntos fuertes y débiles. Las reseñas son: 'Me encanta este producto, es excelente', 'No me gusta este producto, es muy caro', 'Este producto es decente, pero no es lo que esperaba'. Proporciona un resultado en formato de porcentaje de sentimiento positivo, negativo y neutro",
+        "titulo": "Crear un sistema de automatización de procesos",
+        "objetivo": "Conseguir crear un sistema que envíe correos electrónicos de bienvenida a los nuevos clientes de manera automática",
+        "prompt_practica": "Actúa como un desarrollador de software y crea un sistema que envíe correos electrónicos de bienvenida personalizados a los nuevos clientes de una empresa de comercio electrónico. El sistema debe integrarse con la base de datos de la empresa y enviar un correo electrónico con el nombre y la información de contacto del cliente cuando se registren en el sitio web. El correo electrónico debe incluir un enlace para descargar un eBook gratuito sobre productos de la empresa. El sistema debe ser capaz de manejar hasta 100 registros por día y debe ser escalable para crecer con la empresa. Utiliza Claude para generar el código y la documentación necesarios para implementar el sistema.",
         "pasos": [
-          "Paso 1: Ingresa a la plataforma de Claude y selecciona la opción de análisis de sentimiento",
-          "Paso 2: Copia y pega las reseñas en el campo de texto proporcionado",
-          "Paso 3: Selecciona el idioma y el modelo de análisis de sentimiento",
-          "Paso 4: Haz clic en el botón de análisis y espera a que se muestren los resultados",
-          "Paso 5: Evalúa los resultados y refina el análisis según sea necesario"
+          "Paso 1: Ir a la página de Claude y crear un nuevo proyecto de automatización de procesos",
+          "Paso 2: Configurar la integración con la base de datos de la empresa y definir las reglas para enviar correos electrónicos de bienvenida",
+          "Paso 3: Utilizar Claude para generar el código y la documentación necesarios para implementar el sistema",
+          "Paso 4: Probar y depurar el sistema para asegurarse de que funcione correctamente y envíe correos electrónicos de bienvenida personalizados a los nuevos clientes",
+          "Paso 5: Documentar y guardar el sistema para futuras referencias y mejoras"
         ],
-        "criterio_exito": "Un resultado que muestra un porcentaje de sentimiento positivo, negativo y neutro para cada reseña"
+        "criterio_exito": "El sistema envía correos electrónicos de bienvenida personalizados a los nuevos clientes de manera automática y correctamente"
       },
       "recursos": [
-        "La documentación oficial de Claude sobre análisis de sentimiento"
+        "La documentación oficial de Claude sobre automatización de procesos"
       ]
     },
     {
-      "id": "extra-24-2",
-      "semana": "2026-06-08",
+      "id": "extra-25-2",
+      "semana": "2026-06-15",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Clasificación de Texto",
-      "subtitulo": "Aprenderá a clasificar texto con Gemini",
+      "titulo": "Integración de Herramientas",
+      "subtitulo": "Aprenderá a integrar herramientas y sistemas utilizando Gemini",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Clasificación de Texto",
-        "explicacion": "La clasificación de texto es una técnica de procesamiento de lenguaje natural que se utiliza para asignar una etiqueta o categoría a un texto en función de su contenido. Esta técnica es importante porque permite a las empresas y organizaciones automatizar la clasificación de textos y mejorar la eficiencia en la toma de decisiones. La clasificación de texto se utiliza comúnmente en la clasificación de spam, la detección de fraude y la clasificación de documentos.",
-        "analogia": "Un ejemplo del mundo real es un sistema de clasificación de correos electrónicos que asigna una etiqueta de 'spam' o 'no spam' a cada correo electrónico",
+        "concepto": "Integración de Sistemas",
+        "explicacion": "La integración de sistemas es el proceso de conectar y coordinar diferentes sistemas y herramientas para que funcionen juntos de manera efectiva. Esto se logra a través de la creación de interfaces y APIs que permiten la comunicación entre los sistemas. La integración de sistemas es importante porque permite a las empresas aprovechar al máximo sus inversiones en tecnología y mejorar la eficiencia y la productividad. Funciona a través de la creación de un marco de trabajo que define cómo se deben integrar los sistemas y cómo se deben manejar los datos.",
+        "analogia": "Un ejemplo de integración de sistemas en la vida real es un sistema de gestión de inventario que se integra con un sistema de ventas en línea. El sistema de gestión de inventario puede actualizar automáticamente el stock de productos en el sistema de ventas en línea cuando se realizan ventas o se reciben nuevos productos.",
         "cuando_usarlo": [
-          "Cuando se necesita clasificar textos en categorías predefinidas",
-          "Cuando se necesita automatizar la clasificación de textos",
-          "Cuando se necesita mejorar la eficiencia en la toma de decisiones",
-          "Cuando se necesita detectar patrones y tendencias en textos"
+          "Cuando se necesitan integrar múltiples sistemas y herramientas",
+          "Cuando se requiere una alta flexibilidad y escalabilidad",
+          "Cuando se necesita mejorar la eficiencia y la productividad",
+          "Cuando se busca reducir los costos y mejorar la calidad de los datos"
         ]
       },
       "ejemplo": {
-        "caso": "Un caso de uso real es clasificar correos electrónicos como spam o no spam",
-        "prompt_malo": "¿Es este correo electrónico spam?",
-        "prompt_bueno": "Clasifica este correo electrónico como spam o no spam y proporciona un motivo para la clasificación",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona un resultado más detallado y útil para entender la clasificación"
+        "caso": "Un ejemplo de integración de sistemas es la conexión de un sistema de gestión de clientes con un sistema de marketing por correo electrónico",
+        "prompt_malo": "Conecta el sistema de gestión de clientes con el sistema de marketing por correo electrónico",
+        "prompt_bueno": "Crea una integración entre el sistema de gestión de clientes y el sistema de marketing por correo electrónico, de manera que los datos de los clientes se actualicen automáticamente en ambos sistemas y se puedan enviar correos electrónicos personalizados a los clientes",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y especificidad sobre lo que se necesita, lo que permite a Gemini generar una integración más efectiva y personalizada"
       },
       "practica": {
-        "titulo": "Clasificación de Texto con Gemini",
-        "objetivo": "Conseguirás clasificar un conjunto de textos en categorías predefinidas",
-        "prompt_practica": "Clasifica los siguientes textos en las categorías de 'política', 'deportes' o 'entretenimiento'. Los textos son: 'El equipo de fútbol ganó el campeonato', 'La nueva película de acción es un éxito', 'El presidente anunció un nuevo plan de economía'. Proporciona un resultado en formato de etiqueta de categoría para cada texto",
+        "titulo": "Crear una integración de sistemas",
+        "objetivo": "Conseguir crear una integración entre un sistema de gestión de clientes y un sistema de marketing por correo electrónico",
+        "prompt_practica": "Actúa como un desarrollador de software y crea una integración entre un sistema de gestión de clientes y un sistema de marketing por correo electrónico. La integración debe permitir que los datos de los clientes se actualicen automáticamente en ambos sistemas y se puedan enviar correos electrónicos personalizados a los clientes. Utiliza Gemini para generar el código y la documentación necesarios para implementar la integración. El sistema de gestión de clientes debe tener una API RESTful y el sistema de marketing por correo electrónico debe tener una API de correo electrónico. La integración debe ser capaz de manejar hasta 1000 clientes y debe ser escalable para crecer con la empresa.",
         "pasos": [
-          "Paso 1: Ingresa a la plataforma de Gemini y selecciona la opción de clasificación de texto",
-          "Paso 2: Copia y pega los textos en el campo de texto proporcionado",
-          "Paso 3: Selecciona el modelo de clasificación de texto y las categorías predefinidas",
-          "Paso 4: Haz clic en el botón de clasificación y espera a que se muestren los resultados",
-          "Paso 5: Evalúa los resultados y refina la clasificación según sea necesario"
+          "Paso 1: Ir a la página de Gemini y crear un nuevo proyecto de integración de sistemas",
+          "Paso 2: Configurar la integración con la API RESTful del sistema de gestión de clientes y la API de correo electrónico del sistema de marketing por correo electrónico",
+          "Paso 3: Utilizar Gemini para generar el código y la documentación necesarios para implementar la integración",
+          "Paso 4: Probar y depurar la integración para asegurarse de que funcione correctamente y se puedan enviar correos electrónicos personalizados a los clientes",
+          "Paso 5: Documentar y guardar la integración para futuras referencias y mejoras"
         ],
-        "criterio_exito": "Un resultado que muestra una etiqueta de categoría para cada texto"
+        "criterio_exito": "La integración entre los sistemas funciona correctamente y se pueden enviar correos electrónicos personalizados a los clientes"
       },
       "recursos": [
-        "La documentación oficial de Gemini sobre clasificación de texto"
+        "La documentación oficial de Gemini sobre integración de sistemas"
       ]
     },
     {
-      "id": "extra-24-3",
-      "semana": "2026-06-08",
+      "id": "extra-25-3",
+      "semana": "2026-06-15",
       "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Análisis de Voz",
-      "subtitulo": "Aprenderá a analizar la voz del cliente con Kiro",
+      "titulo": "Automatización de Tareas",
+      "subtitulo": "Aprenderá a automatizar tareas complejas utilizando Kiro",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Análisis de Voz del Cliente",
-        "explicacion": "El análisis de voz del cliente es una técnica de procesamiento de lenguaje natural que se utiliza para entender la opinión y las necesidades de los clientes. Esta técnica es importante porque permite a las empresas y organizaciones mejorar la satisfacción del cliente y aumentar la lealtad. El análisis de voz del cliente se utiliza comúnmente en la evaluación de la satisfacción del cliente, la detección de patrones y tendencias en las opiniones de los clientes y la identificación de oportunidades de mejora.",
-        "analogia": "Un ejemplo del mundo real es un sistema de feedback de clientes que analiza las opiniones de los clientes y proporciona recomendaciones para mejorar",
+        "concepto": "Automatización de Tareas",
+        "explicacion": "La automatización de tareas es el proceso de utilizar software y hardware para automatizar tareas repetitivas y rutinarias. Esto se logra a través de la creación de flujos de trabajo y la integración de herramientas y sistemas. La automatización de tareas es importante porque permite a las empresas aumentar la eficiencia y la productividad, y reducir los costos y los errores. Funciona a través de la creación de un marco de trabajo que define cómo se deben automatizar las tareas y cómo se deben manejar los datos.",
+        "analogia": "Un ejemplo de automatización de tareas en la vida real es un sistema de automatización de facturas que puede generar y enviar facturas a los clientes de manera automática",
         "cuando_usarlo": [
-          "Cuando se necesita entender la opinión y las necesidades de los clientes",
-          "Cuando se necesita mejorar la satisfacción del cliente",
-          "Cuando se necesita detectar patrones y tendencias en las opiniones de los clientes",
-          "Cuando se necesita identificar oportunidades de mejora"
+          "Cuando se necesitan automatizar tareas repetitivas y rutinarias",
+          "Cuando se requiere una alta precisión y exactitud",
+          "Cuando se necesita integrar múltiples herramientas y sistemas",
+          "Cuando se busca reducir los costos y mejorar la eficiencia"
         ]
       },
       "ejemplo": {
-        "caso": "Un caso de uso real es analizar las opiniones de los clientes sobre un producto",
-        "prompt_malo": "¿Qué tal es este producto?",
-        "prompt_bueno": "Analiza la voz del cliente sobre este producto y proporciona un resumen de los puntos fuertes y débiles",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona un resultado más detallado y útil para entender la opinión de los clientes"
+        "caso": "Un ejemplo de automatización de tareas es la creación de un sistema que genere y envíe informes de ventas diarios",
+        "prompt_malo": "Genera un informe de ventas diario",
+        "prompt_bueno": "Crea un sistema que genere y envíe un informe de ventas diario a los gerentes de la empresa, incluyendo los datos de ventas y las tendencias del mercado",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y especificidad sobre lo que se necesita, lo que permite a Kiro generar un informe más detallado y personalizado"
       },
       "practica": {
-        "titulo": "Análisis de Voz del Cliente con Kiro",
-        "objetivo": "Conseguirás analizar la voz del cliente sobre un producto",
-        "prompt_practica": "Analiza la voz del cliente sobre el siguiente producto y proporciona un resumen de los puntos fuertes y débiles. El producto es un teléfono inteligente y las opiniones de los clientes son: 'Me encanta este teléfono, es muy rápido', 'No me gusta este teléfono, la batería es muy débil', 'Este teléfono es decente, pero no es lo que esperaba'. Proporciona un resultado en formato de porcentaje de satisfacción del cliente",
+        "titulo": "Crear un sistema de automatización de tareas",
+        "objetivo": "Conseguir crear un sistema que genere y envíe informes de ventas diarios a los gerentes de la empresa",
+        "prompt_practica": "Actúa como un desarrollador de software y crea un sistema que genere y envíe un informe de ventas diario a los gerentes de la empresa. El sistema debe incluir los datos de ventas y las tendencias del mercado, y debe ser capaz de manejar hasta 1000 transacciones diarias. Utiliza Kiro para generar el código y la documentación necesarios para implementar el sistema. El sistema debe tener una interfaz de usuario amigable y debe ser escalable para crecer con la empresa.",
         "pasos": [
-          "Paso 1: Ingresa a la plataforma de Kiro y selecciona la opción de análisis de voz del cliente",
-          "Paso 2: Copia y pega las opiniones de los clientes en el campo de texto proporcionado",
-          "Paso 3: Selecciona el modelo de análisis de voz del cliente y las opciones de configuración",
-          "Paso 4: Haz clic en el botón de análisis y espera a que se muestren los resultados",
-          "Paso 5: Evalúa los resultados y refina el análisis según sea necesario"
+          "Paso 1: Ir a la página de Kiro y crear un nuevo proyecto de automatización de tareas",
+          "Paso 2: Configurar la integración con la base de datos de ventas y definir las reglas para generar el informe",
+          "Paso 3: Utilizar Kiro para generar el código y la documentación necesarios para implementar el sistema",
+          "Paso 4: Probar y depurar el sistema para asegurarse de que funcione correctamente y se puedan generar informes de ventas diarios",
+          "Paso 5: Documentar y guardar el sistema para futuras referencias y mejoras"
         ],
-        "criterio_exito": "Un resultado que muestra un porcentaje de satisfacción del cliente"
+        "criterio_exito": "El sistema genera y envía informes de ventas diarios a los gerentes de la empresa de manera correcta y automática"
       },
       "recursos": [
-        "La documentación oficial de Kiro sobre análisis de voz del cliente"
+        "La documentación oficial de Kiro sobre automatización de tareas"
       ]
     },
     {
-      "id": "extra-24-4",
-      "semana": "2026-06-08",
+      "id": "extra-25-4",
+      "semana": "2026-06-15",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Detección de Tendencias",
-      "subtitulo": "Aprenderá a detectar tendencias con Claude",
+      "titulo": "Optimización de Procesos",
+      "subtitulo": "Aprenderá a optimizar procesos utilizando Claude",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Detección de Tendencias",
-        "explicacion": "La detección de tendencias es una técnica de procesamiento de lenguaje natural que se utiliza para identificar patrones y tendencias en grandes conjuntos de datos. Esta técnica es importante porque permite a las empresas y organizaciones tomar decisiones informadas y anticiparse a los cambios en el mercado. La detección de tendencias se utiliza comúnmente en la evaluación de la satisfacción del cliente, la detección de fraude y la identificación de oportunidades de mejora.",
-        "analogia": "Un ejemplo del mundo real es un sistema de análisis de mercado que identifica tendencias en las ventas y proporciona recomendaciones para mejorar",
+        "concepto": "Optimización de Procesos",
+        "explicacion": "La optimización de procesos es el proceso de mejorar la eficiencia y la eficacia de los procesos y sistemas. Esto se logra a través de la identificación y eliminación de cuellos de botella, la reducción de la complejidad y la mejora de la productividad. La optimización de procesos es importante porque permite a las empresas mejorar la calidad y la velocidad de los productos y servicios, y reducir los costos y los errores. Funciona a través de la creación de un marco de trabajo que define cómo se deben optimizar los procesos y cómo se deben medir los resultados.",
+        "analogia": "Un ejemplo de optimización de procesos en la vida real es la mejora de un sistema de producción que reduce el tiempo de entrega de los productos y mejora la calidad",
         "cuando_usarlo": [
-          "Cuando se necesita identificar patrones y tendencias en grandes conjuntos de datos",
-          "Cuando se necesita tomar decisiones informadas",
-          "Cuando se necesita anticiparse a los cambios en el mercado",
-          "Cuando se necesita identificar oportunidades de mejora"
+          "Cuando se necesitan mejorar la eficiencia y la eficacia de los procesos",
+          "Cuando se requiere una alta precisión y exactitud",
+          "Cuando se necesita reducir la complejidad y mejorar la productividad",
+          "Cuando se busca reducir los costos y mejorar la calidad"
         ]
       },
       "ejemplo": {
-        "caso": "Un caso de uso real es detectar tendencias en las opiniones de los clientes sobre un producto",
-        "prompt_malo": "¿Qué tal es este producto?",
-        "prompt_bueno": "Detecta las tendencias en las opiniones de los clientes sobre este producto y proporciona un resumen de los puntos fuertes y débiles",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona un resultado más detallado y útil para entender las tendencias"
+        "caso": "Un ejemplo de optimización de procesos es la mejora de un sistema de gestión de inventario que reduce el tiempo de entrega de los productos",
+        "prompt_malo": "Mejora el sistema de gestión de inventario",
+        "prompt_bueno": "Optimiza el sistema de gestión de inventario para reducir el tiempo de entrega de los productos y mejorar la precisión de la gestión de inventario",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y especificidad sobre lo que se necesita, lo que permite a Claude generar una optimización más efectiva y personalizada"
       },
       "practica": {
-        "titulo": "Detección de Tendencias con Claude",
-        "objetivo": "Conseguirás detectar tendencias en las opiniones de los clientes sobre un producto",
-        "prompt_practica": "Detecta las tendencias en las opiniones de los clientes sobre el siguiente producto y proporciona un resumen de los puntos fuertes y débiles. El producto es un teléfono inteligente y las opiniones de los clientes son: 'Me encanta este teléfono, es muy rápido', 'No me gusta este teléfono, la batería es muy débil', 'Este teléfono es decente, pero no es lo que esperaba'. Proporciona un resultado en formato de gráfico de tendencias",
+        "titulo": "Crear un sistema de optimización de procesos",
+        "objetivo": "Conseguir crear un sistema que optimice el proceso de gestión de inventario y reduzca el tiempo de entrega de los productos",
+        "prompt_practica": "Actúa como un desarrollador de software y crea un sistema que optimice el proceso de gestión de inventario y reduzca el tiempo de entrega de los productos. El sistema debe incluir la gestión de inventario, la planificación de la producción y la entrega de los productos. Utiliza Claude para generar el código y la documentación necesarios para implementar el sistema. El sistema debe tener una interfaz de usuario amigable y debe ser escalable para crecer con la empresa.",
         "pasos": [
-          "Paso 1: Ingresa a la plataforma de Claude y selecciona la opción de detección de tendencias",
-          "Paso 2: Copia y pega las opiniones de los clientes en el campo de texto proporcionado",
-          "Paso 3: Selecciona el modelo de detección de tendencias y las opciones de configuración",
-          "Paso 4: Haz clic en el botón de análisis y espera a que se muestren los resultados",
-          "Paso 5: Evalúa los resultados y refina el análisis según sea necesario"
+          "Paso 1: Ir a la página de Claude y crear un nuevo proyecto de optimización de procesos",
+          "Paso 2: Configurar la integración con la base de datos de inventario y definir las reglas para optimizar el proceso",
+          "Paso 3: Utilizar Claude para generar el código y la documentación necesarios para implementar el sistema",
+          "Paso 4: Probar y depurar el sistema para asegurarse de que funcione correctamente y se puedan optimizar los procesos",
+          "Paso 5: Documentar y guardar el sistema para futuras referencias y mejoras"
         ],
-        "criterio_exito": "Un resultado que muestra un gráfico de tendencias"
+        "criterio_exito": "El sistema optimiza el proceso de gestión de inventario y reduce el tiempo de entrega de los productos de manera correcta y automática"
       },
       "recursos": [
-        "La documentación oficial de Claude sobre detección de tendencias"
+        "La documentación oficial de Claude sobre optimización de procesos"
       ]
     }
   ]
