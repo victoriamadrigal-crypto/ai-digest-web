@@ -1,92 +1,93 @@
 {
-  "semana": "2026-06-08",
-  "num_semana": 24,
-  "tema": "prompting avanzado: técnicas de few-shot y chain-of-thought",
-  "titulo": "Dominio Prompting",
-  "descripcion": "Mejora la eficiencia con IA",
+  "semana": "2026-06-15",
+  "num_semana": 25,
+  "tema": "uso de IA para análisis y toma de decisiones de negocio",
+  "titulo": "IA para Negocios",
+  "descripcion": "Impulsa decisiones informadas",
   "ejercicios": [
     {
       "id": 1,
       "herramienta": "Claude",
       "nivel": "Basico",
-      "titulo": "Prompting Básico",
-      "objetivo": "Aprender a crear prompts efectivos",
-      "contexto": "Este ejercicio es útil para entender cómo crear instrucciones claras para la IA. En el trabajo real, esto se aplica a la automatización de tareas y la generación de contenido",
-      "prompt_ejemplo": "Escribe un correo electrónico formal dirigido a un gerente de marketing, solicitando una reunión para discutir una propuesta de campaña publicitaria. El correo debe incluir una breve introducción, un resumen de la propuesta y una llamada a la acción. El tono debe ser profesional y amigable. La respuesta debe estar en formato de correo electrónico completo, incluyendo asunto, destinatario y remitente.",
+      "titulo": "Análisis Básico",
+      "objetivo": "Aprender a utilizar Claude para análisis de datos básicos",
+      "contexto": "Este ejercicio es útil para entender cómo la IA puede ayudar en la toma de decisiones de negocio. En el trabajo real, los análisis básicos son fundamentales para identificar tendencias y patrones en los datos. Esto permite a los profesionales tomar decisiones informadas y desarrollar estrategias efectivas.",
+      "prompt_ejemplo": "Eres un analista de marketing en una empresa de tecnología. Tu tarea es analizar los datos de ventas de los últimos 6 meses para identificar las tendencias y patrones en la compra de nuestros productos. Los datos incluyen fecha de venta, producto vendido, cantidad vendida y precio de venta. Debes proporcionar un resumen de las tendencias y patrones identificados, incluyendo gráficos y tablas para ilustrar tus hallazgos. El formato de salida debe ser un informe detallado de 2 páginas, con un resumen ejecutivo de 100 palabras al comienzo.",
       "pasos": [
-        "Ve a https://claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Crear cuenta'",
-        "Una vez dentro, haz clic en 'Crear nuevo prompt'. Verás un campo de texto grande donde puedes escribir tu prompt",
-        "Copia el prompt de ejemplo que aparece arriba en esta lección",
-        "Pégalo en el campo de texto 'Ingrese su prompt aquí'. Antes de enviarlo, sustituye 'gerente de marketing' por el nombre de la persona a la que te diriges en tu caso real",
-        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta",
-        "Lee la respuesta y evalúa: la respuesta debe incluir un asunto, un destinatario y un remitente, y debe estar escrita en un tono profesional y amigable. Si no cumple, prueba añadiendo al final del prompt: 'Asegúrate de incluir todos los detalles de contacto'",
-        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura"
+        "Ve a https://claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Sign up' en la esquina superior derecha.",
+        "Una vez dentro, haz clic en el botón 'New Project' en la página de inicio. Verás una pantalla donde puedes ingresar el nombre de tu proyecto.",
+        "Copia el prompt de ejemplo que aparece arriba en esta lección.",
+        "Pégalo en el campo de texto 'Enter your prompt' en la pantalla de Claude. Antes de enviarlo, sustituye 'nuestros productos' por el nombre real de tus productos o servicio.",
+        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
+        "Lee la respuesta y evalúa: si la respuesta incluye al menos 2 gráficos y 1 tabla, y si el resumen ejecutivo es claro y conciso. Si no cumple, prueba añadir al final del prompt: 'Por favor, proporciona más detalles sobre las tendencias y patrones identificados'.",
+        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
       ],
-      "criterio_exito": "La respuesta generada incluye todos los elementos solicitados y está escrita en un tono adecuado",
+      "criterio_exito": "La respuesta incluye al menos 2 gráficos y 1 tabla, y el resumen ejecutivo es claro y conciso",
       "tiempo_estimado": "15 min",
-      "consejo_pro": "Utiliza palabras clave específicas de tu industria en el prompt para obtener respuestas más relevantes y personalizadas"
+      "consejo_pro": "Utiliza la función de 'Refine' en Claude para iterar y mejorar tus resultados. Esto te permite ajustar el modelo y obtener respuestas más precisas y relevantes para tu análisis."
     },
     {
       "id": 2,
       "herramienta": "Gemini",
       "nivel": "Basico",
-      "titulo": "Few-Shot Learning",
-      "objetivo": "Aprender a utilizar el aprendizaje de pocos disparos",
-      "contexto": "Este ejercicio es útil para entender cómo la IA puede aprender de ejemplos limitados. En el trabajo real, esto se aplica a la clasificación de texto y la detección de sentimiento",
-      "prompt_ejemplo": "Clasifica los siguientes textos como positivos o negativos: 'Me encantó el servicio', 'El producto fue defectuoso', 'La experiencia fue increíble'. Utiliza el aprendizaje de pocos disparos para entrenar el modelo y luego clasifica el texto 'El restaurante tenía una atmósfera agradable'. La respuesta debe incluir la clasificación de cada texto y la explicación de por qué se tomó esa decisión",
+      "titulo": "Toma de Decisiones",
+      "objetivo": "Aprender a utilizar Gemini para tomar decisiones informadas",
+      "contexto": "Este ejercicio es útil para entender cómo la IA puede ayudar en la toma de decisiones de negocio. En el trabajo real, la capacidad de analizar datos y tomar decisiones informadas es crucial para el éxito de cualquier empresa. Gemini ofrece herramientas avanzadas para este propósito.",
+      "prompt_ejemplo": "Eres un gerente de productos en una empresa de tecnología. Tu tarea es decidir si lanzar un nuevo producto al mercado. Los datos incluyen el tamaño del mercado, la competencia, los costos de producción y los precios de los productos similares. Debes proporcionar una recomendación sobre si lanzar o no el producto, incluyendo un análisis de los factores clave que influyen en la decisión. El formato de salida debe ser un informe de 1 página, con un resumen ejecutivo de 50 palabras al comienzo.",
       "pasos": [
-        "Ve a https://gemini.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Registro'",
-        "Una vez dentro, haz clic en 'Crear nuevo proyecto'. Verás un menú desplegable con opciones de tarea",
-        "Selecciona 'Clasificación de texto' y luego 'Aprendizaje de pocos disparos'",
-        "Copia el prompt de ejemplo que aparece arriba en esta lección y pégalo en el campo de texto 'Ingrese su prompt aquí'",
-        "Haz clic en el botón 'Entrenar' y espera a que el modelo se entrene. Luego, haz clic en 'Clasificar' para ver las clasificaciones de los textos",
-        "Lee las clasificaciones y evalúa: las clasificaciones deben ser coherentes con el tono de cada texto. Si no cumple, prueba ajustando los parámetros de entrenamiento",
-        "Guarda las clasificaciones que más te gusten copiándolas a un documento o nota para referencia futura"
+        "Ve a https://gemini.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Sign up' en la esquina superior derecha.",
+        "Una vez dentro, haz clic en el botón 'New Project' en la página de inicio. Verás una pantalla donde puedes ingresar el nombre de tu proyecto.",
+        "Copia el prompt de ejemplo que aparece arriba en esta lección.",
+        "Pégalo en el campo de texto 'Enter your prompt' en la pantalla de Gemini. Antes de enviarlo, sustituye 'nuevo producto' por el nombre real del producto que estás considerando lanzar.",
+        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
+        "Lee la respuesta y evalúa: si la respuesta incluye un análisis claro de los factores clave y una recomendación clara sobre si lanzar o no el producto. Si no cumple, prueba añadir al final del prompt: 'Por favor, proporciona más detalles sobre los factores que influyen en la decisión'.",
+        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
       ],
-      "criterio_exito": "Las clasificaciones generadas son coherentes con el tono de cada texto",
-      "tiempo_estimado": "20 min",
-      "consejo_pro": "Utiliza un conjunto de datos diverso y representativo para entrenar el modelo, para mejorar la precisión de las clasificaciones"
+      "criterio_exito": "La respuesta incluye un análisis claro de los factores clave y una recomendación clara sobre si lanzar o no el producto",
+      "tiempo_estimado": "15 min",
+      "consejo_pro": "Utiliza la función de 'Comparar' en Gemini para evaluar diferentes escenarios y opciones. Esto te permite comparar los resultados de diferentes decisiones y seleccionar la mejor opción para tu negocio."
     },
     {
       "id": 3,
       "herramienta": "Kiro",
       "nivel": "Intermedio",
-      "titulo": "Chain-of-Thought",
-      "objetivo": "Aprender a crear cadenas de pensamiento",
-      "contexto": "Este ejercicio es útil para entender cómo la IA puede razonar y tomar decisiones. En el trabajo real, esto se aplica a la resolución de problemas complejos",
-      "prompt_ejemplo": "Un fabricante de automóviles quiere aumentar la eficiencia de su línea de producción. La empresa tiene 5 máquinas que pueden producir 100 unidades por hora cada una. Sin embargo, la empresa solo puede producir 400 unidades por hora debido a limitaciones de suministro. ¿Cuál es la mejor estrategia para aumentar la producción? Utiliza una cadena de pensamiento para analizar el problema y proponer una solución. La respuesta debe incluir una descripción detallada de la cadena de pensamiento y la solución propuesta",
+      "titulo": "Análisis Avanzado",
+      "objetivo": "Aprender a utilizar Kiro para análisis avanzados de datos",
+      "contexto": "Este ejercicio es útil para entender cómo la IA puede ayudar en la toma de decisiones de negocio a través de análisis avanzados. En el trabajo real, la capacidad de analizar grandes conjuntos de datos y identificar patrones complejos es crucial para el éxito de cualquier empresa. Kiro ofrece herramientas avanzadas para este propósito.",
+      "prompt_ejemplo": "Eres un analista de datos en una empresa de finanzas. Tu tarea es analizar los datos de transacciones financieras de los últimos 12 meses para identificar patrones y tendencias en la actividad de los clientes. Los datos incluyen fecha de transacción, tipo de transacción, monto de transacción y información del cliente. Debes proporcionar un informe detallado de 3 páginas, incluyendo gráficos y tablas para ilustrar tus hallazgos, y una recomendación sobre cómo utilizar estos insights para mejorar la experiencia del cliente.",
       "pasos": [
-        "Ve a https://kiro.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Crear cuenta'",
-        "Una vez dentro, haz clic en 'Crear nuevo proyecto'. Verás un menú desplegable con opciones de tarea",
-        "Selecciona 'Resolución de problemas' y luego 'Cadena de pensamiento'",
-        "Copia el prompt de ejemplo que aparece arriba en esta lección y pégalo en el campo de texto 'Ingrese su prompt aquí'",
-        "Haz clic en el botón 'Analizar' y espera a que el modelo genere una cadena de pensamiento",
-        "Lee la cadena de pensamiento y evalúa: la cadena de pensamiento debe incluir una descripción clara del problema, una identificación de las limitaciones y una propuesta de solución. Si no cumple, prueba ajustando los parámetros de análisis",
-        "Guarda la cadena de pensamiento que más te guste copiándola a un documento o nota para referencia futura"
+        "Ve a https://kiro.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Sign up' en la esquina superior derecha.",
+        "Una vez dentro, haz clic en el botón 'New Project' en la página de inicio. Verás una pantalla donde puedes ingresar el nombre de tu proyecto.",
+        "Copia el prompt de ejemplo que aparece arriba en esta lección.",
+        "Pégalo en el campo de texto 'Enter your prompt' en la pantalla de Kiro. Antes de enviarlo, sustituye 'datos de transacciones financieras' por el nombre real de los datos que estás analizando.",
+        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 10 y 30 segundos a que aparezca la respuesta.",
+        "Lee la respuesta y evalúa: si la respuesta incluye al menos 3 gráficos y 2 tablas, y si la recomendación sobre cómo utilizar estos insights es clara y relevante. Si no cumple, prueba añadir al final del prompt: 'Por favor, proporciona más detalles sobre los patrones y tendencias identificados'.",
+        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
       ],
-      "criterio_exito": "La cadena de pensamiento generada es coherente y lógica, y la solución propuesta es factible",
+      "criterio_exito": "La respuesta incluye al menos 3 gráficos y 2 tablas, y la recomendación sobre cómo utilizar estos insights es clara y relevante",
       "tiempo_estimado": "30 min",
-      "consejo_pro": "Utiliza una variedad de fuentes de información para alimentar la cadena de pensamiento, para obtener una comprensión más completa del problema"
+      "consejo_pro": "Utiliza la función de 'Clustering' en Kiro para identificar grupos y patrones en los datos. Esto te permite segmentar a los clientes y desarrollar estrategias personalizadas para cada grupo."
     },
     {
       "id": 4,
       "herramienta": "Claude",
       "nivel": "Intermedio",
-      "titulo": "Prompting Avanzado",
-      "objetivo": "Aprender a crear prompts avanzados",
-      "contexto": "Este ejercicio es útil para entender cómo la IA puede generar contenido complejo. En el trabajo real, esto se aplica a la creación de informes y presentaciones",
-      "prompt_ejemplo": "Crea un informe detallado sobre el impacto del cambio climático en la industria agrícola. El informe debe incluir una introducción, una sección de antecedentes, una sección de análisis y una sección de conclusiones. Utiliza una variedad de fuentes de información para respaldar tus argumentos. La respuesta debe incluir un resumen ejecutivo, una tabla de contenido y una bibliografía",
+      "titulo": "Toma de Decisiones Avanzada",
+      "objetivo": "Aprender a utilizar Claude para tomar decisiones informadas de manera avanzada",
+      "contexto": "Este ejercicio es útil para entender cómo la IA puede ayudar en la toma de decisiones de negocio de manera avanzada. En el trabajo real, la capacidad de analizar datos complejos y tomar decisiones informadas es crucial para el éxito de cualquier empresa. Claude ofrece herramientas avanzadas para este propósito.",
+      "prompt_ejemplo": "Eres un gerente de productos en una empresa de tecnología. Tu tarea es decidir si invertir en el desarrollo de un nuevo producto o mejorar un producto existente. Los datos incluyen el tamaño del mercado, la competencia, los costos de producción y los precios de los productos similares. Debes proporcionar una recomendación sobre si invertir en el desarrollo de un nuevo producto o mejorar un producto existente, incluyendo un análisis de los factores clave que influyen en la decisión y una evaluación de los riesgos y beneficios potenciales. El formato de salida debe ser un informe de 2 páginas, con un resumen ejecutivo de 100 palabras al comienzo.",
       "pasos": [
-        "Ve a https://claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Crear cuenta'",
-        "Una vez dentro, haz clic en 'Crear nuevo prompt'. Verás un campo de texto grande donde puedes escribir tu prompt",
-        "Copia el prompt de ejemplo que aparece arriba en esta lección y pégalo en el campo de texto 'Ingrese su prompt aquí'",
-        "Haz clic en el botón 'Generar' y espera a que el modelo genere el informe",
-        "Lee el informe y evalúa: el informe debe incluir todas las secciones solicitadas y debe estar bien organizado y estructurado. Si no cumple, prueba ajustando los parámetros de generación",
-        "Guarda el informe que más te guste copiándolo a un documento o nota para referencia futura"
+        "Ve a https://claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Sign up' en la esquina superior derecha.",
+        "Una vez dentro, haz clic en el botón 'New Project' en la página de inicio. Verás una pantalla donde puedes ingresar el nombre de tu proyecto.",
+        "Copia el prompt de ejemplo que aparece arriba en esta lección.",
+        "Pégalo en el campo de texto 'Enter your prompt' en la pantalla de Claude. Antes de enviarlo, sustituye 'nuevo producto' por el nombre real del producto que estás considerando desarrollar o mejorar.",
+        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 10 y 30 segundos a que aparezca la respuesta.",
+        "Lee la respuesta y evalúa: si la respuesta incluye un análisis claro de los factores clave y una evaluación de los riesgos y beneficios potenciales, y si la recomendación sobre si invertir en el desarrollo de un nuevo producto o mejorar un producto existente es clara y relevante. Si no cumple, prueba añadir al final del prompt: 'Por favor, proporciona más detalles sobre los factores que influyen en la decisión'.",
+        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
       ],
-      "criterio_exito": "El informe generado es completo y bien estructurado, y incluye una variedad de fuentes de información",
-      "tiempo_estimado": "45 min",
-      "consejo_pro": "Utiliza una variedad de palabras clave y frases de búsqueda para ayudar al modelo a generar contenido relevante y preciso"
+      "criterio_exito": "La respuesta incluye un análisis claro de los factores clave y una evaluación de los riesgos y beneficios potenciales, y la recomendación sobre si invertir en el desarrollo de un nuevo producto o mejorar un producto existente es clara y relevante",
+      "tiempo_estimado": "30 min",
+      "consejo_pro": "Utiliza la función de 'Sensibilidad' en Claude para evaluar cómo los cambios en los parámetros afectan los resultados. Esto te permite identificar las variables más críticas y desarrollar estrategias para mitigar los riesgos."
     }
   ]
 }
