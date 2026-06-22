@@ -1,184 +1,184 @@
 {
-  "semana": "2026-06-15",
-  "tema": "automatización avanzada: MCP y herramientas externas",
+  "semana": "2026-06-22",
+  "tema": "construcción de pipelines de IA para producción",
   "tip": {
-    "semana": "2026-06-15",
-    "tema": "automatización avanzada: MCP y herramientas externas",
-    "emoji": "🤖",
-    "titulo": "Automatiza con MCP y API",
-    "resumen": "Automatiza procesos con MCP y API",
-    "explicacion": "La técnica de automatización avanzada con MCP (Modelo de Control de Procesos) y herramientas externas como API permite integrar sistemas y procesos de manera eficiente. Esto se logra mediante la creación de flujos de trabajo personalizados que interactúan con herramientas externas a través de API, lo que reduce la carga de trabajo manual y aumenta la productividad. Esta técnica es especialmente útil en entornos empresariales donde la integración de sistemas y la automatización de procesos son clave para el éxito.",
-    "ejemplo_prompt": "Para automatizar un proceso de aprobación de solicitudes de compra, se puede crear un flujo de trabajo en MCP que envíe una solicitud de aprobación a un gestor a través de la API de un sistema de gestión de compras, y luego actualice el estado de la solicitud en el sistema de gestión de compras según la respuesta del gestor. El comando para enviar la solicitud de aprobación podría ser: 'curl -X POST https://api.sistema-de-gestion-de-compras.com/aprobacion -H 'Authorization: Bearer token-de-acceso' -d '{\"id_solicitud\": 123, \"monto\": 1000}'",
-    "cuando_usarlo": "Cuando se necesita integrar sistemas de gestión de compras con flujos de trabajo de aprobación, cuando se requiere automatizar la actualización de estados de solicitudes en un sistema de gestión de compras, o cuando se necesita enviar notificaciones a gestores a través de un sistema de mensajería instantánea",
+    "semana": "2026-06-22",
+    "tema": "construcción de pipelines de IA para producción",
+    "emoji": "🚀",
+    "titulo": "Optimización de Pipelines con K-Fold",
+    "resumen": "Mejora la estabilidad de tus modelos",
+    "explicacion": "La técnica de K-Fold permite evaluar y optimizar el desempeño de los modelos de IA en diferentes conjuntos de datos, lo que ayuda a mejorar la estabilidad y generalización de los resultados. Esto se logra dividiendo el conjunto de datos en subconjuntos y entrenando el modelo en cada uno de ellos, luego se calcula el promedio de los resultados para obtener una evaluación más precisa. Esta técnica es especialmente útil cuando se trabaja con conjuntos de datos limitados o cuando se busca reducir el sobreajuste.",
+    "ejemplo_prompt": "Utiliza el comando `from sklearn.model_selection import KFold; kf = KFold(n_splits=5, shuffle=True, random_state=42); for train_index, test_index in kf.split(X): X_train, X_test = X[train_index], X[test_index]; y_train, y_test = y[train_index], y[test_index]; modelo.fit(X_train, y_train); evaluacion = modelo.evaluate(X_test, y_test); print(evaluacion)` para implementar la técnica de K-Fold en tus pipelines de IA",
+    "cuando_usarlo": "Cuando se está trabajando con conjuntos de datos pequeños, cuando se necesita evaluar el desempeño de un modelo en diferentes escenarios o cuando se busca reducir el sobreajuste en los modelos",
     "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-25-1",
-      "semana": "2026-06-15",
+      "id": "extra-26-1",
+      "semana": "2026-06-22",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Automatización Avanzada",
-      "subtitulo": "Aprenderá a automatizar tareas complejas utilizando Claude",
+      "titulo": "Optimización Pipeline",
+      "subtitulo": "Aprenderá a optimizar pipelines de IA para producción",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Automatización de Procesos",
-        "explicacion": "La automatización de procesos es la capacidad de un sistema para ejecutar tareas de manera autónoma, sin la intervención directa de un humano. Esto se logra a través de la programación de flujos de trabajo y la integración de herramientas y sistemas. La automatización de procesos es importante porque permite aumentar la eficiencia, reducir los errores y mejorar la productividad. Funciona a través de la creación de reglas y condiciones que determinan cuándo y cómo se deben ejecutar las tareas. Se utiliza en una variedad de industrias, desde la manufactura hasta los servicios financieros.",
-        "analogia": "Un ejemplo de automatización de procesos en la vida real es un sistema de iluminación inteligente en una casa. El sistema puede estar programado para encender y apagar las luces en función de la hora del día y la ocupación de la habitación.",
+        "concepto": "Optimización de Pipelines",
+        "explicacion": "La optimización de pipelines es crucial para mejorar el rendimiento y la eficiencia de los sistemas de IA. Un pipeline de IA es una serie de etapas que se ejecutan en secuencia para realizar una tarea específica. La optimización implica ajustar y mejorar cada etapa del pipeline para minimizar el tiempo de ejecución, reducir el consumo de recursos y mejorar la precisión. Esto se logra mediante técnicas como la paralelización de tareas, la reducción de la complejidad computacional y la selección de algoritmos más eficientes. La optimización de pipelines es importante porque permite a los sistemas de IA procesar grandes cantidades de datos de manera rápida y precisa, lo que es esencial para aplicaciones como el aprendizaje automático y el procesamiento de lenguaje natural.",
+        "analogia": "La optimización de pipelines es similar a la optimización de una fábrica. Al igual que una fábrica puede ser optimizada para producir más productos en menos tiempo, un pipeline de IA puede ser optimizado para procesar más datos en menos tiempo.",
         "cuando_usarlo": [
-          "Cuando se necesitan ejecutar tareas repetitivas y rutinarias",
-          "Cuando se requiere una alta precisión y exactitud",
-          "Cuando se necesita integrar múltiples sistemas y herramientas",
-          "Cuando se busca reducir los costos y mejorar la eficiencia"
+          "Cuando se necesita procesar grandes cantidades de datos",
+          "Cuando se requiere una respuesta rápida",
+          "Cuando se necesita mejorar la precisión",
+          "Cuando se necesita reducir el consumo de recursos"
         ]
       },
       "ejemplo": {
-        "caso": "Un ejemplo de automatización de procesos es la creación de un sistema que envíe correos electrónicos de bienvenida a los nuevos clientes de una empresa",
-        "prompt_malo": "Escribe un correo electrónico de bienvenida para nuevos clientes",
-        "prompt_bueno": "Crea un correo electrónico de bienvenida personalizado para nuevos clientes, incluyendo su nombre y información de contacto, y envíalo automáticamente cuando se registren en nuestro sitio web",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y especificidad sobre lo que se necesita, lo que permite a Claude generar un correo electrónico más personalizado y efectivo"
+        "caso": "Un sistema de recomendación de productos",
+        "prompt_malo": "Diseña un pipeline de IA para un sistema de recomendación de productos que utilice un algoritmo de aprendizaje automático para recomendar productos a los usuarios.",
+        "prompt_bueno": "Diseña un pipeline de IA para un sistema de recomendación de productos que utilice un algoritmo de aprendizaje automático para recomendar productos a los usuarios, considerando factores como la historia de compras del usuario, las preferencias del usuario y la popularidad de los productos.",
+        "por_que_mejor": "El prompt bueno es mejor porque considera factores adicionales que pueden mejorar la precisión de las recomendaciones."
       },
       "practica": {
-        "titulo": "Crear un sistema de automatización de procesos",
-        "objetivo": "Conseguir crear un sistema que envíe correos electrónicos de bienvenida a los nuevos clientes de manera automática",
-        "prompt_practica": "Actúa como un desarrollador de software y crea un sistema que envíe correos electrónicos de bienvenida personalizados a los nuevos clientes de una empresa de comercio electrónico. El sistema debe integrarse con la base de datos de la empresa y enviar un correo electrónico con el nombre y la información de contacto del cliente cuando se registren en el sitio web. El correo electrónico debe incluir un enlace para descargar un eBook gratuito sobre productos de la empresa. El sistema debe ser capaz de manejar hasta 100 registros por día y debe ser escalable para crecer con la empresa. Utiliza Claude para generar el código y la documentación necesarios para implementar el sistema.",
+        "titulo": "Optimizar un pipeline de IA",
+        "objetivo": "Optimizar un pipeline de IA para un sistema de recomendación de productos",
+        "prompt_practica": "Diseña un pipeline de IA para un sistema de recomendación de productos que utilice un algoritmo de aprendizaje automático para recomendar productos a los usuarios. Considera factores como la historia de compras del usuario, las preferencias del usuario y la popularidad de los productos. Utiliza la herramienta Claude para implementar el pipeline y evalúa su rendimiento. Asegúrate de que el pipeline sea escalable y pueda procesar grandes cantidades de datos. La salida debe ser una lista de productos recomendados para cada usuario, junto con una puntuación de confianza para cada recomendación.",
         "pasos": [
-          "Paso 1: Ir a la página de Claude y crear un nuevo proyecto de automatización de procesos",
-          "Paso 2: Configurar la integración con la base de datos de la empresa y definir las reglas para enviar correos electrónicos de bienvenida",
-          "Paso 3: Utilizar Claude para generar el código y la documentación necesarios para implementar el sistema",
-          "Paso 4: Probar y depurar el sistema para asegurarse de que funcione correctamente y envíe correos electrónicos de bienvenida personalizados a los nuevos clientes",
-          "Paso 5: Documentar y guardar el sistema para futuras referencias y mejoras"
+          "Paso 1: Accede a la herramienta Claude y crea un nuevo proyecto",
+          "Paso 2: Importa los datos de historias de compras de los usuarios y las preferencias de los usuarios",
+          "Paso 3: Diseña el pipeline de IA utilizando un algoritmo de aprendizaje automático y considera factores como la historia de compras del usuario y las preferencias del usuario",
+          "Paso 4: Evalúa el rendimiento del pipeline y ajusta los parámetros para mejorar la precisión",
+          "Paso 5: Guarda el pipeline y aplica los cambios para que esté listo para producción"
         ],
-        "criterio_exito": "El sistema envía correos electrónicos de bienvenida personalizados a los nuevos clientes de manera automática y correctamente"
+        "criterio_exito": "El pipeline de IA debe ser capaz de procesar grandes cantidades de datos y producir recomendaciones precisas para los usuarios."
       },
       "recursos": [
-        "La documentación oficial de Claude sobre automatización de procesos"
+        "Técnicas de aprendizaje automático para recomendación de productos"
       ]
     },
     {
-      "id": "extra-25-2",
-      "semana": "2026-06-15",
+      "id": "extra-26-2",
+      "semana": "2026-06-22",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Integración de Herramientas",
-      "subtitulo": "Aprenderá a integrar herramientas y sistemas utilizando Gemini",
+      "titulo": "Diseño de Arquitecturas",
+      "subtitulo": "Aprenderá a diseñar arquitecturas de pipelines de IA para producción",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Integración de Sistemas",
-        "explicacion": "La integración de sistemas es el proceso de conectar y coordinar diferentes sistemas y herramientas para que funcionen juntos de manera efectiva. Esto se logra a través de la creación de interfaces y APIs que permiten la comunicación entre los sistemas. La integración de sistemas es importante porque permite a las empresas aprovechar al máximo sus inversiones en tecnología y mejorar la eficiencia y la productividad. Funciona a través de la creación de un marco de trabajo que define cómo se deben integrar los sistemas y cómo se deben manejar los datos.",
-        "analogia": "Un ejemplo de integración de sistemas en la vida real es un sistema de gestión de inventario que se integra con un sistema de ventas en línea. El sistema de gestión de inventario puede actualizar automáticamente el stock de productos en el sistema de ventas en línea cuando se realizan ventas o se reciben nuevos productos.",
+        "concepto": "Arquitecturas de Pipelines",
+        "explicacion": "La arquitectura de un pipeline de IA se refiere a la estructura y el diseño de las diferentes etapas que componen el pipeline. Una buena arquitectura de pipeline debe ser escalable, flexible y capaz de procesar grandes cantidades de datos de manera eficiente. Esto se logra mediante la selección de tecnologías y herramientas adecuadas para cada etapa del pipeline, así como la implementación de mecanismos de control y monitoreo para garantizar el rendimiento y la precisión.",
+        "analogia": "La arquitectura de un pipeline de IA es similar a la arquitectura de un edificio. Al igual que un edificio debe ser diseñado para ser funcional y seguro, un pipeline de IA debe ser diseñado para ser escalable y preciso.",
         "cuando_usarlo": [
-          "Cuando se necesitan integrar múltiples sistemas y herramientas",
-          "Cuando se requiere una alta flexibilidad y escalabilidad",
-          "Cuando se necesita mejorar la eficiencia y la productividad",
-          "Cuando se busca reducir los costos y mejorar la calidad de los datos"
+          "Cuando se necesita procesar grandes cantidades de datos",
+          "Cuando se requiere una respuesta rápida",
+          "Cuando se necesita mejorar la precisión",
+          "Cuando se necesita reducir el consumo de recursos"
         ]
       },
       "ejemplo": {
-        "caso": "Un ejemplo de integración de sistemas es la conexión de un sistema de gestión de clientes con un sistema de marketing por correo electrónico",
-        "prompt_malo": "Conecta el sistema de gestión de clientes con el sistema de marketing por correo electrónico",
-        "prompt_bueno": "Crea una integración entre el sistema de gestión de clientes y el sistema de marketing por correo electrónico, de manera que los datos de los clientes se actualicen automáticamente en ambos sistemas y se puedan enviar correos electrónicos personalizados a los clientes",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y especificidad sobre lo que se necesita, lo que permite a Gemini generar una integración más efectiva y personalizada"
+        "caso": "Un sistema de detección de fraude",
+        "prompt_malo": "Diseña un pipeline de IA para un sistema de detección de fraude que utilice un algoritmo de aprendizaje automático para detectar transacciones fraudulentas.",
+        "prompt_bueno": "Diseña un pipeline de IA para un sistema de detección de fraude que utilice un algoritmo de aprendizaje automático para detectar transacciones fraudulentas, considerando factores como la historia de transacciones del usuario, el comportamiento del usuario y la información de la transacción.",
+        "por_que_mejor": "El prompt bueno es mejor porque considera factores adicionales que pueden mejorar la precisión de la detección de fraude."
       },
       "practica": {
-        "titulo": "Crear una integración de sistemas",
-        "objetivo": "Conseguir crear una integración entre un sistema de gestión de clientes y un sistema de marketing por correo electrónico",
-        "prompt_practica": "Actúa como un desarrollador de software y crea una integración entre un sistema de gestión de clientes y un sistema de marketing por correo electrónico. La integración debe permitir que los datos de los clientes se actualicen automáticamente en ambos sistemas y se puedan enviar correos electrónicos personalizados a los clientes. Utiliza Gemini para generar el código y la documentación necesarios para implementar la integración. El sistema de gestión de clientes debe tener una API RESTful y el sistema de marketing por correo electrónico debe tener una API de correo electrónico. La integración debe ser capaz de manejar hasta 1000 clientes y debe ser escalable para crecer con la empresa.",
+        "titulo": "Diseñar una arquitectura de pipeline",
+        "objetivo": "Diseñar una arquitectura de pipeline de IA para un sistema de detección de fraude",
+        "prompt_practica": "Diseña una arquitectura de pipeline de IA para un sistema de detección de fraude que utilice un algoritmo de aprendizaje automático para detectar transacciones fraudulentas. Considera factores como la historia de transacciones del usuario, el comportamiento del usuario y la información de la transacción. Utiliza la herramienta Gemini para implementar el pipeline y evalúa su rendimiento. Asegúrate de que el pipeline sea escalable y pueda procesar grandes cantidades de datos. La salida debe ser una lista de transacciones detectadas como fraudulentas, junto con una puntuación de confianza para cada transacción.",
         "pasos": [
-          "Paso 1: Ir a la página de Gemini y crear un nuevo proyecto de integración de sistemas",
-          "Paso 2: Configurar la integración con la API RESTful del sistema de gestión de clientes y la API de correo electrónico del sistema de marketing por correo electrónico",
-          "Paso 3: Utilizar Gemini para generar el código y la documentación necesarios para implementar la integración",
-          "Paso 4: Probar y depurar la integración para asegurarse de que funcione correctamente y se puedan enviar correos electrónicos personalizados a los clientes",
-          "Paso 5: Documentar y guardar la integración para futuras referencias y mejoras"
+          "Paso 1: Accede a la herramienta Gemini y crea un nuevo proyecto",
+          "Paso 2: Importa los datos de historias de transacciones de los usuarios y el comportamiento de los usuarios",
+          "Paso 3: Diseña la arquitectura del pipeline de IA utilizando un algoritmo de aprendizaje automático y considera factores como la historia de transacciones del usuario y el comportamiento del usuario",
+          "Paso 4: Evalúa el rendimiento del pipeline y ajusta los parámetros para mejorar la precisión",
+          "Paso 5: Guarda el pipeline y aplica los cambios para que esté listo para producción"
         ],
-        "criterio_exito": "La integración entre los sistemas funciona correctamente y se pueden enviar correos electrónicos personalizados a los clientes"
+        "criterio_exito": "El pipeline de IA debe ser capaz de procesar grandes cantidades de datos y producir resultados precisos para la detección de fraude."
       },
       "recursos": [
-        "La documentación oficial de Gemini sobre integración de sistemas"
+        "Técnicas de aprendizaje automático para detección de fraude"
       ]
     },
     {
-      "id": "extra-25-3",
-      "semana": "2026-06-15",
+      "id": "extra-26-3",
+      "semana": "2026-06-22",
       "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Automatización de Tareas",
-      "subtitulo": "Aprenderá a automatizar tareas complejas utilizando Kiro",
+      "titulo": "Implementación de Modelos",
+      "subtitulo": "Aprenderá a implementar modelos de IA en pipelines de producción",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Automatización de Tareas",
-        "explicacion": "La automatización de tareas es el proceso de utilizar software y hardware para automatizar tareas repetitivas y rutinarias. Esto se logra a través de la creación de flujos de trabajo y la integración de herramientas y sistemas. La automatización de tareas es importante porque permite a las empresas aumentar la eficiencia y la productividad, y reducir los costos y los errores. Funciona a través de la creación de un marco de trabajo que define cómo se deben automatizar las tareas y cómo se deben manejar los datos.",
-        "analogia": "Un ejemplo de automatización de tareas en la vida real es un sistema de automatización de facturas que puede generar y enviar facturas a los clientes de manera automática",
+        "concepto": "Implementación de Modelos",
+        "explicacion": "La implementación de modelos de IA en pipelines de producción se refiere a la integración de los modelos entrenados en el pipeline de IA. Esto implica la selección de la tecnología y la herramienta adecuadas para implementar el modelo, así como la configuración de los parámetros y la evaluación del rendimiento. Una buena implementación de modelos debe ser escalable, flexible y capaz de procesar grandes cantidades de datos de manera eficiente.",
+        "analogia": "La implementación de modelos de IA es similar a la implementación de un software. Al igual que un software debe ser diseñado y probado antes de ser implementado, un modelo de IA debe ser entrenado y evaluado antes de ser implementado en un pipeline de producción.",
         "cuando_usarlo": [
-          "Cuando se necesitan automatizar tareas repetitivas y rutinarias",
-          "Cuando se requiere una alta precisión y exactitud",
-          "Cuando se necesita integrar múltiples herramientas y sistemas",
-          "Cuando se busca reducir los costos y mejorar la eficiencia"
+          "Cuando se necesita procesar grandes cantidades de datos",
+          "Cuando se requiere una respuesta rápida",
+          "Cuando se necesita mejorar la precisión",
+          "Cuando se necesita reducir el consumo de recursos"
         ]
       },
       "ejemplo": {
-        "caso": "Un ejemplo de automatización de tareas es la creación de un sistema que genere y envíe informes de ventas diarios",
-        "prompt_malo": "Genera un informe de ventas diario",
-        "prompt_bueno": "Crea un sistema que genere y envíe un informe de ventas diario a los gerentes de la empresa, incluyendo los datos de ventas y las tendencias del mercado",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y especificidad sobre lo que se necesita, lo que permite a Kiro generar un informe más detallado y personalizado"
+        "caso": "Un sistema de clasificación de textos",
+        "prompt_malo": "Diseña un pipeline de IA para un sistema de clasificación de textos que utilice un algoritmo de aprendizaje automático para clasificar textos en diferentes categorías.",
+        "prompt_bueno": "Diseña un pipeline de IA para un sistema de clasificación de textos que utilice un algoritmo de aprendizaje automático para clasificar textos en diferentes categorías, considerando factores como la sintaxis, la semántica y el contexto del texto.",
+        "por_que_mejor": "El prompt bueno es mejor porque considera factores adicionales que pueden mejorar la precisión de la clasificación de textos."
       },
       "practica": {
-        "titulo": "Crear un sistema de automatización de tareas",
-        "objetivo": "Conseguir crear un sistema que genere y envíe informes de ventas diarios a los gerentes de la empresa",
-        "prompt_practica": "Actúa como un desarrollador de software y crea un sistema que genere y envíe un informe de ventas diario a los gerentes de la empresa. El sistema debe incluir los datos de ventas y las tendencias del mercado, y debe ser capaz de manejar hasta 1000 transacciones diarias. Utiliza Kiro para generar el código y la documentación necesarios para implementar el sistema. El sistema debe tener una interfaz de usuario amigable y debe ser escalable para crecer con la empresa.",
+        "titulo": "Implementar un modelo de IA",
+        "objetivo": "Implementar un modelo de IA en un pipeline de producción para un sistema de clasificación de textos",
+        "prompt_practica": "Implementa un modelo de IA en un pipeline de producción para un sistema de clasificación de textos que utilice un algoritmo de aprendizaje automático para clasificar textos en diferentes categorías. Considera factores como la sintaxis, la semántica y el contexto del texto. Utiliza la herramienta Kiro para implementar el pipeline y evalúa su rendimiento. Asegúrate de que el pipeline sea escalable y pueda procesar grandes cantidades de datos. La salida debe ser una lista de textos clasificados, junto con una puntuación de confianza para cada clasificación.",
         "pasos": [
-          "Paso 1: Ir a la página de Kiro y crear un nuevo proyecto de automatización de tareas",
-          "Paso 2: Configurar la integración con la base de datos de ventas y definir las reglas para generar el informe",
-          "Paso 3: Utilizar Kiro para generar el código y la documentación necesarios para implementar el sistema",
-          "Paso 4: Probar y depurar el sistema para asegurarse de que funcione correctamente y se puedan generar informes de ventas diarios",
-          "Paso 5: Documentar y guardar el sistema para futuras referencias y mejoras"
+          "Paso 1: Accede a la herramienta Kiro y crea un nuevo proyecto",
+          "Paso 2: Importa los datos de textos y las categorías de clasificación",
+          "Paso 3: Entrena un modelo de IA utilizando un algoritmo de aprendizaje automático y considera factores como la sintaxis y la semántica del texto",
+          "Paso 4: Evalúa el rendimiento del modelo y ajusta los parámetros para mejorar la precisión",
+          "Paso 5: Guarda el modelo y aplica los cambios para que esté listo para producción"
         ],
-        "criterio_exito": "El sistema genera y envía informes de ventas diarios a los gerentes de la empresa de manera correcta y automática"
+        "criterio_exito": "El modelo de IA debe ser capaz de procesar grandes cantidades de datos y producir resultados precisos para la clasificación de textos."
       },
       "recursos": [
-        "La documentación oficial de Kiro sobre automatización de tareas"
+        "Técnicas de aprendizaje automático para clasificación de textos"
       ]
     },
     {
-      "id": "extra-25-4",
-      "semana": "2026-06-15",
-      "herramienta": "Claude",
+      "id": "extra-26-4",
+      "semana": "2026-06-22",
+      "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Optimización de Procesos",
-      "subtitulo": "Aprenderá a optimizar procesos utilizando Claude",
+      "titulo": "Monitoreo y Evaluación",
+      "subtitulo": "Aprenderá a monitorear y evaluar pipelines de IA en producción",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Optimización de Procesos",
-        "explicacion": "La optimización de procesos es el proceso de mejorar la eficiencia y la eficacia de los procesos y sistemas. Esto se logra a través de la identificación y eliminación de cuellos de botella, la reducción de la complejidad y la mejora de la productividad. La optimización de procesos es importante porque permite a las empresas mejorar la calidad y la velocidad de los productos y servicios, y reducir los costos y los errores. Funciona a través de la creación de un marco de trabajo que define cómo se deben optimizar los procesos y cómo se deben medir los resultados.",
-        "analogia": "Un ejemplo de optimización de procesos en la vida real es la mejora de un sistema de producción que reduce el tiempo de entrega de los productos y mejora la calidad",
+        "concepto": "Monitoreo y Evaluación",
+        "explicacion": "El monitoreo y la evaluación de pipelines de IA en producción se refieren a la supervisión y la evaluación del rendimiento del pipeline en tiempo real. Esto implica la recopilación de datos y métricas sobre el rendimiento del pipeline, la detección de problemas y la implementación de soluciones para mejorar el rendimiento. Una buena estrategia de monitoreo y evaluación debe ser capaz de detectar problemas en tiempo real y proporcionar información valiosa para mejorar el rendimiento del pipeline.",
+        "analogia": "El monitoreo y la evaluación de pipelines de IA es similar a la supervisión de un sistema de producción. Al igual que un sistema de producción debe ser supervisado para garantizar su funcionamiento óptimo, un pipeline de IA debe ser monitoreado para garantizar su rendimiento óptimo.",
         "cuando_usarlo": [
-          "Cuando se necesitan mejorar la eficiencia y la eficacia de los procesos",
-          "Cuando se requiere una alta precisión y exactitud",
-          "Cuando se necesita reducir la complejidad y mejorar la productividad",
-          "Cuando se busca reducir los costos y mejorar la calidad"
+          "Cuando se necesita procesar grandes cantidades de datos",
+          "Cuando se requiere una respuesta rápida",
+          "Cuando se necesita mejorar la precisión",
+          "Cuando se necesita reducir el consumo de recursos"
         ]
       },
       "ejemplo": {
-        "caso": "Un ejemplo de optimización de procesos es la mejora de un sistema de gestión de inventario que reduce el tiempo de entrega de los productos",
-        "prompt_malo": "Mejora el sistema de gestión de inventario",
-        "prompt_bueno": "Optimiza el sistema de gestión de inventario para reducir el tiempo de entrega de los productos y mejorar la precisión de la gestión de inventario",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona más contexto y especificidad sobre lo que se necesita, lo que permite a Claude generar una optimización más efectiva y personalizada"
+        "caso": "Un sistema de recomendación de productos",
+        "prompt_malo": "Diseña un pipeline de IA para un sistema de recomendación de productos que utilice un algoritmo de aprendizaje automático para recomendar productos a los usuarios.",
+        "prompt_bueno": "Diseña un pipeline de IA para un sistema de recomendación de productos que utilice un algoritmo de aprendizaje automático para recomendar productos a los usuarios, considerando factores como la historia de compras del usuario y las preferencias del usuario.",
+        "por_que_mejor": "El prompt bueno es mejor porque considera factores adicionales que pueden mejorar la precisión de las recomendaciones."
       },
       "practica": {
-        "titulo": "Crear un sistema de optimización de procesos",
-        "objetivo": "Conseguir crear un sistema que optimice el proceso de gestión de inventario y reduzca el tiempo de entrega de los productos",
-        "prompt_practica": "Actúa como un desarrollador de software y crea un sistema que optimice el proceso de gestión de inventario y reduzca el tiempo de entrega de los productos. El sistema debe incluir la gestión de inventario, la planificación de la producción y la entrega de los productos. Utiliza Claude para generar el código y la documentación necesarios para implementar el sistema. El sistema debe tener una interfaz de usuario amigable y debe ser escalable para crecer con la empresa.",
+        "titulo": "Monitorear y evaluar un pipeline de IA",
+        "objetivo": "Monitorear y evaluar un pipeline de IA en producción para un sistema de recomendación de productos",
+        "prompt_practica": "Monitorea y evalúa un pipeline de IA en producción para un sistema de recomendación de productos que utilice un algoritmo de aprendizaje automático para recomendar productos a los usuarios. Considera factores como la historia de compras del usuario y las preferencias del usuario. Utiliza la herramienta Kiro para monitorear y evaluar el pipeline y ajusta los parámetros para mejorar la precisión. Asegúrate de que el pipeline sea escalable y pueda procesar grandes cantidades de datos. La salida debe ser una lista de productos recomendados, junto con una puntuación de confianza para cada recomendación.",
         "pasos": [
-          "Paso 1: Ir a la página de Claude y crear un nuevo proyecto de optimización de procesos",
-          "Paso 2: Configurar la integración con la base de datos de inventario y definir las reglas para optimizar el proceso",
-          "Paso 3: Utilizar Claude para generar el código y la documentación necesarios para implementar el sistema",
-          "Paso 4: Probar y depurar el sistema para asegurarse de que funcione correctamente y se puedan optimizar los procesos",
-          "Paso 5: Documentar y guardar el sistema para futuras referencias y mejoras"
+          "Paso 1: Accede a la herramienta Kiro y crea un nuevo proyecto",
+          "Paso 2: Importa los datos de historias de compras de los usuarios y las preferencias de los usuarios",
+          "Paso 3: Monitorea el rendimiento del pipeline y ajusta los parámetros para mejorar la precisión",
+          "Paso 4: Evalúa el rendimiento del pipeline y ajusta los parámetros para mejorar la precisión",
+          "Paso 5: Guarda el pipeline y aplica los cambios para que esté listo para producción"
         ],
-        "criterio_exito": "El sistema optimiza el proceso de gestión de inventario y reduce el tiempo de entrega de los productos de manera correcta y automática"
+        "criterio_exito": "El pipeline de IA debe ser capaz de procesar grandes cantidades de datos y producir resultados precisos para la recomendación de productos."
       },
       "recursos": [
-        "La documentación oficial de Claude sobre optimización de procesos"
+        "Técnicas de monitoreo y evaluación de pipelines de IA"
       ]
     }
   ]

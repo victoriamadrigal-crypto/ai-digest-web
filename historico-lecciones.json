@@ -318,5 +318,45 @@
     "titulo": "Optimización de Procesos",
     "subtitulo": "Aprenderá a optimizar procesos utilizando Claude",
     "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-22",
+    "tema": "construcción de pipelines de IA para producción",
+    "id": "extra-26-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Optimización Pipeline",
+    "subtitulo": "Aprenderá a optimizar pipelines de IA para producción",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-22",
+    "tema": "construcción de pipelines de IA para producción",
+    "id": "extra-26-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Diseño de Arquitecturas",
+    "subtitulo": "Aprenderá a diseñar arquitecturas de pipelines de IA para producción",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-22",
+    "tema": "construcción de pipelines de IA para producción",
+    "id": "extra-26-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Implementación de Modelos",
+    "subtitulo": "Aprenderá a implementar modelos de IA en pipelines de producción",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-22",
+    "tema": "construcción de pipelines de IA para producción",
+    "id": "extra-26-4",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Monitoreo y Evaluación",
+    "subtitulo": "Aprenderá a monitorear y evaluar pipelines de IA en producción",
+    "duracion": "25 min"
   }
 ]
