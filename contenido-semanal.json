@@ -1,184 +1,180 @@
 {
-  "semana": "2026-06-22",
-  "tema": "construcción de pipelines de IA para producción",
+  "semana": "2026-06-29",
+  "tema": "IA para generación y validación de hipótesis de negocio",
   "tip": {
-    "semana": "2026-06-22",
-    "tema": "construcción de pipelines de IA para producción",
-    "emoji": "🚀",
-    "titulo": "Optimización de Pipelines con K-Fold",
-    "resumen": "Mejora la estabilidad de tus modelos",
-    "explicacion": "La técnica de K-Fold permite evaluar y optimizar el desempeño de los modelos de IA en diferentes conjuntos de datos, lo que ayuda a mejorar la estabilidad y generalización de los resultados. Esto se logra dividiendo el conjunto de datos en subconjuntos y entrenando el modelo en cada uno de ellos, luego se calcula el promedio de los resultados para obtener una evaluación más precisa. Esta técnica es especialmente útil cuando se trabaja con conjuntos de datos limitados o cuando se busca reducir el sobreajuste.",
-    "ejemplo_prompt": "Utiliza el comando `from sklearn.model_selection import KFold; kf = KFold(n_splits=5, shuffle=True, random_state=42); for train_index, test_index in kf.split(X): X_train, X_test = X[train_index], X[test_index]; y_train, y_test = y[train_index], y[test_index]; modelo.fit(X_train, y_train); evaluacion = modelo.evaluate(X_test, y_test); print(evaluacion)` para implementar la técnica de K-Fold en tus pipelines de IA",
-    "cuando_usarlo": "Cuando se está trabajando con conjuntos de datos pequeños, cuando se necesita evaluar el desempeño de un modelo en diferentes escenarios o cuando se busca reducir el sobreajuste en los modelos",
+    "semana": "2026-06-29",
+    "tema": "IA para generación y validación de hipótesis de negocio",
+    "emoji": "💡",
+    "titulo": "Generación de Hipótesis con IA",
+    "resumen": "Genera hipótesis con algoritmos de asociación",
+    "explicacion": "La técnica de generación de hipótesis utilizando algoritmos de asociación permite identificar relaciones entre variables y generar hipótesis de negocio innovadoras. Funciona mediante el análisis de grandes conjuntos de datos y la identificación de patrones ocultos. Se utiliza cuando se necesitan identificar oportunidades de negocio no explotadas.",
+    "ejemplo_prompt": "Utiliza el algoritmo de asociación Apriori para analizar las compras de un supermercado y genera hipótesis sobre los productos que suelen comprarse juntos. Ejemplo: 'Analiza las transacciones de un supermercado durante un mes y genera 5 hipótesis sobre los productos que se compran juntos con una confianza del 80%'.",
+    "cuando_usarlo": "Cuando se necesita identificar oportunidades de cross-selling, cuando se lanzan nuevos productos y se busca entender el comportamiento de los clientes, o cuando se busca optimizar la disposición de los productos en la tienda",
     "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-26-1",
-      "semana": "2026-06-22",
+      "id": "extra-27-1",
+      "semana": "2026-06-29",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Optimización Pipeline",
-      "subtitulo": "Aprenderá a optimizar pipelines de IA para producción",
+      "titulo": "Generación Hipótesis",
+      "subtitulo": "Aprenderá a generar hipótesis de negocio utilizando técnicas de IA",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Optimización de Pipelines",
-        "explicacion": "La optimización de pipelines es crucial para mejorar el rendimiento y la eficiencia de los sistemas de IA. Un pipeline de IA es una serie de etapas que se ejecutan en secuencia para realizar una tarea específica. La optimización implica ajustar y mejorar cada etapa del pipeline para minimizar el tiempo de ejecución, reducir el consumo de recursos y mejorar la precisión. Esto se logra mediante técnicas como la paralelización de tareas, la reducción de la complejidad computacional y la selección de algoritmos más eficientes. La optimización de pipelines es importante porque permite a los sistemas de IA procesar grandes cantidades de datos de manera rápida y precisa, lo que es esencial para aplicaciones como el aprendizaje automático y el procesamiento de lenguaje natural.",
-        "analogia": "La optimización de pipelines es similar a la optimización de una fábrica. Al igual que una fábrica puede ser optimizada para producir más productos en menos tiempo, un pipeline de IA puede ser optimizado para procesar más datos en menos tiempo.",
+        "concepto": "Técnicas de Generación de Hipótesis",
+        "explicacion": "Las técnicas de generación de hipótesis son fundamentales en el proceso de toma de decisiones empresariales. La IA puede ser utilizada para generar hipótesis de negocio mediante el análisis de grandes cantidades de datos y la identificación de patrones. Esto puede incluir el uso de algoritmos de aprendizaje automático y técnicas de procesamiento de lenguaje natural. La importancia de estas técnicas radica en su capacidad para proporcionar a los empresarios y líderes de negocios información valiosa y objetiva para tomar decisiones informadas. Además, estas técnicas pueden ayudar a reducir el sesgo y la subjetividad en el proceso de toma de decisiones, lo que puede mejorar la eficacia y la eficiencia de las organizaciones.",
+        "analogia": "Imagina que estás buscando una aguja en un pajar. La IA es como un imán que puede atravesar el pajar y encontrar la aguja (la hipótesis correcta) de manera eficiente",
         "cuando_usarlo": [
-          "Cuando se necesita procesar grandes cantidades de datos",
-          "Cuando se requiere una respuesta rápida",
-          "Cuando se necesita mejorar la precisión",
-          "Cuando se necesita reducir el consumo de recursos"
+          "Cuando se necesita generar un gran número de hipótesis",
+          "Cuando se dispone de grandes cantidades de datos",
+          "Cuando se necesita reducir el sesgo y la subjetividad en el proceso de toma de decisiones"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de recomendación de productos",
-        "prompt_malo": "Diseña un pipeline de IA para un sistema de recomendación de productos que utilice un algoritmo de aprendizaje automático para recomendar productos a los usuarios.",
-        "prompt_bueno": "Diseña un pipeline de IA para un sistema de recomendación de productos que utilice un algoritmo de aprendizaje automático para recomendar productos a los usuarios, considerando factores como la historia de compras del usuario, las preferencias del usuario y la popularidad de los productos.",
-        "por_que_mejor": "El prompt bueno es mejor porque considera factores adicionales que pueden mejorar la precisión de las recomendaciones."
+        "caso": "Una empresa de comercio electrónico quiere generar hipótesis sobre los productos que serán más populares en la próxima temporada",
+        "prompt_malo": "¿Cuáles serán los productos más populares en la próxima temporada?",
+        "prompt_bueno": "Utilizando datos históricos de ventas y tendencias actuales, genera 5 hipótesis sobre los productos que serán más populares en la próxima temporada, considerando factores como la edad y el género de los clientes",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona contexto y especifica los factores que se deben considerar, lo que permite a la IA generar hipótesis más precisas y relevantes"
       },
       "practica": {
-        "titulo": "Optimizar un pipeline de IA",
-        "objetivo": "Optimizar un pipeline de IA para un sistema de recomendación de productos",
-        "prompt_practica": "Diseña un pipeline de IA para un sistema de recomendación de productos que utilice un algoritmo de aprendizaje automático para recomendar productos a los usuarios. Considera factores como la historia de compras del usuario, las preferencias del usuario y la popularidad de los productos. Utiliza la herramienta Claude para implementar el pipeline y evalúa su rendimiento. Asegúrate de que el pipeline sea escalable y pueda procesar grandes cantidades de datos. La salida debe ser una lista de productos recomendados para cada usuario, junto con una puntuación de confianza para cada recomendación.",
+        "titulo": "Generación de Hipótesis de Negocio",
+        "objetivo": "Generar 3 hipótesis de negocio para un caso de uso específico",
+        "prompt_practica": "Actuando como un consultor de negocios, utilizando datos históricos de ventas y tendencias actuales, genera 3 hipótesis sobre los productos que serán más populares en la próxima temporada para una tienda de ropa en línea que vende ropa para mujeres y hombres de entre 25 y 45 años. Considera factores como la estación del año, los eventos sociales y las tendencias de moda. Presenta las hipótesis en un formato de lista numerada, con una breve justificación para cada una.",
         "pasos": [
           "Paso 1: Accede a la herramienta Claude y crea un nuevo proyecto",
-          "Paso 2: Importa los datos de historias de compras de los usuarios y las preferencias de los usuarios",
-          "Paso 3: Diseña el pipeline de IA utilizando un algoritmo de aprendizaje automático y considera factores como la historia de compras del usuario y las preferencias del usuario",
-          "Paso 4: Evalúa el rendimiento del pipeline y ajusta los parámetros para mejorar la precisión",
-          "Paso 5: Guarda el pipeline y aplica los cambios para que esté listo para producción"
+          "Paso 2: Introduce el prompt de práctica y selecciona la opción de generar hipótesis",
+          "Paso 3: Analiza los resultados y selecciona las 3 hipótesis más relevantes",
+          "Paso 4: Evalúa las hipótesis y refina las justificaciones para cada una",
+          "Paso 5: Guarda las hipótesis y justificaciones en un documento para futuras referencias"
         ],
-        "criterio_exito": "El pipeline de IA debe ser capaz de procesar grandes cantidades de datos y producir recomendaciones precisas para los usuarios."
+        "criterio_exito": "Se han generado 3 hipótesis de negocio claras y bien justificadas"
       },
       "recursos": [
-        "Técnicas de aprendizaje automático para recomendación de productos"
+        "Técnicas de aprendizaje automático para el análisis de datos"
       ]
     },
     {
-      "id": "extra-26-2",
-      "semana": "2026-06-22",
+      "id": "extra-27-2",
+      "semana": "2026-06-29",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Diseño de Arquitecturas",
-      "subtitulo": "Aprenderá a diseñar arquitecturas de pipelines de IA para producción",
-      "duracion": "25 min",
+      "titulo": "Validación Hipótesis",
+      "subtitulo": "Aprenderá a validar hipótesis de negocio utilizando técnicas de IA",
+      "duracion": "20 min",
       "teoria": {
-        "concepto": "Arquitecturas de Pipelines",
-        "explicacion": "La arquitectura de un pipeline de IA se refiere a la estructura y el diseño de las diferentes etapas que componen el pipeline. Una buena arquitectura de pipeline debe ser escalable, flexible y capaz de procesar grandes cantidades de datos de manera eficiente. Esto se logra mediante la selección de tecnologías y herramientas adecuadas para cada etapa del pipeline, así como la implementación de mecanismos de control y monitoreo para garantizar el rendimiento y la precisión.",
-        "analogia": "La arquitectura de un pipeline de IA es similar a la arquitectura de un edificio. Al igual que un edificio debe ser diseñado para ser funcional y seguro, un pipeline de IA debe ser diseñado para ser escalable y preciso.",
+        "concepto": "Técnicas de Validación de Hipótesis",
+        "explicacion": "La validación de hipótesis es un paso crucial en el proceso de toma de decisiones empresariales. La IA puede ser utilizada para validar hipótesis de negocio mediante el análisis de datos y la identificación de patrones. Esto puede incluir el uso de algoritmos de aprendizaje automático y técnicas de estadística. La importancia de estas técnicas radica en su capacidad para proporcionar a los empresarios y líderes de negocios información valiosa y objetiva para tomar decisiones informadas.",
+        "analogia": "Imagina que estás intentando demostrar una teoría científica. La IA es como un experimento que puede probar la teoría (la hipótesis) y determinar si es válida",
         "cuando_usarlo": [
-          "Cuando se necesita procesar grandes cantidades de datos",
-          "Cuando se requiere una respuesta rápida",
-          "Cuando se necesita mejorar la precisión",
-          "Cuando se necesita reducir el consumo de recursos"
+          "Cuando se necesita probar la validez de una hipótesis",
+          "Cuando se dispone de datos para analizar",
+          "Cuando se necesita reducir el riesgo de tomar decisiones incorrectas"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de detección de fraude",
-        "prompt_malo": "Diseña un pipeline de IA para un sistema de detección de fraude que utilice un algoritmo de aprendizaje automático para detectar transacciones fraudulentas.",
-        "prompt_bueno": "Diseña un pipeline de IA para un sistema de detección de fraude que utilice un algoritmo de aprendizaje automático para detectar transacciones fraudulentas, considerando factores como la historia de transacciones del usuario, el comportamiento del usuario y la información de la transacción.",
-        "por_que_mejor": "El prompt bueno es mejor porque considera factores adicionales que pueden mejorar la precisión de la detección de fraude."
+        "caso": "Una empresa de marketing digital quiere validar la hipótesis de que los anuncios en redes sociales aumentan las ventas",
+        "prompt_malo": "¿Es cierto que los anuncios en redes sociales aumentan las ventas?",
+        "prompt_bueno": "Utilizando datos de ventas y estadísticas de redes sociales, valida la hipótesis de que los anuncios en redes sociales aumentan las ventas en un 15% en comparación con otros canales de publicidad",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona contexto y especifica los parámetros que se deben considerar, lo que permite a la IA validar la hipótesis de manera más precisa"
       },
       "practica": {
-        "titulo": "Diseñar una arquitectura de pipeline",
-        "objetivo": "Diseñar una arquitectura de pipeline de IA para un sistema de detección de fraude",
-        "prompt_practica": "Diseña una arquitectura de pipeline de IA para un sistema de detección de fraude que utilice un algoritmo de aprendizaje automático para detectar transacciones fraudulentas. Considera factores como la historia de transacciones del usuario, el comportamiento del usuario y la información de la transacción. Utiliza la herramienta Gemini para implementar el pipeline y evalúa su rendimiento. Asegúrate de que el pipeline sea escalable y pueda procesar grandes cantidades de datos. La salida debe ser una lista de transacciones detectadas como fraudulentas, junto con una puntuación de confianza para cada transacción.",
+        "titulo": "Validación de Hipótesis de Negocio",
+        "objetivo": "Validar una hipótesis de negocio para un caso de uso específico",
+        "prompt_practica": "Actuando como un analista de datos, utilizando datos de ventas y estadísticas de redes sociales, valida la hipótesis de que los anuncios en Instagram aumentan las ventas en un 10% en comparación con otros canales de publicidad para una tienda de ropa en línea. Presenta los resultados en un formato de informe, con gráficos y estadísticas que respalden la validación o refutación de la hipótesis.",
         "pasos": [
-          "Paso 1: Accede a la herramienta Gemini y crea un nuevo proyecto",
-          "Paso 2: Importa los datos de historias de transacciones de los usuarios y el comportamiento de los usuarios",
-          "Paso 3: Diseña la arquitectura del pipeline de IA utilizando un algoritmo de aprendizaje automático y considera factores como la historia de transacciones del usuario y el comportamiento del usuario",
-          "Paso 4: Evalúa el rendimiento del pipeline y ajusta los parámetros para mejorar la precisión",
-          "Paso 5: Guarda el pipeline y aplica los cambios para que esté listo para producción"
+          "Paso 1: Accede a la herramienta Gemini y carga los datos de ventas y estadísticas de redes sociales",
+          "Paso 2: Introduce el prompt de práctica y selecciona la opción de validar hipótesis",
+          "Paso 3: Analiza los resultados y determina si la hipótesis es válida o no",
+          "Paso 4: Evalúa los resultados y refina la presentación para que sea clara y convincente",
+          "Paso 5: Guarda el informe y resultados para futuras referencias"
         ],
-        "criterio_exito": "El pipeline de IA debe ser capaz de procesar grandes cantidades de datos y producir resultados precisos para la detección de fraude."
+        "criterio_exito": "Se ha validado o refutado la hipótesis de negocio de manera clara y objetiva"
       },
       "recursos": [
-        "Técnicas de aprendizaje automático para detección de fraude"
+        "Técnicas de estadística para el análisis de datos"
       ]
     },
     {
-      "id": "extra-26-3",
-      "semana": "2026-06-22",
+      "id": "extra-27-3",
+      "semana": "2026-06-29",
       "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Implementación de Modelos",
-      "subtitulo": "Aprenderá a implementar modelos de IA en pipelines de producción",
+      "titulo": "Análisis Competencia",
+      "subtitulo": "Aprenderá a analizar la competencia utilizando técnicas de IA",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Implementación de Modelos",
-        "explicacion": "La implementación de modelos de IA en pipelines de producción se refiere a la integración de los modelos entrenados en el pipeline de IA. Esto implica la selección de la tecnología y la herramienta adecuadas para implementar el modelo, así como la configuración de los parámetros y la evaluación del rendimiento. Una buena implementación de modelos debe ser escalable, flexible y capaz de procesar grandes cantidades de datos de manera eficiente.",
-        "analogia": "La implementación de modelos de IA es similar a la implementación de un software. Al igual que un software debe ser diseñado y probado antes de ser implementado, un modelo de IA debe ser entrenado y evaluado antes de ser implementado en un pipeline de producción.",
+        "concepto": "Técnicas de Análisis de Competencia",
+        "explicacion": "El análisis de la competencia es fundamental para entender el mercado y tomar decisiones informadas. La IA puede ser utilizada para analizar la competencia mediante el análisis de datos y la identificación de patrones. Esto puede incluir el uso de algoritmos de aprendizaje automático y técnicas de minería de datos. La importancia de estas técnicas radica en su capacidad para proporcionar a los empresarios y líderes de negocios información valiosa y objetiva para tomar decisiones estratégicas.",
+        "analogia": "Imagina que estás intentando entender el juego de un oponente en un deporte. La IA es como un entrenador que puede analizar el juego del oponente y proporcionar estrategias para ganar",
         "cuando_usarlo": [
-          "Cuando se necesita procesar grandes cantidades de datos",
-          "Cuando se requiere una respuesta rápida",
-          "Cuando se necesita mejorar la precisión",
-          "Cuando se necesita reducir el consumo de recursos"
+          "Cuando se necesita entender la estrategia de la competencia",
+          "Cuando se dispone de datos sobre la competencia",
+          "Cuando se necesita desarrollar una estrategia competitiva"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de clasificación de textos",
-        "prompt_malo": "Diseña un pipeline de IA para un sistema de clasificación de textos que utilice un algoritmo de aprendizaje automático para clasificar textos en diferentes categorías.",
-        "prompt_bueno": "Diseña un pipeline de IA para un sistema de clasificación de textos que utilice un algoritmo de aprendizaje automático para clasificar textos en diferentes categorías, considerando factores como la sintaxis, la semántica y el contexto del texto.",
-        "por_que_mejor": "El prompt bueno es mejor porque considera factores adicionales que pueden mejorar la precisión de la clasificación de textos."
+        "caso": "Una empresa de tecnología quiere analizar la competencia en el mercado de inteligencia artificial",
+        "prompt_malo": "¿Quiénes son los competidores en el mercado de IA?",
+        "prompt_bueno": "Utilizando datos de mercado y estadísticas de la industria, analiza la competencia en el mercado de inteligencia artificial y identifica las fortalezas y debilidades de los 3 competidores principales",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona contexto y especifica los parámetros que se deben considerar, lo que permite a la IA analizar la competencia de manera más precisa"
       },
       "practica": {
-        "titulo": "Implementar un modelo de IA",
-        "objetivo": "Implementar un modelo de IA en un pipeline de producción para un sistema de clasificación de textos",
-        "prompt_practica": "Implementa un modelo de IA en un pipeline de producción para un sistema de clasificación de textos que utilice un algoritmo de aprendizaje automático para clasificar textos en diferentes categorías. Considera factores como la sintaxis, la semántica y el contexto del texto. Utiliza la herramienta Kiro para implementar el pipeline y evalúa su rendimiento. Asegúrate de que el pipeline sea escalable y pueda procesar grandes cantidades de datos. La salida debe ser una lista de textos clasificados, junto con una puntuación de confianza para cada clasificación.",
+        "titulo": "Análisis de Competencia",
+        "objetivo": "Analizar la competencia para un caso de uso específico",
+        "prompt_practica": "Actuando como un consultor de negocios, utilizando datos de mercado y estadísticas de la industria, analiza la competencia en el mercado de comercio electrónico y identifica las fortalezas y debilidades de los 3 competidores principales. Presenta los resultados en un formato de informe, con gráficos y estadísticas que respalden el análisis.",
         "pasos": [
-          "Paso 1: Accede a la herramienta Kiro y crea un nuevo proyecto",
-          "Paso 2: Importa los datos de textos y las categorías de clasificación",
-          "Paso 3: Entrena un modelo de IA utilizando un algoritmo de aprendizaje automático y considera factores como la sintaxis y la semántica del texto",
-          "Paso 4: Evalúa el rendimiento del modelo y ajusta los parámetros para mejorar la precisión",
-          "Paso 5: Guarda el modelo y aplica los cambios para que esté listo para producción"
+          "Paso 1: Accede a la herramienta Kiro y carga los datos de mercado y estadísticas de la industria",
+          "Paso 2: Introduce el prompt de práctica y selecciona la opción de analizar la competencia",
+          "Paso 3: Analiza los resultados y identifica las fortalezas y debilidades de los competidores",
+          "Paso 4: Evalúa los resultados y refina la presentación para que sea clara y convincente",
+          "Paso 5: Guarda el informe y resultados para futuras referencias"
         ],
-        "criterio_exito": "El modelo de IA debe ser capaz de procesar grandes cantidades de datos y producir resultados precisos para la clasificación de textos."
+        "criterio_exito": "Se ha analizado la competencia de manera clara y objetiva"
       },
       "recursos": [
-        "Técnicas de aprendizaje automático para clasificación de textos"
+        "Técnicas de minería de datos para el análisis de la competencia"
       ]
     },
     {
-      "id": "extra-26-4",
-      "semana": "2026-06-22",
-      "herramienta": "Kiro",
+      "id": "extra-27-4",
+      "semana": "2026-06-29",
+      "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Monitoreo y Evaluación",
-      "subtitulo": "Aprenderá a monitorear y evaluar pipelines de IA en producción",
-      "duracion": "25 min",
+      "titulo": "Estrategia de Negocio",
+      "subtitulo": "Aprenderá a desarrollar una estrategia de negocio utilizando técnicas de IA",
+      "duracion": "30 min",
       "teoria": {
-        "concepto": "Monitoreo y Evaluación",
-        "explicacion": "El monitoreo y la evaluación de pipelines de IA en producción se refieren a la supervisión y la evaluación del rendimiento del pipeline en tiempo real. Esto implica la recopilación de datos y métricas sobre el rendimiento del pipeline, la detección de problemas y la implementación de soluciones para mejorar el rendimiento. Una buena estrategia de monitoreo y evaluación debe ser capaz de detectar problemas en tiempo real y proporcionar información valiosa para mejorar el rendimiento del pipeline.",
-        "analogia": "El monitoreo y la evaluación de pipelines de IA es similar a la supervisión de un sistema de producción. Al igual que un sistema de producción debe ser supervisado para garantizar su funcionamiento óptimo, un pipeline de IA debe ser monitoreado para garantizar su rendimiento óptimo.",
+        "concepto": "Técnicas de Desarrollo de Estrategia de Negocio",
+        "explicacion": "El desarrollo de una estrategia de negocio es fundamental para el éxito de cualquier empresa. La IA puede ser utilizada para desarrollar una estrategia de negocio mediante el análisis de datos y la identificación de patrones. Esto puede incluir el uso de algoritmos de aprendizaje automático y técnicas de planificación estratégica. La importancia de estas técnicas radica en su capacidad para proporcionar a los empresarios y líderes de negocios información valiosa y objetiva para tomar decisiones estratégicas.",
+        "analogia": "Imagina que estás intentando navegar un barco en un mar desconocido. La IA es como un GPS que puede guiar el barco hacia el destino",
         "cuando_usarlo": [
-          "Cuando se necesita procesar grandes cantidades de datos",
-          "Cuando se requiere una respuesta rápida",
-          "Cuando se necesita mejorar la precisión",
-          "Cuando se necesita reducir el consumo de recursos"
+          "Cuando se necesita desarrollar una estrategia de negocio",
+          "Cuando se dispone de datos sobre la empresa y el mercado",
+          "Cuando se necesita tomar decisiones estratégicas"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de recomendación de productos",
-        "prompt_malo": "Diseña un pipeline de IA para un sistema de recomendación de productos que utilice un algoritmo de aprendizaje automático para recomendar productos a los usuarios.",
-        "prompt_bueno": "Diseña un pipeline de IA para un sistema de recomendación de productos que utilice un algoritmo de aprendizaje automático para recomendar productos a los usuarios, considerando factores como la historia de compras del usuario y las preferencias del usuario.",
-        "por_que_mejor": "El prompt bueno es mejor porque considera factores adicionales que pueden mejorar la precisión de las recomendaciones."
+        "caso": "Una empresa de tecnología quiere desarrollar una estrategia de negocio para expandirse en el mercado de inteligencia artificial",
+        "prompt_malo": "¿Cuál es la mejor estrategia de negocio para expandirse en el mercado de IA?",
+        "prompt_bueno": "Utilizando datos de mercado y estadísticas de la industria, desarrolla una estrategia de negocio para expandirse en el mercado de inteligencia artificial, considerando factores como la competencia, el mercado y la tecnología",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona contexto y especifica los parámetros que se deben considerar, lo que permite a la IA desarrollar una estrategia de negocio más precisa y efectiva"
       },
       "practica": {
-        "titulo": "Monitorear y evaluar un pipeline de IA",
-        "objetivo": "Monitorear y evaluar un pipeline de IA en producción para un sistema de recomendación de productos",
-        "prompt_practica": "Monitorea y evalúa un pipeline de IA en producción para un sistema de recomendación de productos que utilice un algoritmo de aprendizaje automático para recomendar productos a los usuarios. Considera factores como la historia de compras del usuario y las preferencias del usuario. Utiliza la herramienta Kiro para monitorear y evaluar el pipeline y ajusta los parámetros para mejorar la precisión. Asegúrate de que el pipeline sea escalable y pueda procesar grandes cantidades de datos. La salida debe ser una lista de productos recomendados, junto con una puntuación de confianza para cada recomendación.",
+        "titulo": "Desarrollo de Estrategia de Negocio",
+        "objetivo": "Desarrollar una estrategia de negocio para un caso de uso específico",
+        "prompt_practica": "Actuando como un consultor de negocios, utilizando datos de mercado y estadísticas de la industria, desarrolla una estrategia de negocio para expandirse en el mercado de comercio electrónico, considerando factores como la competencia, el mercado y la tecnología. Presenta los resultados en un formato de informe, con gráficos y estadísticas que respalden la estrategia.",
         "pasos": [
-          "Paso 1: Accede a la herramienta Kiro y crea un nuevo proyecto",
-          "Paso 2: Importa los datos de historias de compras de los usuarios y las preferencias de los usuarios",
-          "Paso 3: Monitorea el rendimiento del pipeline y ajusta los parámetros para mejorar la precisión",
-          "Paso 4: Evalúa el rendimiento del pipeline y ajusta los parámetros para mejorar la precisión",
-          "Paso 5: Guarda el pipeline y aplica los cambios para que esté listo para producción"
+          "Paso 1: Accede a la herramienta Claude y carga los datos de mercado y estadísticas de la industria",
+          "Paso 2: Introduce el prompt de práctica y selecciona la opción de desarrollar una estrategia de negocio",
+          "Paso 3: Analiza los resultados y desarrolla una estrategia de negocio",
+          "Paso 4: Evalúa los resultados y refina la presentación para que sea clara y convincente",
+          "Paso 5: Guarda el informe y resultados para futuras referencias"
         ],
-        "criterio_exito": "El pipeline de IA debe ser capaz de procesar grandes cantidades de datos y producir resultados precisos para la recomendación de productos."
+        "criterio_exito": "Se ha desarrollado una estrategia de negocio clara y efectiva"
       },
       "recursos": [
-        "Técnicas de monitoreo y evaluación de pipelines de IA"
+        "Técnicas de planificación estratégica para el desarrollo de estrategias de negocio"
       ]
     }
   ]

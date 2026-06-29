@@ -358,5 +358,45 @@
     "titulo": "Monitoreo y Evaluación",
     "subtitulo": "Aprenderá a monitorear y evaluar pipelines de IA en producción",
     "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-29",
+    "tema": "IA para generación y validación de hipótesis de negocio",
+    "id": "extra-27-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Generación Hipótesis",
+    "subtitulo": "Aprenderá a generar hipótesis de negocio utilizando técnicas de IA",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-29",
+    "tema": "IA para generación y validación de hipótesis de negocio",
+    "id": "extra-27-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Validación Hipótesis",
+    "subtitulo": "Aprenderá a validar hipótesis de negocio utilizando técnicas de IA",
+    "duracion": "20 min"
+  },
+  {
+    "semana": "2026-06-29",
+    "tema": "IA para generación y validación de hipótesis de negocio",
+    "id": "extra-27-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Análisis Competencia",
+    "subtitulo": "Aprenderá a analizar la competencia utilizando técnicas de IA",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-06-29",
+    "tema": "IA para generación y validación de hipótesis de negocio",
+    "id": "extra-27-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Estrategia de Negocio",
+    "subtitulo": "Aprenderá a desarrollar una estrategia de negocio utilizando técnicas de IA",
+    "duracion": "30 min"
   }
 ]
