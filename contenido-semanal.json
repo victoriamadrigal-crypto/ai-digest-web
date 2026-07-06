@@ -1,180 +1,184 @@
 {
-  "semana": "2026-06-29",
-  "tema": "IA para generación y validación de hipótesis de negocio",
+  "semana": "2026-07-06",
+  "tema": "prompt engineering para modelos de razonamiento (o1, R1)",
   "tip": {
-    "semana": "2026-06-29",
-    "tema": "IA para generación y validación de hipótesis de negocio",
+    "semana": "2026-07-06",
+    "tema": "prompt engineering para modelos de razonamiento (o1, R1)",
     "emoji": "💡",
-    "titulo": "Generación de Hipótesis con IA",
-    "resumen": "Genera hipótesis con algoritmos de asociación",
-    "explicacion": "La técnica de generación de hipótesis utilizando algoritmos de asociación permite identificar relaciones entre variables y generar hipótesis de negocio innovadoras. Funciona mediante el análisis de grandes conjuntos de datos y la identificación de patrones ocultos. Se utiliza cuando se necesitan identificar oportunidades de negocio no explotadas.",
-    "ejemplo_prompt": "Utiliza el algoritmo de asociación Apriori para analizar las compras de un supermercado y genera hipótesis sobre los productos que suelen comprarse juntos. Ejemplo: 'Analiza las transacciones de un supermercado durante un mes y genera 5 hipótesis sobre los productos que se compran juntos con una confianza del 80%'.",
-    "cuando_usarlo": "Cuando se necesita identificar oportunidades de cross-selling, cuando se lanzan nuevos productos y se busca entender el comportamiento de los clientes, o cuando se busca optimizar la disposición de los productos en la tienda",
+    "titulo": "Técnica de Prompt Chaining",
+    "resumen": "Mejora la precisión de modelos de razonamiento",
+    "explicacion": "La técnica de Prompt Chaining implica crear una cadena de prompts que se construyen sobre las respuestas anteriores, lo que permite a los modelos de razonamiento profundizar en su comprensión y generar respuestas más precisas. Esto funciona porque cada prompt posterior se enfoca en aspectos específicos de la respuesta anterior, permitiendo una exploración más detallada del tema. Se puede usar cuando se necesita una comprensión profunda de un tema complejo o cuando se quiere evaluar la capacidad de razonamiento de un modelo.",
+    "ejemplo_prompt": "Primero, describe el concepto de inteligencia artificial. Luego, explica cómo la inteligencia artificial se aplica en la industria automotriz. Finalmente, analiza los beneficios y desafíos de implementar la inteligencia artificial en la producción de vehículos. Considera factores como la eficiencia, la seguridad y el impacto ambiental.",
+    "cuando_usarlo": "Al analizar temas complejos, al evaluar modelos de razonamiento, al generar informes detallados",
     "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-27-1",
-      "semana": "2026-06-29",
+      "id": "extra-28-1",
+      "semana": "2026-07-06",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Generación Hipótesis",
-      "subtitulo": "Aprenderá a generar hipótesis de negocio utilizando técnicas de IA",
+      "titulo": "Optimización de Prompt",
+      "subtitulo": "Aprenderá a optimizar prompts para modelos de razonamiento",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Técnicas de Generación de Hipótesis",
-        "explicacion": "Las técnicas de generación de hipótesis son fundamentales en el proceso de toma de decisiones empresariales. La IA puede ser utilizada para generar hipótesis de negocio mediante el análisis de grandes cantidades de datos y la identificación de patrones. Esto puede incluir el uso de algoritmos de aprendizaje automático y técnicas de procesamiento de lenguaje natural. La importancia de estas técnicas radica en su capacidad para proporcionar a los empresarios y líderes de negocios información valiosa y objetiva para tomar decisiones informadas. Además, estas técnicas pueden ayudar a reducir el sesgo y la subjetividad en el proceso de toma de decisiones, lo que puede mejorar la eficacia y la eficiencia de las organizaciones.",
-        "analogia": "Imagina que estás buscando una aguja en un pajar. La IA es como un imán que puede atravesar el pajar y encontrar la aguja (la hipótesis correcta) de manera eficiente",
+        "concepto": "Optimización de Prompt",
+        "explicacion": "La optimización de prompt es el proceso de mejorar la calidad y precisión de los resultados generados por un modelo de lenguaje. Esto se logra mediante la creación de prompts claros, concisos y bien definidos. Es importante porque permite a los modelos de lenguaje entender mejor el contexto y la tarea, lo que resulta en respuestas más precisas y relevantes. La optimización de prompt es especialmente crucial en aplicaciones críticas, como la atención médica o la toma de decisiones financieras, donde la precisión es fundamental.",
+        "analogia": "La optimización de prompt es similar a la creación de un buen título para un libro. Un título claro y conciso puede atraer a los lectores y transmitir el contenido del libro de manera efectiva. De la misma manera, un prompt bien optimizado puede ayudar a los modelos de lenguaje a entender el contexto y la tarea, lo que resulta en respuestas más precisas y relevantes.",
         "cuando_usarlo": [
-          "Cuando se necesita generar un gran número de hipótesis",
-          "Cuando se dispone de grandes cantidades de datos",
-          "Cuando se necesita reducir el sesgo y la subjetividad en el proceso de toma de decisiones"
+          "Cuando se necesita una respuesta precisa y detallada",
+          "Cuando el modelo de lenguaje no entiende el contexto",
+          "Cuando se necesita una respuesta creativa y original",
+          "Cuando se necesita una respuesta que se ajuste a un formato específico"
         ]
       },
       "ejemplo": {
-        "caso": "Una empresa de comercio electrónico quiere generar hipótesis sobre los productos que serán más populares en la próxima temporada",
-        "prompt_malo": "¿Cuáles serán los productos más populares en la próxima temporada?",
-        "prompt_bueno": "Utilizando datos históricos de ventas y tendencias actuales, genera 5 hipótesis sobre los productos que serán más populares en la próxima temporada, considerando factores como la edad y el género de los clientes",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona contexto y especifica los factores que se deben considerar, lo que permite a la IA generar hipótesis más precisas y relevantes"
+        "caso": "Un usuario necesita una respuesta detallada sobre la historia de la inteligencia artificial",
+        "prompt_malo": "¿Qué es la inteligencia artificial?",
+        "prompt_bueno": "Escribe un artículo detallado sobre la historia de la inteligencia artificial, incluyendo sus orígenes, evolución y aplicaciones actuales. Asegúrate de incluir ejemplos concretos y referencias a fuentes confiables.",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona un contexto claro y una tarea específica, lo que permite al modelo de lenguaje entender mejor lo que se necesita y generar una respuesta más precisa y detallada."
       },
       "practica": {
-        "titulo": "Generación de Hipótesis de Negocio",
-        "objetivo": "Generar 3 hipótesis de negocio para un caso de uso específico",
-        "prompt_practica": "Actuando como un consultor de negocios, utilizando datos históricos de ventas y tendencias actuales, genera 3 hipótesis sobre los productos que serán más populares en la próxima temporada para una tienda de ropa en línea que vende ropa para mujeres y hombres de entre 25 y 45 años. Considera factores como la estación del año, los eventos sociales y las tendencias de moda. Presenta las hipótesis en un formato de lista numerada, con una breve justificación para cada una.",
+        "titulo": "Optimizar un Prompt para un Modelo de Lenguaje",
+        "objetivo": "Aprender a crear un prompt claro y conciso para un modelo de lenguaje",
+        "prompt_practica": "Escribe un artículo sobre los beneficios y desafíos de implementar la inteligencia artificial en la industria de la salud. Asegúrate de incluir al menos 3 ejemplos concretos y referencias a fuentes confiables. El artículo debe tener un mínimo de 250 palabras y un máximo de 500 palabras. Utiliza un tono formal y objetivo, y asegúrate de incluir una introducción, un desarrollo y una conclusión claros.",
         "pasos": [
-          "Paso 1: Accede a la herramienta Claude y crea un nuevo proyecto",
-          "Paso 2: Introduce el prompt de práctica y selecciona la opción de generar hipótesis",
-          "Paso 3: Analiza los resultados y selecciona las 3 hipótesis más relevantes",
-          "Paso 4: Evalúa las hipótesis y refina las justificaciones para cada una",
-          "Paso 5: Guarda las hipótesis y justificaciones en un documento para futuras referencias"
+          "Paso 1: Abre la herramienta Claude y crea un nuevo proyecto",
+          "Paso 2: Escribe el prompt practica en el campo de texto proporcionado",
+          "Paso 3: Configura las opciones de salida para que el modelo de lenguaje genere un artículo con un mínimo de 250 palabras y un máximo de 500 palabras",
+          "Paso 4: Evalúa la respuesta generada y refina el prompt según sea necesario",
+          "Paso 5: Guarda el prompt optimizado y el artículo generado para futuras referencias"
         ],
-        "criterio_exito": "Se han generado 3 hipótesis de negocio claras y bien justificadas"
+        "criterio_exito": "La respuesta generada es un artículo claro y detallado que incluye al menos 3 ejemplos concretos y referencias a fuentes confiables."
       },
       "recursos": [
-        "Técnicas de aprendizaje automático para el análisis de datos"
+        "Guía de optimización de prompt para modelos de lenguaje"
       ]
     },
     {
-      "id": "extra-27-2",
-      "semana": "2026-06-29",
+      "id": "extra-28-2",
+      "semana": "2026-07-06",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Validación Hipótesis",
-      "subtitulo": "Aprenderá a validar hipótesis de negocio utilizando técnicas de IA",
+      "titulo": "Diseño de Prompt",
+      "subtitulo": "Aprenderá a diseñar prompts efectivos para modelos de razonamiento",
       "duracion": "20 min",
       "teoria": {
-        "concepto": "Técnicas de Validación de Hipótesis",
-        "explicacion": "La validación de hipótesis es un paso crucial en el proceso de toma de decisiones empresariales. La IA puede ser utilizada para validar hipótesis de negocio mediante el análisis de datos y la identificación de patrones. Esto puede incluir el uso de algoritmos de aprendizaje automático y técnicas de estadística. La importancia de estas técnicas radica en su capacidad para proporcionar a los empresarios y líderes de negocios información valiosa y objetiva para tomar decisiones informadas.",
-        "analogia": "Imagina que estás intentando demostrar una teoría científica. La IA es como un experimento que puede probar la teoría (la hipótesis) y determinar si es válida",
+        "concepto": "Diseño de Prompt",
+        "explicacion": "El diseño de prompt es el proceso de crear un prompt que sea claro, conciso y bien definido, y que permita al modelo de lenguaje entender el contexto y la tarea. Esto se logra mediante la creación de un prompt que incluya la información necesaria, como el contexto, la tarea y las restricciones. El diseño de prompt es importante porque permite a los modelos de lenguaje generar respuestas precisas y relevantes.",
+        "analogia": "El diseño de prompt es similar a la creación de un buen resumen para un artículo. Un resumen claro y conciso puede transmitir el contenido del artículo de manera efectiva. De la misma manera, un prompt bien diseñado puede ayudar a los modelos de lenguaje a entender el contexto y la tarea, lo que resulta en respuestas más precisas y relevantes.",
         "cuando_usarlo": [
-          "Cuando se necesita probar la validez de una hipótesis",
-          "Cuando se dispone de datos para analizar",
-          "Cuando se necesita reducir el riesgo de tomar decisiones incorrectas"
+          "Cuando se necesita una respuesta precisa y detallada",
+          "Cuando el modelo de lenguaje no entiende el contexto",
+          "Cuando se necesita una respuesta creativa y original",
+          "Cuando se necesita una respuesta que se ajuste a un formato específico"
         ]
       },
       "ejemplo": {
-        "caso": "Una empresa de marketing digital quiere validar la hipótesis de que los anuncios en redes sociales aumentan las ventas",
-        "prompt_malo": "¿Es cierto que los anuncios en redes sociales aumentan las ventas?",
-        "prompt_bueno": "Utilizando datos de ventas y estadísticas de redes sociales, valida la hipótesis de que los anuncios en redes sociales aumentan las ventas en un 15% en comparación con otros canales de publicidad",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona contexto y especifica los parámetros que se deben considerar, lo que permite a la IA validar la hipótesis de manera más precisa"
+        "caso": "Un usuario necesita una respuesta detallada sobre la historia de la inteligencia artificial",
+        "prompt_malo": "¿Qué es la inteligencia artificial?",
+        "prompt_bueno": "Escribe un artículo detallado sobre la historia de la inteligencia artificial, incluyendo sus orígenes, evolución y aplicaciones actuales. Asegúrate de incluir ejemplos concretos y referencias a fuentes confiables.",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona un contexto claro y una tarea específica, lo que permite al modelo de lenguaje entender mejor lo que se necesita y generar una respuesta más precisa y detallada."
       },
       "practica": {
-        "titulo": "Validación de Hipótesis de Negocio",
-        "objetivo": "Validar una hipótesis de negocio para un caso de uso específico",
-        "prompt_practica": "Actuando como un analista de datos, utilizando datos de ventas y estadísticas de redes sociales, valida la hipótesis de que los anuncios en Instagram aumentan las ventas en un 10% en comparación con otros canales de publicidad para una tienda de ropa en línea. Presenta los resultados en un formato de informe, con gráficos y estadísticas que respalden la validación o refutación de la hipótesis.",
+        "titulo": "Diseñar un Prompt para un Modelo de Lenguaje",
+        "objetivo": "Aprender a crear un prompt claro y conciso para un modelo de lenguaje",
+        "prompt_practica": "Escribe un artículo sobre los beneficios y desafíos de implementar la inteligencia artificial en la industria de la salud. Asegúrate de incluir al menos 3 ejemplos concretos y referencias a fuentes confiables. El artículo debe tener un mínimo de 250 palabras y un máximo de 500 palabras. Utiliza un tono formal y objetivo, y asegúrate de incluir una introducción, un desarrollo y una conclusión claros.",
         "pasos": [
-          "Paso 1: Accede a la herramienta Gemini y carga los datos de ventas y estadísticas de redes sociales",
-          "Paso 2: Introduce el prompt de práctica y selecciona la opción de validar hipótesis",
-          "Paso 3: Analiza los resultados y determina si la hipótesis es válida o no",
-          "Paso 4: Evalúa los resultados y refina la presentación para que sea clara y convincente",
-          "Paso 5: Guarda el informe y resultados para futuras referencias"
+          "Paso 1: Abre la herramienta Gemini y crea un nuevo proyecto",
+          "Paso 2: Escribe el prompt practica en el campo de texto proporcionado",
+          "Paso 3: Configura las opciones de salida para que el modelo de lenguaje genere un artículo con un mínimo de 250 palabras y un máximo de 500 palabras",
+          "Paso 4: Evalúa la respuesta generada y refina el prompt según sea necesario",
+          "Paso 5: Guarda el prompt diseñado y el artículo generado para futuras referencias"
         ],
-        "criterio_exito": "Se ha validado o refutado la hipótesis de negocio de manera clara y objetiva"
+        "criterio_exito": "La respuesta generada es un artículo claro y detallado que incluye al menos 3 ejemplos concretos y referencias a fuentes confiables."
       },
       "recursos": [
-        "Técnicas de estadística para el análisis de datos"
+        "Guía de diseño de prompt para modelos de lenguaje"
       ]
     },
     {
-      "id": "extra-27-3",
-      "semana": "2026-06-29",
+      "id": "extra-28-3",
+      "semana": "2026-07-06",
       "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Análisis Competencia",
-      "subtitulo": "Aprenderá a analizar la competencia utilizando técnicas de IA",
+      "titulo": "Análisis de Prompt",
+      "subtitulo": "Aprenderá a analizar prompts para modelos de razonamiento",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Técnicas de Análisis de Competencia",
-        "explicacion": "El análisis de la competencia es fundamental para entender el mercado y tomar decisiones informadas. La IA puede ser utilizada para analizar la competencia mediante el análisis de datos y la identificación de patrones. Esto puede incluir el uso de algoritmos de aprendizaje automático y técnicas de minería de datos. La importancia de estas técnicas radica en su capacidad para proporcionar a los empresarios y líderes de negocios información valiosa y objetiva para tomar decisiones estratégicas.",
-        "analogia": "Imagina que estás intentando entender el juego de un oponente en un deporte. La IA es como un entrenador que puede analizar el juego del oponente y proporcionar estrategias para ganar",
+        "concepto": "Análisis de Prompt",
+        "explicacion": "El análisis de prompt es el proceso de evaluar y mejorar la calidad de un prompt. Esto se logra mediante la identificación de los elementos clave del prompt, como el contexto, la tarea y las restricciones. El análisis de prompt es importante porque permite a los modelos de lenguaje generar respuestas precisas y relevantes.",
+        "analogia": "El análisis de prompt es similar a la revisión de un artículo antes de publicarlo. La revisión permite identificar y corregir errores, lo que resulta en un artículo de mayor calidad. De la misma manera, el análisis de prompt permite identificar y mejorar la calidad del prompt, lo que resulta en respuestas más precisas y relevantes.",
         "cuando_usarlo": [
-          "Cuando se necesita entender la estrategia de la competencia",
-          "Cuando se dispone de datos sobre la competencia",
-          "Cuando se necesita desarrollar una estrategia competitiva"
+          "Cuando se necesita una respuesta precisa y detallada",
+          "Cuando el modelo de lenguaje no entiende el contexto",
+          "Cuando se necesita una respuesta creativa y original",
+          "Cuando se necesita una respuesta que se ajuste a un formato específico"
         ]
       },
       "ejemplo": {
-        "caso": "Una empresa de tecnología quiere analizar la competencia en el mercado de inteligencia artificial",
-        "prompt_malo": "¿Quiénes son los competidores en el mercado de IA?",
-        "prompt_bueno": "Utilizando datos de mercado y estadísticas de la industria, analiza la competencia en el mercado de inteligencia artificial y identifica las fortalezas y debilidades de los 3 competidores principales",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona contexto y especifica los parámetros que se deben considerar, lo que permite a la IA analizar la competencia de manera más precisa"
+        "caso": "Un usuario necesita una respuesta detallada sobre la historia de la inteligencia artificial",
+        "prompt_malo": "¿Qué es la inteligencia artificial?",
+        "prompt_bueno": "Escribe un artículo detallado sobre la historia de la inteligencia artificial, incluyendo sus orígenes, evolución y aplicaciones actuales. Asegúrate de incluir ejemplos concretos y referencias a fuentes confiables.",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona un contexto claro y una tarea específica, lo que permite al modelo de lenguaje entender mejor lo que se necesita y generar una respuesta más precisa y detallada."
       },
       "practica": {
-        "titulo": "Análisis de Competencia",
-        "objetivo": "Analizar la competencia para un caso de uso específico",
-        "prompt_practica": "Actuando como un consultor de negocios, utilizando datos de mercado y estadísticas de la industria, analiza la competencia en el mercado de comercio electrónico y identifica las fortalezas y debilidades de los 3 competidores principales. Presenta los resultados en un formato de informe, con gráficos y estadísticas que respalden el análisis.",
+        "titulo": "Analizar un Prompt para un Modelo de Lenguaje",
+        "objetivo": "Aprender a evaluar y mejorar la calidad de un prompt",
+        "prompt_practica": "Escribe un artículo sobre los beneficios y desafíos de implementar la inteligencia artificial en la industria de la salud. Asegúrate de incluir al menos 3 ejemplos concretos y referencias a fuentes confiables. El artículo debe tener un mínimo de 250 palabras y un máximo de 500 palabras. Utiliza un tono formal y objetivo, y asegúrate de incluir una introducción, un desarrollo y una conclusión claros.",
         "pasos": [
-          "Paso 1: Accede a la herramienta Kiro y carga los datos de mercado y estadísticas de la industria",
-          "Paso 2: Introduce el prompt de práctica y selecciona la opción de analizar la competencia",
-          "Paso 3: Analiza los resultados y identifica las fortalezas y debilidades de los competidores",
-          "Paso 4: Evalúa los resultados y refina la presentación para que sea clara y convincente",
-          "Paso 5: Guarda el informe y resultados para futuras referencias"
+          "Paso 1: Abre la herramienta Kiro y crea un nuevo proyecto",
+          "Paso 2: Escribe el prompt practica en el campo de texto proporcionado",
+          "Paso 3: Configura las opciones de salida para que el modelo de lenguaje genere un artículo con un mínimo de 250 palabras y un máximo de 500 palabras",
+          "Paso 4: Evalúa la respuesta generada y refina el prompt según sea necesario",
+          "Paso 5: Guarda el prompt analizado y el artículo generado para futuras referencias"
         ],
-        "criterio_exito": "Se ha analizado la competencia de manera clara y objetiva"
+        "criterio_exito": "La respuesta generada es un artículo claro y detallado que incluye al menos 3 ejemplos concretos y referencias a fuentes confiables."
       },
       "recursos": [
-        "Técnicas de minería de datos para el análisis de la competencia"
+        "Guía de análisis de prompt para modelos de lenguaje"
       ]
     },
     {
-      "id": "extra-27-4",
-      "semana": "2026-06-29",
+      "id": "extra-28-4",
+      "semana": "2026-07-06",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Estrategia de Negocio",
-      "subtitulo": "Aprenderá a desarrollar una estrategia de negocio utilizando técnicas de IA",
-      "duracion": "30 min",
+      "titulo": "Evaluación de Prompt",
+      "subtitulo": "Aprenderá a evaluar prompts para modelos de razonamiento",
+      "duracion": "20 min",
       "teoria": {
-        "concepto": "Técnicas de Desarrollo de Estrategia de Negocio",
-        "explicacion": "El desarrollo de una estrategia de negocio es fundamental para el éxito de cualquier empresa. La IA puede ser utilizada para desarrollar una estrategia de negocio mediante el análisis de datos y la identificación de patrones. Esto puede incluir el uso de algoritmos de aprendizaje automático y técnicas de planificación estratégica. La importancia de estas técnicas radica en su capacidad para proporcionar a los empresarios y líderes de negocios información valiosa y objetiva para tomar decisiones estratégicas.",
-        "analogia": "Imagina que estás intentando navegar un barco en un mar desconocido. La IA es como un GPS que puede guiar el barco hacia el destino",
+        "concepto": "Evaluación de Prompt",
+        "explicacion": "La evaluación de prompt es el proceso de evaluar la calidad y efectividad de un prompt. Esto se logra mediante la identificación de los elementos clave del prompt, como el contexto, la tarea y las restricciones. La evaluación de prompt es importante porque permite a los modelos de lenguaje generar respuestas precisas y relevantes.",
+        "analogia": "La evaluación de prompt es similar a la revisión de un artículo antes de publicarlo. La revisión permite identificar y corregir errores, lo que resulta en un artículo de mayor calidad. De la misma manera, la evaluación de prompt permite identificar y mejorar la calidad del prompt, lo que resulta en respuestas más precisas y relevantes.",
         "cuando_usarlo": [
-          "Cuando se necesita desarrollar una estrategia de negocio",
-          "Cuando se dispone de datos sobre la empresa y el mercado",
-          "Cuando se necesita tomar decisiones estratégicas"
+          "Cuando se necesita una respuesta precisa y detallada",
+          "Cuando el modelo de lenguaje no entiende el contexto",
+          "Cuando se necesita una respuesta creativa y original",
+          "Cuando se necesita una respuesta que se ajuste a un formato específico"
         ]
       },
       "ejemplo": {
-        "caso": "Una empresa de tecnología quiere desarrollar una estrategia de negocio para expandirse en el mercado de inteligencia artificial",
-        "prompt_malo": "¿Cuál es la mejor estrategia de negocio para expandirse en el mercado de IA?",
-        "prompt_bueno": "Utilizando datos de mercado y estadísticas de la industria, desarrolla una estrategia de negocio para expandirse en el mercado de inteligencia artificial, considerando factores como la competencia, el mercado y la tecnología",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona contexto y especifica los parámetros que se deben considerar, lo que permite a la IA desarrollar una estrategia de negocio más precisa y efectiva"
+        "caso": "Un usuario necesita una respuesta detallada sobre la historia de la inteligencia artificial",
+        "prompt_malo": "¿Qué es la inteligencia artificial?",
+        "prompt_bueno": "Escribe un artículo detallado sobre la historia de la inteligencia artificial, incluyendo sus orígenes, evolución y aplicaciones actuales. Asegúrate de incluir ejemplos concretos y referencias a fuentes confiables.",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona un contexto claro y una tarea específica, lo que permite al modelo de lenguaje entender mejor lo que se necesita y generar una respuesta más precisa y detallada."
       },
       "practica": {
-        "titulo": "Desarrollo de Estrategia de Negocio",
-        "objetivo": "Desarrollar una estrategia de negocio para un caso de uso específico",
-        "prompt_practica": "Actuando como un consultor de negocios, utilizando datos de mercado y estadísticas de la industria, desarrolla una estrategia de negocio para expandirse en el mercado de comercio electrónico, considerando factores como la competencia, el mercado y la tecnología. Presenta los resultados en un formato de informe, con gráficos y estadísticas que respalden la estrategia.",
+        "titulo": "Evaluar un Prompt para un Modelo de Lenguaje",
+        "objetivo": "Aprender a evaluar la calidad y efectividad de un prompt",
+        "prompt_practica": "Escribe un artículo sobre los beneficios y desafíos de implementar la inteligencia artificial en la industria de la salud. Asegúrate de incluir al menos 3 ejemplos concretos y referencias a fuentes confiables. El artículo debe tener un mínimo de 250 palabras y un máximo de 500 palabras. Utiliza un tono formal y objetivo, y asegúrate de incluir una introducción, un desarrollo y una conclusión claros.",
         "pasos": [
-          "Paso 1: Accede a la herramienta Claude y carga los datos de mercado y estadísticas de la industria",
-          "Paso 2: Introduce el prompt de práctica y selecciona la opción de desarrollar una estrategia de negocio",
-          "Paso 3: Analiza los resultados y desarrolla una estrategia de negocio",
-          "Paso 4: Evalúa los resultados y refina la presentación para que sea clara y convincente",
-          "Paso 5: Guarda el informe y resultados para futuras referencias"
+          "Paso 1: Abre la herramienta Claude y crea un nuevo proyecto",
+          "Paso 2: Escribe el prompt practica en el campo de texto proporcionado",
+          "Paso 3: Configura las opciones de salida para que el modelo de lenguaje genere un artículo con un mínimo de 250 palabras y un máximo de 500 palabras",
+          "Paso 4: Evalúa la respuesta generada y refina el prompt según sea necesario",
+          "Paso 5: Guarda el prompt evaluado y el artículo generado para futuras referencias"
         ],
-        "criterio_exito": "Se ha desarrollado una estrategia de negocio clara y efectiva"
+        "criterio_exito": "La respuesta generada es un artículo claro y detallado que incluye al menos 3 ejemplos concretos y referencias a fuentes confiables."
       },
       "recursos": [
-        "Técnicas de planificación estratégica para el desarrollo de estrategias de negocio"
+        "Guía de evaluación de prompt para modelos de lenguaje"
       ]
     }
   ]

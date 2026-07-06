@@ -398,5 +398,45 @@
     "titulo": "Estrategia de Negocio",
     "subtitulo": "Aprenderá a desarrollar una estrategia de negocio utilizando técnicas de IA",
     "duracion": "30 min"
+  },
+  {
+    "semana": "2026-07-06",
+    "tema": "prompt engineering para modelos de razonamiento (o1, R1)",
+    "id": "extra-28-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Optimización de Prompt",
+    "subtitulo": "Aprenderá a optimizar prompts para modelos de razonamiento",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-07-06",
+    "tema": "prompt engineering para modelos de razonamiento (o1, R1)",
+    "id": "extra-28-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Diseño de Prompt",
+    "subtitulo": "Aprenderá a diseñar prompts efectivos para modelos de razonamiento",
+    "duracion": "20 min"
+  },
+  {
+    "semana": "2026-07-06",
+    "tema": "prompt engineering para modelos de razonamiento (o1, R1)",
+    "id": "extra-28-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Análisis de Prompt",
+    "subtitulo": "Aprenderá a analizar prompts para modelos de razonamiento",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-07-06",
+    "tema": "prompt engineering para modelos de razonamiento (o1, R1)",
+    "id": "extra-28-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Evaluación de Prompt",
+    "subtitulo": "Aprenderá a evaluar prompts para modelos de razonamiento",
+    "duracion": "20 min"
   }
 ]
