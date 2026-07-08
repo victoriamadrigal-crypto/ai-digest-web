@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 Resumen IA — 08/07/2026</title>
+    <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #0f0f1a; color: #e0e0e0;
+        min-height: 100vh; padding: 0 16px 48px;
+    }
+    header {
+        max-width: 860px; margin: 0 auto;
+        padding: 40px 0 24px; border-bottom: 1px solid #2a2a3e; margin-bottom: 32px;
+    }
+    header h1 {
+        font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 700; color: #ffffff;
+        display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    .badge {
+        font-size: 0.75rem; background: #1e3a5f; color: #60a5fa;
+        padding: 4px 10px; border-radius: 20px; font-weight: 500; white-space: nowrap;
+    }
+    .subtitle { margin-top: 8px; font-size: 0.9rem; color: #6b7280; }
+    .layout {
+        max-width: 860px; margin: 0 auto;
+        display: grid; grid-template-columns: 1fr 220px; gap: 32px; align-items: start;
+    }
+    @media (max-width: 640px) {
+        .layout { grid-template-columns: 1fr; }
+        .sidebar { order: -1; }
+    }
+    .news-list { display: flex; flex-direction: column; gap: 16px; }
+    .card {
+        background: #1a1a2e; border: 1px solid #2a2a3e; border-radius: 14px;
+        padding: 24px 28px; transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover { border-color: #4a90d9; transform: translateY(-2px); }
+    .card h2 {
+        font-size: 1.05rem; font-weight: 600; color: #ffffff;
+        line-height: 1.4; margin-bottom: 10px;
+    }
+    .card p { font-size: 0.9rem; color: #9ca3af; line-height: 1.65; margin-bottom: 16px; }
+    .card a.read-more {
+        display: inline-flex; align-items: center; gap: 6px;
+        font-size: 0.85rem; font-weight: 500; color: #60a5fa; text-decoration: none;
+        padding: 6px 14px; border: 1px solid #1e3a5f; border-radius: 6px;
+        transition: background 0.2s, color 0.2s;
+    }
+    .card a.read-more:hover { background: #1e3a5f; color: #93c5fd; }
+    .sidebar {
+        background: #1a1a2e; border: 1px solid #2a2a3e; border-radius: 14px;
+        padding: 20px; position: sticky; top: 20px;
+    }
+    .sidebar h3 {
+        font-size: 0.85rem; font-weight: 600; color: #ffffff;
+        margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .sidebar ul li a {
+        font-size: 0.85rem; color: #60a5fa; text-decoration: none;
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 4px 0; border-bottom: 1px solid #2a2a3e; transition: color 0.15s;
+    }
+    .sidebar ul li a:hover { color: #93c5fd; }
+    .sidebar ul li a .count { font-size: 0.75rem; color: #4b5563; }
+    .sidebar ul li.active a { color: #ffffff; font-weight: 600; }
+    footer {
+        max-width: 860px; margin: 40px auto 0;
+        text-align: center; font-size: 0.78rem; color: #4b5563;
+    }
+    .back-link {
+        display: inline-flex; align-items: center; gap: 6px;
+        font-size: 0.85rem; color: #60a5fa; text-decoration: none; margin-bottom: 24px;
+    }
+    .back-link:hover { color: #93c5fd; }
+</style>
+</head>
+<body>
+    <header>
+        <a class="back-link" href="../index.html">← Volver a hoy</a>
+        <h1>🤖 Resumen IA <span class="badge">08/07/2026</span></h1>
+        <p class="subtitle">Edición del 08/07/2026</p>
+    </header>
+    <div class="layout">
+        <section class="news-list">
+            <article class="card">
+                <h2>La arquitectura de IA que los líderes de TI necesitan para escalar</h2>
+                <p>Las organizaciones están expandiendo sus casos de uso de la IA debido a su rápido progreso y la transición a sistemas agénticos. Sin embargo, esta evolución constante introduce riesgos y desafíos.</p>
+                <a class="read-more" href="https://www.technologyreview.com/2026/07/07/1139413/the-foundational-elements-of-ai-architecture-that-it-leaders-need-to-scale/" target="_blank" rel="noopener">Leer más →</a>
+            </article>
+            <article class="card">
+                <h2>Construyendo la base para una empresa autónoma</h2>
+                <p>La IA está siendo utilizada en casos de uso más consecuentes que los herramientas de consumo, como chatbots y generadores de imágenes. En la industria, la IA está siendo utilizada para mejorar la eficiencia y la productividad.</p>
+                <a class="read-more" href="https://www.technologyreview.com/2026/07/02/1138433/building-the-foundation-for-an-autonomous-enterprise/" target="_blank" rel="noopener">Leer más →</a>
+            </article>
+            <article class="card">
+                <h2>España se alía con países para proteger a los menores ante la IA</h2>
+                <p>El Gobierno español ha formado una coalición internacional con Unicef y la Unesco para proteger a los menores ante el impacto de la IA. La coalición no cuenta con el apoyo de EE UU ni de China.</p>
+                <a class="read-more" href="https://elpais.com/tecnologia/2026-07-07/espana-se-alia-con-una-veintena-de-paises-unicef-y-la-unesco-para-proteger-a-los-menores-ante-la-ia.html" target="_blank" rel="noopener">Leer más →</a>
+            </article>
+            <article class="card">
+                <h2>La IA en la industria: oportunidades y desafíos</h2>
+                <p>La IA está siendo utilizada en la industria para mejorar la eficiencia y la productividad. Sin embargo, también plantea desafíos y riesgos que deben ser abordados por los líderes de TI.</p>
+                <a class="read-more" href="https://www.technologyreview.com/2026/07/02/1138433/building-the-foundation-for-an-autonomous-enterprise/" target="_blank" rel="noopener">Leer más →</a>
+            </article>
+            <article class="card">
+                <h2>La IA en la movilidad eléctrica: una aventura emocionante</h2>
+                <p>La gama Hyundai IONIQ N redefine la movilidad eléctrica sin renunciar al placer de conducir. La ingeniería, la conectividad y el rendimiento se unen para demostrar que un deportivo eléctrico puede emocionar.</p>
+                <a class="read-more" href="https://elpais.com/tecnologia/2026-07-02/tecnologia-diseno-y-experiencia-una-aventura-electrica-al-volante.html" target="_blank" rel="noopener">Leer más →</a>
+            </article></section>
+        
+        <aside class="sidebar">
+            <h3>📅 Ediciones anteriores</h3>
+            <ul>
+            <li>
+                <a href="../archive/2026-07-07.html">
+                    07 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-06.html">
+                    06 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-03.html">
+                    03 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-01.html">
+                    01 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-30.html">
+                    30 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-29.html">
+                    29 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-26.html">
+                    26 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-25.html">
+                    25 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-24.html">
+                    24 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-23.html">
+                    23 Jun 2026
+                    <span class="count">4 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-19.html">
+                    19 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-18.html">
+                    18 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-17.html">
+                    17 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-16.html">
+                    16 Jun 2026
+                    <span class="count">4 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-15.html">
+                    15 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-12.html">
+                    12 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-10.html">
+                    10 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-09.html">
+                    09 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-08.html">
+                    08 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-05.html">
+                    05 Jun 2026
+                    <span class="count">4 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-04.html">
+                    04 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-03.html">
+                    03 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-02.html">
+                    02 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-01.html">
+                    01 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-05-29.html">
+                    29 May 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-05-28.html">
+                    28 May 2026
+                    <span class="count">4 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-05-27.html">
+                    27 May 2026
+                    <span class="count">4 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-05-25.html">
+                    25 May 2026
+                    <span class="count">4 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-05-22.html">
+                    22 May 2026
+                    <span class="count">4 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-05-21.html">
+                    21 May 2026
+                    <span class="count">4 noticias</span>
+                </a>
+            </li></ul>
+        </aside>
+    </div>
+    <footer>
+        Generado con Groq + Llama 3.1 &middot;
+        Fuentes: Arxiv, The Batch, VentureBeat, MIT Tech Review, Xataka, Hipertextual, El País
+    </footer>
+</body>
+</html>
