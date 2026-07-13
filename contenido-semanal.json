@@ -1,184 +1,180 @@
 {
-  "semana": "2026-07-06",
-  "tema": "prompt engineering para modelos de razonamiento (o1, R1)",
+  "semana": "2026-07-13",
+  "tema": "IA para síntesis de investigación académica y técnica",
   "tip": {
-    "semana": "2026-07-06",
-    "tema": "prompt engineering para modelos de razonamiento (o1, R1)",
-    "emoji": "💡",
-    "titulo": "Técnica de Prompt Chaining",
-    "resumen": "Mejora la precisión de modelos de razonamiento",
-    "explicacion": "La técnica de Prompt Chaining implica crear una cadena de prompts que se construyen sobre las respuestas anteriores, lo que permite a los modelos de razonamiento profundizar en su comprensión y generar respuestas más precisas. Esto funciona porque cada prompt posterior se enfoca en aspectos específicos de la respuesta anterior, permitiendo una exploración más detallada del tema. Se puede usar cuando se necesita una comprensión profunda de un tema complejo o cuando se quiere evaluar la capacidad de razonamiento de un modelo.",
-    "ejemplo_prompt": "Primero, describe el concepto de inteligencia artificial. Luego, explica cómo la inteligencia artificial se aplica en la industria automotriz. Finalmente, analiza los beneficios y desafíos de implementar la inteligencia artificial en la producción de vehículos. Considera factores como la eficiencia, la seguridad y el impacto ambiental.",
-    "cuando_usarlo": "Al analizar temas complejos, al evaluar modelos de razonamiento, al generar informes detallados",
+    "semana": "2026-07-13",
+    "tema": "IA para síntesis de investigación académica y técnica",
+    "emoji": "🤖",
+    "titulo": "Síntesis de investigación con IA",
+    "resumen": "Síntesis automática de artículos técnicos",
+    "explicacion": "La técnica de síntesis de investigación académica y técnica mediante IA implica el uso de algoritmos de procesamiento de lenguaje natural para analizar y resumir grandes cantidades de texto. Esta técnica funciona mediante la identificación de patrones y relaciones entre conceptos en los textos, lo que permite generar resúmenes precisos y relevantes. Se utiliza comúnmente para ahorrar tiempo en la investigación y mantenerse actualizado sobre los últimos avances en un campo específico.",
+    "ejemplo_prompt": "Analiza los siguientes artículos de investigación sobre aprendizaje automático y resume los hallazgos clave y las conclusiones en un informe de 200 palabras: https://example.com/articulo1.pdf, https://example.com/articulo2.pdf. Incluye una introducción, métodos, resultados y discusión. Utiliza un lenguaje técnico y evita la jerga.",
+    "cuando_usarlo": "Cuando necesitas revisar múltiples artículos para una revisión de literatura, cuando deseas mantenerse actualizado sobre los últimos avances en un campo específico o cuando necesitas resumir informes técnicos largos",
     "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-28-1",
-      "semana": "2026-07-06",
+      "id": "extra-29-1",
+      "semana": "2026-07-13",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Optimización de Prompt",
-      "subtitulo": "Aprenderá a optimizar prompts para modelos de razonamiento",
+      "titulo": "Síntesis de artículos",
+      "subtitulo": "Aprende a generar resúmenes detallados de artículos científicos",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Optimización de Prompt",
-        "explicacion": "La optimización de prompt es el proceso de mejorar la calidad y precisión de los resultados generados por un modelo de lenguaje. Esto se logra mediante la creación de prompts claros, concisos y bien definidos. Es importante porque permite a los modelos de lenguaje entender mejor el contexto y la tarea, lo que resulta en respuestas más precisas y relevantes. La optimización de prompt es especialmente crucial en aplicaciones críticas, como la atención médica o la toma de decisiones financieras, donde la precisión es fundamental.",
-        "analogia": "La optimización de prompt es similar a la creación de un buen título para un libro. Un título claro y conciso puede atraer a los lectores y transmitir el contenido del libro de manera efectiva. De la misma manera, un prompt bien optimizado puede ayudar a los modelos de lenguaje a entender el contexto y la tarea, lo que resulta en respuestas más precisas y relevantes.",
+        "concepto": "Síntesis de texto",
+        "explicacion": "La síntesis de texto es una técnica de procesamiento de lenguaje natural que implica la generación de un resumen o síntesis de un texto más grande. Esto puede ser útil para resumir artículos científicos, informes y otros textos largos. La síntesis de texto puede ser realizada mediante algoritmos de aprendizaje automático que identifican las partes más importantes del texto y las condensan en un resumen más corto.",
+        "analogia": "Imagina que estás leyendo un libro muy largo y quieres recordar solo los puntos más importantes. La síntesis de texto es como tener un resumen personalizado que te ayuda a recordar los puntos clave del libro.",
         "cuando_usarlo": [
-          "Cuando se necesita una respuesta precisa y detallada",
-          "Cuando el modelo de lenguaje no entiende el contexto",
-          "Cuando se necesita una respuesta creativa y original",
-          "Cuando se necesita una respuesta que se ajuste a un formato específico"
+          "Cuando necesitas resumir un artículo científico para una presentación",
+          "Cuando deseas generar un resumen de un informe largo para una reunión",
+          "Cuando necesitas identificar los puntos más importantes de un texto para una tarea de investigación"
         ]
       },
       "ejemplo": {
-        "caso": "Un usuario necesita una respuesta detallada sobre la historia de la inteligencia artificial",
-        "prompt_malo": "¿Qué es la inteligencia artificial?",
-        "prompt_bueno": "Escribe un artículo detallado sobre la historia de la inteligencia artificial, incluyendo sus orígenes, evolución y aplicaciones actuales. Asegúrate de incluir ejemplos concretos y referencias a fuentes confiables.",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona un contexto claro y una tarea específica, lo que permite al modelo de lenguaje entender mejor lo que se necesita y generar una respuesta más precisa y detallada."
+        "caso": "Un estudiante de posgrado necesita resumir un artículo científico sobre el cambio climático para una presentación",
+        "prompt_malo": "Resumen del artículo sobre el cambio climático",
+        "prompt_bueno": "Genera un resumen detallado del artículo 'El impacto del cambio climático en la biodiversidad' de la revista Nature, incluyendo los hallazgos más importantes y las conclusiones de los autores. Asegúrate de mencionar las fuentes y los métodos utilizados en la investigación.",
+        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite a la IA generar un resumen más detallado y preciso."
       },
       "practica": {
-        "titulo": "Optimizar un Prompt para un Modelo de Lenguaje",
-        "objetivo": "Aprender a crear un prompt claro y conciso para un modelo de lenguaje",
-        "prompt_practica": "Escribe un artículo sobre los beneficios y desafíos de implementar la inteligencia artificial en la industria de la salud. Asegúrate de incluir al menos 3 ejemplos concretos y referencias a fuentes confiables. El artículo debe tener un mínimo de 250 palabras y un máximo de 500 palabras. Utiliza un tono formal y objetivo, y asegúrate de incluir una introducción, un desarrollo y una conclusión claros.",
+        "titulo": "Generar un resumen de un artículo científico",
+        "objetivo": "Generar un resumen detallado de un artículo científico sobre un tema de interés",
+        "prompt_practica": "Eres un asistente de investigación y necesitas generar un resumen detallado del artículo 'El impacto de la inteligencia artificial en la sociedad' de la revista Harvard Business Review. El artículo analiza los beneficios y desafíos de la implementación de la inteligencia artificial en la industria y la sociedad. Asegúrate de incluir los hallazgos más importantes, las conclusiones de los autores y las fuentes utilizadas en la investigación. El resumen debe tener un máximo de 250 palabras y debe ser escrito en un lenguaje claro y conciso. ¿Cuáles son las implicaciones de la inteligencia artificial en la sociedad y cómo pueden ser abordadas?",
         "pasos": [
-          "Paso 1: Abre la herramienta Claude y crea un nuevo proyecto",
-          "Paso 2: Escribe el prompt practica en el campo de texto proporcionado",
-          "Paso 3: Configura las opciones de salida para que el modelo de lenguaje genere un artículo con un mínimo de 250 palabras y un máximo de 500 palabras",
-          "Paso 4: Evalúa la respuesta generada y refina el prompt según sea necesario",
-          "Paso 5: Guarda el prompt optimizado y el artículo generado para futuras referencias"
+          "Abre la herramienta Claude y selecciona la opción de 'Síntesis de texto'",
+          "Pega el prompt_practica en el campo de texto y selecciona la opción de 'Generar resumen'",
+          "Revisa el resumen generado y asegúrate de que sea detallado y preciso",
+          "Refina el resumen según sea necesario y guarda el resultado",
+          "Evalúa el resultado y determina si se han logrado los objetivos del ejercicio"
         ],
-        "criterio_exito": "La respuesta generada es un artículo claro y detallado que incluye al menos 3 ejemplos concretos y referencias a fuentes confiables."
+        "criterio_exito": "El resumen generado es detallado, preciso y tiene un máximo de 250 palabras."
       },
       "recursos": [
-        "Guía de optimización de prompt para modelos de lenguaje"
+        "La revista Nature y la Harvard Business Review son fuentes confiables de artículos científicos y de negocios."
       ]
     },
     {
-      "id": "extra-28-2",
-      "semana": "2026-07-06",
+      "id": "extra-29-2",
+      "semana": "2026-07-13",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Diseño de Prompt",
-      "subtitulo": "Aprenderá a diseñar prompts efectivos para modelos de razonamiento",
-      "duracion": "20 min",
-      "teoria": {
-        "concepto": "Diseño de Prompt",
-        "explicacion": "El diseño de prompt es el proceso de crear un prompt que sea claro, conciso y bien definido, y que permita al modelo de lenguaje entender el contexto y la tarea. Esto se logra mediante la creación de un prompt que incluya la información necesaria, como el contexto, la tarea y las restricciones. El diseño de prompt es importante porque permite a los modelos de lenguaje generar respuestas precisas y relevantes.",
-        "analogia": "El diseño de prompt es similar a la creación de un buen resumen para un artículo. Un resumen claro y conciso puede transmitir el contenido del artículo de manera efectiva. De la misma manera, un prompt bien diseñado puede ayudar a los modelos de lenguaje a entender el contexto y la tarea, lo que resulta en respuestas más precisas y relevantes.",
-        "cuando_usarlo": [
-          "Cuando se necesita una respuesta precisa y detallada",
-          "Cuando el modelo de lenguaje no entiende el contexto",
-          "Cuando se necesita una respuesta creativa y original",
-          "Cuando se necesita una respuesta que se ajuste a un formato específico"
-        ]
-      },
-      "ejemplo": {
-        "caso": "Un usuario necesita una respuesta detallada sobre la historia de la inteligencia artificial",
-        "prompt_malo": "¿Qué es la inteligencia artificial?",
-        "prompt_bueno": "Escribe un artículo detallado sobre la historia de la inteligencia artificial, incluyendo sus orígenes, evolución y aplicaciones actuales. Asegúrate de incluir ejemplos concretos y referencias a fuentes confiables.",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona un contexto claro y una tarea específica, lo que permite al modelo de lenguaje entender mejor lo que se necesita y generar una respuesta más precisa y detallada."
-      },
-      "practica": {
-        "titulo": "Diseñar un Prompt para un Modelo de Lenguaje",
-        "objetivo": "Aprender a crear un prompt claro y conciso para un modelo de lenguaje",
-        "prompt_practica": "Escribe un artículo sobre los beneficios y desafíos de implementar la inteligencia artificial en la industria de la salud. Asegúrate de incluir al menos 3 ejemplos concretos y referencias a fuentes confiables. El artículo debe tener un mínimo de 250 palabras y un máximo de 500 palabras. Utiliza un tono formal y objetivo, y asegúrate de incluir una introducción, un desarrollo y una conclusión claros.",
-        "pasos": [
-          "Paso 1: Abre la herramienta Gemini y crea un nuevo proyecto",
-          "Paso 2: Escribe el prompt practica en el campo de texto proporcionado",
-          "Paso 3: Configura las opciones de salida para que el modelo de lenguaje genere un artículo con un mínimo de 250 palabras y un máximo de 500 palabras",
-          "Paso 4: Evalúa la respuesta generada y refina el prompt según sea necesario",
-          "Paso 5: Guarda el prompt diseñado y el artículo generado para futuras referencias"
-        ],
-        "criterio_exito": "La respuesta generada es un artículo claro y detallado que incluye al menos 3 ejemplos concretos y referencias a fuentes confiables."
-      },
-      "recursos": [
-        "Guía de diseño de prompt para modelos de lenguaje"
-      ]
-    },
-    {
-      "id": "extra-28-3",
-      "semana": "2026-07-06",
-      "herramienta": "Kiro",
-      "nivel": "Avanzado",
-      "titulo": "Análisis de Prompt",
-      "subtitulo": "Aprenderá a analizar prompts para modelos de razonamiento",
+      "titulo": "Análisis de informes",
+      "subtitulo": "Aprende a analizar y resumir informes técnicos",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Análisis de Prompt",
-        "explicacion": "El análisis de prompt es el proceso de evaluar y mejorar la calidad de un prompt. Esto se logra mediante la identificación de los elementos clave del prompt, como el contexto, la tarea y las restricciones. El análisis de prompt es importante porque permite a los modelos de lenguaje generar respuestas precisas y relevantes.",
-        "analogia": "El análisis de prompt es similar a la revisión de un artículo antes de publicarlo. La revisión permite identificar y corregir errores, lo que resulta en un artículo de mayor calidad. De la misma manera, el análisis de prompt permite identificar y mejorar la calidad del prompt, lo que resulta en respuestas más precisas y relevantes.",
+        "concepto": "Análisis de informes",
+        "explicacion": "El análisis de informes es una técnica que implica la revisión y evaluación de informes técnicos para identificar los hallazgos más importantes y las conclusiones. Esto puede ser útil para evaluar la efectividad de un proyecto, identificar áreas de mejora y tomar decisiones informadas.",
+        "analogia": "Imagina que estás revisando un informe de un proyecto de construcción y necesitas identificar los puntos más importantes para tomar decisiones sobre el próximo proyecto.",
         "cuando_usarlo": [
-          "Cuando se necesita una respuesta precisa y detallada",
-          "Cuando el modelo de lenguaje no entiende el contexto",
-          "Cuando se necesita una respuesta creativa y original",
-          "Cuando se necesita una respuesta que se ajuste a un formato específico"
+          "Cuando necesitas evaluar la efectividad de un proyecto",
+          "Cuando deseas identificar áreas de mejora en un proceso",
+          "Cuando necesitas tomar decisiones informadas basadas en datos"
         ]
       },
       "ejemplo": {
-        "caso": "Un usuario necesita una respuesta detallada sobre la historia de la inteligencia artificial",
-        "prompt_malo": "¿Qué es la inteligencia artificial?",
-        "prompt_bueno": "Escribe un artículo detallado sobre la historia de la inteligencia artificial, incluyendo sus orígenes, evolución y aplicaciones actuales. Asegúrate de incluir ejemplos concretos y referencias a fuentes confiables.",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona un contexto claro y una tarea específica, lo que permite al modelo de lenguaje entender mejor lo que se necesita y generar una respuesta más precisa y detallada."
+        "caso": "Un gerente de proyectos necesita analizar un informe técnico sobre un proyecto de desarrollo de software",
+        "prompt_malo": "Resumen del informe del proyecto",
+        "prompt_bueno": "Analiza el informe del proyecto de desarrollo de software y resumen los hallazgos más importantes, incluyendo los objetivos del proyecto, los métodos utilizados, los resultados y las conclusiones. Asegúrate de mencionar las lecciones aprendidas y las recomendaciones para futuros proyectos.",
+        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite a la IA generar un análisis más detallado y preciso."
       },
       "practica": {
-        "titulo": "Analizar un Prompt para un Modelo de Lenguaje",
-        "objetivo": "Aprender a evaluar y mejorar la calidad de un prompt",
-        "prompt_practica": "Escribe un artículo sobre los beneficios y desafíos de implementar la inteligencia artificial en la industria de la salud. Asegúrate de incluir al menos 3 ejemplos concretos y referencias a fuentes confiables. El artículo debe tener un mínimo de 250 palabras y un máximo de 500 palabras. Utiliza un tono formal y objetivo, y asegúrate de incluir una introducción, un desarrollo y una conclusión claros.",
+        "titulo": "Analizar un informe técnico",
+        "objetivo": "Analizar y resumir un informe técnico sobre un tema de interés",
+        "prompt_practica": "Eres un analista de proyectos y necesitas analizar el informe del proyecto de desarrollo de software de un sistema de gestión de inventario. El informe incluye los objetivos del proyecto, los métodos utilizados, los resultados y las conclusiones. Asegúrate de identificar los hallazgos más importantes, las lecciones aprendidas y las recomendaciones para futuros proyectos. El análisis debe tener un máximo de 300 palabras y debe ser escrito en un lenguaje claro y conciso. ¿Cuáles son las implicaciones del proyecto para la empresa y cómo pueden ser aplicadas en futuros proyectos?",
         "pasos": [
-          "Paso 1: Abre la herramienta Kiro y crea un nuevo proyecto",
-          "Paso 2: Escribe el prompt practica en el campo de texto proporcionado",
-          "Paso 3: Configura las opciones de salida para que el modelo de lenguaje genere un artículo con un mínimo de 250 palabras y un máximo de 500 palabras",
-          "Paso 4: Evalúa la respuesta generada y refina el prompt según sea necesario",
-          "Paso 5: Guarda el prompt analizado y el artículo generado para futuras referencias"
+          "Abre la herramienta Gemini y selecciona la opción de 'Análisis de informes'",
+          "Pega el prompt_practica en el campo de texto y selecciona la opción de 'Analizar informe'",
+          "Revisa el análisis generado y asegúrate de que sea detallado y preciso",
+          "Refina el análisis según sea necesario y guarda el resultado",
+          "Evalúa el resultado y determina si se han logrado los objetivos del ejercicio"
         ],
-        "criterio_exito": "La respuesta generada es un artículo claro y detallado que incluye al menos 3 ejemplos concretos y referencias a fuentes confiables."
+        "criterio_exito": "El análisis generado es detallado, preciso y tiene un máximo de 300 palabras."
       },
       "recursos": [
-        "Guía de análisis de prompt para modelos de lenguaje"
+        "El informe del proyecto de desarrollo de software es un ejemplo de un informe técnico que puede ser analizado."
       ]
     },
     {
-      "id": "extra-28-4",
-      "semana": "2026-07-06",
-      "herramienta": "Claude",
+      "id": "extra-29-3",
+      "semana": "2026-07-13",
+      "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Evaluación de Prompt",
-      "subtitulo": "Aprenderá a evaluar prompts para modelos de razonamiento",
-      "duracion": "20 min",
+      "titulo": "Generación de resúmenes",
+      "subtitulo": "Aprende a generar resúmenes de textos largos",
+      "duracion": "25 min",
       "teoria": {
-        "concepto": "Evaluación de Prompt",
-        "explicacion": "La evaluación de prompt es el proceso de evaluar la calidad y efectividad de un prompt. Esto se logra mediante la identificación de los elementos clave del prompt, como el contexto, la tarea y las restricciones. La evaluación de prompt es importante porque permite a los modelos de lenguaje generar respuestas precisas y relevantes.",
-        "analogia": "La evaluación de prompt es similar a la revisión de un artículo antes de publicarlo. La revisión permite identificar y corregir errores, lo que resulta en un artículo de mayor calidad. De la misma manera, la evaluación de prompt permite identificar y mejorar la calidad del prompt, lo que resulta en respuestas más precisas y relevantes.",
+        "concepto": "Generación de resúmenes",
+        "explicacion": "La generación de resúmenes es una técnica que implica la creación de un resumen de un texto largo. Esto puede ser útil para resumir artículos científicos, informes y otros textos largos.",
+        "analogia": "Imagina que estás leyendo un libro muy largo y quieres recordar solo los puntos más importantes. La generación de resúmenes es como tener un resumen personalizado que te ayuda a recordar los puntos clave del libro.",
         "cuando_usarlo": [
-          "Cuando se necesita una respuesta precisa y detallada",
-          "Cuando el modelo de lenguaje no entiende el contexto",
-          "Cuando se necesita una respuesta creativa y original",
-          "Cuando se necesita una respuesta que se ajuste a un formato específico"
+          "Cuando necesitas resumir un artículo científico para una presentación",
+          "Cuando deseas generar un resumen de un informe largo para una reunión",
+          "Cuando necesitas identificar los puntos más importantes de un texto para una tarea de investigación"
         ]
       },
       "ejemplo": {
-        "caso": "Un usuario necesita una respuesta detallada sobre la historia de la inteligencia artificial",
-        "prompt_malo": "¿Qué es la inteligencia artificial?",
-        "prompt_bueno": "Escribe un artículo detallado sobre la historia de la inteligencia artificial, incluyendo sus orígenes, evolución y aplicaciones actuales. Asegúrate de incluir ejemplos concretos y referencias a fuentes confiables.",
-        "por_que_mejor": "El prompt bueno es mejor porque proporciona un contexto claro y una tarea específica, lo que permite al modelo de lenguaje entender mejor lo que se necesita y generar una respuesta más precisa y detallada."
+        "caso": "Un estudiante de posgrado necesita resumir un artículo científico sobre el cambio climático para una presentación",
+        "prompt_malo": "Resumen del artículo sobre el cambio climático",
+        "prompt_bueno": "Genera un resumen detallado del artículo 'El impacto del cambio climático en la biodiversidad' de la revista Nature, incluyendo los hallazgos más importantes y las conclusiones de los autores. Asegúrate de mencionar las fuentes y los métodos utilizados en la investigación.",
+        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite a la IA generar un resumen más detallado y preciso."
       },
       "practica": {
-        "titulo": "Evaluar un Prompt para un Modelo de Lenguaje",
-        "objetivo": "Aprender a evaluar la calidad y efectividad de un prompt",
-        "prompt_practica": "Escribe un artículo sobre los beneficios y desafíos de implementar la inteligencia artificial en la industria de la salud. Asegúrate de incluir al menos 3 ejemplos concretos y referencias a fuentes confiables. El artículo debe tener un mínimo de 250 palabras y un máximo de 500 palabras. Utiliza un tono formal y objetivo, y asegúrate de incluir una introducción, un desarrollo y una conclusión claros.",
+        "titulo": "Generar un resumen de un texto largo",
+        "objetivo": "Generar un resumen detallado de un texto largo sobre un tema de interés",
+        "prompt_practica": "Eres un asistente de investigación y necesitas generar un resumen detallado del libro 'El origen de las especies' de Charles Darwin. El libro analiza la teoría de la evolución y la selección natural. Asegúrate de incluir los hallazgos más importantes, las conclusiones del autor y las fuentes utilizadas en la investigación. El resumen debe tener un máximo de 250 palabras y debe ser escrito en un lenguaje claro y conciso. ¿Cuáles son las implicaciones de la teoría de la evolución en la biología y cómo pueden ser aplicadas en futuras investigaciones?",
         "pasos": [
-          "Paso 1: Abre la herramienta Claude y crea un nuevo proyecto",
-          "Paso 2: Escribe el prompt practica en el campo de texto proporcionado",
-          "Paso 3: Configura las opciones de salida para que el modelo de lenguaje genere un artículo con un mínimo de 250 palabras y un máximo de 500 palabras",
-          "Paso 4: Evalúa la respuesta generada y refina el prompt según sea necesario",
-          "Paso 5: Guarda el prompt evaluado y el artículo generado para futuras referencias"
+          "Abre la herramienta Kiro y selecciona la opción de 'Generación de resúmenes'",
+          "Pega el prompt_practica en el campo de texto y selecciona la opción de 'Generar resumen'",
+          "Revisa el resumen generado y asegúrate de que sea detallado y preciso",
+          "Refina el resumen según sea necesario y guarda el resultado",
+          "Evalúa el resultado y determina si se han logrado los objetivos del ejercicio"
         ],
-        "criterio_exito": "La respuesta generada es un artículo claro y detallado que incluye al menos 3 ejemplos concretos y referencias a fuentes confiables."
+        "criterio_exito": "El resumen generado es detallado, preciso y tiene un máximo de 250 palabras."
       },
       "recursos": [
-        "Guía de evaluación de prompt para modelos de lenguaje"
+        "El libro 'El origen de las especies' de Charles Darwin es un ejemplo de un texto largo que puede ser resumido."
+      ]
+    },
+    {
+      "id": "extra-29-4",
+      "semana": "2026-07-13",
+      "herramienta": "Claude",
+      "nivel": "Avanzado",
+      "titulo": "Síntesis de datos",
+      "subtitulo": "Aprende a generar informes detallados a partir de datos",
+      "duracion": "25 min",
+      "teoria": {
+        "concepto": "Síntesis de datos",
+        "explicacion": "La síntesis de datos es una técnica que implica la generación de informes detallados a partir de datos. Esto puede ser útil para analizar y visualizar datos, identificar tendencias y patrones, y tomar decisiones informadas.",
+        "analogia": "Imagina que estás analizando un conjunto de datos sobre las ventas de una empresa y necesitas generar un informe detallado sobre las tendencias y patrones en los datos.",
+        "cuando_usarlo": [
+          "Cuando necesitas analizar y visualizar datos",
+          "Cuando deseas identificar tendencias y patrones en los datos",
+          "Cuando necesitas tomar decisiones informadas basadas en datos"
+        ]
+      },
+      "ejemplo": {
+        "caso": "Un analista de datos necesita generar un informe detallado sobre las ventas de una empresa",
+        "prompt_malo": "Informe de ventas",
+        "prompt_bueno": "Genera un informe detallado sobre las ventas de la empresa en el último trimestre, incluyendo los datos sobre las ventas por región, los productos más vendidos y las tendencias en los datos. Asegúrate de incluir gráficos y visualizaciones para ayudar a entender los datos.",
+        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite a la IA generar un informe más detallado y preciso."
+      },
+      "practica": {
+        "titulo": "Generar un informe detallado a partir de datos",
+        "objetivo": "Generar un informe detallado a partir de datos sobre un tema de interés",
+        "prompt_practica": "Eres un analista de datos y necesitas generar un informe detallado sobre las ventas de la empresa en el último año. Los datos incluyen las ventas por región, los productos más vendidos y las tendencias en los datos. Asegúrate de incluir gráficos y visualizaciones para ayudar a entender los datos. El informe debe tener un máximo de 300 palabras y debe ser escrito en un lenguaje claro y conciso. ¿Cuáles son las implicaciones de los datos para la empresa y cómo pueden ser aplicadas en futuras decisiones?",
+        "pasos": [
+          "Abre la herramienta Claude y selecciona la opción de 'Síntesis de datos'",
+          "Pega el prompt_practica en el campo de texto y selecciona la opción de 'Generar informe'",
+          "Revisa el informe generado y asegúrate de que sea detallado y preciso",
+          "Refina el informe según sea necesario y guarda el resultado",
+          "Evalúa el resultado y determina si se han logrado los objetivos del ejercicio"
+        ],
+        "criterio_exito": "El informe generado es detallado, preciso y tiene un máximo de 300 palabras."
+      },
+      "recursos": [
+        "Los datos sobre las ventas de la empresa son un ejemplo de datos que pueden ser analizados y visualizados."
       ]
     }
   ]

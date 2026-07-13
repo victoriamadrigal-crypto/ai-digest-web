@@ -438,5 +438,45 @@
     "titulo": "Evaluación de Prompt",
     "subtitulo": "Aprenderá a evaluar prompts para modelos de razonamiento",
     "duracion": "20 min"
+  },
+  {
+    "semana": "2026-07-13",
+    "tema": "IA para síntesis de investigación académica y técnica",
+    "id": "extra-29-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Síntesis de artículos",
+    "subtitulo": "Aprende a generar resúmenes detallados de artículos científicos",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-07-13",
+    "tema": "IA para síntesis de investigación académica y técnica",
+    "id": "extra-29-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Análisis de informes",
+    "subtitulo": "Aprende a analizar y resumir informes técnicos",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-07-13",
+    "tema": "IA para síntesis de investigación académica y técnica",
+    "id": "extra-29-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Generación de resúmenes",
+    "subtitulo": "Aprende a generar resúmenes de textos largos",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-07-13",
+    "tema": "IA para síntesis de investigación académica y técnica",
+    "id": "extra-29-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Síntesis de datos",
+    "subtitulo": "Aprende a generar informes detallados a partir de datos",
+    "duracion": "25 min"
   }
 ]
