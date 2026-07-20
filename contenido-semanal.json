@@ -1,180 +1,180 @@
 {
-  "semana": "2026-07-13",
-  "tema": "IA para síntesis de investigación académica y técnica",
+  "semana": "2026-07-20",
+  "tema": "sistemas multi-agente: coordinación y paralelización",
   "tip": {
-    "semana": "2026-07-13",
-    "tema": "IA para síntesis de investigación académica y técnica",
+    "semana": "2026-07-20",
+    "tema": "sistemas multi-agente: coordinación y paralelización",
     "emoji": "🤖",
-    "titulo": "Síntesis de investigación con IA",
-    "resumen": "Síntesis automática de artículos técnicos",
-    "explicacion": "La técnica de síntesis de investigación académica y técnica mediante IA implica el uso de algoritmos de procesamiento de lenguaje natural para analizar y resumir grandes cantidades de texto. Esta técnica funciona mediante la identificación de patrones y relaciones entre conceptos en los textos, lo que permite generar resúmenes precisos y relevantes. Se utiliza comúnmente para ahorrar tiempo en la investigación y mantenerse actualizado sobre los últimos avances en un campo específico.",
-    "ejemplo_prompt": "Analiza los siguientes artículos de investigación sobre aprendizaje automático y resume los hallazgos clave y las conclusiones en un informe de 200 palabras: https://example.com/articulo1.pdf, https://example.com/articulo2.pdf. Incluye una introducción, métodos, resultados y discusión. Utiliza un lenguaje técnico y evita la jerga.",
-    "cuando_usarlo": "Cuando necesitas revisar múltiples artículos para una revisión de literatura, cuando deseas mantenerse actualizado sobre los últimos avances en un campo específico o cuando necesitas resumir informes técnicos largos",
+    "titulo": "Coordinación Paralela con Agentes",
+    "resumen": " Optimiza procesos con agentes paralelos",
+    "explicacion": "La técnica de coordinación paralela en sistemas multi-agente implica la ejecución simultánea de múltiples agentes para alcanzar un objetivo común. Esto funciona bien en entornos donde la división de tareas es posible y la comunicación entre agentes es eficiente. Se utiliza en problemas complejos que requieren soluciones escalables y rápidas.",
+    "ejemplo_prompt": "Supongamos un sistema de recomendación de productos en línea donde cada agente se encarga de analizar un tipo diferente de dato del cliente (historial de compras, búsqueda, clics). Para coordinarlos, se puede utilizar un algoritmo de consenso como el 'Leader-Follower' donde un agente líder recopila y procesa la información de los demás agentes seguidores y luego toma una decisión final sobre la recomendación de producto. Ejemplo de código en Python: `import threading; class Agente(threading.Thread): def __init__(self, nombre): ...`",
+    "cuando_usarlo": "En proyectos de recomendación de contenido, en aplicaciones de logística donde varios vehículos deben coordinarse para entregar paquetes de manera eficiente, y en sistemas de seguridad donde múltiples cámaras y sensores deben trabajar juntos para detectar eventos sospechosos",
     "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-29-1",
-      "semana": "2026-07-13",
+      "id": "extra-30-1",
+      "semana": "2026-07-20",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Síntesis de artículos",
-      "subtitulo": "Aprende a generar resúmenes detallados de artículos científicos",
+      "titulo": "Coordinación de Agentes",
+      "subtitulo": "Aprenderá a diseñar sistemas multi-agente coordinados",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Síntesis de texto",
-        "explicacion": "La síntesis de texto es una técnica de procesamiento de lenguaje natural que implica la generación de un resumen o síntesis de un texto más grande. Esto puede ser útil para resumir artículos científicos, informes y otros textos largos. La síntesis de texto puede ser realizada mediante algoritmos de aprendizaje automático que identifican las partes más importantes del texto y las condensan en un resumen más corto.",
-        "analogia": "Imagina que estás leyendo un libro muy largo y quieres recordar solo los puntos más importantes. La síntesis de texto es como tener un resumen personalizado que te ayuda a recordar los puntos clave del libro.",
+        "concepto": "Coordinación de Agentes",
+        "explicacion": "La coordinación de agentes es un concepto clave en sistemas multi-agente. Se refiere a la capacidad de los agentes para trabajar juntos hacia un objetivo común. Esto requiere la comunicación y el intercambio de información entre los agentes. La coordinación puede ser centralizada o descentralizada, dependiendo de la complejidad del sistema y la cantidad de agentes involucrados. La coordinación efectiva es crucial para lograr objetivos complejos y maximizar la eficiencia del sistema.",
+        "analogia": "Un ejemplo de coordinación de agentes en el mundo real es un equipo de fútbol. Cada jugador (agente) tiene un papel específico, pero trabajan juntos para lograr el objetivo común de ganar el partido.",
         "cuando_usarlo": [
-          "Cuando necesitas resumir un artículo científico para una presentación",
-          "Cuando deseas generar un resumen de un informe largo para una reunión",
-          "Cuando necesitas identificar los puntos más importantes de un texto para una tarea de investigación"
+          "Sistemas de control de tráfico",
+          "Sistemas de logística y transporte",
+          "Sistemas de seguridad y vigilancia"
         ]
       },
       "ejemplo": {
-        "caso": "Un estudiante de posgrado necesita resumir un artículo científico sobre el cambio climático para una presentación",
-        "prompt_malo": "Resumen del artículo sobre el cambio climático",
-        "prompt_bueno": "Genera un resumen detallado del artículo 'El impacto del cambio climático en la biodiversidad' de la revista Nature, incluyendo los hallazgos más importantes y las conclusiones de los autores. Asegúrate de mencionar las fuentes y los métodos utilizados en la investigación.",
-        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite a la IA generar un resumen más detallado y preciso."
+        "caso": "Un sistema de control de tráfico que utiliza agentes para optimizar el flujo de tráfico",
+        "prompt_malo": "Diseñar un sistema de control de tráfico con un solo agente que controle todo el tráfico",
+        "prompt_bueno": "Diseñar un sistema de control de tráfico con múltiples agentes que se comuniquen entre sí para optimizar el flujo de tráfico",
+        "por_que_mejor": "El prompt bueno es mejor porque permite la coordinación y el intercambio de información entre los agentes, lo que puede llevar a una optimización más efectiva del tráfico"
       },
       "practica": {
-        "titulo": "Generar un resumen de un artículo científico",
-        "objetivo": "Generar un resumen detallado de un artículo científico sobre un tema de interés",
-        "prompt_practica": "Eres un asistente de investigación y necesitas generar un resumen detallado del artículo 'El impacto de la inteligencia artificial en la sociedad' de la revista Harvard Business Review. El artículo analiza los beneficios y desafíos de la implementación de la inteligencia artificial en la industria y la sociedad. Asegúrate de incluir los hallazgos más importantes, las conclusiones de los autores y las fuentes utilizadas en la investigación. El resumen debe tener un máximo de 250 palabras y debe ser escrito en un lenguaje claro y conciso. ¿Cuáles son las implicaciones de la inteligencia artificial en la sociedad y cómo pueden ser abordadas?",
+        "titulo": "Diseñar un sistema de control de tráfico con agentes coordinados",
+        "objetivo": "Conseguir un sistema de control de tráfico que minimice los tiempos de espera y maximice la eficiencia",
+        "prompt_practica": "Diseñar un sistema de control de tráfico con 5 agentes que se comuniquen entre sí para optimizar el flujo de tráfico en una intersección. Los agentes deben considerar factores como la velocidad y la distancia de los vehículos, así como las normas de tráfico. El sistema debe ser capaz de adaptarse a cambios en el tráfico y minimizar los tiempos de espera. Utilice Claude para simular el sistema y evaluar su eficiencia.",
         "pasos": [
-          "Abre la herramienta Claude y selecciona la opción de 'Síntesis de texto'",
-          "Pega el prompt_practica en el campo de texto y selecciona la opción de 'Generar resumen'",
-          "Revisa el resumen generado y asegúrate de que sea detallado y preciso",
-          "Refina el resumen según sea necesario y guarda el resultado",
-          "Evalúa el resultado y determina si se han logrado los objetivos del ejercicio"
+          "Paso 1: Crear un nuevo proyecto en Claude y seleccionar el modelo de sistema de control de tráfico",
+          "Paso 2: Diseñar los 5 agentes y definir sus roles y responsabilidades",
+          "Paso 3: Configurar la comunicación entre los agentes y definir las normas de tráfico",
+          "Paso 4: Simular el sistema y evaluar su eficiencia utilizando los indicadores de rendimiento proporcionados por Claude",
+          "Paso 5: Refinar el sistema y ajustar los parámetros para optimizar su eficiencia"
         ],
-        "criterio_exito": "El resumen generado es detallado, preciso y tiene un máximo de 250 palabras."
+        "criterio_exito": "El sistema de control de tráfico diseñado minimiza los tiempos de espera y maximiza la eficiencia en un escenario de tráfico simulado"
       },
       "recursos": [
-        "La revista Nature y la Harvard Business Review son fuentes confiables de artículos científicos y de negocios."
+        "Documentación de Claude sobre sistemas de control de tráfico"
       ]
     },
     {
-      "id": "extra-29-2",
-      "semana": "2026-07-13",
+      "id": "extra-30-2",
+      "semana": "2026-07-20",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Análisis de informes",
-      "subtitulo": "Aprende a analizar y resumir informes técnicos",
-      "duracion": "25 min",
+      "titulo": "Paralelización de Tareas",
+      "subtitulo": "Aprenderá a diseñar sistemas multi-agente que pueden paralelizar tareas",
+      "duracion": "20 min",
       "teoria": {
-        "concepto": "Análisis de informes",
-        "explicacion": "El análisis de informes es una técnica que implica la revisión y evaluación de informes técnicos para identificar los hallazgos más importantes y las conclusiones. Esto puede ser útil para evaluar la efectividad de un proyecto, identificar áreas de mejora y tomar decisiones informadas.",
-        "analogia": "Imagina que estás revisando un informe de un proyecto de construcción y necesitas identificar los puntos más importantes para tomar decisiones sobre el próximo proyecto.",
+        "concepto": "Paralelización de Tareas",
+        "explicacion": "La paralelización de tareas es una técnica que permite a los sistemas multi-agente realizar múltiples tareas simultáneamente. Esto puede mejorar significativamente la eficiencia y el rendimiento del sistema. La paralelización puede ser realizada mediante la división de tareas en sub-tareas que pueden ser ejecutadas en paralelo.",
+        "analogia": "Un ejemplo de paralelización de tareas en el mundo real es una fábrica que produce múltiples productos al mismo tiempo. Cada producto es producido en una línea de producción separada, lo que permite la paralelización de tareas.",
         "cuando_usarlo": [
-          "Cuando necesitas evaluar la efectividad de un proyecto",
-          "Cuando deseas identificar áreas de mejora en un proceso",
-          "Cuando necesitas tomar decisiones informadas basadas en datos"
+          "Sistemas de procesamiento de datos",
+          "Sistemas de simulación",
+          "Sistemas de control de procesos industriales"
         ]
       },
       "ejemplo": {
-        "caso": "Un gerente de proyectos necesita analizar un informe técnico sobre un proyecto de desarrollo de software",
-        "prompt_malo": "Resumen del informe del proyecto",
-        "prompt_bueno": "Analiza el informe del proyecto de desarrollo de software y resumen los hallazgos más importantes, incluyendo los objetivos del proyecto, los métodos utilizados, los resultados y las conclusiones. Asegúrate de mencionar las lecciones aprendidas y las recomendaciones para futuros proyectos.",
-        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite a la IA generar un análisis más detallado y preciso."
+        "caso": "Un sistema de procesamiento de datos que utiliza agentes para procesar grandes cantidades de datos",
+        "prompt_malo": "Diseñar un sistema de procesamiento de datos con un solo agente que procese todos los datos secuencialmente",
+        "prompt_bueno": "Diseñar un sistema de procesamiento de datos con múltiples agentes que procesen los datos en paralelo",
+        "por_que_mejor": "El prompt bueno es mejor porque permite la paralelización de tareas, lo que puede mejorar significativamente la eficiencia y el rendimiento del sistema"
       },
       "practica": {
-        "titulo": "Analizar un informe técnico",
-        "objetivo": "Analizar y resumir un informe técnico sobre un tema de interés",
-        "prompt_practica": "Eres un analista de proyectos y necesitas analizar el informe del proyecto de desarrollo de software de un sistema de gestión de inventario. El informe incluye los objetivos del proyecto, los métodos utilizados, los resultados y las conclusiones. Asegúrate de identificar los hallazgos más importantes, las lecciones aprendidas y las recomendaciones para futuros proyectos. El análisis debe tener un máximo de 300 palabras y debe ser escrito en un lenguaje claro y conciso. ¿Cuáles son las implicaciones del proyecto para la empresa y cómo pueden ser aplicadas en futuros proyectos?",
+        "titulo": "Diseñar un sistema de procesamiento de datos con agentes paralelos",
+        "objetivo": "Conseguir un sistema de procesamiento de datos que pueda procesar grandes cantidades de datos de manera eficiente",
+        "prompt_practica": "Diseñar un sistema de procesamiento de datos con 10 agentes que procesen los datos en paralelo. Los agentes deben ser capaces de dividir las tareas en sub-tareas que puedan ser ejecutadas en paralelo. El sistema debe ser capaz de adaptarse a cambios en la cantidad de datos y minimizar los tiempos de procesamiento. Utilice Gemini para simular el sistema y evaluar su eficiencia.",
         "pasos": [
-          "Abre la herramienta Gemini y selecciona la opción de 'Análisis de informes'",
-          "Pega el prompt_practica en el campo de texto y selecciona la opción de 'Analizar informe'",
-          "Revisa el análisis generado y asegúrate de que sea detallado y preciso",
-          "Refina el análisis según sea necesario y guarda el resultado",
-          "Evalúa el resultado y determina si se han logrado los objetivos del ejercicio"
+          "Paso 1: Crear un nuevo proyecto en Gemini y seleccionar el modelo de sistema de procesamiento de datos",
+          "Paso 2: Diseñar los 10 agentes y definir sus roles y responsabilidades",
+          "Paso 3: Configurar la paralelización de tareas y definir las sub-tareas que pueden ser ejecutadas en paralelo",
+          "Paso 4: Simular el sistema y evaluar su eficiencia utilizando los indicadores de rendimiento proporcionados por Gemini",
+          "Paso 5: Refinar el sistema y ajustar los parámetros para optimizar su eficiencia"
         ],
-        "criterio_exito": "El análisis generado es detallado, preciso y tiene un máximo de 300 palabras."
+        "criterio_exito": "El sistema de procesamiento de datos diseñado puede procesar grandes cantidades de datos de manera eficiente en un escenario de procesamiento de datos simulado"
       },
       "recursos": [
-        "El informe del proyecto de desarrollo de software es un ejemplo de un informe técnico que puede ser analizado."
+        "Documentación de Gemini sobre sistemas de procesamiento de datos"
       ]
     },
     {
-      "id": "extra-29-3",
-      "semana": "2026-07-13",
+      "id": "extra-30-3",
+      "semana": "2026-07-20",
       "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Generación de resúmenes",
-      "subtitulo": "Aprende a generar resúmenes de textos largos",
+      "titulo": "Coordinación de Agentes con Kiro",
+      "subtitulo": "Aprenderá a diseñar sistemas multi-agente coordinados con Kiro",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Generación de resúmenes",
-        "explicacion": "La generación de resúmenes es una técnica que implica la creación de un resumen de un texto largo. Esto puede ser útil para resumir artículos científicos, informes y otros textos largos.",
-        "analogia": "Imagina que estás leyendo un libro muy largo y quieres recordar solo los puntos más importantes. La generación de resúmenes es como tener un resumen personalizado que te ayuda a recordar los puntos clave del libro.",
+        "concepto": "Coordinación de Agentes con Kiro",
+        "explicacion": "Kiro es una herramienta que permite la coordinación de agentes en sistemas multi-agente. Permite la definición de roles y responsabilidades para cada agente, así como la configuración de la comunicación entre ellos. Kiro también proporciona indicadores de rendimiento para evaluar la eficiencia del sistema.",
+        "analogia": "Un ejemplo de coordinación de agentes con Kiro en el mundo real es un sistema de control de tráfico que utiliza agentes para optimizar el flujo de tráfico. Cada agente tiene un rol específico y se comunica con los demás agentes para tomar decisiones informadas.",
         "cuando_usarlo": [
-          "Cuando necesitas resumir un artículo científico para una presentación",
-          "Cuando deseas generar un resumen de un informe largo para una reunión",
-          "Cuando necesitas identificar los puntos más importantes de un texto para una tarea de investigación"
+          "Sistemas de control de tráfico",
+          "Sistemas de logística y transporte",
+          "Sistemas de seguridad y vigilancia"
         ]
       },
       "ejemplo": {
-        "caso": "Un estudiante de posgrado necesita resumir un artículo científico sobre el cambio climático para una presentación",
-        "prompt_malo": "Resumen del artículo sobre el cambio climático",
-        "prompt_bueno": "Genera un resumen detallado del artículo 'El impacto del cambio climático en la biodiversidad' de la revista Nature, incluyendo los hallazgos más importantes y las conclusiones de los autores. Asegúrate de mencionar las fuentes y los métodos utilizados en la investigación.",
-        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite a la IA generar un resumen más detallado y preciso."
+        "caso": "Un sistema de control de tráfico que utiliza agentes para optimizar el flujo de tráfico",
+        "prompt_malo": "Diseñar un sistema de control de tráfico con un solo agente que controle todo el tráfico",
+        "prompt_bueno": "Diseñar un sistema de control de tráfico con múltiples agentes que se comuniquen entre sí para optimizar el flujo de tráfico",
+        "por_que_mejor": "El prompt bueno es mejor porque permite la coordinación y el intercambio de información entre los agentes, lo que puede llevar a una optimización más efectiva del tráfico"
       },
       "practica": {
-        "titulo": "Generar un resumen de un texto largo",
-        "objetivo": "Generar un resumen detallado de un texto largo sobre un tema de interés",
-        "prompt_practica": "Eres un asistente de investigación y necesitas generar un resumen detallado del libro 'El origen de las especies' de Charles Darwin. El libro analiza la teoría de la evolución y la selección natural. Asegúrate de incluir los hallazgos más importantes, las conclusiones del autor y las fuentes utilizadas en la investigación. El resumen debe tener un máximo de 250 palabras y debe ser escrito en un lenguaje claro y conciso. ¿Cuáles son las implicaciones de la teoría de la evolución en la biología y cómo pueden ser aplicadas en futuras investigaciones?",
+        "titulo": "Diseñar un sistema de control de tráfico con agentes coordinados con Kiro",
+        "objetivo": "Conseguir un sistema de control de tráfico que minimice los tiempos de espera y maximice la eficiencia",
+        "prompt_practica": "Diseñar un sistema de control de tráfico con 5 agentes que se comuniquen entre sí para optimizar el flujo de tráfico en una intersección. Los agentes deben considerar factores como la velocidad y la distancia de los vehículos, así como las normas de tráfico. El sistema debe ser capaz de adaptarse a cambios en el tráfico y minimizar los tiempos de espera. Utilice Kiro para simular el sistema y evaluar su eficiencia.",
         "pasos": [
-          "Abre la herramienta Kiro y selecciona la opción de 'Generación de resúmenes'",
-          "Pega el prompt_practica en el campo de texto y selecciona la opción de 'Generar resumen'",
-          "Revisa el resumen generado y asegúrate de que sea detallado y preciso",
-          "Refina el resumen según sea necesario y guarda el resultado",
-          "Evalúa el resultado y determina si se han logrado los objetivos del ejercicio"
+          "Paso 1: Crear un nuevo proyecto en Kiro y seleccionar el modelo de sistema de control de tráfico",
+          "Paso 2: Diseñar los 5 agentes y definir sus roles y responsabilidades",
+          "Paso 3: Configurar la comunicación entre los agentes y definir las normas de tráfico",
+          "Paso 4: Simular el sistema y evaluar su eficiencia utilizando los indicadores de rendimiento proporcionados por Kiro",
+          "Paso 5: Refinar el sistema y ajustar los parámetros para optimizar su eficiencia"
         ],
-        "criterio_exito": "El resumen generado es detallado, preciso y tiene un máximo de 250 palabras."
+        "criterio_exito": "El sistema de control de tráfico diseñado minimiza los tiempos de espera y maximiza la eficiencia en un escenario de tráfico simulado"
       },
       "recursos": [
-        "El libro 'El origen de las especies' de Charles Darwin es un ejemplo de un texto largo que puede ser resumido."
+        "Documentación de Kiro sobre sistemas de control de tráfico"
       ]
     },
     {
-      "id": "extra-29-4",
-      "semana": "2026-07-13",
-      "herramienta": "Claude",
+      "id": "extra-30-4",
+      "semana": "2026-07-20",
+      "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Síntesis de datos",
-      "subtitulo": "Aprende a generar informes detallados a partir de datos",
-      "duracion": "25 min",
+      "titulo": "Paralelización de Tareas con Gemini",
+      "subtitulo": "Aprenderá a diseñar sistemas multi-agente que pueden paralelizar tareas con Gemini",
+      "duracion": "20 min",
       "teoria": {
-        "concepto": "Síntesis de datos",
-        "explicacion": "La síntesis de datos es una técnica que implica la generación de informes detallados a partir de datos. Esto puede ser útil para analizar y visualizar datos, identificar tendencias y patrones, y tomar decisiones informadas.",
-        "analogia": "Imagina que estás analizando un conjunto de datos sobre las ventas de una empresa y necesitas generar un informe detallado sobre las tendencias y patrones en los datos.",
+        "concepto": "Paralelización de Tareas con Gemini",
+        "explicacion": "Gemini es una herramienta que permite la paralelización de tareas en sistemas multi-agente. Permite la definición de sub-tareas que pueden ser ejecutadas en paralelo, lo que puede mejorar significativamente la eficiencia y el rendimiento del sistema.",
+        "analogia": "Un ejemplo de paralelización de tareas con Gemini en el mundo real es un sistema de procesamiento de datos que utiliza agentes para procesar grandes cantidades de datos. Cada agente puede procesar una parte de los datos en paralelo, lo que puede mejorar significativamente la eficiencia del sistema.",
         "cuando_usarlo": [
-          "Cuando necesitas analizar y visualizar datos",
-          "Cuando deseas identificar tendencias y patrones en los datos",
-          "Cuando necesitas tomar decisiones informadas basadas en datos"
+          "Sistemas de procesamiento de datos",
+          "Sistemas de simulación",
+          "Sistemas de control de procesos industriales"
         ]
       },
       "ejemplo": {
-        "caso": "Un analista de datos necesita generar un informe detallado sobre las ventas de una empresa",
-        "prompt_malo": "Informe de ventas",
-        "prompt_bueno": "Genera un informe detallado sobre las ventas de la empresa en el último trimestre, incluyendo los datos sobre las ventas por región, los productos más vendidos y las tendencias en los datos. Asegúrate de incluir gráficos y visualizaciones para ayudar a entender los datos.",
-        "por_que_mejor": "El prompt bueno es más específico y proporciona más contexto, lo que permite a la IA generar un informe más detallado y preciso."
+        "caso": "Un sistema de procesamiento de datos que utiliza agentes para procesar grandes cantidades de datos",
+        "prompt_malo": "Diseñar un sistema de procesamiento de datos con un solo agente que procese todos los datos secuencialmente",
+        "prompt_bueno": "Diseñar un sistema de procesamiento de datos con múltiples agentes que procesen los datos en paralelo",
+        "por_que_mejor": "El prompt bueno es mejor porque permite la paralelización de tareas, lo que puede mejorar significativamente la eficiencia y el rendimiento del sistema"
       },
       "practica": {
-        "titulo": "Generar un informe detallado a partir de datos",
-        "objetivo": "Generar un informe detallado a partir de datos sobre un tema de interés",
-        "prompt_practica": "Eres un analista de datos y necesitas generar un informe detallado sobre las ventas de la empresa en el último año. Los datos incluyen las ventas por región, los productos más vendidos y las tendencias en los datos. Asegúrate de incluir gráficos y visualizaciones para ayudar a entender los datos. El informe debe tener un máximo de 300 palabras y debe ser escrito en un lenguaje claro y conciso. ¿Cuáles son las implicaciones de los datos para la empresa y cómo pueden ser aplicadas en futuras decisiones?",
+        "titulo": "Diseñar un sistema de procesamiento de datos con agentes paralelos con Gemini",
+        "objetivo": "Conseguir un sistema de procesamiento de datos que pueda procesar grandes cantidades de datos de manera eficiente",
+        "prompt_practica": "Diseñar un sistema de procesamiento de datos con 10 agentes que procesen los datos en paralelo. Los agentes deben ser capaces de dividir las tareas en sub-tareas que puedan ser ejecutadas en paralelo. El sistema debe ser capaz de adaptarse a cambios en la cantidad de datos y minimizar los tiempos de procesamiento. Utilice Gemini para simular el sistema y evaluar su eficiencia.",
         "pasos": [
-          "Abre la herramienta Claude y selecciona la opción de 'Síntesis de datos'",
-          "Pega el prompt_practica en el campo de texto y selecciona la opción de 'Generar informe'",
-          "Revisa el informe generado y asegúrate de que sea detallado y preciso",
-          "Refina el informe según sea necesario y guarda el resultado",
-          "Evalúa el resultado y determina si se han logrado los objetivos del ejercicio"
+          "Paso 1: Crear un nuevo proyecto en Gemini y seleccionar el modelo de sistema de procesamiento de datos",
+          "Paso 2: Diseñar los 10 agentes y definir sus roles y responsabilidades",
+          "Paso 3: Configurar la paralelización de tareas y definir las sub-tareas que pueden ser ejecutadas en paralelo",
+          "Paso 4: Simular el sistema y evaluar su eficiencia utilizando los indicadores de rendimiento proporcionados por Gemini",
+          "Paso 5: Refinar el sistema y ajustar los parámetros para optimizar su eficiencia"
         ],
-        "criterio_exito": "El informe generado es detallado, preciso y tiene un máximo de 300 palabras."
+        "criterio_exito": "El sistema de procesamiento de datos diseñado puede procesar grandes cantidades de datos de manera eficiente en un escenario de procesamiento de datos simulado"
       },
       "recursos": [
-        "Los datos sobre las ventas de la empresa son un ejemplo de datos que pueden ser analizados y visualizados."
+        "Documentación de Gemini sobre sistemas de procesamiento de datos"
       ]
     }
   ]
