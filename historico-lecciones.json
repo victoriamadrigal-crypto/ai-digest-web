@@ -518,5 +518,45 @@
     "titulo": "Paralelización de Tareas con Gemini",
     "subtitulo": "Aprenderá a diseñar sistemas multi-agente que pueden paralelizar tareas con Gemini",
     "duracion": "20 min"
+  },
+  {
+    "semana": "2026-07-27",
+    "tema": "IA para detección de sesgos y fairness",
+    "id": "extra-31-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Detección de sesgos",
+    "subtitulo": "Aprenderá a detectar sesgos en modelos de IA",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-07-27",
+    "tema": "IA para detección de sesgos y fairness",
+    "id": "extra-31-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Fairness en IA",
+    "subtitulo": "Aprenderá a evaluar y mejorar la justicia en modelos de IA",
+    "duracion": "20 min"
+  },
+  {
+    "semana": "2026-07-27",
+    "tema": "IA para detección de sesgos y fairness",
+    "id": "extra-31-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Mitigación de sesgos",
+    "subtitulo": "Aprenderá a mitigar los sesgos en modelos de IA",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-07-27",
+    "tema": "IA para detección de sesgos y fairness",
+    "id": "extra-31-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Auditoría de IA",
+    "subtitulo": "Aprenderá a realizar una auditoría de IA para detectar sesgos",
+    "duracion": "30 min"
   }
 ]

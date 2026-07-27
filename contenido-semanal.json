@@ -1,180 +1,180 @@
 {
-  "semana": "2026-07-20",
-  "tema": "sistemas multi-agente: coordinación y paralelización",
+  "semana": "2026-07-27",
+  "tema": "IA para detección de sesgos y fairness",
   "tip": {
-    "semana": "2026-07-20",
-    "tema": "sistemas multi-agente: coordinación y paralelización",
+    "semana": "2026-07-27",
+    "tema": "IA para detección de sesgos y fairness",
     "emoji": "🤖",
-    "titulo": "Coordinación Paralela con Agentes",
-    "resumen": " Optimiza procesos con agentes paralelos",
-    "explicacion": "La técnica de coordinación paralela en sistemas multi-agente implica la ejecución simultánea de múltiples agentes para alcanzar un objetivo común. Esto funciona bien en entornos donde la división de tareas es posible y la comunicación entre agentes es eficiente. Se utiliza en problemas complejos que requieren soluciones escalables y rápidas.",
-    "ejemplo_prompt": "Supongamos un sistema de recomendación de productos en línea donde cada agente se encarga de analizar un tipo diferente de dato del cliente (historial de compras, búsqueda, clics). Para coordinarlos, se puede utilizar un algoritmo de consenso como el 'Leader-Follower' donde un agente líder recopila y procesa la información de los demás agentes seguidores y luego toma una decisión final sobre la recomendación de producto. Ejemplo de código en Python: `import threading; class Agente(threading.Thread): def __init__(self, nombre): ...`",
-    "cuando_usarlo": "En proyectos de recomendación de contenido, en aplicaciones de logística donde varios vehículos deben coordinarse para entregar paquetes de manera eficiente, y en sistemas de seguridad donde múltiples cámaras y sensores deben trabajar juntos para detectar eventos sospechosos",
+    "titulo": "Detección de sesgos con SHAP",
+    "resumen": "Detección de sesgos con SHAP valores",
+    "explicacion": "La técnica de SHAP (SHapley Additive exPlanations) es útil para detectar sesgos en modelos de IA, ya que asigna un valor a cada característica que indica su contribución a la predicción. Esto ayuda a identificar características que pueden estar sesgando el modelo. La técnica funciona al calcular la contribución de cada característica a la predicción y compararla con la contribución esperada. Se debe usar cuando se sospecha que un modelo puede estar sesgado o cuando se necesita evaluar la justicia de un modelo.",
+    "ejemplo_prompt": "Utiliza la biblioteca SHAP en Python con el comando 'shap.initjs()' y luego 'shap.summary_plot()' para visualizar los sesgos en un modelo de clasificación, por ejemplo: 'shap.summary_plot(shap_values, X_test, plot_type='bar')' donde 'shap_values' son los valores de SHAP calculados y 'X_test' es el conjunto de datos de prueba.",
+    "cuando_usarlo": "Se debe aplicar esta técnica cuando se está evaluando la justicia de un modelo de IA, cuando se sospecha que un modelo puede estar sesgado o cuando se necesita identificar las características más influyentes en un modelo.",
     "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-30-1",
-      "semana": "2026-07-20",
+      "id": "extra-31-1",
+      "semana": "2026-07-27",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Coordinación de Agentes",
-      "subtitulo": "Aprenderá a diseñar sistemas multi-agente coordinados",
+      "titulo": "Detección de sesgos",
+      "subtitulo": "Aprenderá a detectar sesgos en modelos de IA",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Coordinación de Agentes",
-        "explicacion": "La coordinación de agentes es un concepto clave en sistemas multi-agente. Se refiere a la capacidad de los agentes para trabajar juntos hacia un objetivo común. Esto requiere la comunicación y el intercambio de información entre los agentes. La coordinación puede ser centralizada o descentralizada, dependiendo de la complejidad del sistema y la cantidad de agentes involucrados. La coordinación efectiva es crucial para lograr objetivos complejos y maximizar la eficiencia del sistema.",
-        "analogia": "Un ejemplo de coordinación de agentes en el mundo real es un equipo de fútbol. Cada jugador (agente) tiene un papel específico, pero trabajan juntos para lograr el objetivo común de ganar el partido.",
+        "concepto": "Análisis de disparidad",
+        "explicacion": "El análisis de disparidad es una técnica estadística que se utiliza para medir la diferencia en la distribución de una variable entre diferentes grupos. En el contexto de la detección de sesgos, se utiliza para comparar la distribución de las predicciones de un modelo entre diferentes grupos, como hombres y mujeres, o diferentes razas. Esto ayuda a identificar si el modelo está sesgado hacia uno de los grupos. La técnica se basa en la comparación de las probabilidades condicionales de las variables de entrada y salida del modelo. El análisis de disparidad es importante porque permite identificar y corregir los sesgos en los modelos de IA, lo que puede tener un impacto significativo en la toma de decisiones y la justicia social. El análisis de disparidad se puede aplicar en una variedad de contextos, como la detección de fraude, la clasificación de imágenes y la recomendación de productos.",
+        "analogia": "Un ejemplo del mundo real es la comparación de la tasa de aprobación de préstamos entre diferentes grupos étnicos. Si se encuentra que un grupo tiene una tasa de aprobación significativamente más baja que otro, puede ser un indicio de sesgo en el proceso de aprobación.",
         "cuando_usarlo": [
-          "Sistemas de control de tráfico",
-          "Sistemas de logística y transporte",
-          "Sistemas de seguridad y vigilancia"
+          "Cuando se sospecha que un modelo de IA puede estar sesgado hacia un grupo en particular",
+          "Cuando se necesita evaluar la justicia de un modelo de IA en un contexto específico",
+          "Cuando se necesita comparar el rendimiento de diferentes modelos de IA en diferentes grupos"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de control de tráfico que utiliza agentes para optimizar el flujo de tráfico",
-        "prompt_malo": "Diseñar un sistema de control de tráfico con un solo agente que controle todo el tráfico",
-        "prompt_bueno": "Diseñar un sistema de control de tráfico con múltiples agentes que se comuniquen entre sí para optimizar el flujo de tráfico",
-        "por_que_mejor": "El prompt bueno es mejor porque permite la coordinación y el intercambio de información entre los agentes, lo que puede llevar a una optimización más efectiva del tráfico"
+        "caso": "Un modelo de IA para la detección de fraude que se sospecha que puede estar sesgado hacia un grupo étnico en particular",
+        "prompt_malo": "¿Cuál es la probabilidad de fraude para un usuario con un historial de crédito malo?",
+        "prompt_bueno": "¿Cuál es la probabilidad de fraude para un usuario con un historial de crédito malo, considerando la raza y el género del usuario? ¿Cómo cambia la probabilidad si se cambia la raza o el género?",
+        "por_que_mejor": "El prompt bueno es mejor porque considera las variables de raza y género, lo que puede ayudar a identificar y corregir los sesgos en el modelo"
       },
       "practica": {
-        "titulo": "Diseñar un sistema de control de tráfico con agentes coordinados",
-        "objetivo": "Conseguir un sistema de control de tráfico que minimice los tiempos de espera y maximice la eficiencia",
-        "prompt_practica": "Diseñar un sistema de control de tráfico con 5 agentes que se comuniquen entre sí para optimizar el flujo de tráfico en una intersección. Los agentes deben considerar factores como la velocidad y la distancia de los vehículos, así como las normas de tráfico. El sistema debe ser capaz de adaptarse a cambios en el tráfico y minimizar los tiempos de espera. Utilice Claude para simular el sistema y evaluar su eficiencia.",
+        "titulo": "Análisis de disparidad en un modelo de IA",
+        "objetivo": "Aprender a detectar sesgos en un modelo de IA utilizando el análisis de disparidad",
+        "prompt_practica": "Utilice Claude para analizar un modelo de IA que predice la probabilidad de fraude para un usuario. Considere las variables de raza y género del usuario. ¿Cuál es la probabilidad de fraude para un usuario con un historial de crédito malo, considerando la raza y el género del usuario? ¿Cómo cambia la probabilidad si se cambia la raza o el género? Utilice el análisis de disparidad para identificar y corregir los sesgos en el modelo.",
         "pasos": [
-          "Paso 1: Crear un nuevo proyecto en Claude y seleccionar el modelo de sistema de control de tráfico",
-          "Paso 2: Diseñar los 5 agentes y definir sus roles y responsabilidades",
-          "Paso 3: Configurar la comunicación entre los agentes y definir las normas de tráfico",
-          "Paso 4: Simular el sistema y evaluar su eficiencia utilizando los indicadores de rendimiento proporcionados por Claude",
-          "Paso 5: Refinar el sistema y ajustar los parámetros para optimizar su eficiencia"
+          "Paso 1: Ingrese a Claude y seleccione el modelo de IA que se desea analizar",
+          "Paso 2: Defina las variables de entrada y salida del modelo, incluyendo la raza y el género del usuario",
+          "Paso 3: Utilice el análisis de disparidad para comparar la distribución de las predicciones del modelo entre diferentes grupos",
+          "Paso 4: Evalúe los resultados y refine el modelo para corregir los sesgos",
+          "Paso 5: Guarde y aplique los cambios en el modelo"
         ],
-        "criterio_exito": "El sistema de control de tráfico diseñado minimiza los tiempos de espera y maximiza la eficiencia en un escenario de tráfico simulado"
+        "criterio_exito": "El modelo de IA corregido tiene una disparidad significativamente menor entre diferentes grupos"
       },
       "recursos": [
-        "Documentación de Claude sobre sistemas de control de tráfico"
+        "Libro de 'Análisis de disparidad' de la Universidad de Harvard"
       ]
     },
     {
-      "id": "extra-30-2",
-      "semana": "2026-07-20",
+      "id": "extra-31-2",
+      "semana": "2026-07-27",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Paralelización de Tareas",
-      "subtitulo": "Aprenderá a diseñar sistemas multi-agente que pueden paralelizar tareas",
+      "titulo": "Fairness en IA",
+      "subtitulo": "Aprenderá a evaluar y mejorar la justicia en modelos de IA",
       "duracion": "20 min",
       "teoria": {
-        "concepto": "Paralelización de Tareas",
-        "explicacion": "La paralelización de tareas es una técnica que permite a los sistemas multi-agente realizar múltiples tareas simultáneamente. Esto puede mejorar significativamente la eficiencia y el rendimiento del sistema. La paralelización puede ser realizada mediante la división de tareas en sub-tareas que pueden ser ejecutadas en paralelo.",
-        "analogia": "Un ejemplo de paralelización de tareas en el mundo real es una fábrica que produce múltiples productos al mismo tiempo. Cada producto es producido en una línea de producción separada, lo que permite la paralelización de tareas.",
+        "concepto": "Fairness",
+        "explicacion": "La justicia en IA se refiere a la capacidad de un modelo para tratar a todos los grupos de manera justa y sin sesgos. Un modelo justo no debe tener una disparidad significativa en la distribución de las predicciones entre diferentes grupos. La justicia en IA es importante porque puede tener un impacto significativo en la toma de decisiones y la justicia social. La justicia en IA se puede evaluar utilizando métricas como la disparidad y la equidad.",
+        "analogia": "Un ejemplo del mundo real es la evaluación de la justicia en un sistema de crédito. Un sistema de crédito justo no debe tener una disparidad significativa en la tasa de aprobación de préstamos entre diferentes grupos étnicos.",
         "cuando_usarlo": [
-          "Sistemas de procesamiento de datos",
-          "Sistemas de simulación",
-          "Sistemas de control de procesos industriales"
+          "Cuando se necesita evaluar la justicia de un modelo de IA en un contexto específico",
+          "Cuando se necesita comparar el rendimiento de diferentes modelos de IA en diferentes grupos",
+          "Cuando se necesita identificar y corregir los sesgos en un modelo de IA"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de procesamiento de datos que utiliza agentes para procesar grandes cantidades de datos",
-        "prompt_malo": "Diseñar un sistema de procesamiento de datos con un solo agente que procese todos los datos secuencialmente",
-        "prompt_bueno": "Diseñar un sistema de procesamiento de datos con múltiples agentes que procesen los datos en paralelo",
-        "por_que_mejor": "El prompt bueno es mejor porque permite la paralelización de tareas, lo que puede mejorar significativamente la eficiencia y el rendimiento del sistema"
+        "caso": "Un modelo de IA para la recomendación de productos que se sospecha que puede estar sesgado hacia un grupo en particular",
+        "prompt_malo": "¿Qué productos se recomiendan para un usuario con un historial de compras?",
+        "prompt_bueno": "¿Qué productos se recomiendan para un usuario con un historial de compras, considerando la raza y el género del usuario? ¿Cómo cambia la recomendación si se cambia la raza o el género?",
+        "por_que_mejor": "El prompt bueno es mejor porque considera las variables de raza y género, lo que puede ayudar a identificar y corregir los sesgos en el modelo"
       },
       "practica": {
-        "titulo": "Diseñar un sistema de procesamiento de datos con agentes paralelos",
-        "objetivo": "Conseguir un sistema de procesamiento de datos que pueda procesar grandes cantidades de datos de manera eficiente",
-        "prompt_practica": "Diseñar un sistema de procesamiento de datos con 10 agentes que procesen los datos en paralelo. Los agentes deben ser capaces de dividir las tareas en sub-tareas que puedan ser ejecutadas en paralelo. El sistema debe ser capaz de adaptarse a cambios en la cantidad de datos y minimizar los tiempos de procesamiento. Utilice Gemini para simular el sistema y evaluar su eficiencia.",
+        "titulo": "Evaluación de la justicia en un modelo de IA",
+        "objetivo": "Aprender a evaluar y mejorar la justicia en un modelo de IA utilizando Gemini",
+        "prompt_practica": "Utilice Gemini para evaluar un modelo de IA que recomienda productos para un usuario. Considere las variables de raza y género del usuario. ¿Qué productos se recomiendan para un usuario con un historial de compras, considerando la raza y el género del usuario? ¿Cómo cambia la recomendación si se cambia la raza o el género? Utilice las métricas de justicia para evaluar y mejorar la justicia en el modelo.",
         "pasos": [
-          "Paso 1: Crear un nuevo proyecto en Gemini y seleccionar el modelo de sistema de procesamiento de datos",
-          "Paso 2: Diseñar los 10 agentes y definir sus roles y responsabilidades",
-          "Paso 3: Configurar la paralelización de tareas y definir las sub-tareas que pueden ser ejecutadas en paralelo",
-          "Paso 4: Simular el sistema y evaluar su eficiencia utilizando los indicadores de rendimiento proporcionados por Gemini",
-          "Paso 5: Refinar el sistema y ajustar los parámetros para optimizar su eficiencia"
+          "Paso 1: Ingrese a Gemini y seleccione el modelo de IA que se desea evaluar",
+          "Paso 2: Defina las variables de entrada y salida del modelo, incluyendo la raza y el género del usuario",
+          "Paso 3: Utilice las métricas de justicia para evaluar la justicia en el modelo",
+          "Paso 4: Evalúe los resultados y refine el modelo para mejorar la justicia",
+          "Paso 5: Guarde y aplique los cambios en el modelo"
         ],
-        "criterio_exito": "El sistema de procesamiento de datos diseñado puede procesar grandes cantidades de datos de manera eficiente en un escenario de procesamiento de datos simulado"
+        "criterio_exito": "El modelo de IA evaluado tiene una justicia significativamente mejorada"
       },
       "recursos": [
-        "Documentación de Gemini sobre sistemas de procesamiento de datos"
+        "Artículo de 'Justicia en IA' de la revista Nature"
       ]
     },
     {
-      "id": "extra-30-3",
-      "semana": "2026-07-20",
+      "id": "extra-31-3",
+      "semana": "2026-07-27",
       "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Coordinación de Agentes con Kiro",
-      "subtitulo": "Aprenderá a diseñar sistemas multi-agente coordinados con Kiro",
+      "titulo": "Mitigación de sesgos",
+      "subtitulo": "Aprenderá a mitigar los sesgos en modelos de IA",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Coordinación de Agentes con Kiro",
-        "explicacion": "Kiro es una herramienta que permite la coordinación de agentes en sistemas multi-agente. Permite la definición de roles y responsabilidades para cada agente, así como la configuración de la comunicación entre ellos. Kiro también proporciona indicadores de rendimiento para evaluar la eficiencia del sistema.",
-        "analogia": "Un ejemplo de coordinación de agentes con Kiro en el mundo real es un sistema de control de tráfico que utiliza agentes para optimizar el flujo de tráfico. Cada agente tiene un rol específico y se comunica con los demás agentes para tomar decisiones informadas.",
+        "concepto": "Mitigación de sesgos",
+        "explicacion": "La mitigación de sesgos se refiere a la capacidad de reducir o eliminar los sesgos en un modelo de IA. La mitigación de sesgos es importante porque puede tener un impacto significativo en la toma de decisiones y la justicia social. La mitigación de sesgos se puede lograr mediante técnicas como la reponderación, la reestructuración y la regularización.",
+        "analogia": "Un ejemplo del mundo real es la mitigación de sesgos en un sistema de crédito. Un sistema de crédito con sesgos puede ser mitigado mediante la reponderación de las variables de entrada para reducir la disparidad en la tasa de aprobación de préstamos entre diferentes grupos étnicos.",
         "cuando_usarlo": [
-          "Sistemas de control de tráfico",
-          "Sistemas de logística y transporte",
-          "Sistemas de seguridad y vigilancia"
+          "Cuando se necesita mitigar los sesgos en un modelo de IA",
+          "Cuando se necesita mejorar la justicia en un modelo de IA",
+          "Cuando se necesita reducir la disparidad en la distribución de las predicciones entre diferentes grupos"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de control de tráfico que utiliza agentes para optimizar el flujo de tráfico",
-        "prompt_malo": "Diseñar un sistema de control de tráfico con un solo agente que controle todo el tráfico",
-        "prompt_bueno": "Diseñar un sistema de control de tráfico con múltiples agentes que se comuniquen entre sí para optimizar el flujo de tráfico",
-        "por_que_mejor": "El prompt bueno es mejor porque permite la coordinación y el intercambio de información entre los agentes, lo que puede llevar a una optimización más efectiva del tráfico"
+        "caso": "Un modelo de IA para la detección de fraude que se sospecha que puede estar sesgado hacia un grupo en particular",
+        "prompt_malo": "¿Cuál es la probabilidad de fraude para un usuario con un historial de crédito malo?",
+        "prompt_bueno": "¿Cuál es la probabilidad de fraude para un usuario con un historial de crédito malo, considerando la raza y el género del usuario? ¿Cómo cambia la probabilidad si se cambia la raza o el género? Utilice la reponderación para mitigar los sesgos en el modelo.",
+        "por_que_mejor": "El prompt bueno es mejor porque considera las variables de raza y género, lo que puede ayudar a mitigar los sesgos en el modelo"
       },
       "practica": {
-        "titulo": "Diseñar un sistema de control de tráfico con agentes coordinados con Kiro",
-        "objetivo": "Conseguir un sistema de control de tráfico que minimice los tiempos de espera y maximice la eficiencia",
-        "prompt_practica": "Diseñar un sistema de control de tráfico con 5 agentes que se comuniquen entre sí para optimizar el flujo de tráfico en una intersección. Los agentes deben considerar factores como la velocidad y la distancia de los vehículos, así como las normas de tráfico. El sistema debe ser capaz de adaptarse a cambios en el tráfico y minimizar los tiempos de espera. Utilice Kiro para simular el sistema y evaluar su eficiencia.",
+        "titulo": "Mitigación de sesgos en un modelo de IA",
+        "objetivo": "Aprender a mitigar los sesgos en un modelo de IA utilizando Kiro",
+        "prompt_practica": "Utilice Kiro para mitigar los sesgos en un modelo de IA que predice la probabilidad de fraude para un usuario. Considere las variables de raza y género del usuario. ¿Cuál es la probabilidad de fraude para un usuario con un historial de crédito malo, considerando la raza y el género del usuario? ¿Cómo cambia la probabilidad si se cambia la raza o el género? Utilice la reponderación para mitigar los sesgos en el modelo.",
         "pasos": [
-          "Paso 1: Crear un nuevo proyecto en Kiro y seleccionar el modelo de sistema de control de tráfico",
-          "Paso 2: Diseñar los 5 agentes y definir sus roles y responsabilidades",
-          "Paso 3: Configurar la comunicación entre los agentes y definir las normas de tráfico",
-          "Paso 4: Simular el sistema y evaluar su eficiencia utilizando los indicadores de rendimiento proporcionados por Kiro",
-          "Paso 5: Refinar el sistema y ajustar los parámetros para optimizar su eficiencia"
+          "Paso 1: Ingrese a Kiro y seleccione el modelo de IA que se desea mitigar",
+          "Paso 2: Defina las variables de entrada y salida del modelo, incluyendo la raza y el género del usuario",
+          "Paso 3: Utilice la reponderación para mitigar los sesgos en el modelo",
+          "Paso 4: Evalúe los resultados y refine el modelo para mejorar la justicia",
+          "Paso 5: Guarde y aplique los cambios en el modelo"
         ],
-        "criterio_exito": "El sistema de control de tráfico diseñado minimiza los tiempos de espera y maximiza la eficiencia en un escenario de tráfico simulado"
+        "criterio_exito": "El modelo de IA mitigado tiene una disparidad significativamente menor entre diferentes grupos"
       },
       "recursos": [
-        "Documentación de Kiro sobre sistemas de control de tráfico"
+        "Libro de 'Mitigación de sesgos' de la Universidad de Stanford"
       ]
     },
     {
-      "id": "extra-30-4",
-      "semana": "2026-07-20",
-      "herramienta": "Gemini",
+      "id": "extra-31-4",
+      "semana": "2026-07-27",
+      "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Paralelización de Tareas con Gemini",
-      "subtitulo": "Aprenderá a diseñar sistemas multi-agente que pueden paralelizar tareas con Gemini",
-      "duracion": "20 min",
+      "titulo": "Auditoría de IA",
+      "subtitulo": "Aprenderá a realizar una auditoría de IA para detectar sesgos",
+      "duracion": "30 min",
       "teoria": {
-        "concepto": "Paralelización de Tareas con Gemini",
-        "explicacion": "Gemini es una herramienta que permite la paralelización de tareas en sistemas multi-agente. Permite la definición de sub-tareas que pueden ser ejecutadas en paralelo, lo que puede mejorar significativamente la eficiencia y el rendimiento del sistema.",
-        "analogia": "Un ejemplo de paralelización de tareas con Gemini en el mundo real es un sistema de procesamiento de datos que utiliza agentes para procesar grandes cantidades de datos. Cada agente puede procesar una parte de los datos en paralelo, lo que puede mejorar significativamente la eficiencia del sistema.",
+        "concepto": "Auditoría de IA",
+        "explicacion": "La auditoría de IA se refiere a la evaluación sistemática de un modelo de IA para detectar sesgos y garantizar la justicia. La auditoría de IA es importante porque puede tener un impacto significativo en la toma de decisiones y la justicia social. La auditoría de IA se puede realizar mediante técnicas como la evaluación de la disparidad y la equidad.",
+        "analogia": "Un ejemplo del mundo real es la auditoría de un sistema de crédito. Un sistema de crédito con sesgos puede ser auditado para detectar y corregir los sesgos en la tasa de aprobación de préstamos entre diferentes grupos étnicos.",
         "cuando_usarlo": [
-          "Sistemas de procesamiento de datos",
-          "Sistemas de simulación",
-          "Sistemas de control de procesos industriales"
+          "Cuando se necesita evaluar la justicia de un modelo de IA",
+          "Cuando se necesita detectar sesgos en un modelo de IA",
+          "Cuando se necesita garantizar la justicia en un modelo de IA"
         ]
       },
       "ejemplo": {
-        "caso": "Un sistema de procesamiento de datos que utiliza agentes para procesar grandes cantidades de datos",
-        "prompt_malo": "Diseñar un sistema de procesamiento de datos con un solo agente que procese todos los datos secuencialmente",
-        "prompt_bueno": "Diseñar un sistema de procesamiento de datos con múltiples agentes que procesen los datos en paralelo",
-        "por_que_mejor": "El prompt bueno es mejor porque permite la paralelización de tareas, lo que puede mejorar significativamente la eficiencia y el rendimiento del sistema"
+        "caso": "Un modelo de IA para la recomendación de productos que se sospecha que puede estar sesgado hacia un grupo en particular",
+        "prompt_malo": "¿Qué productos se recomiendan para un usuario con un historial de compras?",
+        "prompt_bueno": "¿Qué productos se recomiendan para un usuario con un historial de compras, considerando la raza y el género del usuario? ¿Cómo cambia la recomendación si se cambia la raza o el género? Utilice la auditoría de IA para detectar y corregir los sesgos en el modelo.",
+        "por_que_mejor": "El prompt bueno es mejor porque considera las variables de raza y género, lo que puede ayudar a detectar y corregir los sesgos en el modelo"
       },
       "practica": {
-        "titulo": "Diseñar un sistema de procesamiento de datos con agentes paralelos con Gemini",
-        "objetivo": "Conseguir un sistema de procesamiento de datos que pueda procesar grandes cantidades de datos de manera eficiente",
-        "prompt_practica": "Diseñar un sistema de procesamiento de datos con 10 agentes que procesen los datos en paralelo. Los agentes deben ser capaces de dividir las tareas en sub-tareas que puedan ser ejecutadas en paralelo. El sistema debe ser capaz de adaptarse a cambios en la cantidad de datos y minimizar los tiempos de procesamiento. Utilice Gemini para simular el sistema y evaluar su eficiencia.",
+        "titulo": "Auditoría de IA para detectar sesgos",
+        "objetivo": "Aprender a realizar una auditoría de IA para detectar sesgos utilizando Claude",
+        "prompt_practica": "Utilice Claude para realizar una auditoría de IA en un modelo de IA que recomienda productos para un usuario. Considere las variables de raza y género del usuario. ¿Qué productos se recomiendan para un usuario con un historial de compras, considerando la raza y el género del usuario? ¿Cómo cambia la recomendación si se cambia la raza o el género? Utilice la auditoría de IA para detectar y corregir los sesgos en el modelo.",
         "pasos": [
-          "Paso 1: Crear un nuevo proyecto en Gemini y seleccionar el modelo de sistema de procesamiento de datos",
-          "Paso 2: Diseñar los 10 agentes y definir sus roles y responsabilidades",
-          "Paso 3: Configurar la paralelización de tareas y definir las sub-tareas que pueden ser ejecutadas en paralelo",
-          "Paso 4: Simular el sistema y evaluar su eficiencia utilizando los indicadores de rendimiento proporcionados por Gemini",
-          "Paso 5: Refinar el sistema y ajustar los parámetros para optimizar su eficiencia"
+          "Paso 1: Ingrese a Claude y seleccione el modelo de IA que se desea auditar",
+          "Paso 2: Defina las variables de entrada y salida del modelo, incluyendo la raza y el género del usuario",
+          "Paso 3: Utilice la auditoría de IA para detectar sesgos en el modelo",
+          "Paso 4: Evalúe los resultados y refine el modelo para mejorar la justicia",
+          "Paso 5: Guarde y aplique los cambios en el modelo"
         ],
-        "criterio_exito": "El sistema de procesamiento de datos diseñado puede procesar grandes cantidades de datos de manera eficiente en un escenario de procesamiento de datos simulado"
+        "criterio_exito": "El modelo de IA auditado tiene una disparidad significativamente menor entre diferentes grupos"
       },
       "recursos": [
-        "Documentación de Gemini sobre sistemas de procesamiento de datos"
+        "Libro de 'Auditoría de IA' de la Universidad de Oxford"
       ]
     }
   ]
