@@ -1,180 +1,184 @@
 {
-  "semana": "2026-07-27",
-  "tema": "IA para detección de sesgos y fairness",
+  "semana": "2026-08-03",
+  "tema": "LLMs para análisis de código legacy y refactorización",
   "tip": {
-    "semana": "2026-07-27",
-    "tema": "IA para detección de sesgos y fairness",
+    "semana": "2026-08-03",
+    "tema": "LLMs para análisis de código legacy y refactorización",
     "emoji": "🤖",
-    "titulo": "Detección de sesgos con SHAP",
-    "resumen": "Detección de sesgos con SHAP valores",
-    "explicacion": "La técnica de SHAP (SHapley Additive exPlanations) es útil para detectar sesgos en modelos de IA, ya que asigna un valor a cada característica que indica su contribución a la predicción. Esto ayuda a identificar características que pueden estar sesgando el modelo. La técnica funciona al calcular la contribución de cada característica a la predicción y compararla con la contribución esperada. Se debe usar cuando se sospecha que un modelo puede estar sesgado o cuando se necesita evaluar la justicia de un modelo.",
-    "ejemplo_prompt": "Utiliza la biblioteca SHAP en Python con el comando 'shap.initjs()' y luego 'shap.summary_plot()' para visualizar los sesgos en un modelo de clasificación, por ejemplo: 'shap.summary_plot(shap_values, X_test, plot_type='bar')' donde 'shap_values' son los valores de SHAP calculados y 'X_test' es el conjunto de datos de prueba.",
-    "cuando_usarlo": "Se debe aplicar esta técnica cuando se está evaluando la justicia de un modelo de IA, cuando se sospecha que un modelo puede estar sesgado o cuando se necesita identificar las características más influyentes en un modelo.",
+    "titulo": "Refactorización con LLMs",
+    "resumen": "Mejora el código legacy con LLMs",
+    "explicacion": "Los LLMs (Large Language Models) pueden analizar y refactorizar código legacy de manera eficiente. Funciona identificando patrones y sugerencias de mejora en el código, lo que reduce el tiempo y el esfuerzo necesarios para actualizar el código. Se utiliza cuando se necesita refactorizar código antiguo y complejo.",
+    "ejemplo_prompt": "Analyze the following Java method and suggest improvements: public void procesoDatos(List<Object> datos) { ... }. Provide a refactored version with explanations for each change.",
+    "cuando_usarlo": "Cuando se hereda un proyecto legacy, durante la revisión de código y antes de implementar nuevas características",
     "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-31-1",
-      "semana": "2026-07-27",
+      "id": "extra-32-1",
+      "semana": "2026-08-03",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Detección de sesgos",
-      "subtitulo": "Aprenderá a detectar sesgos en modelos de IA",
+      "titulo": "Análisis de Código Legacy",
+      "subtitulo": "Aprenderá a utilizar LLMs para analizar y comprender código legacy",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Análisis de disparidad",
-        "explicacion": "El análisis de disparidad es una técnica estadística que se utiliza para medir la diferencia en la distribución de una variable entre diferentes grupos. En el contexto de la detección de sesgos, se utiliza para comparar la distribución de las predicciones de un modelo entre diferentes grupos, como hombres y mujeres, o diferentes razas. Esto ayuda a identificar si el modelo está sesgado hacia uno de los grupos. La técnica se basa en la comparación de las probabilidades condicionales de las variables de entrada y salida del modelo. El análisis de disparidad es importante porque permite identificar y corregir los sesgos en los modelos de IA, lo que puede tener un impacto significativo en la toma de decisiones y la justicia social. El análisis de disparidad se puede aplicar en una variedad de contextos, como la detección de fraude, la clasificación de imágenes y la recomendación de productos.",
-        "analogia": "Un ejemplo del mundo real es la comparación de la tasa de aprobación de préstamos entre diferentes grupos étnicos. Si se encuentra que un grupo tiene una tasa de aprobación significativamente más baja que otro, puede ser un indicio de sesgo en el proceso de aprobación.",
+        "concepto": "Análisis de código asistido por IA",
+        "explicacion": "El análisis de código asistido por IA es una técnica que utiliza modelos de lenguaje para comprender y analizar código legacy. Esta técnica es importante porque permite a los desarrolladores identificar patrones y problemas en el código de manera más eficiente. La IA puede analizar grandes cantidades de código y proporcionar insights valiosos sobre la estructura y el comportamiento del código. Esto es especialmente útil en proyectos legacy donde el código es complejo y difícil de entender. Los modelos de lenguaje pueden aprender a reconocer patrones en el código y proporcionar recomendaciones para mejorar la calidad y la mantenibilidad del código.",
+        "analogia": "Es como tener un asistente personal que revise y comprenda el código por ti, señalando áreas de mejora y optimización",
         "cuando_usarlo": [
-          "Cuando se sospecha que un modelo de IA puede estar sesgado hacia un grupo en particular",
-          "Cuando se necesita evaluar la justicia de un modelo de IA en un contexto específico",
-          "Cuando se necesita comparar el rendimiento de diferentes modelos de IA en diferentes grupos"
+          "Al heredar un proyecto legacy con código complejo",
+          "Al intentar refactorizar un sistema antiguo",
+          "Al necesitar identificar y corregir errores en el código",
+          "Al querer mejorar la calidad y la mantenibilidad del código"
         ]
       },
       "ejemplo": {
-        "caso": "Un modelo de IA para la detección de fraude que se sospecha que puede estar sesgado hacia un grupo étnico en particular",
-        "prompt_malo": "¿Cuál es la probabilidad de fraude para un usuario con un historial de crédito malo?",
-        "prompt_bueno": "¿Cuál es la probabilidad de fraude para un usuario con un historial de crédito malo, considerando la raza y el género del usuario? ¿Cómo cambia la probabilidad si se cambia la raza o el género?",
-        "por_que_mejor": "El prompt bueno es mejor porque considera las variables de raza y género, lo que puede ayudar a identificar y corregir los sesgos en el modelo"
+        "caso": "Un equipo de desarrollo hereda un proyecto legacy con código complejo y necesita entender cómo funciona para hacer cambios",
+        "prompt_malo": "Explica cómo funciona este código",
+        "prompt_bueno": "Analiza este código legacy y proporciona un resumen detallado de su estructura, patrones y posibles problemas, incluyendo recomendaciones para mejorar la calidad y la mantenibilidad",
+        "por_que_mejor": "El prompt bueno es más específico y solicita un análisis detallado, lo que permite a la IA proporcionar insights valiosos y relevantes para el proyecto"
       },
       "practica": {
-        "titulo": "Análisis de disparidad en un modelo de IA",
-        "objetivo": "Aprender a detectar sesgos en un modelo de IA utilizando el análisis de disparidad",
-        "prompt_practica": "Utilice Claude para analizar un modelo de IA que predice la probabilidad de fraude para un usuario. Considere las variables de raza y género del usuario. ¿Cuál es la probabilidad de fraude para un usuario con un historial de crédito malo, considerando la raza y el género del usuario? ¿Cómo cambia la probabilidad si se cambia la raza o el género? Utilice el análisis de disparidad para identificar y corregir los sesgos en el modelo.",
+        "titulo": "Análisis de Código Legacy con Claude",
+        "objetivo": "Conseguirás analizar y comprender un código legacy utilizando Claude",
+        "prompt_practica": "Actúa como un analista de código experimentado y analiza el siguiente código legacy: https://github.com/ejemplo/codigo-legacy. Proporciona un resumen detallado de su estructura, patrones y posibles problemas, incluyendo recomendaciones para mejorar la calidad y la mantenibilidad. Utiliza Claude para analizar el código y proporcionar insights valiosos. El código es un sistema de gestión de inventario escrito en Java. Debes proporcionar un informe detallado en formato Markdown, incluyendo secciones para introducción, análisis, conclusiones y recomendaciones.",
         "pasos": [
-          "Paso 1: Ingrese a Claude y seleccione el modelo de IA que se desea analizar",
-          "Paso 2: Defina las variables de entrada y salida del modelo, incluyendo la raza y el género del usuario",
-          "Paso 3: Utilice el análisis de disparidad para comparar la distribución de las predicciones del modelo entre diferentes grupos",
-          "Paso 4: Evalúe los resultados y refine el modelo para corregir los sesgos",
-          "Paso 5: Guarde y aplique los cambios en el modelo"
+          "Paso 1: Accede a la URL https://claude.ai/ y crea un nuevo proyecto",
+          "Paso 2: Copia y pega el código legacy en el editor de Claude",
+          "Paso 3: Configura las opciones de análisis y selecciona el modelo de lenguaje adecuado para Java",
+          "Paso 4: Ejecuta el análisis y revisa los resultados, identificando patrones y problemas en el código",
+          "Paso 5: Utiliza los insights proporcionados por Claude para crear un informe detallado en formato Markdown"
         ],
-        "criterio_exito": "El modelo de IA corregido tiene una disparidad significativamente menor entre diferentes grupos"
+        "criterio_exito": "Un informe detallado en formato Markdown que analice el código legacy y proporcione recomendaciones para mejorar la calidad y la mantenibilidad"
       },
       "recursos": [
-        "Libro de 'Análisis de disparidad' de la Universidad de Harvard"
+        "Curso de análisis de código asistido por IA en Udemy"
       ]
     },
     {
-      "id": "extra-31-2",
-      "semana": "2026-07-27",
+      "id": "extra-32-2",
+      "semana": "2026-08-03",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Fairness en IA",
-      "subtitulo": "Aprenderá a evaluar y mejorar la justicia en modelos de IA",
-      "duracion": "20 min",
-      "teoria": {
-        "concepto": "Fairness",
-        "explicacion": "La justicia en IA se refiere a la capacidad de un modelo para tratar a todos los grupos de manera justa y sin sesgos. Un modelo justo no debe tener una disparidad significativa en la distribución de las predicciones entre diferentes grupos. La justicia en IA es importante porque puede tener un impacto significativo en la toma de decisiones y la justicia social. La justicia en IA se puede evaluar utilizando métricas como la disparidad y la equidad.",
-        "analogia": "Un ejemplo del mundo real es la evaluación de la justicia en un sistema de crédito. Un sistema de crédito justo no debe tener una disparidad significativa en la tasa de aprobación de préstamos entre diferentes grupos étnicos.",
-        "cuando_usarlo": [
-          "Cuando se necesita evaluar la justicia de un modelo de IA en un contexto específico",
-          "Cuando se necesita comparar el rendimiento de diferentes modelos de IA en diferentes grupos",
-          "Cuando se necesita identificar y corregir los sesgos en un modelo de IA"
-        ]
-      },
-      "ejemplo": {
-        "caso": "Un modelo de IA para la recomendación de productos que se sospecha que puede estar sesgado hacia un grupo en particular",
-        "prompt_malo": "¿Qué productos se recomiendan para un usuario con un historial de compras?",
-        "prompt_bueno": "¿Qué productos se recomiendan para un usuario con un historial de compras, considerando la raza y el género del usuario? ¿Cómo cambia la recomendación si se cambia la raza o el género?",
-        "por_que_mejor": "El prompt bueno es mejor porque considera las variables de raza y género, lo que puede ayudar a identificar y corregir los sesgos en el modelo"
-      },
-      "practica": {
-        "titulo": "Evaluación de la justicia en un modelo de IA",
-        "objetivo": "Aprender a evaluar y mejorar la justicia en un modelo de IA utilizando Gemini",
-        "prompt_practica": "Utilice Gemini para evaluar un modelo de IA que recomienda productos para un usuario. Considere las variables de raza y género del usuario. ¿Qué productos se recomiendan para un usuario con un historial de compras, considerando la raza y el género del usuario? ¿Cómo cambia la recomendación si se cambia la raza o el género? Utilice las métricas de justicia para evaluar y mejorar la justicia en el modelo.",
-        "pasos": [
-          "Paso 1: Ingrese a Gemini y seleccione el modelo de IA que se desea evaluar",
-          "Paso 2: Defina las variables de entrada y salida del modelo, incluyendo la raza y el género del usuario",
-          "Paso 3: Utilice las métricas de justicia para evaluar la justicia en el modelo",
-          "Paso 4: Evalúe los resultados y refine el modelo para mejorar la justicia",
-          "Paso 5: Guarde y aplique los cambios en el modelo"
-        ],
-        "criterio_exito": "El modelo de IA evaluado tiene una justicia significativamente mejorada"
-      },
-      "recursos": [
-        "Artículo de 'Justicia en IA' de la revista Nature"
-      ]
-    },
-    {
-      "id": "extra-31-3",
-      "semana": "2026-07-27",
-      "herramienta": "Kiro",
-      "nivel": "Avanzado",
-      "titulo": "Mitigación de sesgos",
-      "subtitulo": "Aprenderá a mitigar los sesgos en modelos de IA",
+      "titulo": "Refactorización de Código",
+      "subtitulo": "Aprenderá a utilizar LLMs para refactorizar código legacy",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Mitigación de sesgos",
-        "explicacion": "La mitigación de sesgos se refiere a la capacidad de reducir o eliminar los sesgos en un modelo de IA. La mitigación de sesgos es importante porque puede tener un impacto significativo en la toma de decisiones y la justicia social. La mitigación de sesgos se puede lograr mediante técnicas como la reponderación, la reestructuración y la regularización.",
-        "analogia": "Un ejemplo del mundo real es la mitigación de sesgos en un sistema de crédito. Un sistema de crédito con sesgos puede ser mitigado mediante la reponderación de las variables de entrada para reducir la disparidad en la tasa de aprobación de préstamos entre diferentes grupos étnicos.",
+        "concepto": "Refactorización asistida por IA",
+        "explicacion": "La refactorización asistida por IA es una técnica que utiliza modelos de lenguaje para identificar y aplicar patrones de refactorización en código legacy. Esta técnica es importante porque permite a los desarrolladores mejorar la calidad y la mantenibilidad del código de manera más eficiente. La IA puede analizar el código y proporcionar recomendaciones de refactorización personalizadas para cada proyecto.",
+        "analogia": "Es como tener un asistente personal que te ayude a reorganizar y mejorar el código",
         "cuando_usarlo": [
-          "Cuando se necesita mitigar los sesgos en un modelo de IA",
-          "Cuando se necesita mejorar la justicia en un modelo de IA",
-          "Cuando se necesita reducir la disparidad en la distribución de las predicciones entre diferentes grupos"
+          "Al necesitar mejorar la calidad y la mantenibilidad del código",
+          "Al querer reducir la complejidad del código",
+          "Al intentar aplicar patrones de diseño en el código",
+          "Al necesitar mejorar la performance del código"
         ]
       },
       "ejemplo": {
-        "caso": "Un modelo de IA para la detección de fraude que se sospecha que puede estar sesgado hacia un grupo en particular",
-        "prompt_malo": "¿Cuál es la probabilidad de fraude para un usuario con un historial de crédito malo?",
-        "prompt_bueno": "¿Cuál es la probabilidad de fraude para un usuario con un historial de crédito malo, considerando la raza y el género del usuario? ¿Cómo cambia la probabilidad si se cambia la raza o el género? Utilice la reponderación para mitigar los sesgos en el modelo.",
-        "por_que_mejor": "El prompt bueno es mejor porque considera las variables de raza y género, lo que puede ayudar a mitigar los sesgos en el modelo"
+        "caso": "Un equipo de desarrollo necesita refactorizar un sistema legacy para mejorar su performance",
+        "prompt_malo": "Refactoriza este código",
+        "prompt_bueno": "Analiza este código legacy y proporciona recomendaciones de refactorización personalizadas para mejorar su performance y calidad, incluyendo ejemplos de código refactorizado",
+        "por_que_mejor": "El prompt bueno es más específico y solicita recomendaciones de refactorización personalizadas, lo que permite a la IA proporcionar insights valiosos y relevantes para el proyecto"
       },
       "practica": {
-        "titulo": "Mitigación de sesgos en un modelo de IA",
-        "objetivo": "Aprender a mitigar los sesgos en un modelo de IA utilizando Kiro",
-        "prompt_practica": "Utilice Kiro para mitigar los sesgos en un modelo de IA que predice la probabilidad de fraude para un usuario. Considere las variables de raza y género del usuario. ¿Cuál es la probabilidad de fraude para un usuario con un historial de crédito malo, considerando la raza y el género del usuario? ¿Cómo cambia la probabilidad si se cambia la raza o el género? Utilice la reponderación para mitigar los sesgos en el modelo.",
+        "titulo": "Refactorización de Código con Gemini",
+        "objetivo": "Conseguirás refactorizar un código legacy utilizando Gemini",
+        "prompt_practica": "Actúa como un desarrollador experimentado y refactoriza el siguiente código legacy: https://github.com/ejemplo/codigo-legacy. Utiliza Gemini para analizar el código y proporcionar recomendaciones de refactorización personalizadas. El código es un sistema de gestión de usuarios escrito en Python. Debes proporcionar un informe detallado en formato Markdown, incluyendo secciones para introducción, análisis, recomendaciones de refactorización y código refactorizado.",
         "pasos": [
-          "Paso 1: Ingrese a Kiro y seleccione el modelo de IA que se desea mitigar",
-          "Paso 2: Defina las variables de entrada y salida del modelo, incluyendo la raza y el género del usuario",
-          "Paso 3: Utilice la reponderación para mitigar los sesgos en el modelo",
-          "Paso 4: Evalúe los resultados y refine el modelo para mejorar la justicia",
-          "Paso 5: Guarde y aplique los cambios en el modelo"
+          "Paso 1: Accede a la URL https://gemini.ai/ y crea un nuevo proyecto",
+          "Paso 2: Copia y pega el código legacy en el editor de Gemini",
+          "Paso 3: Configura las opciones de análisis y selecciona el modelo de lenguaje adecuado para Python",
+          "Paso 4: Ejecuta el análisis y revisa las recomendaciones de refactorización proporcionadas por Gemini",
+          "Paso 5: Aplica las recomendaciones de refactorización y proporciona un informe detallado en formato Markdown"
         ],
-        "criterio_exito": "El modelo de IA mitigado tiene una disparidad significativamente menor entre diferentes grupos"
+        "criterio_exito": "Un informe detallado en formato Markdown que proporcione recomendaciones de refactorización personalizadas y código refactorizado"
       },
       "recursos": [
-        "Libro de 'Mitigación de sesgos' de la Universidad de Stanford"
+        "Curso de refactorización de código en Coursera"
       ]
     },
     {
-      "id": "extra-31-4",
-      "semana": "2026-07-27",
-      "herramienta": "Claude",
+      "id": "extra-32-3",
+      "semana": "2026-08-03",
+      "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Auditoría de IA",
-      "subtitulo": "Aprenderá a realizar una auditoría de IA para detectar sesgos",
-      "duracion": "30 min",
+      "titulo": "Integración de LLMs",
+      "subtitulo": "Aprenderá a integrar LLMs en pipelines de desarrollo",
+      "duracion": "25 min",
       "teoria": {
-        "concepto": "Auditoría de IA",
-        "explicacion": "La auditoría de IA se refiere a la evaluación sistemática de un modelo de IA para detectar sesgos y garantizar la justicia. La auditoría de IA es importante porque puede tener un impacto significativo en la toma de decisiones y la justicia social. La auditoría de IA se puede realizar mediante técnicas como la evaluación de la disparidad y la equidad.",
-        "analogia": "Un ejemplo del mundo real es la auditoría de un sistema de crédito. Un sistema de crédito con sesgos puede ser auditado para detectar y corregir los sesgos en la tasa de aprobación de préstamos entre diferentes grupos étnicos.",
+        "concepto": "Integración de LLMs en pipelines de desarrollo",
+        "explicacion": "La integración de LLMs en pipelines de desarrollo es una técnica que permite a los desarrolladores automatizar tareas de análisis y refactorización de código. Esta técnica es importante porque permite a los equipos de desarrollo mejorar la calidad y la mantenibilidad del código de manera más eficiente. La integración de LLMs en pipelines de desarrollo puede ser realizada utilizando herramientas como Kiro.",
+        "analogia": "Es como tener un robot que te ayude a automatizar tareas de análisis y refactorización de código",
         "cuando_usarlo": [
-          "Cuando se necesita evaluar la justicia de un modelo de IA",
-          "Cuando se necesita detectar sesgos en un modelo de IA",
-          "Cuando se necesita garantizar la justicia en un modelo de IA"
+          "Al necesitar automatizar tareas de análisis y refactorización de código",
+          "Al querer mejorar la calidad y la mantenibilidad del código",
+          "Al intentar reducir la complejidad del código",
+          "Al necesitar mejorar la performance del código"
         ]
       },
       "ejemplo": {
-        "caso": "Un modelo de IA para la recomendación de productos que se sospecha que puede estar sesgado hacia un grupo en particular",
-        "prompt_malo": "¿Qué productos se recomiendan para un usuario con un historial de compras?",
-        "prompt_bueno": "¿Qué productos se recomiendan para un usuario con un historial de compras, considerando la raza y el género del usuario? ¿Cómo cambia la recomendación si se cambia la raza o el género? Utilice la auditoría de IA para detectar y corregir los sesgos en el modelo.",
-        "por_que_mejor": "El prompt bueno es mejor porque considera las variables de raza y género, lo que puede ayudar a detectar y corregir los sesgos en el modelo"
+        "caso": "Un equipo de desarrollo necesita integrar LLMs en su pipeline de desarrollo para mejorar la calidad del código",
+        "prompt_malo": "Integra LLMs en nuestro pipeline de desarrollo",
+        "prompt_bueno": "Analiza nuestro pipeline de desarrollo y proporciona recomendaciones para integrar LLMs de manera efectiva, incluyendo ejemplos de código y configuraciones",
+        "por_que_mejor": "El prompt bueno es más específico y solicita recomendaciones para integrar LLMs de manera efectiva, lo que permite a la IA proporcionar insights valiosos y relevantes para el proyecto"
       },
       "practica": {
-        "titulo": "Auditoría de IA para detectar sesgos",
-        "objetivo": "Aprender a realizar una auditoría de IA para detectar sesgos utilizando Claude",
-        "prompt_practica": "Utilice Claude para realizar una auditoría de IA en un modelo de IA que recomienda productos para un usuario. Considere las variables de raza y género del usuario. ¿Qué productos se recomiendan para un usuario con un historial de compras, considerando la raza y el género del usuario? ¿Cómo cambia la recomendación si se cambia la raza o el género? Utilice la auditoría de IA para detectar y corregir los sesgos en el modelo.",
+        "titulo": "Integración de LLMs con Kiro",
+        "objetivo": "Conseguirás integrar LLMs en un pipeline de desarrollo utilizando Kiro",
+        "prompt_practica": "Actúa como un desarrollador experimentado y integra LLMs en el siguiente pipeline de desarrollo: https://github.com/ejemplo/pipeline-de-desarrollo. Utiliza Kiro para analizar el pipeline y proporcionar recomendaciones para integrar LLMs de manera efectiva. El pipeline es para un proyecto de desarrollo de software escrito en Java. Debes proporcionar un informe detallado en formato Markdown, incluyendo secciones para introducción, análisis, recomendaciones de integración y configuraciones.",
         "pasos": [
-          "Paso 1: Ingrese a Claude y seleccione el modelo de IA que se desea auditar",
-          "Paso 2: Defina las variables de entrada y salida del modelo, incluyendo la raza y el género del usuario",
-          "Paso 3: Utilice la auditoría de IA para detectar sesgos en el modelo",
-          "Paso 4: Evalúe los resultados y refine el modelo para mejorar la justicia",
-          "Paso 5: Guarde y aplique los cambios en el modelo"
+          "Paso 1: Accede a la URL https://kiro.ai/ y crea un nuevo proyecto",
+          "Paso 2: Copia y pega el pipeline de desarrollo en el editor de Kiro",
+          "Paso 3: Configura las opciones de análisis y selecciona el modelo de lenguaje adecuado para Java",
+          "Paso 4: Ejecuta el análisis y revisa las recomendaciones de integración proporcionadas por Kiro",
+          "Paso 5: Aplica las recomendaciones de integración y proporciona un informe detallado en formato Markdown"
         ],
-        "criterio_exito": "El modelo de IA auditado tiene una disparidad significativamente menor entre diferentes grupos"
+        "criterio_exito": "Un informe detallado en formato Markdown que proporcione recomendaciones para integrar LLMs de manera efectiva y configuraciones"
       },
       "recursos": [
-        "Libro de 'Auditoría de IA' de la Universidad de Oxford"
+        "Curso de integración de LLMs en pipelines de desarrollo en edX"
+      ]
+    },
+    {
+      "id": "extra-32-4",
+      "semana": "2026-08-03",
+      "herramienta": "Claude",
+      "nivel": "Avanzado",
+      "titulo": "Monitoreo de Calidad",
+      "subtitulo": "Aprenderá a utilizar LLMs para monitorear la calidad del código",
+      "duracion": "25 min",
+      "teoria": {
+        "concepto": "Monitoreo de calidad del código asistido por IA",
+        "explicacion": "El monitoreo de calidad del código asistido por IA es una técnica que utiliza modelos de lenguaje para analizar y evaluar la calidad del código. Esta técnica es importante porque permite a los desarrolladores identificar problemas de calidad en el código de manera más eficiente. La IA puede analizar el código y proporcionar insights valiosos sobre la calidad y la mantenibilidad del código.",
+        "analogia": "Es como tener un asistente personal que revise y evalúe la calidad del código",
+        "cuando_usarlo": [
+          "Al necesitar evaluar la calidad del código",
+          "Al querer mejorar la calidad y la mantenibilidad del código",
+          "Al intentar reducir la complejidad del código",
+          "Al necesitar mejorar la performance del código"
+        ]
+      },
+      "ejemplo": {
+        "caso": "Un equipo de desarrollo necesita evaluar la calidad del código para un proyecto de desarrollo de software",
+        "prompt_malo": "Evalúa la calidad del código",
+        "prompt_bueno": "Analiza el código y proporciona un informe detallado sobre la calidad, incluyendo métricas y recomendaciones para mejorar la calidad y la mantenibilidad",
+        "por_que_mejor": "El prompt bueno es más específico y solicita un informe detallado sobre la calidad, lo que permite a la IA proporcionar insights valiosos y relevantes para el proyecto"
+      },
+      "practica": {
+        "titulo": "Monitoreo de Calidad con Claude",
+        "objetivo": "Conseguirás evaluar la calidad del código utilizando Claude",
+        "prompt_practica": "Actúa como un desarrollador experimentado y evalúa la calidad del siguiente código: https://github.com/ejemplo/codigo-de-ejemplo. Utiliza Claude para analizar el código y proporcionar un informe detallado sobre la calidad, incluyendo métricas y recomendaciones para mejorar la calidad y la mantenibilidad. El código es un sistema de gestión de inventario escrito en Java. Debes proporcionar un informe detallado en formato Markdown, incluyendo secciones para introducción, análisis, métricas y recomendaciones.",
+        "pasos": [
+          "Paso 1: Accede a la URL https://claude.ai/ y crea un nuevo proyecto",
+          "Paso 2: Copia y pega el código en el editor de Claude",
+          "Paso 3: Configura las opciones de análisis y selecciona el modelo de lenguaje adecuado para Java",
+          "Paso 4: Ejecuta el análisis y revisa el informe detallado sobre la calidad proporcionado por Claude",
+          "Paso 5: Utiliza el informe para mejorar la calidad y la mantenibilidad del código"
+        ],
+        "criterio_exito": "Un informe detallado en formato Markdown que evalúe la calidad del código y proporcione recomendaciones para mejorar la calidad y la mantenibilidad"
+      },
+      "recursos": [
+        "Curso de monitoreo de calidad del código en Pluralsight"
       ]
     }
   ]

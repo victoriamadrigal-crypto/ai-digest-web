@@ -558,5 +558,45 @@
     "titulo": "Auditoría de IA",
     "subtitulo": "Aprenderá a realizar una auditoría de IA para detectar sesgos",
     "duracion": "30 min"
+  },
+  {
+    "semana": "2026-08-03",
+    "tema": "LLMs para análisis de código legacy y refactorización",
+    "id": "extra-32-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Análisis de Código Legacy",
+    "subtitulo": "Aprenderá a utilizar LLMs para analizar y comprender código legacy",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-08-03",
+    "tema": "LLMs para análisis de código legacy y refactorización",
+    "id": "extra-32-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Refactorización de Código",
+    "subtitulo": "Aprenderá a utilizar LLMs para refactorizar código legacy",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-08-03",
+    "tema": "LLMs para análisis de código legacy y refactorización",
+    "id": "extra-32-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Integración de LLMs",
+    "subtitulo": "Aprenderá a integrar LLMs en pipelines de desarrollo",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-08-03",
+    "tema": "LLMs para análisis de código legacy y refactorización",
+    "id": "extra-32-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Monitoreo de Calidad",
+    "subtitulo": "Aprenderá a utilizar LLMs para monitorear la calidad del código",
+    "duracion": "25 min"
   }
 ]
