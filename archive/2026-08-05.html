@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 Resumen IA — 05/08/2026</title>
+    <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #0f0f1a; color: #e0e0e0;
+        min-height: 100vh; padding: 0 16px 48px;
+    }
+    header {
+        max-width: 860px; margin: 0 auto;
+        padding: 40px 0 24px; border-bottom: 1px solid #2a2a3e; margin-bottom: 32px;
+    }
+    header h1 {
+        font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 700; color: #ffffff;
+        display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    .badge {
+        font-size: 0.75rem; background: #1e3a5f; color: #60a5fa;
+        padding: 4px 10px; border-radius: 20px; font-weight: 500; white-space: nowrap;
+    }
+    .subtitle { margin-top: 8px; font-size: 0.9rem; color: #6b7280; }
+    .layout {
+        max-width: 860px; margin: 0 auto;
+        display: grid; grid-template-columns: 1fr 220px; gap: 32px; align-items: start;
+    }
+    @media (max-width: 640px) {
+        .layout { grid-template-columns: 1fr; }
+        .sidebar { order: -1; }
+    }
+    .news-list { display: flex; flex-direction: column; gap: 16px; }
+    .card {
+        background: #1a1a2e; border: 1px solid #2a2a3e; border-radius: 14px;
+        padding: 24px 28px; transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover { border-color: #4a90d9; transform: translateY(-2px); }
+    .card h2 {
+        font-size: 1.05rem; font-weight: 600; color: #ffffff;
+        line-height: 1.4; margin-bottom: 10px;
+    }
+    .card p { font-size: 0.9rem; color: #9ca3af; line-height: 1.65; margin-bottom: 16px; }
+    .card a.read-more {
+        display: inline-flex; align-items: center; gap: 6px;
+        font-size: 0.85rem; font-weight: 500; color: #60a5fa; text-decoration: none;
+        padding: 6px 14px; border: 1px solid #1e3a5f; border-radius: 6px;
+        transition: background 0.2s, color 0.2s;
+    }
+    .card a.read-more:hover { background: #1e3a5f; color: #93c5fd; }
+    .sidebar {
+        background: #1a1a2e; border: 1px solid #2a2a3e; border-radius: 14px;
+        padding: 20px; position: sticky; top: 20px;
+    }
+    .sidebar h3 {
+        font-size: 0.85rem; font-weight: 600; color: #ffffff;
+        margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .sidebar ul li a {
+        font-size: 0.85rem; color: #60a5fa; text-decoration: none;
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 4px 0; border-bottom: 1px solid #2a2a3e; transition: color 0.15s;
+    }
+    .sidebar ul li a:hover { color: #93c5fd; }
+    .sidebar ul li a .count { font-size: 0.75rem; color: #4b5563; }
+    .sidebar ul li.active a { color: #ffffff; font-weight: 600; }
+    footer {
+        max-width: 860px; margin: 40px auto 0;
+        text-align: center; font-size: 0.78rem; color: #4b5563;
+    }
+    .back-link {
+        display: inline-flex; align-items: center; gap: 6px;
+        font-size: 0.85rem; color: #60a5fa; text-decoration: none; margin-bottom: 24px;
+    }
+    .back-link:hover { color: #93c5fd; }
+</style>
+</head>
+<body>
+    <header>
+        <a class="back-link" href="../index.html">← Volver a hoy</a>
+        <h1>🤖 Resumen IA <span class="badge">05/08/2026</span></h1>
+        <p class="subtitle">Edición del 05/08/2026</p>
+    </header>
+    <div class="layout">
+        <section class="news-list">
+            <article class="card">
+                <h2>Google anuncia un avance en la inteligencia artificial para la medicina</h2>
+                <p>Google ha anunciado un avance en la inteligencia artificial para la medicina, que permitirá a los médicos diagnosticar enfermedades de manera más precisa y rápida. La tecnología utiliza algoritmos de aprendizaje automático para analizar imágenes médicas y detectar patrones que pueden indicar enfermedades específicas.</p>
+                <a class="read-more" href="https://www.theverge.com/2026/7/25/16553320/google-ai-medical-diagnosis-breakthrough" target="_blank" rel="noopener">Leer más →</a>
+            </article>
+            <article class="card">
+                <h2>La IA puede ayudar a predecir la propagación de enfermedades</h2>
+                <p>Un equipo de investigadores ha desarrollado un modelo de IA que puede predecir la propagación de enfermedades en diferentes regiones del mundo. El modelo utiliza datos históricos y meteorológicos para predecir la probabilidad de brotes de enfermedades en diferentes áreas.</p>
+                <a class="read-more" href="https://www.scientificamerican.com/article/ai-predicts-disease-spread/" target="_blank" rel="noopener">Leer más →</a>
+            </article>
+            <article class="card">
+                <h2>El País Tecnología | ES: Tres móviles plegables para tres personalidades diferentes</h2>
+                <p>Samsung ha lanzado una nueva generación de móviles plegables, cada uno con una forma y funcionalidad única. Estos dispositivos están diseñados para satisfacer las necesidades de diferentes tipos de usuarios, desde aquellos que buscan una experiencia de pantalla grande hasta aquellos que prefieren una portabilidad máxima.</p>
+                <a class="read-more" href="https://elpais.com/tecnologia/2026-07-30/tres-moviles-plegables-para-tres-personalidades-diferentes.html" target="_blank" rel="noopener">Leer más →</a>
+            </article>
+            <article class="card">
+                <h2>La IA puede ayudar a mejorar la seguridad en los sistemas de transporte</h2>
+                <p>Un equipo de investigadores ha desarrollado un modelo de IA que puede ayudar a mejorar la seguridad en los sistemas de transporte. El modelo utiliza datos de tráfico y condiciones climáticas para predecir la probabilidad de accidentes y alertar a los conductores y autoridades.</p>
+                <a class="read-more" href="https://www.reuters.com/article/us-transportation-safety-ai-idUSKCN24M2JL" target="_blank" rel="noopener">Leer más →</a>
+            </article>
+            <article class="card">
+                <h2>El País Tecnología | ES: 'Nos vemos allí el 15 de agosto'. Así debaten miles de marroquíes en Facebook y WhatsApp si habrá una nueva entrada masiva a Ceuta</h2>
+                <p>En las redes sociales más populares entre la juventud marroquí, se están cruzando consejos y peticiones sobre un posible asalto a la frontera en Ceuta en los próximos días. La situación se está volviendo cada vez más tensa y los expertos temen por la seguridad de los ciudadanos en la zona.</p>
+                <a class="read-more" href="https://elpais.com/tecnologia/2026-08-04/nos-vemos-alli-el-15-de-agosto-asi-debaten-miles-de-marroquies-en-facebook-y-whatsapp-si-habra-una-nueva-entrada-masiva-a-ceuta.html" target="_blank" rel="noopener">Leer más →</a>
+            </article></section>
+        
+        <aside class="sidebar">
+            <h3>📅 Ediciones anteriores</h3>
+            <ul>
+            <li>
+                <a href="../archive/2026-08-04.html">
+                    04 Aug 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-08-03.html">
+                    03 Aug 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-31.html">
+                    31 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-30.html">
+                    30 Jul 2026
+                    <span class="count">4 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-29.html">
+                    29 Jul 2026
+                    <span class="count">4 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-28.html">
+                    28 Jul 2026
+                    <span class="count">4 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-27.html">
+                    27 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-24.html">
+                    24 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-22.html">
+                    22 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-21.html">
+                    21 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-20.html">
+                    20 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-17.html">
+                    17 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-16.html">
+                    16 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-14.html">
+                    14 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-13.html">
+                    13 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-10.html">
+                    10 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-08.html">
+                    08 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-07.html">
+                    07 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-06.html">
+                    06 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-03.html">
+                    03 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-07-01.html">
+                    01 Jul 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-30.html">
+                    30 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-29.html">
+                    29 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-26.html">
+                    26 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-25.html">
+                    25 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-24.html">
+                    24 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-23.html">
+                    23 Jun 2026
+                    <span class="count">4 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-19.html">
+                    19 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-18.html">
+                    18 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../archive/2026-06-17.html">
+                    17 Jun 2026
+                    <span class="count">5 noticias</span>
+                </a>
+            </li></ul>
+        </aside>
+    </div>
+    <footer>
+        Generado con Groq + Llama 3.1 &middot;
+        Fuentes: Arxiv, The Batch, VentureBeat, MIT Tech Review, Xataka, Hipertextual, El País
+    </footer>
+</body>
+</html>
