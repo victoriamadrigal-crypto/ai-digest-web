@@ -1,184 +1,180 @@
 {
-  "semana": "2026-08-03",
-  "tema": "LLMs para análisis de código legacy y refactorización",
+  "semana": "2026-08-10",
+  "tema": "IA para generación de datos sintéticos de entrenamiento",
   "tip": {
-    "semana": "2026-08-03",
-    "tema": "LLMs para análisis de código legacy y refactorización",
+    "semana": "2026-08-10",
+    "tema": "IA para generación de datos sintéticos de entrenamiento",
     "emoji": "🤖",
-    "titulo": "Refactorización con LLMs",
-    "resumen": "Mejora el código legacy con LLMs",
-    "explicacion": "Los LLMs (Large Language Models) pueden analizar y refactorizar código legacy de manera eficiente. Funciona identificando patrones y sugerencias de mejora en el código, lo que reduce el tiempo y el esfuerzo necesarios para actualizar el código. Se utiliza cuando se necesita refactorizar código antiguo y complejo.",
-    "ejemplo_prompt": "Analyze the following Java method and suggest improvements: public void procesoDatos(List<Object> datos) { ... }. Provide a refactored version with explanations for each change.",
-    "cuando_usarlo": "Cuando se hereda un proyecto legacy, durante la revisión de código y antes de implementar nuevas características",
-    "herramienta": "Todas"
+    "titulo": "Generación de datos con GANs",
+    "resumen": "Crea datos sintéticos con GANs para entrenamiento",
+    "explicacion": "La técnica de Generative Adversarial Networks (GANs) permite generar datos sintéticos que se asemejan a los datos reales, lo que es útil para entrenar modelos de aprendizaje automático cuando hay escasez de datos. Esto funciona porque las GANs consisten en dos redes neuronales que compiten entre sí, una generadora y una discriminadora, lo que permite generar datos que son cada vez más realistas. Esta técnica es especialmente útil cuando se necesita entrenar modelos con conjuntos de datos pequeños o cuando se quiere generar datos para escenarios hipotéticos.",
+    "ejemplo_prompt": "Para generar datos sintéticos de imágenes de perros, puedes utilizar el siguiente comando en Claude: 'genera 100 imágenes de perros con GANs, resolución 256x256, estilo realista'. Luego, puedes entrenar tu modelo de clasificación de imágenes con estos datos sintéticos para mejorar su precisión.",
+    "cuando_usarlo": "Cuando se tienen conjuntos de datos pequeños, cuando se necesita generar datos para escenarios hipotéticos o cuando se quiere reducir el costo de recopilación de datos",
+    "herramienta": "Claude"
   },
   "lecciones": [
     {
-      "id": "extra-32-1",
-      "semana": "2026-08-03",
+      "id": "extra-33-1",
+      "semana": "2026-08-10",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Análisis de Código Legacy",
-      "subtitulo": "Aprenderá a utilizar LLMs para analizar y comprender código legacy",
+      "titulo": "Generación de Datos",
+      "subtitulo": "Aprenderá a generar datos sintéticos con Claude",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Análisis de código asistido por IA",
-        "explicacion": "El análisis de código asistido por IA es una técnica que utiliza modelos de lenguaje para comprender y analizar código legacy. Esta técnica es importante porque permite a los desarrolladores identificar patrones y problemas en el código de manera más eficiente. La IA puede analizar grandes cantidades de código y proporcionar insights valiosos sobre la estructura y el comportamiento del código. Esto es especialmente útil en proyectos legacy donde el código es complejo y difícil de entender. Los modelos de lenguaje pueden aprender a reconocer patrones en el código y proporcionar recomendaciones para mejorar la calidad y la mantenibilidad del código.",
-        "analogia": "Es como tener un asistente personal que revise y comprenda el código por ti, señalando áreas de mejora y optimización",
+        "concepto": "Generación de datos sintéticos",
+        "explicacion": "La generación de datos sintéticos es una técnica utilizada para crear conjuntos de datos artificiales que imitan las características de los datos reales. Esto se logra mediante algoritmos y modelos de aprendizaje automático que generan datos que son similares en estructura y distribución a los datos reales. La generación de datos sintéticos es importante porque permite a los desarrolladores probar y entrenar modelos de aprendizaje automático sin necesidad de recopilar y procesar grandes cantidades de datos reales. Además, la generación de datos sintéticos puede ayudar a proteger la privacidad de los datos reales, ya que no se requiere el uso de datos personales o confidenciales.",
+        "analogia": "La generación de datos sintéticos es similar a la creación de un escenario de simulación en un videojuego. En lugar de utilizar un entorno real, se crea un entorno artificial que imita las condiciones reales.",
         "cuando_usarlo": [
-          "Al heredar un proyecto legacy con código complejo",
-          "Al intentar refactorizar un sistema antiguo",
-          "Al necesitar identificar y corregir errores en el código",
-          "Al querer mejorar la calidad y la mantenibilidad del código"
+          "Cuando se necesita un gran conjunto de datos para entrenar un modelo de aprendizaje automático",
+          "Cuando se quiere proteger la privacidad de los datos reales",
+          "Cuando se necesita simular un escenario o entorno que no se puede replicar en la vida real"
         ]
       },
       "ejemplo": {
-        "caso": "Un equipo de desarrollo hereda un proyecto legacy con código complejo y necesita entender cómo funciona para hacer cambios",
-        "prompt_malo": "Explica cómo funciona este código",
-        "prompt_bueno": "Analiza este código legacy y proporciona un resumen detallado de su estructura, patrones y posibles problemas, incluyendo recomendaciones para mejorar la calidad y la mantenibilidad",
-        "por_que_mejor": "El prompt bueno es más específico y solicita un análisis detallado, lo que permite a la IA proporcionar insights valiosos y relevantes para el proyecto"
+        "caso": "Un desarrollador de software quiere entrenar un modelo de aprendizaje automático para reconocer objetos en imágenes",
+        "prompt_malo": "Genera un conjunto de datos de imágenes de objetos",
+        "prompt_bueno": "Genera un conjunto de datos de 10.000 imágenes de objetos con una variedad de tamaños, formas y colores, y con un ruido de fondo de 20% para simular condiciones reales",
+        "por_que_mejor": "El prompt bueno es mejor porque especifica la cantidad de datos que se necesita, la variedad de objetos y el nivel de ruido de fondo, lo que permite generar un conjunto de datos más realista y útil para entrenar el modelo"
       },
       "practica": {
-        "titulo": "Análisis de Código Legacy con Claude",
-        "objetivo": "Conseguirás analizar y comprender un código legacy utilizando Claude",
-        "prompt_practica": "Actúa como un analista de código experimentado y analiza el siguiente código legacy: https://github.com/ejemplo/codigo-legacy. Proporciona un resumen detallado de su estructura, patrones y posibles problemas, incluyendo recomendaciones para mejorar la calidad y la mantenibilidad. Utiliza Claude para analizar el código y proporcionar insights valiosos. El código es un sistema de gestión de inventario escrito en Java. Debes proporcionar un informe detallado en formato Markdown, incluyendo secciones para introducción, análisis, conclusiones y recomendaciones.",
+        "titulo": "Generación de datos sintéticos de imágenes",
+        "objetivo": "Generar un conjunto de datos de imágenes sintéticas de objetos para entrenar un modelo de aprendizaje automático",
+        "prompt_practica": "Genera un conjunto de datos de 5.000 imágenes de objetos con una variedad de tamaños, formas y colores, y con un ruido de fondo de 15% para simular condiciones reales. Los objetos deben ser de categorías como animales, vehículos y edificios. El conjunto de datos debe ser lo suficientemente grande como para entrenar un modelo de aprendizaje automático para reconocer objetos en imágenes.",
         "pasos": [
-          "Paso 1: Accede a la URL https://claude.ai/ y crea un nuevo proyecto",
-          "Paso 2: Copia y pega el código legacy en el editor de Claude",
-          "Paso 3: Configura las opciones de análisis y selecciona el modelo de lenguaje adecuado para Java",
-          "Paso 4: Ejecuta el análisis y revisa los resultados, identificando patrones y problemas en el código",
-          "Paso 5: Utiliza los insights proporcionados por Claude para crear un informe detallado en formato Markdown"
+          "Paso 1: Acceder a la herramienta Claude y seleccionar la opción de generación de datos sintéticos",
+          "Paso 2: Introducir el prompt de generación de datos y ajustar los parámetros según sea necesario",
+          "Paso 3: Esperar a que la herramienta genere el conjunto de datos y descargarlo en un formato adecuado",
+          "Paso 4: Evaluar la calidad del conjunto de datos generado y refinarlo según sea necesario",
+          "Paso 5: Guardar el conjunto de datos generado y aplicarlo en un modelo de aprendizaje automático para reconocer objetos en imágenes"
         ],
-        "criterio_exito": "Un informe detallado en formato Markdown que analice el código legacy y proporcione recomendaciones para mejorar la calidad y la mantenibilidad"
+        "criterio_exito": "El conjunto de datos generado debe ser lo suficientemente grande y variado como para entrenar un modelo de aprendizaje automático para reconocer objetos en imágenes con una precisión del 90% o superior"
       },
       "recursos": [
-        "Curso de análisis de código asistido por IA en Udemy"
+        "Documentación de la herramienta Claude para generación de datos sintéticos"
       ]
     },
     {
-      "id": "extra-32-2",
-      "semana": "2026-08-03",
+      "id": "extra-33-2",
+      "semana": "2026-08-10",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Refactorización de Código",
-      "subtitulo": "Aprenderá a utilizar LLMs para refactorizar código legacy",
-      "duracion": "25 min",
+      "titulo": "Análisis de Calidad",
+      "subtitulo": "Aprenderá a analizar la calidad de los datos sintéticos con Gemini",
+      "duracion": "20 min",
       "teoria": {
-        "concepto": "Refactorización asistida por IA",
-        "explicacion": "La refactorización asistida por IA es una técnica que utiliza modelos de lenguaje para identificar y aplicar patrones de refactorización en código legacy. Esta técnica es importante porque permite a los desarrolladores mejorar la calidad y la mantenibilidad del código de manera más eficiente. La IA puede analizar el código y proporcionar recomendaciones de refactorización personalizadas para cada proyecto.",
-        "analogia": "Es como tener un asistente personal que te ayude a reorganizar y mejorar el código",
+        "concepto": "Análisis de calidad de datos sintéticos",
+        "explicacion": "El análisis de calidad de datos sintéticos es el proceso de evaluar la calidad y la precisión de los datos generados. Esto es importante porque los datos sintéticos deben ser lo suficientemente realistas y precisos como para ser utilizados en aplicaciones reales. El análisis de calidad de datos sintéticos implica evaluar la distribución de los datos, la presencia de ruido o errores, y la similitud con los datos reales.",
+        "analogia": "El análisis de calidad de datos sintéticos es similar a la revisión de un trabajo de investigación. Se debe evaluar la calidad y la precisión de los resultados para asegurarse de que sean confiables y útiles.",
         "cuando_usarlo": [
-          "Al necesitar mejorar la calidad y la mantenibilidad del código",
-          "Al querer reducir la complejidad del código",
-          "Al intentar aplicar patrones de diseño en el código",
-          "Al necesitar mejorar la performance del código"
+          "Cuando se generan datos sintéticos para entrenar un modelo de aprendizaje automático",
+          "Cuando se necesita evaluar la calidad de los datos sintéticos antes de utilizarlos en una aplicación real",
+          "Cuando se quiere comparar la calidad de diferentes conjuntos de datos sintéticos"
         ]
       },
       "ejemplo": {
-        "caso": "Un equipo de desarrollo necesita refactorizar un sistema legacy para mejorar su performance",
-        "prompt_malo": "Refactoriza este código",
-        "prompt_bueno": "Analiza este código legacy y proporciona recomendaciones de refactorización personalizadas para mejorar su performance y calidad, incluyendo ejemplos de código refactorizado",
-        "por_que_mejor": "El prompt bueno es más específico y solicita recomendaciones de refactorización personalizadas, lo que permite a la IA proporcionar insights valiosos y relevantes para el proyecto"
+        "caso": "Un desarrollador de software quiere evaluar la calidad de un conjunto de datos sintéticos de imágenes de objetos",
+        "prompt_malo": "Evalúa la calidad de los datos",
+        "prompt_bueno": "Evalúa la calidad de los datos sintéticos de imágenes de objetos en términos de precisión, variedad y similitud con los datos reales",
+        "por_que_mejor": "El prompt bueno es mejor porque especifica los criterios de evaluación y permite obtener una evaluación más detallada y precisa de la calidad de los datos"
       },
       "practica": {
-        "titulo": "Refactorización de Código con Gemini",
-        "objetivo": "Conseguirás refactorizar un código legacy utilizando Gemini",
-        "prompt_practica": "Actúa como un desarrollador experimentado y refactoriza el siguiente código legacy: https://github.com/ejemplo/codigo-legacy. Utiliza Gemini para analizar el código y proporcionar recomendaciones de refactorización personalizadas. El código es un sistema de gestión de usuarios escrito en Python. Debes proporcionar un informe detallado en formato Markdown, incluyendo secciones para introducción, análisis, recomendaciones de refactorización y código refactorizado.",
+        "titulo": "Análisis de calidad de datos sintéticos de imágenes",
+        "objetivo": "Evaluar la calidad de un conjunto de datos sintéticos de imágenes de objetos",
+        "prompt_practica": "Evalúa la calidad de un conjunto de datos sintéticos de 1.000 imágenes de objetos en términos de precisión, variedad y similitud con los datos reales. La evaluación debe incluir la medición de la precisión de la clasificación de los objetos, la variedad de los objetos y la similitud con los datos reales. El resultado de la evaluación debe ser un informe detallado que incluya gráficos y estadísticas.",
         "pasos": [
-          "Paso 1: Accede a la URL https://gemini.ai/ y crea un nuevo proyecto",
-          "Paso 2: Copia y pega el código legacy en el editor de Gemini",
-          "Paso 3: Configura las opciones de análisis y selecciona el modelo de lenguaje adecuado para Python",
-          "Paso 4: Ejecuta el análisis y revisa las recomendaciones de refactorización proporcionadas por Gemini",
-          "Paso 5: Aplica las recomendaciones de refactorización y proporciona un informe detallado en formato Markdown"
+          "Paso 1: Acceder a la herramienta Gemini y seleccionar la opción de análisis de calidad de datos sintéticos",
+          "Paso 2: Introducir el conjunto de datos sintéticos y ajustar los parámetros de evaluación según sea necesario",
+          "Paso 3: Esperar a que la herramienta realice la evaluación y genere el informe",
+          "Paso 4: Revisar el informe y evaluar la calidad de los datos sintéticos",
+          "Paso 5: Guardar el informe y aplicar los resultados en la mejora de la generación de datos sintéticos"
         ],
-        "criterio_exito": "Un informe detallado en formato Markdown que proporcione recomendaciones de refactorización personalizadas y código refactorizado"
+        "criterio_exito": "El informe de evaluación debe incluir gráficos y estadísticas que demuestren la calidad de los datos sintéticos y permitan identificar áreas de mejora"
       },
       "recursos": [
-        "Curso de refactorización de código en Coursera"
+        "Documentación de la herramienta Gemini para análisis de calidad de datos sintéticos"
       ]
     },
     {
-      "id": "extra-32-3",
-      "semana": "2026-08-03",
+      "id": "extra-33-3",
+      "semana": "2026-08-10",
       "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Integración de LLMs",
-      "subtitulo": "Aprenderá a integrar LLMs en pipelines de desarrollo",
+      "titulo": "Optimización de Parámetros",
+      "subtitulo": "Aprenderá a optimizar los parámetros de generación de datos sintéticos con Kiro",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Integración de LLMs en pipelines de desarrollo",
-        "explicacion": "La integración de LLMs en pipelines de desarrollo es una técnica que permite a los desarrolladores automatizar tareas de análisis y refactorización de código. Esta técnica es importante porque permite a los equipos de desarrollo mejorar la calidad y la mantenibilidad del código de manera más eficiente. La integración de LLMs en pipelines de desarrollo puede ser realizada utilizando herramientas como Kiro.",
-        "analogia": "Es como tener un robot que te ayude a automatizar tareas de análisis y refactorización de código",
+        "concepto": "Optimización de parámetros de generación de datos sintéticos",
+        "explicacion": "La optimización de parámetros de generación de datos sintéticos es el proceso de ajustar los parámetros de la generación de datos para obtener los mejores resultados posibles. Esto implica encontrar el equilibrio óptimo entre la calidad de los datos y el tiempo de generación. La optimización de parámetros de generación de datos sintéticos es importante porque permite obtener datos de alta calidad de manera eficiente.",
+        "analogia": "La optimización de parámetros de generación de datos sintéticos es similar a la ajuste de los parámetros de una máquina para obtener el mejor rendimiento posible.",
         "cuando_usarlo": [
-          "Al necesitar automatizar tareas de análisis y refactorización de código",
-          "Al querer mejorar la calidad y la mantenibilidad del código",
-          "Al intentar reducir la complejidad del código",
-          "Al necesitar mejorar la performance del código"
+          "Cuando se necesita obtener datos de alta calidad de manera eficiente",
+          "Cuando se quiere reducir el tiempo de generación de datos sintéticos",
+          "Cuando se necesita encontrar el equilibrio óptimo entre la calidad de los datos y el tiempo de generación"
         ]
       },
       "ejemplo": {
-        "caso": "Un equipo de desarrollo necesita integrar LLMs en su pipeline de desarrollo para mejorar la calidad del código",
-        "prompt_malo": "Integra LLMs en nuestro pipeline de desarrollo",
-        "prompt_bueno": "Analiza nuestro pipeline de desarrollo y proporciona recomendaciones para integrar LLMs de manera efectiva, incluyendo ejemplos de código y configuraciones",
-        "por_que_mejor": "El prompt bueno es más específico y solicita recomendaciones para integrar LLMs de manera efectiva, lo que permite a la IA proporcionar insights valiosos y relevantes para el proyecto"
+        "caso": "Un desarrollador de software quiere optimizar los parámetros de generación de datos sintéticos de imágenes de objetos",
+        "prompt_malo": "Optimiza los parámetros de generación de datos",
+        "prompt_bueno": "Optimiza los parámetros de generación de datos sintéticos de imágenes de objetos para obtener la mejor calidad posible en un tiempo de generación de 10 minutos",
+        "por_que_mejor": "El prompt bueno es mejor porque especifica el objetivo de la optimización y el tiempo de generación, lo que permite obtener los mejores resultados posibles"
       },
       "practica": {
-        "titulo": "Integración de LLMs con Kiro",
-        "objetivo": "Conseguirás integrar LLMs en un pipeline de desarrollo utilizando Kiro",
-        "prompt_practica": "Actúa como un desarrollador experimentado y integra LLMs en el siguiente pipeline de desarrollo: https://github.com/ejemplo/pipeline-de-desarrollo. Utiliza Kiro para analizar el pipeline y proporcionar recomendaciones para integrar LLMs de manera efectiva. El pipeline es para un proyecto de desarrollo de software escrito en Java. Debes proporcionar un informe detallado en formato Markdown, incluyendo secciones para introducción, análisis, recomendaciones de integración y configuraciones.",
+        "titulo": "Optimización de parámetros de generación de datos sintéticos de imágenes",
+        "objetivo": "Optimizar los parámetros de generación de datos sintéticos de imágenes de objetos para obtener la mejor calidad posible",
+        "prompt_practica": "Optimiza los parámetros de generación de datos sintéticos de 1.000 imágenes de objetos para obtener la mejor calidad posible en un tiempo de generación de 5 minutos. La optimización debe incluir la ajuste de los parámetros de generación de datos, como la resolución de la imagen, el número de objetos y el nivel de ruido. El resultado de la optimización debe ser un conjunto de parámetros óptimos que permitan obtener la mejor calidad posible en el tiempo de generación especificado.",
         "pasos": [
-          "Paso 1: Accede a la URL https://kiro.ai/ y crea un nuevo proyecto",
-          "Paso 2: Copia y pega el pipeline de desarrollo en el editor de Kiro",
-          "Paso 3: Configura las opciones de análisis y selecciona el modelo de lenguaje adecuado para Java",
-          "Paso 4: Ejecuta el análisis y revisa las recomendaciones de integración proporcionadas por Kiro",
-          "Paso 5: Aplica las recomendaciones de integración y proporciona un informe detallado en formato Markdown"
+          "Paso 1: Acceder a la herramienta Kiro y seleccionar la opción de optimización de parámetros de generación de datos sintéticos",
+          "Paso 2: Introducir el conjunto de datos sintéticos y ajustar los parámetros de generación según sea necesario",
+          "Paso 3: Esperar a que la herramienta realice la optimización y genere el conjunto de parámetros óptimos",
+          "Paso 4: Revisar los parámetros óptimos y evaluar la calidad de los datos sintéticos",
+          "Paso 5: Guardar los parámetros óptimos y aplicarlos en la generación de datos sintéticos"
         ],
-        "criterio_exito": "Un informe detallado en formato Markdown que proporcione recomendaciones para integrar LLMs de manera efectiva y configuraciones"
+        "criterio_exito": "El conjunto de parámetros óptimos debe permitir obtener la mejor calidad posible en el tiempo de generación especificado"
       },
       "recursos": [
-        "Curso de integración de LLMs en pipelines de desarrollo en edX"
+        "Documentación de la herramienta Kiro para optimización de parámetros de generación de datos sintéticos"
       ]
     },
     {
-      "id": "extra-32-4",
-      "semana": "2026-08-03",
-      "herramienta": "Claude",
+      "id": "extra-33-4",
+      "semana": "2026-08-10",
+      "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Monitoreo de Calidad",
-      "subtitulo": "Aprenderá a utilizar LLMs para monitorear la calidad del código",
-      "duracion": "25 min",
+      "titulo": "Integración con Modelos",
+      "subtitulo": "Aprenderá a integrar los datos sintéticos con modelos de aprendizaje automático",
+      "duracion": "30 min",
       "teoria": {
-        "concepto": "Monitoreo de calidad del código asistido por IA",
-        "explicacion": "El monitoreo de calidad del código asistido por IA es una técnica que utiliza modelos de lenguaje para analizar y evaluar la calidad del código. Esta técnica es importante porque permite a los desarrolladores identificar problemas de calidad en el código de manera más eficiente. La IA puede analizar el código y proporcionar insights valiosos sobre la calidad y la mantenibilidad del código.",
-        "analogia": "Es como tener un asistente personal que revise y evalúe la calidad del código",
+        "concepto": "Integración de datos sintéticos con modelos de aprendizaje automático",
+        "explicacion": "La integración de datos sintéticos con modelos de aprendizaje automático es el proceso de utilizar los datos sintéticos para entrenar y evaluar modelos de aprendizaje automático. Esto implica integrar los datos sintéticos con el modelo de aprendizaje automático y ajustar los parámetros del modelo para obtener los mejores resultados posibles.",
+        "analogia": "La integración de datos sintéticos con modelos de aprendizaje automático es similar a la integración de un nuevo componente en un sistema existente.",
         "cuando_usarlo": [
-          "Al necesitar evaluar la calidad del código",
-          "Al querer mejorar la calidad y la mantenibilidad del código",
-          "Al intentar reducir la complejidad del código",
-          "Al necesitar mejorar la performance del código"
+          "Cuando se necesita entrenar un modelo de aprendizaje automático con datos sintéticos",
+          "Cuando se quiere evaluar el rendimiento de un modelo de aprendizaje automático con datos sintéticos",
+          "Cuando se necesita integrar los datos sintéticos con un modelo de aprendizaje automático existente"
         ]
       },
       "ejemplo": {
-        "caso": "Un equipo de desarrollo necesita evaluar la calidad del código para un proyecto de desarrollo de software",
-        "prompt_malo": "Evalúa la calidad del código",
-        "prompt_bueno": "Analiza el código y proporciona un informe detallado sobre la calidad, incluyendo métricas y recomendaciones para mejorar la calidad y la mantenibilidad",
-        "por_que_mejor": "El prompt bueno es más específico y solicita un informe detallado sobre la calidad, lo que permite a la IA proporcionar insights valiosos y relevantes para el proyecto"
+        "caso": "Un desarrollador de software quiere integrar los datos sintéticos de imágenes de objetos con un modelo de aprendizaje automático para reconocer objetos",
+        "prompt_malo": "Integra los datos sintéticos con el modelo",
+        "prompt_bueno": "Integra los datos sintéticos de 1.000 imágenes de objetos con un modelo de aprendizaje automático para reconocer objetos y ajusta los parámetros del modelo para obtener la mejor precisión posible",
+        "por_que_mejor": "El prompt bueno es mejor porque especifica el objetivo de la integración y los parámetros del modelo, lo que permite obtener los mejores resultados posibles"
       },
       "practica": {
-        "titulo": "Monitoreo de Calidad con Claude",
-        "objetivo": "Conseguirás evaluar la calidad del código utilizando Claude",
-        "prompt_practica": "Actúa como un desarrollador experimentado y evalúa la calidad del siguiente código: https://github.com/ejemplo/codigo-de-ejemplo. Utiliza Claude para analizar el código y proporcionar un informe detallado sobre la calidad, incluyendo métricas y recomendaciones para mejorar la calidad y la mantenibilidad. El código es un sistema de gestión de inventario escrito en Java. Debes proporcionar un informe detallado en formato Markdown, incluyendo secciones para introducción, análisis, métricas y recomendaciones.",
+        "titulo": "Integración de datos sintéticos con un modelo de aprendizaje automático",
+        "objetivo": "Integrar los datos sintéticos de imágenes de objetos con un modelo de aprendizaje automático para reconocer objetos",
+        "prompt_practica": "Integra los datos sintéticos de 1.000 imágenes de objetos con un modelo de aprendizaje automático para reconocer objetos y ajusta los parámetros del modelo para obtener la mejor precisión posible. La integración debe incluir la carga de los datos sintéticos, la configuración del modelo y la evaluación del rendimiento del modelo. El resultado de la integración debe ser un modelo de aprendizaje automático que pueda reconocer objetos en imágenes con una precisión del 90% o superior.",
         "pasos": [
-          "Paso 1: Accede a la URL https://claude.ai/ y crea un nuevo proyecto",
-          "Paso 2: Copia y pega el código en el editor de Claude",
-          "Paso 3: Configura las opciones de análisis y selecciona el modelo de lenguaje adecuado para Java",
-          "Paso 4: Ejecuta el análisis y revisa el informe detallado sobre la calidad proporcionado por Claude",
-          "Paso 5: Utiliza el informe para mejorar la calidad y la mantenibilidad del código"
+          "Paso 1: Acceder a la herramienta Kiro y seleccionar la opción de integración de datos sintéticos con modelos de aprendizaje automático",
+          "Paso 2: Introducir el conjunto de datos sintéticos y el modelo de aprendizaje automático",
+          "Paso 3: Esperar a que la herramienta realice la integración y ajuste los parámetros del modelo",
+          "Paso 4: Revisar el rendimiento del modelo y evaluar la precisión",
+          "Paso 5: Guardar el modelo y aplicarlo en la reconocimiento de objetos en imágenes"
         ],
-        "criterio_exito": "Un informe detallado en formato Markdown que evalúe la calidad del código y proporcione recomendaciones para mejorar la calidad y la mantenibilidad"
+        "criterio_exito": "El modelo de aprendizaje automático debe ser capaz de reconocer objetos en imágenes con una precisión del 90% o superior"
       },
       "recursos": [
-        "Curso de monitoreo de calidad del código en Pluralsight"
+        "Documentación de la herramienta Kiro para integración de datos sintéticos con modelos de aprendizaje automático"
       ]
     }
   ]

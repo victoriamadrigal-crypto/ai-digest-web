@@ -598,5 +598,45 @@
     "titulo": "Monitoreo de Calidad",
     "subtitulo": "Aprenderá a utilizar LLMs para monitorear la calidad del código",
     "duracion": "25 min"
+  },
+  {
+    "semana": "2026-08-10",
+    "tema": "IA para generación de datos sintéticos de entrenamiento",
+    "id": "extra-33-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Generación de Datos",
+    "subtitulo": "Aprenderá a generar datos sintéticos con Claude",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-08-10",
+    "tema": "IA para generación de datos sintéticos de entrenamiento",
+    "id": "extra-33-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Análisis de Calidad",
+    "subtitulo": "Aprenderá a analizar la calidad de los datos sintéticos con Gemini",
+    "duracion": "20 min"
+  },
+  {
+    "semana": "2026-08-10",
+    "tema": "IA para generación de datos sintéticos de entrenamiento",
+    "id": "extra-33-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Optimización de Parámetros",
+    "subtitulo": "Aprenderá a optimizar los parámetros de generación de datos sintéticos con Kiro",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-08-10",
+    "tema": "IA para generación de datos sintéticos de entrenamiento",
+    "id": "extra-33-4",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Integración con Modelos",
+    "subtitulo": "Aprenderá a integrar los datos sintéticos con modelos de aprendizaje automático",
+    "duracion": "30 min"
   }
 ]
