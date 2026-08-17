@@ -1,93 +1,93 @@
 {
-  "semana": "2026-08-10",
-  "num_semana": 33,
-  "tema": "IA para revisión, mejora y feedback de documentos",
-  "titulo": "Mejora Documental",
-  "descripcion": "Optimiza documentos con IA",
+  "semana": "2026-08-17",
+  "num_semana": 34,
+  "tema": "uso de IA en reuniones: preparación, síntesis y seguimiento",
+  "titulo": "Reuniones Inteligentes",
+  "descripcion": "Mejora la productividad",
   "ejercicios": [
     {
       "id": 1,
       "herramienta": "Claude",
       "nivel": "Basico",
-      "titulo": "Revisión Básica",
-      "objetivo": "Aprender a utilizar Claude para revisar documentos básicos",
-      "contexto": "Este ejercicio es útil para entender cómo la IA puede ayudar a mejorar la calidad de los documentos. En el trabajo, es común necesitar revisar y editar documentos para asegurar su claridad y precisión. Este ejercicio introduce al usuario en cómo Claude puede ser una herramienta valiosa en este proceso.",
-      "prompt_ejemplo": "Eres un asesor de comunicación en una empresa de tecnología. Necesitas revisar el siguiente documento para asegurarte de que es claro y conciso: 'La implementación de la inteligencia artificial en nuestros productos es crucial para mantenernos competitivos en el mercado. Sin embargo, la falta de regulación en este ámbito puede generar riesgos para la privacidad de los usuarios.' Por favor, proporciona un feedback detallado sobre la claridad, la concisión y la coherencia del texto, y sugiere mejoras específicas. El formato de la respuesta debe incluir tres puntos: introducción, análisis y recomendaciones.",
+      "titulo": "Preparación",
+      "objetivo": "Aprender a generar resúmenes de reuniones",
+      "contexto": "En el trabajo, es común necesitar resumir reuniones para informar a los ausentes o para revisar lo acordado. Este ejercicio te enseñará a usar IA para automatizar este proceso, ahorrando tiempo y reduciendo errores. Además, mejorarás la comunicación interna y externa, garantizando que todos estén alineados con los objetivos y acciones acordadas.",
+      "prompt_ejemplo": "Actúa como asistente personal de un director ejecutivo. Resumen la reunión de la junta directiva del pasado jueves, donde se discutieron los resultados financieros del segundo trimestre, la expansión a nuevos mercados y la implementación de nuevas tecnologías. Incluye los puntos de acción para cada departamento y las fechas límite. Presenta el resumen en un formato de lista con viñetas, sin incluir opiniones personales y manteniendo un tono profesional. La reunión duró aproximadamente 2 horas y contó con la participación de 10 miembros de la junta.",
       "pasos": [
-        "Ve a https://claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Sign Up' en la esquina superior derecha.",
-        "Una vez dentro, haz clic en el botón 'New Prompt' en la esquina superior izquierda. Verás un campo de texto grande donde puedes escribir o pegar tu prompt.",
+        "Ve a https://claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Crear cuenta'.",
+        "Una vez dentro, haz clic en 'Crear nuevo prompt'. Verás un campo de texto grande donde puedes ingresar tu prompt.",
         "Copia el prompt de ejemplo que aparece arriba en esta lección.",
-        "Pégalo en el campo de texto principal. Antes de enviarlo, sustituye 'La implementación...' por un texto real que necesites revisar.",
+        "Pégalo en el campo de texto 'Prompt'. Antes de enviarlo, sustituye 'pasado jueves' por la fecha real de la reunión que deseas resumir.",
         "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
-        "Lee la respuesta y evalúa si las sugerencias de mejora son relevantes y útiles. Si no cumple, prueba añadir al final del prompt: 'Proporciona ejemplos concretos de cómo mejorar la claridad.'",
+        "Lee la respuesta y evalúa: si el resumen incluye los puntos de acción, las fechas límite y está libre de opiniones personales. Si no cumple, prueba añadir al final del prompt: 'Asegúrate de incluir solo hechos y no expresar opiniones'.",
         "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
       ],
-      "criterio_exito": "Recibir una respuesta que ofrezca al menos tres sugerencias concretas de mejora para el documento de ejemplo",
+      "criterio_exito": "El resumen generado incluye todos los puntos clave de la reunión, como resultados financieros, expansión a nuevos mercados y puntos de acción, sin opiniones personales.",
       "tiempo_estimado": "15 min",
-      "consejo_pro": "Utiliza la función de 'historial' de Claude para comparar diferentes versiones de tus prompts y ver cómo afectan los resultados, lo que puede ayudarte a afinar tus habilidades para formular preguntas efectivas."
+      "consejo_pro": "Para mejorar la precisión del resumen, proporciona más contexto sobre la reunión, como los nombres de los participantes y los temas específicos discutidos."
     },
     {
       "id": 2,
       "herramienta": "Gemini",
       "nivel": "Basico",
-      "titulo": "Análisis de Contenido",
-      "objetivo": "Aprender a utilizar Gemini para analizar el contenido de documentos",
-      "contexto": "Este ejercicio es útil para entender cómo la IA puede ayudar a analizar y comprender el contenido de los documentos. En el trabajo, es común necesitar resumir o analizar grandes cantidades de texto para tomar decisiones informadas. Este ejercicio introduce al usuario en cómo Gemini puede ser una herramienta valiosa en este proceso.",
-      "prompt_ejemplo": "Tienes un informe de 10 páginas sobre tendencias de mercado y necesitas un resumen de 200 palabras que cubra los puntos clave. El informe comienza así: 'El mercado de la inteligencia artificial ha experimentado un crecimiento significativo en los últimos años, impulsado por la adopción de tecnologías como el aprendizaje automático y el procesamiento del lenguaje natural.' Por favor, proporciona un resumen que incluya las tendencias actuales, los desafíos y las oportunidades futuras en este ámbito.",
+      "titulo": "Síntesis",
+      "objetivo": "Aprender a sintetizar notas de reuniones",
+      "contexto": "La síntesis de notas de reuniones es crucial para capturar la esencia de las discusiones y acuerdos. Este ejercicio te enseñará a usar IA para sintetizar notas de reuniones de manera efectiva, permitiéndote identificar los puntos clave y acciones pendientes de forma rápida y precisa.",
+      "prompt_ejemplo": "Sintetiza las siguientes notas de la reunión de equipo de ventas del lunes: 'Discutimos el aumento de las ventas en un 10% en el último trimestre. Se acordó aumentar la publicidad en redes sociales y ofrecer descuentos especiales para los clientes leales. Los puntos de acción incluyen: investigación de mercado para el nuevo producto, creación de contenido de marketing y seguimiento de las ventas actuales. La reunión contó con la participación de 5 miembros del equipo de ventas y duró 1 hora y 30 minutos.' Presenta la síntesis en 50 palabras o menos, enfocándote en los puntos de acción y resultados clave.",
       "pasos": [
-        "Ve a https://gemini.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Sign Up' en la esquina superior derecha.",
-        "Una vez dentro, haz clic en el botón 'New Query' en la esquina superior izquierda. Verás un campo de texto donde puedes escribir o pegar tu prompt.",
+        "Ve a https://gemini.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Iniciar sesión con Google' o 'Crear cuenta'.",
+        "Una vez dentro, haz clic en 'Crear nuevo prompt'. Verás un campo de texto donde puedes ingresar tu prompt.",
         "Copia el prompt de ejemplo que aparece arriba en esta lección.",
-        "Pégalo en el campo de texto principal. Antes de enviarlo, sustituye 'El mercado...' por un texto real que necesites resumir.",
-        "Haz clic en el botón 'Run' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
-        "Lee la respuesta y evalúa si el resumen cubre los puntos clave del texto original. Si no cumple, prueba añadir al final del prompt: 'Incluye estadísticas y ejemplos concretos.'",
-        "Guarda el resumen que más te guste copiándolo a un documento o nota para referencia futura."
+        "Pégalo en el campo de texto 'Prompt'. Antes de enviarlo, ajusta el límite de palabras según tus necesidades.",
+        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
+        "Lee la respuesta y evalúa: si la síntesis captura los puntos de acción y resultados clave dentro del límite de palabras. Si no cumple, prueba ajustar el prompt para enfocarte en los aspectos más importantes.",
+        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
       ],
-      "criterio_exito": "Recibir un resumen que cubra al menos tres puntos clave del texto original",
-      "tiempo_estimado": "15 min",
-      "consejo_pro": "Utiliza la función de 'análisis de entidad' de Gemini para identificar y resaltar las entidades clave mencionadas en el texto, lo que puede ayudar a mejorar la comprensión del contenido."
+      "criterio_exito": "La síntesis generada incluye los puntos de acción y resultados clave dentro del límite de palabras especificado.",
+      "tiempo_estimado": "10 min",
+      "consejo_pro": "Para mejorar la calidad de la síntesis, proporciona notas de reuniones más detalladas y claras, incluyendo fechas, nombres y objetivos específicos."
     },
     {
       "id": 3,
       "herramienta": "Kiro",
       "nivel": "Intermedio",
-      "titulo": "Mejora de Documentos Técnicos",
-      "objetivo": "Aprender a utilizar Kiro para mejorar la calidad de documentos técnicos",
-      "contexto": "Este ejercicio es útil para entender cómo la IA puede ayudar a mejorar la claridad y precisión de los documentos técnicos. En el trabajo, es común necesitar revisar y editar documentos técnicos para asegurar su exactitud y coherencia. Este ejercicio introduce al usuario en cómo Kiro puede ser una herramienta valiosa en este proceso.",
-      "prompt_ejemplo": "Eres un ingeniero de software y necesitas revisar un documento técnico sobre la arquitectura de un sistema de inteligencia artificial. El documento incluye secciones sobre el diseño del sistema, la implementación de algoritmos y la integración con otros sistemas. Por favor, proporciona un feedback detallado sobre la claridad, la concisión y la coherencia del texto, y sugiere mejoras específicas para cada sección. El formato de la respuesta debe incluir cinco puntos: introducción, análisis del diseño, análisis de la implementación, análisis de la integración y recomendaciones.",
+      "titulo": "Seguimiento",
+      "objetivo": "Aprender a generar planes de seguimiento para reuniones",
+      "contexto": "El seguimiento adecuado después de una reunión es crucial para garantizar que los acuerdos y acciones se implementen. Este ejercicio te enseñará a usar IA para generar planes de seguimiento personalizados para reuniones, ayudándote a mantener el ritmo y asegurarte de que todos los involucrados estén alineados con los objetivos y plazos.",
+      "prompt_ejemplo": "Genera un plan de seguimiento para la reunión de la junta directiva del próximo miércoles, donde se discutirán los resultados del tercer trimestre y se tomarán decisiones sobre la expansión a nuevos mercados. El plan debe incluir: recordatorios para los participantes, fechas límite para la entrega de informes y una lista de verificación para el día de la reunión. Presenta el plan en un formato de calendario, con espacios para notas adicionales.",
       "pasos": [
-        "Ve a https://kiro.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Sign Up' en la esquina superior derecha.",
-        "Una vez dentro, haz clic en el botón 'New Project' en la esquina superior izquierda. Verás un campo de texto donde puedes escribir o pegar tu prompt.",
+        "Ve a https://kiro.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Unirse'.",
+        "Una vez dentro, haz clic en 'Crear nuevo proyecto'. Verás un formulario donde puedes ingresar los detalles de tu proyecto.",
         "Copia el prompt de ejemplo que aparece arriba en esta lección.",
-        "Pégalo en el campo de texto principal. Antes de enviarlo, sustituye 'Eres un ingeniero...' por un texto real que necesites revisar.",
-        "Haz clic en el botón 'Start' o pulsa Ctrl+Enter. Espera entre 10 y 30 segundos a que aparezca la respuesta.",
-        "Lee la respuesta y evalúa si las sugerencias de mejora son relevantes y útiles para cada sección del documento. Si no cumple, prueba añadir al final del prompt: 'Incluye diagramas y ejemplos concretos para ilustrar los conceptos técnicos.'",
-        "Guarda la respuesta que más te guste copiándola a un documento o nota para referencia futura."
+        "Pégalo en el campo de texto 'Descripción del proyecto'. Antes de continuar, ajusta las fechas y detalles según la reunión que deseas planificar.",
+        "Haz clic en el botón 'Crear proyecto'. Espera unos segundos a que se cree el proyecto.",
+        "Explora las secciones del proyecto, como 'Recordatorios' y 'Lista de verificación', y ajusta según sea necesario.",
+        "Guarda el proyecto y compártelo con los participantes de la reunión para asegurar que todos estén alineados con el plan de seguimiento."
       ],
-      "criterio_exito": "Recibir un feedback que ofrezca al menos cinco sugerencias concretas de mejora para el documento técnico",
-      "tiempo_estimado": "30 min",
-      "consejo_pro": "Utiliza la función de 'análisis de requisitos' de Kiro para identificar y resaltar los requisitos específicos mencionados en el documento, lo que puede ayudar a mejorar la precisión y coherencia del texto."
+      "criterio_exito": "El plan de seguimiento generado incluye recordatorios, fechas límite y una lista de verificación adecuados para la reunión planificada.",
+      "tiempo_estimado": "20 min",
+      "consejo_pro": "Para mejorar la efectividad del plan de seguimiento, integra herramientas de colaboración y comunicación, como calendarios compartidos y canales de chat, para mantener a todos informados y actualizados."
     },
     {
       "id": 4,
       "herramienta": "Claude",
       "nivel": "Intermedio",
-      "titulo": "Generación de Informes",
-      "objetivo": "Aprender a utilizar Claude para generar informes personalizados",
-      "contexto": "Este ejercicio es útil para entender cómo la IA puede ayudar a generar informes personalizados y detallados a partir de datos y requisitos específicos. En el trabajo, es común necesitar crear informes para diferentes audiencias y propósitos. Este ejercicio introduce al usuario en cómo Claude puede ser una herramienta valiosa en este proceso.",
-      "prompt_ejemplo": "Necesitas generar un informe para el equipo de marketing sobre las tendencias actuales en las redes sociales. El informe debe incluir secciones sobre el análisis de la competencia, el comportamiento de los usuarios y las recomendaciones para campañas futuras. Por favor, proporciona un informe detallado que incluya gráficos, estadísticas y ejemplos concretos. El formato de la respuesta debe incluir seis puntos: introducción, análisis de la competencia, análisis del comportamiento de los usuarios, recomendaciones, conclusiones y referencias.",
+      "titulo": "Análisis de Reuniones",
+      "objetivo": "Aprender a analizar la efectividad de las reuniones",
+      "contexto": "Analizar la efectividad de las reuniones es esencial para identificar áreas de mejora y optimizar el tiempo y los recursos. Este ejercicio te enseñará a usar IA para analizar la efectividad de las reuniones, evaluando aspectos como la productividad, la participación y el logro de objetivos.",
+      "prompt_ejemplo": "Analiza la efectividad de la reunión de equipo de marketing del viernes pasado, donde se discutió la campaña publicitaria para el nuevo producto. La reunión duró 2 horas y contó con la participación de 8 miembros del equipo. Evaluación: productividad, participación y logro de objetivos. Presenta el análisis en un formato de informe, incluyendo recomendaciones para mejorar la efectividad de las reuniones futuras.",
       "pasos": [
-        "Ve a https://claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en el botón 'Sign Up' en la esquina superior derecha.",
-        "Una vez dentro, haz clic en el botón 'New Prompt' en la esquina superior izquierda. Verás un campo de texto donde puedes escribir o pegar tu prompt.",
+        "Ve a https://claude.ai/. Si no tienes cuenta, regístrate gratis haciendo clic en 'Crear cuenta'.",
+        "Una vez dentro, haz clic en 'Crear nuevo prompt'. Verás un campo de texto grande donde puedes ingresar tu prompt.",
         "Copia el prompt de ejemplo que aparece arriba en esta lección.",
-        "Pégalo en el campo de texto principal. Antes de enviarlo, sustituye 'Necesitas generar...' por un texto real que necesites informar.",
-        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 10 y 30 segundos a que aparezca la respuesta.",
-        "Lee la respuesta y evalúa si el informe cubre los puntos clave solicitados. Si no cumple, prueba añadir al final del prompt: 'Incluye una sección de conclusiones que resuma los hallazgos clave.'",
-        "Guarda el informe que más te guste copiándolo a un documento o nota para referencia futura."
+        "Pégalo en el campo de texto 'Prompt'. Antes de enviarlo, ajusta los detalles de la reunión según sea necesario.",
+        "Haz clic en el botón 'Enviar' o pulsa Ctrl+Enter. Espera entre 5 y 15 segundos a que aparezca la respuesta.",
+        "Lee la respuesta y evalúa: si el análisis incluye una evaluación clara de la productividad, participación y logro de objetivos, junto con recomendaciones prácticas para mejorar. Si no cumple, prueba agregar más contexto o detalles sobre la reunión.",
+        "Guarda el análisis que más te guste copiándolo a un documento o nota para referencia futura y planificación de reuniones más efectivas."
       ],
-      "criterio_exito": "Recibir un informe que incluya al menos seis secciones y cubra los puntos clave solicitados",
-      "tiempo_estimado": "30 min",
-      "consejo_pro": "Utiliza la función de 'personalización' de Claude para adaptar el tono, el estilo y el lenguaje del informe a la audiencia específica a la que va dirigido, lo que puede ayudar a mejorar la efectividad del informe."
+      "criterio_exito": "El análisis generado incluye una evaluación clara de la productividad, participación y logro de objetivos, junto con recomendaciones prácticas para mejorar la efectividad de las reuniones futuras.",
+      "tiempo_estimado": "25 min",
+      "consejo_pro": "Para profundizar en el análisis, considera integrar datos adicionales, como encuestas de satisfacción de los participantes o métricas de desempeño del equipo, para obtener una visión más completa de la efectividad de las reuniones."
     }
   ]
 }
