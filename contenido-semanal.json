@@ -1,180 +1,188 @@
 {
-  "semana": "2026-08-10",
-  "tema": "IA para generación de datos sintéticos de entrenamiento",
+  "semana": "2026-08-17",
+  "tema": "optimización de costes en pipelines de IA",
   "tip": {
-    "semana": "2026-08-10",
-    "tema": "IA para generación de datos sintéticos de entrenamiento",
-    "emoji": "🤖",
-    "titulo": "Generación de datos con GANs",
-    "resumen": "Crea datos sintéticos con GANs para entrenamiento",
-    "explicacion": "La técnica de Generative Adversarial Networks (GANs) permite generar datos sintéticos que se asemejan a los datos reales, lo que es útil para entrenar modelos de aprendizaje automático cuando hay escasez de datos. Esto funciona porque las GANs consisten en dos redes neuronales que compiten entre sí, una generadora y una discriminadora, lo que permite generar datos que son cada vez más realistas. Esta técnica es especialmente útil cuando se necesita entrenar modelos con conjuntos de datos pequeños o cuando se quiere generar datos para escenarios hipotéticos.",
-    "ejemplo_prompt": "Para generar datos sintéticos de imágenes de perros, puedes utilizar el siguiente comando en Claude: 'genera 100 imágenes de perros con GANs, resolución 256x256, estilo realista'. Luego, puedes entrenar tu modelo de clasificación de imágenes con estos datos sintéticos para mejorar su precisión.",
-    "cuando_usarlo": "Cuando se tienen conjuntos de datos pequeños, cuando se necesita generar datos para escenarios hipotéticos o cuando se quiere reducir el costo de recopilación de datos",
-    "herramienta": "Claude"
+    "semana": "2026-08-17",
+    "tema": "optimización de costes en pipelines de IA",
+    "emoji": "💡",
+    "titulo": "Optimización de Costes con Pruning",
+    "resumen": "Reduce costes con pruning selectivo",
+    "explicacion": "La técnica de pruning selectivo permite eliminar partes no esenciales de los modelos de IA sin afectar significativamente su precisión, lo que reduce el consumo de recursos y costes. Esto funciona bien cuando se tienen modelos grandes y complejos. Se puede aplicar en fases de entrenamiento y despliegue.",
+    "ejemplo_prompt": "Utiliza el comando `torch.nn.utils.prune` en PyTorch para aplicar pruning a las capas convolucionales de una red neuronal, por ejemplo: `prune.l1_unstructured(module='conv1', name='weight', amount=0.2)` para eliminar el 20% de los pesos con menor importancia en la capa 'conv1'.",
+    "cuando_usarlo": "Cuando se está trabajando con modelos de IA de gran escala, cuando se necesita reducir el tamaño del modelo para despliegue en dispositivos edge, o cuando se busca minimizar los costes de cómputo en la nube",
+    "herramienta": "Todas"
   },
   "lecciones": [
     {
-      "id": "extra-33-1",
-      "semana": "2026-08-10",
+      "id": "extra-34-1",
+      "semana": "2026-08-17",
       "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Generación de Datos",
-      "subtitulo": "Aprenderá a generar datos sintéticos con Claude",
+      "titulo": "Optimización Costos",
+      "subtitulo": "Aprenderá a reducir costos en pipelines de IA",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Generación de datos sintéticos",
-        "explicacion": "La generación de datos sintéticos es una técnica utilizada para crear conjuntos de datos artificiales que imitan las características de los datos reales. Esto se logra mediante algoritmos y modelos de aprendizaje automático que generan datos que son similares en estructura y distribución a los datos reales. La generación de datos sintéticos es importante porque permite a los desarrolladores probar y entrenar modelos de aprendizaje automático sin necesidad de recopilar y procesar grandes cantidades de datos reales. Además, la generación de datos sintéticos puede ayudar a proteger la privacidad de los datos reales, ya que no se requiere el uso de datos personales o confidenciales.",
-        "analogia": "La generación de datos sintéticos es similar a la creación de un escenario de simulación en un videojuego. En lugar de utilizar un entorno real, se crea un entorno artificial que imita las condiciones reales.",
+        "concepto": "Optimización de Costos",
+        "explicacion": "La optimización de costos es crucial en el desarrollo de pipelines de IA. Esto se debe a que los modelos de IA requieren grandes cantidades de datos y recursos computacionales, lo que puede resultar costoso. La optimización de costos implica identificar áreas donde se pueden reducir los gastos sin comprometer el rendimiento del modelo. Esto puede lograrse mediante la selección de hardware y software adecuados, la optimización de los algoritmos de entrenamiento y la reducción del tamaño de los modelos. La optimización de costos es importante porque permite a las empresas desarrollar modelos de IA más eficientes y rentables.",
+        "analogia": "La optimización de costos en pipelines de IA es similar a la optimización de un presupuesto personal. Al igual que se busca reducir los gastos innecesarios en un presupuesto personal, la optimización de costos en pipelines de IA busca reducir los gastos innecesarios en recursos computacionales y datos.",
         "cuando_usarlo": [
-          "Cuando se necesita un gran conjunto de datos para entrenar un modelo de aprendizaje automático",
-          "Cuando se quiere proteger la privacidad de los datos reales",
-          "Cuando se necesita simular un escenario o entorno que no se puede replicar en la vida real"
+          "Cuando se está desarrollando un modelo de IA que requiere grandes cantidades de datos y recursos computacionales",
+          "Cuando se busca reducir los costos de mantenimiento de un modelo de IA existente",
+          "Cuando se está evaluando la viabilidad de un proyecto de IA",
+          "Cuando se busca mejorar la eficiencia de un pipeline de IA"
         ]
       },
       "ejemplo": {
-        "caso": "Un desarrollador de software quiere entrenar un modelo de aprendizaje automático para reconocer objetos en imágenes",
-        "prompt_malo": "Genera un conjunto de datos de imágenes de objetos",
-        "prompt_bueno": "Genera un conjunto de datos de 10.000 imágenes de objetos con una variedad de tamaños, formas y colores, y con un ruido de fondo de 20% para simular condiciones reales",
-        "por_que_mejor": "El prompt bueno es mejor porque especifica la cantidad de datos que se necesita, la variedad de objetos y el nivel de ruido de fondo, lo que permite generar un conjunto de datos más realista y útil para entrenar el modelo"
+        "caso": "Un equipo de desarrollo de IA está trabajando en un proyecto de clasificación de imágenes. El modelo requiere grandes cantidades de datos y recursos computacionales, lo que resulta costoso.",
+        "prompt_malo": "Optimiza el costo del modelo de clasificación de imágenes",
+        "prompt_bueno": "Optimiza el costo del modelo de clasificación de imágenes utilizando técnicas de reducción de dimensionalidad y selección de características, y evalúa el impacto en el rendimiento del modelo",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona una solución específica y detallada para optimizar el costo del modelo, en lugar de una solicitud genérica."
       },
       "practica": {
-        "titulo": "Generación de datos sintéticos de imágenes",
-        "objetivo": "Generar un conjunto de datos de imágenes sintéticas de objetos para entrenar un modelo de aprendizaje automático",
-        "prompt_practica": "Genera un conjunto de datos de 5.000 imágenes de objetos con una variedad de tamaños, formas y colores, y con un ruido de fondo de 15% para simular condiciones reales. Los objetos deben ser de categorías como animales, vehículos y edificios. El conjunto de datos debe ser lo suficientemente grande como para entrenar un modelo de aprendizaje automático para reconocer objetos en imágenes.",
+        "titulo": "Optimización de Costos en un Pipeline de IA",
+        "objetivo": "Reducir los costos de un pipeline de IA sin comprometer el rendimiento",
+        "prompt_practica": "Eres un desarrollador de IA que trabaja en un proyecto de clasificación de texto. El modelo requiere grandes cantidades de datos y recursos computacionales, lo que resulta costoso. Utiliza técnicas de reducción de dimensionalidad y selección de características para optimizar el costo del modelo, y evalúa el impacto en el rendimiento del modelo. La tarea consiste en reducir los costos en un 30% sin reducir el rendimiento en más de un 5%. Utiliza la herramienta Claude para desarrollar y evaluar el modelo.",
         "pasos": [
-          "Paso 1: Acceder a la herramienta Claude y seleccionar la opción de generación de datos sintéticos",
-          "Paso 2: Introducir el prompt de generación de datos y ajustar los parámetros según sea necesario",
-          "Paso 3: Esperar a que la herramienta genere el conjunto de datos y descargarlo en un formato adecuado",
-          "Paso 4: Evaluar la calidad del conjunto de datos generado y refinarlo según sea necesario",
-          "Paso 5: Guardar el conjunto de datos generado y aplicarlo en un modelo de aprendizaje automático para reconocer objetos en imágenes"
+          "Paso 1: Accede a la plataforma de desarrollo de IA y crea un nuevo proyecto",
+          "Paso 2: Importa el conjunto de datos de clasificación de texto y selecciona el modelo de IA adecuado",
+          "Paso 3: Aplica técnicas de reducción de dimensionalidad y selección de características para optimizar el costo del modelo",
+          "Paso 4: Evalúa el impacto en el rendimiento del modelo y ajusta las técnicas de optimización según sea necesario",
+          "Paso 5: Guarda y aplica los cambios en el pipeline de IA"
         ],
-        "criterio_exito": "El conjunto de datos generado debe ser lo suficientemente grande y variado como para entrenar un modelo de aprendizaje automático para reconocer objetos en imágenes con una precisión del 90% o superior"
+        "criterio_exito": "El costo del modelo se reduce en un 30% sin reducir el rendimiento en más de un 5%"
       },
       "recursos": [
-        "Documentación de la herramienta Claude para generación de datos sintéticos"
+        "Técnicas de reducción de dimensionalidad",
+        "Selección de características"
       ]
     },
     {
-      "id": "extra-33-2",
-      "semana": "2026-08-10",
+      "id": "extra-34-2",
+      "semana": "2026-08-17",
       "herramienta": "Gemini",
       "nivel": "Avanzado",
-      "titulo": "Análisis de Calidad",
-      "subtitulo": "Aprenderá a analizar la calidad de los datos sintéticos con Gemini",
+      "titulo": "Eficiencia Energetica",
+      "subtitulo": "Aprenderá a reducir el consumo de energía en pipelines de IA",
       "duracion": "20 min",
       "teoria": {
-        "concepto": "Análisis de calidad de datos sintéticos",
-        "explicacion": "El análisis de calidad de datos sintéticos es el proceso de evaluar la calidad y la precisión de los datos generados. Esto es importante porque los datos sintéticos deben ser lo suficientemente realistas y precisos como para ser utilizados en aplicaciones reales. El análisis de calidad de datos sintéticos implica evaluar la distribución de los datos, la presencia de ruido o errores, y la similitud con los datos reales.",
-        "analogia": "El análisis de calidad de datos sintéticos es similar a la revisión de un trabajo de investigación. Se debe evaluar la calidad y la precisión de los resultados para asegurarse de que sean confiables y útiles.",
+        "concepto": "Eficiencia Energética",
+        "explicacion": "La eficiencia energética es crucial en el desarrollo de pipelines de IA. Esto se debe a que los modelos de IA requieren grandes cantidades de energía para funcionar, lo que puede resultar costoso y perjudicial para el medio ambiente. La eficiencia energética implica identificar áreas donde se pueden reducir el consumo de energía sin comprometer el rendimiento del modelo. Esto puede lograrse mediante la selección de hardware y software adecuados, la optimización de los algoritmos de entrenamiento y la reducción del tamaño de los modelos.",
+        "analogia": "La eficiencia energética en pipelines de IA es similar a la eficiencia energética en un hogar. Al igual que se busca reducir el consumo de energía en un hogar, la eficiencia energética en pipelines de IA busca reducir el consumo de energía en los modelos de IA.",
         "cuando_usarlo": [
-          "Cuando se generan datos sintéticos para entrenar un modelo de aprendizaje automático",
-          "Cuando se necesita evaluar la calidad de los datos sintéticos antes de utilizarlos en una aplicación real",
-          "Cuando se quiere comparar la calidad de diferentes conjuntos de datos sintéticos"
+          "Cuando se está desarrollando un modelo de IA que requiere grandes cantidades de energía",
+          "Cuando se busca reducir el impacto ambiental de un pipeline de IA",
+          "Cuando se está evaluando la viabilidad de un proyecto de IA",
+          "Cuando se busca mejorar la eficiencia de un pipeline de IA"
         ]
       },
       "ejemplo": {
-        "caso": "Un desarrollador de software quiere evaluar la calidad de un conjunto de datos sintéticos de imágenes de objetos",
-        "prompt_malo": "Evalúa la calidad de los datos",
-        "prompt_bueno": "Evalúa la calidad de los datos sintéticos de imágenes de objetos en términos de precisión, variedad y similitud con los datos reales",
-        "por_que_mejor": "El prompt bueno es mejor porque especifica los criterios de evaluación y permite obtener una evaluación más detallada y precisa de la calidad de los datos"
+        "caso": "Un equipo de desarrollo de IA está trabajando en un proyecto de procesamiento de lenguaje natural. El modelo requiere grandes cantidades de energía para funcionar, lo que resulta costoso y perjudicial para el medio ambiente.",
+        "prompt_malo": "Reduce el consumo de energía del modelo de procesamiento de lenguaje natural",
+        "prompt_bueno": "Reduce el consumo de energía del modelo de procesamiento de lenguaje natural utilizando técnicas de optimización de hardware y software, y evalúa el impacto en el rendimiento del modelo",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona una solución específica y detallada para reducir el consumo de energía, en lugar de una solicitud genérica."
       },
       "practica": {
-        "titulo": "Análisis de calidad de datos sintéticos de imágenes",
-        "objetivo": "Evaluar la calidad de un conjunto de datos sintéticos de imágenes de objetos",
-        "prompt_practica": "Evalúa la calidad de un conjunto de datos sintéticos de 1.000 imágenes de objetos en términos de precisión, variedad y similitud con los datos reales. La evaluación debe incluir la medición de la precisión de la clasificación de los objetos, la variedad de los objetos y la similitud con los datos reales. El resultado de la evaluación debe ser un informe detallado que incluya gráficos y estadísticas.",
+        "titulo": "Eficiencia Energética en un Pipeline de IA",
+        "objetivo": "Reducir el consumo de energía de un pipeline de IA sin comprometer el rendimiento",
+        "prompt_practica": "Eres un desarrollador de IA que trabaja en un proyecto de procesamiento de lenguaje natural. El modelo requiere grandes cantidades de energía para funcionar, lo que resulta costoso y perjudicial para el medio ambiente. Utiliza técnicas de optimización de hardware y software para reducir el consumo de energía del modelo, y evalúa el impacto en el rendimiento del modelo. La tarea consiste en reducir el consumo de energía en un 25% sin reducir el rendimiento en más de un 10%. Utiliza la herramienta Gemini para desarrollar y evaluar el modelo.",
         "pasos": [
-          "Paso 1: Acceder a la herramienta Gemini y seleccionar la opción de análisis de calidad de datos sintéticos",
-          "Paso 2: Introducir el conjunto de datos sintéticos y ajustar los parámetros de evaluación según sea necesario",
-          "Paso 3: Esperar a que la herramienta realice la evaluación y genere el informe",
-          "Paso 4: Revisar el informe y evaluar la calidad de los datos sintéticos",
-          "Paso 5: Guardar el informe y aplicar los resultados en la mejora de la generación de datos sintéticos"
+          "Paso 1: Accede a la plataforma de desarrollo de IA y crea un nuevo proyecto",
+          "Paso 2: Importa el conjunto de datos de procesamiento de lenguaje natural y selecciona el modelo de IA adecuado",
+          "Paso 3: Aplica técnicas de optimización de hardware y software para reducir el consumo de energía del modelo",
+          "Paso 4: Evalúa el impacto en el rendimiento del modelo y ajusta las técnicas de optimización según sea necesario",
+          "Paso 5: Guarda y aplica los cambios en el pipeline de IA"
         ],
-        "criterio_exito": "El informe de evaluación debe incluir gráficos y estadísticas que demuestren la calidad de los datos sintéticos y permitan identificar áreas de mejora"
+        "criterio_exito": "El consumo de energía del modelo se reduce en un 25% sin reducir el rendimiento en más de un 10%"
       },
       "recursos": [
-        "Documentación de la herramienta Gemini para análisis de calidad de datos sintéticos"
+        "Técnicas de optimización de hardware",
+        "Técnicas de optimización de software"
       ]
     },
     {
-      "id": "extra-33-3",
-      "semana": "2026-08-10",
+      "id": "extra-34-3",
+      "semana": "2026-08-17",
       "herramienta": "Kiro",
       "nivel": "Avanzado",
-      "titulo": "Optimización de Parámetros",
-      "subtitulo": "Aprenderá a optimizar los parámetros de generación de datos sintéticos con Kiro",
+      "titulo": "Optimización Costos",
+      "subtitulo": "Aprenderá a optimizar los costos de un pipeline de IA",
       "duracion": "25 min",
       "teoria": {
-        "concepto": "Optimización de parámetros de generación de datos sintéticos",
-        "explicacion": "La optimización de parámetros de generación de datos sintéticos es el proceso de ajustar los parámetros de la generación de datos para obtener los mejores resultados posibles. Esto implica encontrar el equilibrio óptimo entre la calidad de los datos y el tiempo de generación. La optimización de parámetros de generación de datos sintéticos es importante porque permite obtener datos de alta calidad de manera eficiente.",
-        "analogia": "La optimización de parámetros de generación de datos sintéticos es similar a la ajuste de los parámetros de una máquina para obtener el mejor rendimiento posible.",
+        "concepto": "Optimización de Costos",
+        "explicacion": "La optimización de costos es crucial en el desarrollo de pipelines de IA. Esto se debe a que los modelos de IA requieren grandes cantidades de datos y recursos computacionales, lo que puede resultar costoso. La optimización de costos implica identificar áreas donde se pueden reducir los gastos sin comprometer el rendimiento del modelo. Esto puede lograrse mediante la selección de hardware y software adecuados, la optimización de los algoritmos de entrenamiento y la reducción del tamaño de los modelos.",
+        "analogia": "La optimización de costos en pipelines de IA es similar a la optimización de un presupuesto personal. Al igual que se busca reducir los gastos innecesarios en un presupuesto personal, la optimización de costos en pipelines de IA busca reducir los gastos innecesarios en recursos computacionales y datos.",
         "cuando_usarlo": [
-          "Cuando se necesita obtener datos de alta calidad de manera eficiente",
-          "Cuando se quiere reducir el tiempo de generación de datos sintéticos",
-          "Cuando se necesita encontrar el equilibrio óptimo entre la calidad de los datos y el tiempo de generación"
+          "Cuando se está desarrollando un modelo de IA que requiere grandes cantidades de datos y recursos computacionales",
+          "Cuando se busca reducir los costos de mantenimiento de un modelo de IA existente",
+          "Cuando se está evaluando la viabilidad de un proyecto de IA",
+          "Cuando se busca mejorar la eficiencia de un pipeline de IA"
         ]
       },
       "ejemplo": {
-        "caso": "Un desarrollador de software quiere optimizar los parámetros de generación de datos sintéticos de imágenes de objetos",
-        "prompt_malo": "Optimiza los parámetros de generación de datos",
-        "prompt_bueno": "Optimiza los parámetros de generación de datos sintéticos de imágenes de objetos para obtener la mejor calidad posible en un tiempo de generación de 10 minutos",
-        "por_que_mejor": "El prompt bueno es mejor porque especifica el objetivo de la optimización y el tiempo de generación, lo que permite obtener los mejores resultados posibles"
+        "caso": "Un equipo de desarrollo de IA está trabajando en un proyecto de clasificación de imágenes. El modelo requiere grandes cantidades de datos y recursos computacionales, lo que resulta costoso.",
+        "prompt_malo": "Optimiza el costo del modelo de clasificación de imágenes",
+        "prompt_bueno": "Optimiza el costo del modelo de clasificación de imágenes utilizando técnicas de reducción de dimensionalidad y selección de características, y evalúa el impacto en el rendimiento del modelo",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona una solución específica y detallada para optimizar el costo del modelo, en lugar de una solicitud genérica."
       },
       "practica": {
-        "titulo": "Optimización de parámetros de generación de datos sintéticos de imágenes",
-        "objetivo": "Optimizar los parámetros de generación de datos sintéticos de imágenes de objetos para obtener la mejor calidad posible",
-        "prompt_practica": "Optimiza los parámetros de generación de datos sintéticos de 1.000 imágenes de objetos para obtener la mejor calidad posible en un tiempo de generación de 5 minutos. La optimización debe incluir la ajuste de los parámetros de generación de datos, como la resolución de la imagen, el número de objetos y el nivel de ruido. El resultado de la optimización debe ser un conjunto de parámetros óptimos que permitan obtener la mejor calidad posible en el tiempo de generación especificado.",
+        "titulo": "Optimización de Costos en un Pipeline de IA",
+        "objetivo": "Reducir los costos de un pipeline de IA sin comprometer el rendimiento",
+        "prompt_practica": "Eres un desarrollador de IA que trabaja en un proyecto de clasificación de texto. El modelo requiere grandes cantidades de datos y recursos computacionales, lo que resulta costoso. Utiliza técnicas de reducción de dimensionalidad y selección de características para optimizar el costo del modelo, y evalúa el impacto en el rendimiento del modelo. La tarea consiste en reducir los costos en un 30% sin reducir el rendimiento en más de un 5%. Utiliza la herramienta Kiro para desarrollar y evaluar el modelo.",
         "pasos": [
-          "Paso 1: Acceder a la herramienta Kiro y seleccionar la opción de optimización de parámetros de generación de datos sintéticos",
-          "Paso 2: Introducir el conjunto de datos sintéticos y ajustar los parámetros de generación según sea necesario",
-          "Paso 3: Esperar a que la herramienta realice la optimización y genere el conjunto de parámetros óptimos",
-          "Paso 4: Revisar los parámetros óptimos y evaluar la calidad de los datos sintéticos",
-          "Paso 5: Guardar los parámetros óptimos y aplicarlos en la generación de datos sintéticos"
+          "Paso 1: Accede a la plataforma de desarrollo de IA y crea un nuevo proyecto",
+          "Paso 2: Importa el conjunto de datos de clasificación de texto y selecciona el modelo de IA adecuado",
+          "Paso 3: Aplica técnicas de reducción de dimensionalidad y selección de características para optimizar el costo del modelo",
+          "Paso 4: Evalúa el impacto en el rendimiento del modelo y ajusta las técnicas de optimización según sea necesario",
+          "Paso 5: Guarda y aplica los cambios en el pipeline de IA"
         ],
-        "criterio_exito": "El conjunto de parámetros óptimos debe permitir obtener la mejor calidad posible en el tiempo de generación especificado"
+        "criterio_exito": "El costo del modelo se reduce en un 30% sin reducir el rendimiento en más de un 5%"
       },
       "recursos": [
-        "Documentación de la herramienta Kiro para optimización de parámetros de generación de datos sintéticos"
+        "Técnicas de reducción de dimensionalidad",
+        "Selección de características"
       ]
     },
     {
-      "id": "extra-33-4",
-      "semana": "2026-08-10",
-      "herramienta": "Kiro",
+      "id": "extra-34-4",
+      "semana": "2026-08-17",
+      "herramienta": "Claude",
       "nivel": "Avanzado",
-      "titulo": "Integración con Modelos",
-      "subtitulo": "Aprenderá a integrar los datos sintéticos con modelos de aprendizaje automático",
-      "duracion": "30 min",
+      "titulo": "Eficiencia Computacional",
+      "subtitulo": "Aprenderá a optimizar la eficiencia computacional de un pipeline de IA",
+      "duracion": "25 min",
       "teoria": {
-        "concepto": "Integración de datos sintéticos con modelos de aprendizaje automático",
-        "explicacion": "La integración de datos sintéticos con modelos de aprendizaje automático es el proceso de utilizar los datos sintéticos para entrenar y evaluar modelos de aprendizaje automático. Esto implica integrar los datos sintéticos con el modelo de aprendizaje automático y ajustar los parámetros del modelo para obtener los mejores resultados posibles.",
-        "analogia": "La integración de datos sintéticos con modelos de aprendizaje automático es similar a la integración de un nuevo componente en un sistema existente.",
+        "concepto": "Eficiencia Computacional",
+        "explicacion": "La eficiencia computacional es crucial en el desarrollo de pipelines de IA. Esto se debe a que los modelos de IA requieren grandes cantidades de recursos computacionales para funcionar, lo que puede resultar costoso y perjudicial para el medio ambiente. La eficiencia computacional implica identificar áreas donde se pueden reducir el consumo de recursos computacionales sin comprometer el rendimiento del modelo. Esto puede lograrse mediante la selección de hardware y software adecuados, la optimización de los algoritmos de entrenamiento y la reducción del tamaño de los modelos.",
+        "analogia": "La eficiencia computacional en pipelines de IA es similar a la eficiencia energética en un hogar. Al igual que se busca reducir el consumo de energía en un hogar, la eficiencia computacional en pipelines de IA busca reducir el consumo de recursos computacionales en los modelos de IA.",
         "cuando_usarlo": [
-          "Cuando se necesita entrenar un modelo de aprendizaje automático con datos sintéticos",
-          "Cuando se quiere evaluar el rendimiento de un modelo de aprendizaje automático con datos sintéticos",
-          "Cuando se necesita integrar los datos sintéticos con un modelo de aprendizaje automático existente"
+          "Cuando se está desarrollando un modelo de IA que requiere grandes cantidades de recursos computacionales",
+          "Cuando se busca reducir el impacto ambiental de un pipeline de IA",
+          "Cuando se está evaluando la viabilidad de un proyecto de IA",
+          "Cuando se busca mejorar la eficiencia de un pipeline de IA"
         ]
       },
       "ejemplo": {
-        "caso": "Un desarrollador de software quiere integrar los datos sintéticos de imágenes de objetos con un modelo de aprendizaje automático para reconocer objetos",
-        "prompt_malo": "Integra los datos sintéticos con el modelo",
-        "prompt_bueno": "Integra los datos sintéticos de 1.000 imágenes de objetos con un modelo de aprendizaje automático para reconocer objetos y ajusta los parámetros del modelo para obtener la mejor precisión posible",
-        "por_que_mejor": "El prompt bueno es mejor porque especifica el objetivo de la integración y los parámetros del modelo, lo que permite obtener los mejores resultados posibles"
+        "caso": "Un equipo de desarrollo de IA está trabajando en un proyecto de procesamiento de lenguaje natural. El modelo requiere grandes cantidades de recursos computacionales para funcionar, lo que resulta costoso y perjudicial para el medio ambiente.",
+        "prompt_malo": "Reduce el consumo de recursos computacionales del modelo de procesamiento de lenguaje natural",
+        "prompt_bueno": "Reduce el consumo de recursos computacionales del modelo de procesamiento de lenguaje natural utilizando técnicas de optimización de hardware y software, y evalúa el impacto en el rendimiento del modelo",
+        "por_que_mejor": "El prompt bueno es mejor porque proporciona una solución específica y detallada para reducir el consumo de recursos computacionales, en lugar de una solicitud genérica."
       },
       "practica": {
-        "titulo": "Integración de datos sintéticos con un modelo de aprendizaje automático",
-        "objetivo": "Integrar los datos sintéticos de imágenes de objetos con un modelo de aprendizaje automático para reconocer objetos",
-        "prompt_practica": "Integra los datos sintéticos de 1.000 imágenes de objetos con un modelo de aprendizaje automático para reconocer objetos y ajusta los parámetros del modelo para obtener la mejor precisión posible. La integración debe incluir la carga de los datos sintéticos, la configuración del modelo y la evaluación del rendimiento del modelo. El resultado de la integración debe ser un modelo de aprendizaje automático que pueda reconocer objetos en imágenes con una precisión del 90% o superior.",
+        "titulo": "Eficiencia Computacional en un Pipeline de IA",
+        "objetivo": "Reducir el consumo de recursos computacionales de un pipeline de IA sin comprometer el rendimiento",
+        "prompt_practica": "Eres un desarrollador de IA que trabaja en un proyecto de procesamiento de lenguaje natural. El modelo requiere grandes cantidades de recursos computacionales para funcionar, lo que resulta costoso y perjudicial para el medio ambiente. Utiliza técnicas de optimización de hardware y software para reducir el consumo de recursos computacionales del modelo, y evalúa el impacto en el rendimiento del modelo. La tarea consiste en reducir el consumo de recursos computacionales en un 25% sin reducir el rendimiento en más de un 10%. Utiliza la herramienta Claude para desarrollar y evaluar el modelo.",
         "pasos": [
-          "Paso 1: Acceder a la herramienta Kiro y seleccionar la opción de integración de datos sintéticos con modelos de aprendizaje automático",
-          "Paso 2: Introducir el conjunto de datos sintéticos y el modelo de aprendizaje automático",
-          "Paso 3: Esperar a que la herramienta realice la integración y ajuste los parámetros del modelo",
-          "Paso 4: Revisar el rendimiento del modelo y evaluar la precisión",
-          "Paso 5: Guardar el modelo y aplicarlo en la reconocimiento de objetos en imágenes"
+          "Paso 1: Accede a la plataforma de desarrollo de IA y crea un nuevo proyecto",
+          "Paso 2: Importa el conjunto de datos de procesamiento de lenguaje natural y selecciona el modelo de IA adecuado",
+          "Paso 3: Aplica técnicas de optimización de hardware y software para reducir el consumo de recursos computacionales del modelo",
+          "Paso 4: Evalúa el impacto en el rendimiento del modelo y ajusta las técnicas de optimización según sea necesario",
+          "Paso 5: Guarda y aplica los cambios en el pipeline de IA"
         ],
-        "criterio_exito": "El modelo de aprendizaje automático debe ser capaz de reconocer objetos en imágenes con una precisión del 90% o superior"
+        "criterio_exito": "El consumo de recursos computacionales del modelo se reduce en un 25% sin reducir el rendimiento en más de un 10%"
       },
       "recursos": [
-        "Documentación de la herramienta Kiro para integración de datos sintéticos con modelos de aprendizaje automático"
+        "Técnicas de optimización de hardware",
+        "Técnicas de optimización de software"
       ]
     }
   ]

@@ -638,5 +638,45 @@
     "titulo": "Integración con Modelos",
     "subtitulo": "Aprenderá a integrar los datos sintéticos con modelos de aprendizaje automático",
     "duracion": "30 min"
+  },
+  {
+    "semana": "2026-08-17",
+    "tema": "optimización de costes en pipelines de IA",
+    "id": "extra-34-1",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Optimización Costos",
+    "subtitulo": "Aprenderá a reducir costos en pipelines de IA",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-08-17",
+    "tema": "optimización de costes en pipelines de IA",
+    "id": "extra-34-2",
+    "herramienta": "Gemini",
+    "nivel": "Avanzado",
+    "titulo": "Eficiencia Energetica",
+    "subtitulo": "Aprenderá a reducir el consumo de energía en pipelines de IA",
+    "duracion": "20 min"
+  },
+  {
+    "semana": "2026-08-17",
+    "tema": "optimización de costes en pipelines de IA",
+    "id": "extra-34-3",
+    "herramienta": "Kiro",
+    "nivel": "Avanzado",
+    "titulo": "Optimización Costos",
+    "subtitulo": "Aprenderá a optimizar los costos de un pipeline de IA",
+    "duracion": "25 min"
+  },
+  {
+    "semana": "2026-08-17",
+    "tema": "optimización de costes en pipelines de IA",
+    "id": "extra-34-4",
+    "herramienta": "Claude",
+    "nivel": "Avanzado",
+    "titulo": "Eficiencia Computacional",
+    "subtitulo": "Aprenderá a optimizar la eficiencia computacional de un pipeline de IA",
+    "duracion": "25 min"
   }
 ]
